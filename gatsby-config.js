@@ -25,6 +25,14 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     'gatsby-plugin-offline',
     {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-prismjs`,
+        ]
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages`,
