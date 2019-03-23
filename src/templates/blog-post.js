@@ -3,9 +3,11 @@ import Layout from '../components/layout'
 import Img from 'gatsby-image'
 import Metatags from '../components/Metatags'
 import { graphql } from 'gatsby'
+import PrevNext from '../components/prevnext'
 
 function BlogPost(props) {
   const post = props.data.markdownRemark
+  const { prev, next } = props.pageContext
   const url = props.data.site.siteMetadata.siteUrl
   const { title, description } = post.frontmatter
   const thumbnail = post.frontmatter.image && post.frontmatter.image.childImageSharp.resize.src
@@ -22,6 +24,7 @@ function BlogPost(props) {
         <h1>{title}</h1>
         <Img fluid={post.frontmatter.image.childImageSharp.fluid} />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <PrevNext prev={prev && prev.node} next={next && next.node} />
       </div>
     </Layout>
   )
