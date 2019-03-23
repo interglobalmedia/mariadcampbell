@@ -1,5 +1,6 @@
 ---
 title: "I'm Now on Patreon!"
+image: patreon.jpg
 description: Bringing more tech awareness and efficiency to small business.
 date: '2019-03-08'
 ---
