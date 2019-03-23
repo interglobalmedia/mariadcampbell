@@ -3,6 +3,7 @@ title: "Upgrading PostgreSQL from version 10.4 to 11.1 via Homebrew (OSX)"
 image: postgresql.jpg
 description: Upgrading to the latest version of PostgreSQL via Homebrew.
 date: '2019-01-11'
+tags: ["postgresql", "homebrew"]
 ---
 
 Yesterday, it was that time again. Time to finally upgrade to the latest version of **PostgreSQL**.  Circumstances differed from the last time, which was good. For one, I didn't have a Migration Assistant data migration from my old computer to my new one to deal with. Second of all, due to changes in **PostgreSQL** itself (and subsequently **Homebrew** as it relates to **PostgreSQL** upgrades starting with version 10+), once you wrap your head around it, the upgrade is fairly painless.
