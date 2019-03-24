@@ -1,0 +1,12 @@
+.header-title {
+    font-size: 130%;
+    font-weight: normal;
+    /* display: flex;
+    justify-content: space-between; */
+    /* align-items: center; */
+}
+
+.routes {
+    /* float: right; */
+    font: 112.5%;
+}

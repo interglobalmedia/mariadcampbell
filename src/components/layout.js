@@ -26,7 +26,7 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <div
+        <div className="Site"
           style={{
             margin: `0 auto`,
             maxWidth: 960,
@@ -34,7 +34,7 @@ const Layout = ({ children }) => (
             paddingTop: 0,
           }}
         >
-          <main>{children}</main>
+          <main className="Site-content">{children}</main>
           <footer className="site-footer">
             Built with
             {` `}

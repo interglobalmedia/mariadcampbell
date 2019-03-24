@@ -1,0 +1,14 @@
+.social {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.social li a:first-of-type {
+    margin-right: 1.5rem;
+}
+
+.center {
+    text-align: center;
+    font-weight: 400;
+}

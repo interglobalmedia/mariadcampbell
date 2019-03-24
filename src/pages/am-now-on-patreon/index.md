@@ -14,4 +14,6 @@ That’s where someone like me comes in. I design, develop, and teach experience
 
 So be sure to follow me there, and let me know the things that you would find beneficial as a patron!
 
-[My Patreon Page](https://www.patreon.com/interglobalmedia)
+## Related Resources:
+
++ [My Patreon Page](https://www.patreon.com/interglobalmedia)

@@ -4,6 +4,7 @@ import Img from 'gatsby-image'
 import Metatags from '../components/Metatags'
 import { graphql } from 'gatsby'
 import PrevNext from '../components/prevnext'
+import Share from '../components/share'
 
 function BlogPost(props) {
   const url = props.data.site.siteMetadata.siteUrl
@@ -23,6 +24,7 @@ function BlogPost(props) {
         <h1>{title}</h1>
         {image && <Img fluid={image.childImageSharp.fluid} />}
         <div dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }} />
+        <Share title={title} url={url} pathname={props.location.pathname} />
         <PrevNext prev={prev && prev.node} next={next && next.node} />
       </div>
     </Layout>

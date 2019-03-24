@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import './post.css';
+import './post.css'
+import './index.css'
 import Layout from '../components/layout'
 
 const IndexPage = (props) => {
@@ -10,7 +11,7 @@ const IndexPage = (props) => {
       {postList.edges.map(({ node }, i) => (
         <Link to={node.fields.slug} className="link" >
           <div className="post-list">
-            <h1>{node.frontmatter.title}</h1>
+            <h1 className="post-list-title">{node.frontmatter.title}</h1>
             <span>{node.frontmatter.date}</span>
             <p>{node.excerpt}</p>
           </div>

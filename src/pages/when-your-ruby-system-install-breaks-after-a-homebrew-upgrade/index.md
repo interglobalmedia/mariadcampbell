@@ -49,16 +49,16 @@ As mentioned in my article entitled [How to save terminal output to a file for f
 
 ## Related Resources:
 
-[How to save Terminal output to a file for future reference](http://www.mariadcampbell.com/2019/01/18/how-to-save-terminal-output-to-a-file-for-future-reference/)
++ [How to save Terminal output to a file for future reference](http://www.mariadcampbell.com/2019/01/18/how-to-save-terminal-output-to-a-file-for-future-reference/)
 
-[Installing rbenv and Updating to the Newest Ruby Version on macOS 10.13.5](https://medium.com/@gratefulcheddar/installing-rbenv-and-updating-to-the-newest-ruby-version-22c465063450)
++ [Installing rbenv and Updating to the Newest Ruby Version on macOS 10.13.5](https://medium.com/@gratefulcheddar/installing-rbenv-and-updating-to-the-newest-ruby-version-22c465063450)
 
-[rbenv on Github](https://github.com/rbenv/rbenv)
++ [rbenv on Github](https://github.com/rbenv/rbenv)
 
-[a lot of error after updating to mojave #4975](https://github.com/Homebrew/brew/issues/4975)
++ [a lot of error after updating to mojave #4975](https://github.com/Homebrew/brew/issues/4975)
 
-[Can't find gem sass (&gt;= 0.a) with executable sass](https://stackoverflow.com/questions/48461207/cant-find-gem-sass-0-a-with-executable-sass)
++ [Can't find gem sass (&gt;= 0.a) with executable sass](https://stackoverflow.com/questions/48461207/cant-find-gem-sass-0-a-with-executable-sass)
 
-[Why can't I install Sass on Mac OS Sierra?](https://stackoverflow.com/questions/45261658/why-cant-i-install-sass-on-mac-os-sierra)
++ [Why can't I install Sass on Mac OS Sierra?](https://stackoverflow.com/questions/45261658/why-cant-i-install-sass-on-mac-os-sierra)
 
-[Ruby Sass to be put to pasture on March 26, 2019](https://css-tricks.com/ruby-sass-to-be-put-to-pasture-on-march-26-2019/)
++ [Ruby Sass to be put to pasture on March 26, 2019](https://css-tricks.com/ruby-sass-to-be-put-to-pasture-on-march-26-2019/)

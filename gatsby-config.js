@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Maria D. Campbell`,
-    siteUrl: `https://www.gatsbyjs.org`,
+    siteUrl: `https://www.mariadcampbell.com`,
     description: `Where I muse about and share my developer experiences.`,
     author: `Maria D. Campbell`,
   },

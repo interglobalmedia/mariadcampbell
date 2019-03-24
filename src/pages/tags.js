@@ -1,14 +1,16 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
-import './post.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHashtag } from '@fortawesome/free-solid-svg-icons'
+import './tags.css'
 
 function TagsPage(props) {
   const data = props.data.allMarkdownRemark.group
   return (
     <Layout>
       <div className="tags">
-        <h1>All tags</h1>
+        <p className="tags-title"><FontAwesomeIcon icon={faHashtag} /></p>
         {
           data.map(tag => (
             <Link to={`/tags/${tag.fieldValue}`}>
