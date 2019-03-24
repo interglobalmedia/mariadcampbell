@@ -1,13 +1,26 @@
+p a {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+ul li {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+ul a,
+a {
+    color: rgba(0, 0, 0, 0.8);
+}
+
 .link {
     text-decoration: none;
-    color: black;
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .post-list {
     border: 1px solid gainsboro;
     padding: .5rem;
     box-shadow: 0 -1px 4px #ede7e7;
-    margin: 1rem;
+    margin: 0 1rem 1rem;
 }
 
 img {
@@ -16,23 +29,6 @@ img {
 
 .post-list:hover {
     background-color: whitesmoke;
-}
-
-.tags {
-    display: flex;
-    flex-direction: column;
-}
-
-.tags a {
-    margin-bottom: 2rem;
-    list-style: none;
-    background: #ececec;
-    border: 1px solid #fff;
-    width: 100%;
-    padding: 1rem;
-    text-decoration: none;
-    font-size: 1.1rem;
-    color: rgb(31, 26, 26);
 }
 
 .site-footer {
