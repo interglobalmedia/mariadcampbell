@@ -7,6 +7,7 @@ import Layout from '../components/layout'
 const IndexPage = (props) => {
   const postList = props.data.allMarkdownRemark
   return (
+
     <Layout>
       {postList.edges.map(({ node }, i) => (
         <Link to={node.fields.slug} className="link" >
@@ -17,7 +18,8 @@ const IndexPage = (props) => {
           </div>
         </Link>
       ))}
-    </Layout>
+    </Layout >
+
   )
 }
 export default IndexPage;
