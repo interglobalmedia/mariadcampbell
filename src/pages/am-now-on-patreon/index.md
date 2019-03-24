@@ -3,6 +3,7 @@ title: "I'm Now on Patreon!"
 image: patreon.jpg
 description: Bringing more tech awareness and efficiency to small business.
 date: '2019-03-08'
+tags: ["patreon"]
 ---
 
 Today is International Women’s Day! And it inspired me to take my first steps in achieving my company’s goals of bringing more tech awareness and efficiency to small business.

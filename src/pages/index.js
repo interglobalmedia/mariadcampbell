@@ -2,8 +2,9 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import './post.css';
 import Layout from '../components/layout'
+
 const IndexPage = (props) => {
-  const postList = props.data.allMarkdownRemark;
+  const postList = props.data.allMarkdownRemark
   return (
     <Layout>
       {postList.edges.map(({ node }, i) => (
@@ -24,7 +25,7 @@ export const listQuery = graphql`
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
-          fields{
+          fields {
             slug
           }
           excerpt(pruneLength: 250)
