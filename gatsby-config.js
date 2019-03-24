@@ -4,6 +4,12 @@ module.exports = {
     siteUrl: `https://www.mariadcampbell.com`,
     description: `Where I muse about and share my developer experiences.`,
     author: `Maria D. Campbell`,
+    social: {
+      twitter: `letsbsocial`,
+      github: `interglobalmedia`,
+      facebook: `mariador62`,
+      linkedin: `mariacampbell`
+    },
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -31,7 +37,7 @@ module.exports = {
         plugins: [
           `gatsby-remark-prismjs`,
         ]
-      }
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,

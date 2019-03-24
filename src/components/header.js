@@ -8,18 +8,20 @@ import './header.css'
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `transparent`,
+      background: '#fff',
       height: '70px',
       margin: '0 auto',
+      position: 'fixed',
+      width: '100%',
+      zIndex: '1',
+      // borderBottom: '1px solid rgba(0,0,0,0.8)',
+      boxShadow: '0 1px 4px rgba(0,0,0,0.2)'
     }}
   >
     <div className="header"
       style={{
-        margin: `1.0875rem auto 0`,
+        margin: `0 auto`,
         maxWidth: 960,
-        // display: 'flex',
-        // justifyContent: 'space-between',
-        // alignItems: 'center',
       }}
     >
       <h1 className="header-title" style={{ marginTop: '1rem', display: 'flex', justifyContent: 'flex-start' }}>
@@ -49,7 +51,7 @@ const Header = ({ siteTitle }) => (
           <FontAwesomeIcon icon={faHome} />
         </Link>
         <Link
-          to="/bio"
+          to="/info"
           style={{
             fontSize: '1.3rem',
             fontWeight: '100',
@@ -74,7 +76,7 @@ const Header = ({ siteTitle }) => (
         </Link>
       </p>
     </div>
-  </header >
+  </header>
 )
 
 Header.propTypes = {
