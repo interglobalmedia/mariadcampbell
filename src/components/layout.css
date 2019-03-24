@@ -715,6 +715,12 @@ pre tt:after {
   }
 }
 
+/* tags list styling in blog-post.js */
+
+.tags-list {
+  margin-top: 2rem;
+}
+
 /* sticky footer */
 :root {
   --space: 1.5em 0;

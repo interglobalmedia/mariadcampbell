@@ -5,6 +5,7 @@ import Metatags from '../components/Metatags'
 import { graphql } from 'gatsby'
 import PrevNext from '../components/prevnext'
 import Share from '../components/share'
+import '../components/layout.css'
 
 function BlogPost(props) {
   const url = props.data.site.siteMetadata.siteUrl
@@ -25,13 +26,17 @@ function BlogPost(props) {
         {image && <Img fluid={image.childImageSharp.fluid} />}
         <div dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }} />
         <div>
-          <span>Tagged in </span>
+          <span>Tagged in: </span>
           {tags.map((tag, i) => (
             <a href={`/tags/${tag}`} key={i} style={{ marginLeft: "10px" }}>{tag}</a>
           ))}
         </div>
-        <Share title={title} url={url} pathname={props.location.pathname} />
-        <PrevNext prev={prev && prev.node} next={next && next.node} />
+        <div className="tags-list">
+          <Share title={title} url={url} pathname={props.location.pathname} />
+        </div>
+        <div className="prev-next-div">
+          <PrevNext prev={prev && prev.node} next={next && next.node} />
+        </div>
       </div>
     </Layout>
   )
