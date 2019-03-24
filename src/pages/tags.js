@@ -10,11 +10,11 @@ function TagsPage(props) {
       <div className="tags">
         <h1>All tags</h1>
         {
-          data.map(tag =>
-            <Link to={`/${tag.fieldValue}`}>
+          data.map(tag => (
+            <Link to={`/tags/${tag.fieldValue}`}>
               {tag.fieldValue} {`(${tag.totalCount})`}
             </Link>
-          )
+          ))
         }
       </div>
     </Layout>

@@ -6,24 +6,23 @@ import { graphql } from 'gatsby'
 import PrevNext from '../components/prevnext'
 
 function BlogPost(props) {
-  const post = props.data.markdownRemark
-  const { prev, next } = props.pageContext
   const url = props.data.site.siteMetadata.siteUrl
-  const { title, description } = post.frontmatter
-  const thumbnail = post.frontmatter.image && post.frontmatter.image.childImageSharp.resize.src
+  const thumbnail = props.data.markdownRemark.frontmatter.image && props.data.markdownRemark.frontmatter.image.childImageSharp.resize.src
+  const { title, image } = props.data.markdownRemark.frontmatter
+  const { prev, next } = props.pageContext
   return (
     <Layout>
       <Metatags
         title={title}
-        description={description}
-        thumbnail={url + thumbnail}
+        description={props.data.markdownRemark.excerpt}
+        thumbnail={thumbnail && url + thumbnail}
         url={url}
         pathname={props.location.pathname}
       />
       <div>
         <h1>{title}</h1>
-        <Img fluid={post.frontmatter.image.childImageSharp.fluid} />
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        {image && <Img fluid={image.childImageSharp.fluid} />}
+        <div dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }} />
         <PrevNext prev={prev && prev.node} next={next && next.node} />
       </div>
     </Layout>
@@ -36,9 +35,9 @@ export const query = graphql`
  query PostQuery($slug: String!) {
      markdownRemark(fields: { slug: { eq: $slug } }) {
        html
+       excerpt
        frontmatter {
         title
-        description
         image {
           childImageSharp {
             resize(width: 1500, height: 1500) {
