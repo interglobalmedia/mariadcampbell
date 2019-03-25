@@ -67,9 +67,6 @@ const infoQuery = graphql`
               site {
             siteMetadata {
               author
-        social {
-              twitter
-            }
             }
           }
         }

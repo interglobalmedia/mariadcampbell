@@ -2,7 +2,39 @@
     margin-top: 2rem;
 }
 
+.post-list {
+    position: relative;
+    border: 1px solid gainsboro;
+    padding: 1rem 1rem 0.25rem;
+    box-shadow: 0 -1px 4px #ede7e7;
+    margin: 1rem 0.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .post-list-title {
     font-size: 1.3rem;
     font-weight: normal;
+}
+
+.post-list-date {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.post-list-excerpt {
+    margin-top: 0.5rem;
+}
+
+.social-media-home {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 0;
+    margin-bottom: 0;
+    /* align-items: center; */
 }
