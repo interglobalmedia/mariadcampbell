@@ -11,7 +11,15 @@ module.exports = {
       linkedin: `mariacampbell`
     },
   },
+  pathPrefix: '/',
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content`,
+        name: "pages",
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     {
@@ -62,14 +70,6 @@ module.exports = {
         ]
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages',
-      },
-    },
-
     {
       resolve: `gatsby-plugin-typography`,
       options: {

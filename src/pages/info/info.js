@@ -2,9 +2,9 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faLinkedinIn, faGithubAlt } from '@fortawesome/free-brands-svg-icons'
 import { StaticQuery, graphql } from "gatsby"
-import Layout from '../components/Layout/Layout'
+import Layout from '../../components/Layout/Layout'
 import './info.css'
-import profileSmall from '../images/profileSmall.png'
+import profileSmall from '../../images/profileSmall.png'
 
 function InfoPage() {
   const twitter = `https://twitter.com/letsbsocial1`

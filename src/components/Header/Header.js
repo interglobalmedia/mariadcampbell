@@ -50,7 +50,7 @@ const Header = ({ siteTitle }) => (
           <FontAwesomeIcon icon={faHome} />
         </Link>
         <Link
-          to="/info"
+          to="/info/info"
           style={{
             fontSize: '1.3rem',
             fontWeight: '100',
@@ -61,7 +61,7 @@ const Header = ({ siteTitle }) => (
           <FontAwesomeIcon icon={faInfo} />
         </Link>
         <Link
-          to="/tags"
+          to="/tags/tags"
           style={{
             fontSize: '1.3rem',
             fontWeight: 'normal',

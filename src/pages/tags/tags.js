@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import Layout from '../components/Layout/Layout'
+import Layout from '../../components/Layout/Layout'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHashtag } from '@fortawesome/free-solid-svg-icons'
 import './tags.css'

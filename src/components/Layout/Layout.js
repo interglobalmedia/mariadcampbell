@@ -10,6 +10,7 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
 import Header from "../Header/Header"
+import PrevNext from '../PrevNext/PrevNext'
 import "./Layout.css"
 import '../../pages/post.css'
 
@@ -36,7 +37,8 @@ const Layout = ({ children }) => (
           }}
         >
           <main className="Site-content"
-            style={{ margin: '6rem auto 2rem', width: '100%' }}>{children}</main>
+            style={{ margin: '6rem auto 2rem', width: '100%' }}>{children}
+          </main>
           <footer className="site-footer">
             Built with
             {` `}

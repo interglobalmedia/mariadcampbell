@@ -11,7 +11,6 @@ const { createFilePath, createFileNode } = require(`gatsby-source-filesystem`)
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
-  const blogPostTemplate = path.resolve(`src/templates/blog-post.js`)
   return new Promise((resolve, reject) => {
     resolve(graphql(`
     {
@@ -38,10 +37,9 @@ exports.createPages = ({ actions, graphql }) => {
         console.log(result.errors)
         return reject(result.errors)
       }
-      const posts = result.data.allMarkdownRemark.edges
-
-      const blogTemplate = path.resolve('./src/templates/blog-post.js')
+      const blogPostTemplate = path.resolve('./src/templates/blog-post.js');
       const tagsTemplate = path.resolve('./src/templates/tag-template.js')
+      const posts = result.data.allMarkdownRemark.edges
 
       // All tags
       let allTags = []
@@ -53,6 +51,7 @@ exports.createPages = ({ actions, graphql }) => {
       })
       // Eliminate duplicate tags
       allTags = _.uniq(allTags)
+
       allTags.forEach((tag => {
         createPage({
           path: `/tags/${_.kebabCase(tag)}/`,
@@ -65,7 +64,7 @@ exports.createPages = ({ actions, graphql }) => {
         posts.forEach(({ node }, index) => {
           createPage({
             path: node.fields.slug,
-            component: blogTemplate,
+            component: blogPostTemplate,
             context: {
               slug: node.fields.slug,
               prev: index === 0 ? null : posts[index - 1],
@@ -73,11 +72,11 @@ exports.createPages = ({ actions, graphql }) => {
             }, // additional data can be passed via context
           })
         }))
+      return
     })
     )
   })
 }
-
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
