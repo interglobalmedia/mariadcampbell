@@ -3,7 +3,8 @@ import PropTypes from "prop-types"
 import React from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHashtag, faInfo, faHome } from '@fortawesome/free-solid-svg-icons'
-import './header.css'
+import './Header.css'
+import '../Layout/Layout.css'
 
 const Header = ({ siteTitle }) => (
   <header
@@ -14,7 +15,6 @@ const Header = ({ siteTitle }) => (
       position: 'fixed',
       width: '100%',
       zIndex: '1',
-      // borderBottom: '1px solid rgba(0,0,0,0.8)',
       boxShadow: '0 1px 4px rgba(0,0,0,0.2)'
     }}
   >
@@ -30,8 +30,8 @@ const Header = ({ siteTitle }) => (
           style={{
             fontSize: '1.3rem',
             color: `rgba(0. 0, 0, 0.8)`,
-            textDecoration: `none`,
             paddingLeft: `1.0875rem`,
+            textDecoration: 'none'
           }}
         >
           {siteTitle}
@@ -43,7 +43,6 @@ const Header = ({ siteTitle }) => (
           style={{
             fontSize: '1.3rem',
             fontWeight: '100',
-            textDecoration: 'none',
             color: `rgba(0,0,0,0.8)`,
             padding: `0 1.0875rem`,
           }}
@@ -55,7 +54,6 @@ const Header = ({ siteTitle }) => (
           style={{
             fontSize: '1.3rem',
             fontWeight: '100',
-            textDecoration: 'none',
             color: `rgba(0,0,0,0.8)`,
             padding: ` 0 1.0875rem`,
           }}
@@ -76,7 +74,7 @@ const Header = ({ siteTitle }) => (
         </Link>
       </p>
     </div>
-  </header>
+  </header >
 )
 
 Header.propTypes = {

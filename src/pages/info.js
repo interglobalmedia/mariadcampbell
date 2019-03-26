@@ -1,10 +1,10 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faLinkedinIn, faGithubAlt } from '@fortawesome/free-brands-svg-icons'
-import profileSmall from '../images/profileSmall.png'
 import { StaticQuery, graphql } from "gatsby"
-import Layout from '../components/layout'
+import Layout from '../components/Layout/Layout'
 import './info.css'
+import profileSmall from '../images/profileSmall.png'
 
 function InfoPage() {
   const twitter = `https://twitter.com/letsbsocial1`
@@ -22,9 +22,6 @@ function InfoPage() {
             <div className="info-layout">
               <ul className="info-text">
                 <img src={profileSmall} width="150" height="150" alt={author} />
-                <li>
-                  Written by <strong>{author}</strong> who lives and works in New York City building useful things.
-                </li>
                 <li>
                   I design, develop, and teach experiences that make people's lives simpler.
                 </li>

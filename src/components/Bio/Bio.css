@@ -1,0 +1,8 @@
+.bio-container {
+    list-style-type: none;
+    margin-left: 0;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.8);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+}

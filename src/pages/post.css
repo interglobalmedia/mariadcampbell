@@ -1,9 +1,15 @@
 p a {
     color: rgba(0, 0, 0, 0.8);
+    color: #cb4b16;
 }
 
 ul li {
     color: rgba(0, 0, 0, 0.8);
+    margin-left: -0.5rem;
+}
+
+ul li a {
+    color: #cb4b16;
 }
 
 ul a,
@@ -12,16 +18,8 @@ a {
 }
 
 .link {
-    text-decoration: none;
     color: rgba(0, 0, 0, 0.8);
-}
-
-.post-list {
-    position: relative;
-    border: 1px solid gainsboro;
-    padding: .5rem;
-    box-shadow: 0 -1px 4px #ede7e7;
-    margin: 1rem;
+    color: #cb4b16;
 }
 
 img {

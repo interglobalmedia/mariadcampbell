@@ -1,7 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faFacebookF, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
-import './share.css'
+import './Share.css'
 
 const Share = props => {
     const twitter = `https://twitter.com/intent/tweet?url=${props.url +

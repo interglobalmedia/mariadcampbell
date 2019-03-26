@@ -13,3 +13,7 @@
     list-style-type: none;
     display: flex;
 }
+
+ul.social-media li a {
+    box-shadow: none;
+}

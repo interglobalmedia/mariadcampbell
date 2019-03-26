@@ -1,11 +1,12 @@
 import React from 'react'
-import Layout from '../components/layout'
+import Layout from '../components/Layout/Layout'
 import Img from 'gatsby-image'
-import Metatags from '../components/Metatags'
+import Metatags from '../components/Metatags/Metatags'
 import { graphql } from 'gatsby'
-import PrevNext from '../components/prevnext'
-import Share from '../components/share'
-import '../components/layout.css'
+import PrevNext from '../components/PrevNext/PrevNext'
+import Share from '../components/Share/Share'
+import Bio from '../components/Bio/Bio'
+import '../components/Layout/Layout.css'
 
 function BlogPost(props) {
   const url = props.data.site.siteMetadata.siteUrl
@@ -25,15 +26,16 @@ function BlogPost(props) {
         <h1>{title}</h1>
         {image && <Img fluid={image.childImageSharp.fluid} />}
         <div dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }} />
-        <div>
+        <div className="tags-list">
           <span>Tagged in: </span>
           {tags.map((tag, i) => (
             <a href={`/tags/${tag}`} key={i} style={{ marginLeft: "10px" }}>{tag}</a>
           ))}
         </div>
-        <div className="tags-list">
+        <div className="social-list">
           <Share title={title} url={url} pathname={props.location.pathname} />
         </div>
+        <Bio />
         <div className="prev-next-div">
           <PrevNext prev={prev && prev.node} next={next && next.node} />
         </div>

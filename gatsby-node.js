@@ -39,6 +39,7 @@ exports.createPages = ({ actions, graphql }) => {
         return reject(result.errors)
       }
       const posts = result.data.allMarkdownRemark.edges
+
       const blogTemplate = path.resolve('./src/templates/blog-post.js')
       const tagsTemplate = path.resolve('./src/templates/tag-template.js')
 
@@ -76,6 +77,7 @@ exports.createPages = ({ actions, graphql }) => {
     )
   })
 }
+
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions

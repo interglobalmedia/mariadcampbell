@@ -1,0 +1,26 @@
+.header-title {
+    font-size: 130%;
+    font-weight: normal;
+}
+
+.header-title a {
+    text-decoration: none;
+    box-shadow: none;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.header-title a:hover {
+    color: #cb4b16;
+}
+
+.routes {
+    font: 112.5%;
+}
+
+header a svg:hover {
+    color: #cb4b16;
+}
+
+p a {
+    box-shadow: none;
+}

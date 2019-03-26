@@ -1,7 +1,11 @@
 .social {
     display: flex;
     justify-content: center;
-    list-style: none;
+    list-style-type: none;
+}
+
+.social li a {
+    box-shadow: none;
 }
 
 .social li a:first-of-type {

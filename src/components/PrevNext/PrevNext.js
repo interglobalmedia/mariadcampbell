@@ -1,5 +1,5 @@
 import React from 'react'
-import './prev-next.css'
+import './PrevNext.css'
 
 const PrevNext = (props) => {
     const { prev, next } = props
