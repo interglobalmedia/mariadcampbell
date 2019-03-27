@@ -7,11 +7,10 @@
 // You can delete this file if you're not using it
 const path = require("path")
 const _ = require('lodash')
-const { createFilePath, createFileNode } = require(`gatsby-source-filesystem`)
+const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
-  const blogPostTemplate = path.resolve(`src/templates/blog-post.js`)
   return new Promise((resolve, reject) => {
     resolve(graphql(`
     {
@@ -38,10 +37,11 @@ exports.createPages = ({ actions, graphql }) => {
         console.log(result.errors)
         return reject(result.errors)
       }
-      const posts = result.data.allMarkdownRemark.edges
-      const blogTemplate = path.resolve('./src/templates/blog-post.js')
+      const blogPostTemplate = path.resolve('./src/templates/blog-post.js');
+      const blogListTemplate = path.resolve('./src/templates/blog-list-template.js');
       const tagsTemplate = path.resolve('./src/templates/tag-template.js')
-
+      // Create blog-list pages
+      const posts = result.data.allMarkdownRemark.edges
       // All tags
       let allTags = []
       // Iterate through each post pulling all found tags into allTags array
@@ -52,6 +52,7 @@ exports.createPages = ({ actions, graphql }) => {
       })
       // Eliminate duplicate tags
       allTags = _.uniq(allTags)
+
       allTags.forEach((tag => {
         createPage({
           path: `/tags/${_.kebabCase(tag)}/`,
@@ -64,7 +65,7 @@ exports.createPages = ({ actions, graphql }) => {
         posts.forEach(({ node }, index) => {
           createPage({
             path: node.fields.slug,
-            component: blogTemplate,
+            component: blogPostTemplate,
             context: {
               slug: node.fields.slug,
               prev: index === 0 ? null : posts[index - 1],
@@ -72,6 +73,22 @@ exports.createPages = ({ actions, graphql }) => {
             }, // additional data can be passed via context
           })
         }))
+      // Create blog post list pages
+      const postsPerPage = 2;
+      const numPages = Math.ceil(posts.length / postsPerPage);
+      Array.from({ length: numPages }).forEach((_, i) => {
+        createPage({
+          path: i === 0 ? `/blog/` : `/blog/${i + 1}`,
+          component: blogListTemplate,
+          context: {
+            limit: postsPerPage,
+            skip: i * postsPerPage,
+            numPages,
+            currentPage: i + 1
+          },
+        })
+      })
+      return
     })
     )
   })

@@ -715,9 +715,9 @@ pre tt:after {
   }
 }
 
-/* tags list styling in blog-post.js */
+/* tags and social list styling in blog-post.js */
 
-.tags-list {
+.social-list {
   margin-top: 2rem;
 }
 

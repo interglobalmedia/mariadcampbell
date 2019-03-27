@@ -5,6 +5,7 @@
     align-items: center;
 }
 
-.prev-next a {
-    text-decoration: none;
+ul.prev-next li.next a,
+ul.prev-next li.prev a {
+    box-shadow: none;
 }

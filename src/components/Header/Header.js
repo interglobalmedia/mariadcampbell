@@ -2,8 +2,9 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHashtag, faInfo, faHome } from '@fortawesome/free-solid-svg-icons'
-import './header.css'
+import { faHashtag, faInfo, faHome, faBlog } from '@fortawesome/free-solid-svg-icons'
+import './Header.css'
+import '../Layout/Layout.css'
 
 const Header = ({ siteTitle }) => (
   <header
@@ -14,7 +15,6 @@ const Header = ({ siteTitle }) => (
       position: 'fixed',
       width: '100%',
       zIndex: '1',
-      // borderBottom: '1px solid rgba(0,0,0,0.8)',
       boxShadow: '0 1px 4px rgba(0,0,0,0.2)'
     }}
   >
@@ -30,8 +30,8 @@ const Header = ({ siteTitle }) => (
           style={{
             fontSize: '1.3rem',
             color: `rgba(0. 0, 0, 0.8)`,
-            textDecoration: `none`,
             paddingLeft: `1.0875rem`,
+            textDecoration: 'none'
           }}
         >
           {siteTitle}
@@ -43,7 +43,6 @@ const Header = ({ siteTitle }) => (
           style={{
             fontSize: '1.3rem',
             fontWeight: '100',
-            textDecoration: 'none',
             color: `rgba(0,0,0,0.8)`,
             padding: `0 1.0875rem`,
           }}
@@ -51,11 +50,21 @@ const Header = ({ siteTitle }) => (
           <FontAwesomeIcon icon={faHome} />
         </Link>
         <Link
-          to="/info"
+          to="/blog/"
           style={{
             fontSize: '1.3rem',
             fontWeight: '100',
-            textDecoration: 'none',
+            color: `rgba(0,0,0,0.8)`,
+            padding: `0 1.0875rem`,
+          }}
+        >
+          <FontAwesomeIcon icon={faBlog} />
+        </Link>
+        <Link
+          to="/info/info"
+          style={{
+            fontSize: '1.3rem',
+            fontWeight: '100',
             color: `rgba(0,0,0,0.8)`,
             padding: ` 0 1.0875rem`,
           }}
@@ -63,7 +72,7 @@ const Header = ({ siteTitle }) => (
           <FontAwesomeIcon icon={faInfo} />
         </Link>
         <Link
-          to="/tags"
+          to="/tags/tags"
           style={{
             fontSize: '1.3rem',
             fontWeight: 'normal',
@@ -76,7 +85,7 @@ const Header = ({ siteTitle }) => (
         </Link>
       </p>
     </div>
-  </header>
+  </header >
 )
 
 Header.propTypes = {

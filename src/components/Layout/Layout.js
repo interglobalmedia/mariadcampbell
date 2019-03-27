@@ -8,9 +8,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
-import "./layout.css"
+import Header from "../Header/Header"
+import "./Layout.css"
+import '../../pages/post.css'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -35,7 +35,8 @@ const Layout = ({ children }) => (
           }}
         >
           <main className="Site-content"
-            style={{ margin: '6rem auto 2rem', width: '100%' }}>{children}</main>
+            style={{ margin: '6rem auto 2rem', width: '100%' }}>{children}
+          </main>
           <footer className="site-footer">
             Built with
             {` `}

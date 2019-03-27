@@ -5,18 +5,49 @@ module.exports = {
     description: `Where I muse about and share my developer experiences.`,
     author: `Maria D. Campbell`,
     social: {
-      twitter: `letsbsocial`,
+      twitter: `letsbsocial1`,
       github: `interglobalmedia`,
       facebook: `mariador62`,
       linkedin: `mariacampbell`
     },
   },
+  pathPrefix: '/',
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-mdx`,
+      options: {
+        // Apply gatsby-mdx to both .mdx and .md files
+        extensions: ['.mdx', '.md'],
+        // defaultLayout: require.resolve('./src/components/blog-post-layout.js')
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/pages/blog`,
+        name: 'blog',
+      },
+    },
+    `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        //trackingId: `ADD YOUR TRACKING ID HERE`,
+      },
+    },
+    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -36,15 +67,22 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
           `gatsby-remark-prismjs`,
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-smartypants`,
         ]
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-typography`,
       options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages',
+        pathToConfigModule: `src/utils/typography`,
       },
     },
   ],
