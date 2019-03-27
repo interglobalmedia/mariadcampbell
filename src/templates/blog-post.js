@@ -7,6 +7,8 @@ import PrevNext from '../components/PrevNext/PrevNext'
 import Share from '../components/Share/Share'
 import Bio from '../components/Bio/Bio'
 import '../components/Layout/Layout.css'
+import { rhythm } from '../utils/typography'
+import './blog-post.css'
 
 function BlogPost(props) {
   const url = props.data.site.siteMetadata.siteUrl
