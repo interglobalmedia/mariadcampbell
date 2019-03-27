@@ -9,3 +9,9 @@ ul.prev-next li.next a,
 ul.prev-next li.prev a {
     box-shadow: none;
 }
+
+li.prev a,
+li.next a {
+    box-shadow: none;
+    text-decoration: none;
+}
