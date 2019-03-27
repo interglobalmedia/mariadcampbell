@@ -39,10 +39,8 @@ function BlogPage(props) {
             >
                 {!isFirst && (
                     <Link to={prevPage} rel="prev" style={{
-                        color: prevPage ? '#fff' : '#fff',
-                        background: prevPage ? '#cb4b16' : 'rgba(0,0,0,0.8)', padding: rhythm(1 / 4),
-                        marginLeft: '-1rem',
-                        boxShadow: '1px 2px 2px rgba(0,0,0,0.3)'
+                        color: prevPage ? '#cb4b16' : 'rgba(0,0,0,0.8)',
+                        background: prevPage ? '#fff' : '', marginLeft: '-1rem',
                     }}>
                         ← Previous
             </Link>
@@ -58,11 +56,9 @@ function BlogPage(props) {
                         <Link
                             to={`/blog/${i === 0 ? '' : i + 1}`}
                             style={{
-                                padding: rhythm(1 / 4),
-                                textDecoration: 'none',
-                                color: i + 1 === currentPage ? '#fff' : '#fff',
-                                background: i + 1 === currentPage ? '#cb4b16' : 'rgba(0,0,0,0.8)',
-                                boxShadow: '1px 2px 2px rgba(0,0,0,0.3)'
+                                color: i + 1 === currentPage ? '#cb4b16' : 'rgba(0,0,0,0.8)',
+                                background: i + 1 === currentPage ? '#fff' : '',
+                                // boxShadow: '1px 2px 2px rgba(0,0,0,0.3)'
                             }}
                         >
                             {i + 1}
@@ -71,10 +67,10 @@ function BlogPage(props) {
                 ))}
                 {!isLast && (
                     <Link to={nextPage} rel="next" style={{
-                        color: nextPage ? '#fff' : '#fff',
-                        background: nextPage ? '#cb4b16' : 'rgba(0,0,0,0.8)', padding: rhythm(1 / 4),
+                        color: nextPage ? '#cb4b16' : 'rgba(0,0,0,0.8)',
+                        background: nextPage ? '#fff' : '',
                         marginRight: '0.25rem',
-                        boxShadow: '1px 2px 2px rgba(0,0,0,0.3)'
+
                     }}>
                         Next →
             </Link>
