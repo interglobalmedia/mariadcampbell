@@ -13,11 +13,20 @@ module.exports = {
   },
   pathPrefix: '/',
   plugins: [
+    `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-mdx`,
       options: {
-        path: `${__dirname}/content`,
-        name: "pages",
+        // Apply gatsby-mdx to both .mdx and .md files
+        extensions: ['.mdx', '.md'],
+        // defaultLayout: require.resolve('./src/components/blog-post-layout.js')
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/pages/blog`,
+        name: 'blog',
       },
     },
     `gatsby-plugin-react-helmet`,

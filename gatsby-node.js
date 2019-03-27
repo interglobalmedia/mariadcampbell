@@ -7,7 +7,7 @@
 // You can delete this file if you're not using it
 const path = require("path")
 const _ = require('lodash')
-const { createFilePath, createFileNode } = require(`gatsby-source-filesystem`)
+const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
@@ -38,9 +38,10 @@ exports.createPages = ({ actions, graphql }) => {
         return reject(result.errors)
       }
       const blogPostTemplate = path.resolve('./src/templates/blog-post.js');
+      const blogListTemplate = path.resolve('./src/templates/blog-list-template.js');
       const tagsTemplate = path.resolve('./src/templates/tag-template.js')
+      // Create blog-list pages
       const posts = result.data.allMarkdownRemark.edges
-
       // All tags
       let allTags = []
       // Iterate through each post pulling all found tags into allTags array
@@ -72,6 +73,21 @@ exports.createPages = ({ actions, graphql }) => {
             }, // additional data can be passed via context
           })
         }))
+      // Create blog post list pages
+      const postsPerPage = 2;
+      const numPages = Math.ceil(posts.length / postsPerPage);
+      Array.from({ length: numPages }).forEach((_, i) => {
+        createPage({
+          path: i === 0 ? `/blog/` : `/blog/${i + 1}`,
+          component: blogListTemplate,
+          context: {
+            limit: postsPerPage,
+            skip: i * postsPerPage,
+            numPages,
+            currentPage: i + 1
+          },
+        })
+      })
       return
     })
     )

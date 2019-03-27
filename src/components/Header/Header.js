@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHashtag, faInfo, faHome } from '@fortawesome/free-solid-svg-icons'
+import { faHashtag, faInfo, faHome, faBlog } from '@fortawesome/free-solid-svg-icons'
 import './Header.css'
 import '../Layout/Layout.css'
 
@@ -48,6 +48,17 @@ const Header = ({ siteTitle }) => (
           }}
         >
           <FontAwesomeIcon icon={faHome} />
+        </Link>
+        <Link
+          to="/blog/"
+          style={{
+            fontSize: '1.3rem',
+            fontWeight: '100',
+            color: `rgba(0,0,0,0.8)`,
+            padding: `0 1.0875rem`,
+          }}
+        >
+          <FontAwesomeIcon icon={faBlog} />
         </Link>
         <Link
           to="/info/info"
