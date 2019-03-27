@@ -41,7 +41,8 @@ function BlogPage(props) {
                     <Link to={prevPage} rel="prev" style={{
                         color: prevPage ? '#fff' : '#fff',
                         background: prevPage ? '#cb4b16' : 'rgba(0,0,0,0.8)', padding: rhythm(1 / 4),
-                        marginLeft: '-1rem'
+                        marginLeft: '-1rem',
+                        boxShadow: '1px 2px 2px rgba(0,0,0,0.3)'
                     }}>
                         ← Previous
             </Link>
@@ -61,6 +62,7 @@ function BlogPage(props) {
                                 textDecoration: 'none',
                                 color: i + 1 === currentPage ? '#fff' : '#fff',
                                 background: i + 1 === currentPage ? '#cb4b16' : 'rgba(0,0,0,0.8)',
+                                boxShadow: '1px 2px 2px rgba(0,0,0,0.3)'
                             }}
                         >
                             {i + 1}
@@ -71,7 +73,8 @@ function BlogPage(props) {
                     <Link to={nextPage} rel="next" style={{
                         color: nextPage ? '#fff' : '#fff',
                         background: nextPage ? '#cb4b16' : 'rgba(0,0,0,0.8)', padding: rhythm(1 / 4),
-                        marginRight: '0.25rem'
+                        marginRight: '0.25rem',
+                        boxShadow: '1px 2px 2px rgba(0,0,0,0.3)'
                     }}>
                         Next →
             </Link>
