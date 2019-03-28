@@ -21,7 +21,7 @@ const Header = ({ siteTitle, description }) => (
         }}
       >
         <Menu>
-          <p style={{ display: 'flex', flexDirection: 'column' }}>
+          <p style={{ display: 'flex', flexDirection: 'column', outline: 'none' }}>
             <Link className='menu-item'
               to="/"
               style={{
@@ -73,20 +73,6 @@ const Header = ({ siteTitle, description }) => (
           </p>
         </Menu>
       </div>
-      <h1 className="header-title" style={{ marginTop: '1.5rem' }}>
-
-        <Link className='menu-item'
-          to="/"
-          style={{
-            fontSize: '1.3rem',
-            color: `rgba(0. 0, 0, 0.8)`,
-            paddingLeft: `1.0875rem`,
-            marginLeft: '1.3rem',
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
     </div>
   </header>
 

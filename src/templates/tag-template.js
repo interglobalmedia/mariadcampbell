@@ -12,7 +12,7 @@ function Tags(props) {
             <div className="tags">
                 {
                     posts.map(({ node }, i) =>
-                        <Link to={node.fields.slug} key={i}>
+                        <Link to={node.fields.slug}>
                             {node.frontmatter.title}
                         </Link>
                     )

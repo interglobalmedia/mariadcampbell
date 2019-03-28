@@ -29,7 +29,7 @@ const Layout = ({ children }) => (
         <Header siteTitle={data.site.siteMetadata.title} />
         <div className="Site"
           style={{
-            margin: `0 auto`,
+            margin: `4rem auto 0`,
             maxWidth: 960,
             padding: `0 1.0875rem 1.45rem`,
             paddingTop: 0,
@@ -38,8 +38,9 @@ const Layout = ({ children }) => (
           <main className="Site-content"
             style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', width: '100%', marginTop: '1rem' }}>{children}
           </main>
+
+          <Footer />
         </div>
-        <Footer />
       </>
     )}
   />
