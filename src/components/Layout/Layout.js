@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import Header from "../Header/Header"
+import Footer from '../Footer/Footer'
 import "./Layout.css"
 import '../../pages/post.css'
 
@@ -35,15 +36,10 @@ const Layout = ({ children }) => (
           }}
         >
           <main className="Site-content"
-            style={{ margin: '6rem auto 2rem', width: '100%' }}>{children}
+            style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', width: '100%', marginTop: '1rem' }}>{children}
           </main>
-          <footer className="site-footer">
-            Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>{` `}
-            © {new Date().getFullYear()} Maria D. Campbell
-          </footer>
         </div>
+        <Footer />
       </>
     )}
   />
