@@ -15,5 +15,9 @@
 }
 
 ul.social-media li a {
-    box-shadow: none;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+ul.social-media li a:hover {
+    color: #cb4b16;
 }

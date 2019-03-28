@@ -35,17 +35,17 @@ function InfoPage() {
               <ul className="social-media">
                 <li>
                   <a href={twitter} target="blank">
-                    <FontAwesomeIcon icon={faTwitter} size='2x' style={{ border: '1px solid rgba(0, 0, 0, 0.8)', borderRadius: '50%', width: '36px', height: '36px', padding: '5px', marginRight: '1rem' }} />
+                    <FontAwesomeIcon icon={faTwitter} size='2x' style={{ borderRadius: '50%', width: '36px', height: '36px', padding: '0 5px', marginRight: '12px', marginLeft: '12px' }} />
                   </a>
                 </li>
                 <li>
                   <a a href={github} target="blank">
-                    <FontAwesomeIcon icon={faGithubAlt} size='2x' style={{ border: '1px solid rgba(0, 0, 0, 0.8)', borderRadius: '50%', width: '36px', height: '36px', padding: '5px', marginRight: '1rem' }} />
+                    <FontAwesomeIcon icon={faGithubAlt} size='2x' style={{ width: '36px', height: '36px', padding: '0 5px', marginRight: '12px', marginLeft: '12px' }} />
                   </a>
                 </li>
                 <li>
                   <a a href={linkedin} target="blank">
-                    <FontAwesomeIcon icon={faLinkedinIn} size='2x' style={{ border: '1px solid rgba(0, 0, 0, 0.8)', borderRadius: '50%', width: '36px', height: '36px', padding: '5px' }} />
+                    <FontAwesomeIcon icon={faLinkedinIn} size='2x' style={{ borderRadius: '50%', width: '36px', height: '36px', padding: '0 5px', marginRight: '12px', marginLeft: '12px' }} />
                   </a>
                 </li>
               </ul>

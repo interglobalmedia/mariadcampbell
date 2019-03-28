@@ -13,22 +13,22 @@ const Share = props => {
         <div>
             <ul className="social">
                 <li>
-                    <a href={fb} target="blank">
-                        <FontAwesomeIcon icon={faFacebookF} size='2x' style={{ border: '1px solid rgba(0, 0, 0, 0.8)', borderRadius: '50%', width: '36px', height: '36px', padding: '5px' }} />
+                    <a href={fb} target="blank" style={{ color: 'rgba(0,0,0,0.8)' }}>
+                        < FontAwesomeIcon icon={faFacebookF} size='2x' style={{ width: '36px', height: '36px', padding: '5px', }} />
                     </a>
                 </li>
                 <li>
-                    <a href={twitter} target="blank">
-                        <FontAwesomeIcon icon={faTwitter} size='2x' style={{ border: '1px solid rgba(0, 0, 0, 0.8)', borderRadius: '50%', width: '36px', height: '36px', padding: '5px' }} />
+                    <a href={twitter} target="blank" style={{ color: 'rgba(0,0,0,0.8)' }}>
+                        <FontAwesomeIcon icon={faTwitter} size='2x' style={{ width: '36px', height: '36px', padding: '5px' }} />
                     </a>
                 </li>
                 <li>
-                    <a href={linkedin} target="blank">
-                        <FontAwesomeIcon icon={faLinkedinIn} size='2x' style={{ border: '1px solid rgba(0, 0, 0, 0.8)', borderRadius: '50%', width: '36px', height: '36px', padding: '5px' }} />
+                    <a href={linkedin} target="blank" style={{ color: 'rgba(0,0,0,0.8)' }}>
+                        <FontAwesomeIcon icon={faLinkedinIn} size='2x' style={{ width: '36px', height: '36px', padding: '5px' }} />
                     </a>
                 </li>
             </ul>
-        </div>
+        </div >
     )
 }
 

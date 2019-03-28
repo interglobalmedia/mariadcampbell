@@ -4,10 +4,6 @@
     list-style-type: none;
 }
 
-.social li a {
-    box-shadow: none;
-}
-
 .social li a:first-of-type {
     margin-right: 1.5rem;
 }
