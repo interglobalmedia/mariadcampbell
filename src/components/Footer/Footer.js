@@ -5,7 +5,7 @@ import './Footer.css'
 const Footer = () => {
     return (
         <>
-            <ScrollUpButton />
+            <ScrollUpButton style={{ outline: 'none' }} />
 
             <footer className="site-footer">
                 Built with
