@@ -5,7 +5,6 @@
 
 .header-title a {
     text-decoration: none;
-    /* box-shadow: none; */
     color: rgba(0, 0, 0, 0.8);
 }
 
@@ -19,8 +18,4 @@
 
 header a svg:hover {
     color: #cb4b16;
-}
-
-p a {
-    box-shadow: none;
 }

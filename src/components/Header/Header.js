@@ -31,7 +31,6 @@ const Header = ({ siteTitle }) => (
             fontSize: '1.3rem',
             color: `rgba(0. 0, 0, 0.8)`,
             paddingLeft: `1.0875rem`,
-            textDecoration: 'none'
           }}
         >
           {siteTitle}
@@ -76,7 +75,6 @@ const Header = ({ siteTitle }) => (
           style={{
             fontSize: '1.3rem',
             fontWeight: 'normal',
-            textDecoration: 'none',
             color: `rgba(0,0,0,0.8)`,
             padding: `0 1.0875rem`,
           }}
