@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout/Layout'
-import { rhythm } from '../utils/typography'
 import './blog-list.css'
 
 function BlogPage(props) {
@@ -14,7 +13,7 @@ function BlogPage(props) {
     return (
         <Layout>
             {postList.edges.map(({ node }, i) => (
-                <Link to={node.fields.slug} className="link" key={i}>
+                <Link to={node.fields.slug} className="link" key={i} style={{ boxShadow: 'none' }}>
                     <div className="post-list" key={i}>
                         <div className="post-list-date">on {node.frontmatter.date}</div>
                         <h1 className="post-list-title">{node.frontmatter.title}</h1>
@@ -58,7 +57,7 @@ function BlogPage(props) {
                             style={{
                                 color: i + 1 === currentPage ? '#cb4b16' : 'rgba(0,0,0,0.8)',
                                 background: i + 1 === currentPage ? '#fff' : '',
-                                // boxShadow: '1px 2px 2px rgba(0,0,0,0.3)'
+                                paddingLeft: '5px', paddingRight: '5px'
                             }}
                         >
                             {i + 1}
