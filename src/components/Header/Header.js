@@ -8,16 +8,17 @@ import './Header.css'
 import '../Layout/Layout.css'
 import "./SideBar.css"
 
-const Header = ({ siteTitle, description }) => (
+const Header = ({ siteTitle }) => (
   <header style={{ display: 'block' }}>
+
     <div className='side-navigation'>
       <div className="header"
         style={{
           boxShadow: 'none',
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'start',
-          justifyContent: 'center'
+          alignItems: 'space-between',
+          justifyContent: 'center',
         }}
       >
         <Menu>
@@ -74,6 +75,21 @@ const Header = ({ siteTitle, description }) => (
         </Menu>
       </div>
     </div>
+    <h1 className="header-title" style={{ marginTop: '1.3rem' }}>
+      <Link className='menu-item'
+        to="/"
+        style={{
+          fontSize: '1.3rem',
+          fontWeight: '400',
+          color: 'rgba(0,0,0,0.9)',
+          padding: `1.0875rem`,
+          marginLeft: '0.5rem',
+          boxShadow: 'none',
+          letterSpacing: '0.07em'
+        }}>
+        {siteTitle}
+      </Link>
+    </h1>
   </header>
 
 )

@@ -24,8 +24,8 @@ function BlogPost(props) {
         pathname={props.location.pathname}
       />
       <div>
-        <h1>{title}</h1>
         {image && <Img fluid={image.childImageSharp.fluid} />}
+        <h1>{title}</h1>
         <div dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }} />
         <div className="tags-list">
           <span>Tagged in: </span>
