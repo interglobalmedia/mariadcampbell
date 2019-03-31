@@ -7,7 +7,26 @@ import PrevNext from '../components/PrevNext/PrevNext'
 import Share from '../components/Share/Share'
 import Bio from '../components/Bio/Bio'
 import '../components/Layout/Layout.css'
-import './blog-post.css'
+import styled from '@emotion/styled'
+
+const ImageDiv = styled.div`
+  width: 100%;
+  @media(max-width: 599px) {
+    display: none;
+  }
+`
+
+const PostContent = styled.div`
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+`
+
+const PostTitle = styled.h1`
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+`
 
 function BlogPost(props) {
   const url = props.data.site.siteMetadata.siteUrl
@@ -23,9 +42,12 @@ function BlogPost(props) {
         url={url}
         pathname={props.location.pathname}
       />
-      <div>
+
+      <ImageDiv>
         {image && <Img fluid={image.childImageSharp.fluid} />}
-        <h1>{title}</h1>
+      </ImageDiv>
+      <PostContent>
+        <PostTitle>{title}</PostTitle>
         <div dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }} />
         <div className="tags-list">
           <span>Tagged in: </span>
@@ -40,8 +62,8 @@ function BlogPost(props) {
         <div className="prev-next-div">
           <PrevNext prev={prev && prev.node} next={next && next.node} />
         </div>
-      </div>
-    </Layout>
+      </PostContent>
+    </Layout >
   )
 }
 

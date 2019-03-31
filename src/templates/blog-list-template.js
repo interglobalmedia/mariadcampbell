@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+
 import Layout from '../components/Layout/Layout'
 import './blog-list.css'
 
@@ -12,69 +13,77 @@ function BlogPage(props) {
     const nextPage = `/blog/${(currentPage + 1).toString()}`
     return (
         <Layout>
-            {postList.edges.map(({ node }, i) => (
-                <Link to={node.fields.slug} className="link" key={i} style={{ boxShadow: 'none' }}>
-                    <div className="post-list" key={i}>
-                        <div className="post-list-date">on {node.frontmatter.date}</div>
-                        <h1 className="post-list-title">{node.frontmatter.title}</h1>
-                        <p className="post-list-excerpt">{node.excerpt}</p>
-                        <ul className="post-list-author">
-                            <li>
-                                by {node.frontmatter.author}
-                            </li>
-                        </ul>
-                    </div>
-                </Link>
-            ))}
-            <ul className="prev-next"
-                style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    listStyle: 'none',
-                    padding: '0'
-                }}
-            >
-                {!isFirst && (
-                    <Link to={prevPage} rel="prev" style={{
-                        color: prevPage ? '#cb4b16' : 'rgba(0,0,0,0.8)',
-                        background: prevPage ? '#fff' : '', marginLeft: '-1rem',
-                    }}>
-                        ← Previous
+            <div style={{ width: '90%', maxWidth: 960, margin: '1.5rem auto' }}>
+                {postList.edges.map(({ node }, i) => (
+                    <Link to={node.fields.slug} className="link" key={i} style={{ boxShadow: 'none' }}>
+                        <div className="post-list" key={i} >
+                            <div className="post-list-date">on {node.frontmatter.date}</div>
+                            <h1 className="post-list-title">{node.frontmatter.title}</h1>
+                            <p className="post-list-excerpt">{node.excerpt}</p>
+                            <ul className="post-list-author">
+                                <li>
+                                    by {node.frontmatter.author}
+                                </li>
+                            </ul>
+                        </div>
+                    </Link>
+                ))}
+                <ul className="prev-next"
+                    style={{
+                        display: 'flex',
+                        flexWrap: 'wrap',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        listStyle: 'none',
+                        paddingLeft: '1.3rem',
+                        width: '100%',
+                        maxWidth: 960,
+                        margin: '1.5rem auto'
+                    }}
+                >
+                    {!isFirst && (
+                        <Link to={prevPage} rel="prev" style={{
+                            color: prevPage ? '#cb4b16' : 'rgba(0,0,0,0.8)',
+                            background: prevPage ? '#fff' : '', marginLeft: '-1rem', boxShadow: 'none', borderBottom: '1px solid #cb4b16'
+                        }}>
+                            ← Previous
             </Link>
-                )}
-                {Array.from({ length: numPages }, (_, i) => (
-                    <li
-                        key={`pagination-number${i + 1}`}
-                        style={{
-                            margin: 0,
-                            marginLeft: '-1rem'
-                        }}
-                    >
-                        <Link
-                            to={`/blog/${i === 0 ? '' : i + 1}`}
+                    )}
+                    {Array.from({ length: numPages }, (_, i) => (
+                        <li
+                            key={`pagination-number${i + 1}`}
                             style={{
-                                color: i + 1 === currentPage ? '#cb4b16' : 'rgba(0,0,0,0.8)',
-                                background: i + 1 === currentPage ? '#fff' : '',
-                                paddingLeft: '5px', paddingRight: '5px'
+                                margin: 0,
+                                marginLeft: '-1rem'
                             }}
                         >
-                            {i + 1}
-                        </Link>
-                    </li>
-                ))}
-                {!isLast && (
-                    <Link to={nextPage} rel="next" style={{
-                        color: nextPage ? '#cb4b16' : 'rgba(0,0,0,0.8)',
-                        background: nextPage ? '#fff' : '',
-                        marginRight: '0.25rem',
+                            <Link
+                                to={`/blog/${i === 0 ? '' : i + 1}`}
+                                style={{
+                                    color: i + 1 === currentPage ? '#cb4b16' : 'rgba(0,0,0,0.8)',
+                                    background: i + 1 === currentPage ? '#fff' : '',
+                                    borderBottom: i + 1 === currentPage ? '1px solid #cb4b16' : '1px solid rgba(0,0,0,0.8)',
+                                    paddingLeft: '5px', paddingRight: '5px', boxShadow: 'none', paddingBottom: '3px'
+                                }}
+                            >
+                                {i + 1}
+                            </Link>
+                        </li>
+                    ))}
+                    {!isLast && (
+                        <Link to={nextPage} rel="next" style={{
+                            color: nextPage ? '#cb4b16' : 'rgba(0,0,0,0.8)',
+                            background: nextPage ? '#fff' : '',
+                            marginRight: '0.25rem',
+                            boxShadow: 'none',
+                            borderBottom: '1px solid #cb4b16'
 
-                    }}>
-                        Next →
+                        }}>
+                            Next →
             </Link>
-                )}
-            </ul>
+                    )}
+                </ul>
+            </div>
         </Layout>
     )
 }

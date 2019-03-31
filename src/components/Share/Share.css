@@ -2,6 +2,13 @@
     display: flex;
     justify-content: center;
     list-style-type: none;
+    align-items: center;
+    /* margin-top: 4rem;
+    margin-bottom: 4rem; */
+}
+
+.social li a {
+    box-shadow: none;
 }
 
 .social li a:first-of-type {

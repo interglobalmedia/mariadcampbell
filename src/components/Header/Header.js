@@ -4,12 +4,12 @@ import PropTypes from "prop-types"
 import React from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHashtag, faInfo, faHome, faBlog } from '@fortawesome/free-solid-svg-icons'
-import './Header.css'
+import '../Header/Header.css'
 import '../Layout/Layout.css'
-import "./SideBar.css"
+import './SideBar.css'
 
 const Header = ({ siteTitle }) => (
-  <header style={{ display: 'block' }}>
+  <header style={{ display: 'flex', width: '90%' }}>
 
     <div className='side-navigation'>
       <div className="header"
@@ -22,7 +22,7 @@ const Header = ({ siteTitle }) => (
         }}
       >
         <Menu>
-          <p style={{ display: 'flex', flexDirection: 'column', outline: 'none' }}>
+          <p style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', outline: 'none' }}>
             <Link className='menu-item'
               to="/"
               style={{
@@ -75,13 +75,12 @@ const Header = ({ siteTitle }) => (
         </Menu>
       </div>
     </div>
-    <h1 className="header-title" style={{ marginTop: '1.3rem' }}>
+    <h1 className="header-title" style={{ marginTop: '1.5rem', color: 'rgba(0,0,0,0.9)' }}>
       <Link className='menu-item'
         to="/"
         style={{
           fontSize: '1.3rem',
           fontWeight: '400',
-          color: 'rgba(0,0,0,0.9)',
           padding: `1.0875rem`,
           marginLeft: '0.5rem',
           boxShadow: 'none',

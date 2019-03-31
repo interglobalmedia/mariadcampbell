@@ -1,9 +1,8 @@
 import React from 'react'
 import { StaticQuery, graphql } from "gatsby"
 import { rhythm } from '../../utils/typography'
-import './Bio.css'
 
-import profileSmall from '../../images/profileSmall.png'
+import profileSmall from '../../img/profileSmall.png'
 
 function Bio() {
   return (
@@ -19,7 +18,7 @@ function Bio() {
               marginBottom: rhythm(2.5),
             }}
           >
-            <div className="bio-container" style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center' }}>
+            <div className="bio-container" style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', borderTop: '1px solid rgba(0,0,0,0.8)', borderBottom: '1px solid rgba(0,0,0,0.8)', paddingTop: '1.5rem' }}>
               <img
                 src={profileSmall}
                 alt={author}
@@ -34,9 +33,7 @@ function Bio() {
               <p>
                 Written by <strong>{author}</strong> who lives and works in New York City building useful things. Be sure to follow me on <a href={`https://twitter.com/${social.twitter}`}>Twitter</a>, <a href={`https://github.com/${social.github}`}>Github</a> or <a href={`https://www.linkedin.com/in/${social.linkedin}`}>Linkedin</a>!
               </p>
-
               <div>
-
               </div>
             </div>
           </div>

@@ -2,14 +2,12 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  min-height: 100%;
 }
 
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-height: 100%;
 }
 
 article,
@@ -694,6 +692,7 @@ code {
 pre code {
   background: none;
   line-height: 1.42;
+  overflow-x: auto;
 }
 
 code:before,
@@ -711,9 +710,19 @@ pre tt:after {
   content: "";
 }
 
+/* Add scrollbar to x axis when code block is too long */
+pre,
+pre>code {
+  max-width: 100% !important;
+  -webkit-overflow-y-scrolling: hidden !important;
+  -webkit-overflow-x-scrolling: auto !important;
+  overflow-y: hidden;
+  overflow-x: auto !important;
+}
+
 @media only screen and (max-width: 480px) {
   html {
-    font-size: 100%;
+    font-size: 112.5%;
   }
 }
 

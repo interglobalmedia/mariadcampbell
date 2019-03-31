@@ -10,25 +10,23 @@ const Share = props => {
         props.pathname}&text=${props.title}`
     const linkedin = `https://www.linkedin.com/shareArticle?mini=true&url=${props.url + props.pathname}&text=${props.title}`
     return (
-        <div>
-            <ul className="social">
-                <li>
-                    <a href={fb} target="blank" style={{ color: 'rgba(0,0,0,0.8)' }}>
-                        < FontAwesomeIcon icon={faFacebookF} size='2x' style={{ width: '36px', height: '36px', padding: '5px', }} />
-                    </a>
-                </li>
-                <li>
-                    <a href={twitter} target="blank" style={{ color: 'rgba(0,0,0,0.8)' }}>
-                        <FontAwesomeIcon icon={faTwitter} size='2x' style={{ width: '36px', height: '36px', padding: '5px' }} />
-                    </a>
-                </li>
-                <li>
-                    <a href={linkedin} target="blank" style={{ color: 'rgba(0,0,0,0.8)' }}>
-                        <FontAwesomeIcon icon={faLinkedinIn} size='2x' style={{ width: '36px', height: '36px', padding: '5px' }} />
-                    </a>
-                </li>
-            </ul>
-        </div >
+        <ul className="social" style={{ boxShadow: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '2rem', marginBottom: '2rem' }}>
+            <li>
+                <a href={fb} target="blank" style={{ color: 'rgba(0,0,0,0.8)' }}>
+                    <FontAwesomeIcon icon={faFacebookF} size='2x' style={{ width: '36px', height: '36px' }} />
+                </a>
+            </li>
+            <li>
+                <a href={twitter} target="blank" style={{ color: 'rgba(0,0,0,0.8)' }}>
+                    <FontAwesomeIcon icon={faTwitter} size='2x' style={{ width: '36px', height: '36px' }} />
+                </a>
+            </li>
+            <li>
+                <a href={linkedin} target="blank" style={{ color: 'rgba(0,0,0,0.8)' }}>
+                    <FontAwesomeIcon icon={faLinkedinIn} size='2x' style={{ width: '36px', height: '36px' }} />
+                </a>
+            </li>
+        </ul>
     )
 }
 

@@ -14,14 +14,7 @@ module.exports = {
   pathPrefix: '/',
   plugins: [
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-mdx`,
-      options: {
-        // Apply gatsby-mdx to both .mdx and .md files
-        extensions: ['.mdx', '.md'],
-        // defaultLayout: require.resolve('./src/components/blog-post-layout.js')
-      }
-    },
+    `gatsby-plugin-emotion`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -35,7 +28,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/img`,
       },
     },
     `gatsby-plugin-sharp`,
@@ -57,7 +50,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/img/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
@@ -73,7 +66,9 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          `gatsby-remark-prismjs`,
+          {
+            resolve: `gatsby-remark-prismjs`,
+          },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ]

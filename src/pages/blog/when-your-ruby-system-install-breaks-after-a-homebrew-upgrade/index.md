@@ -1,6 +1,6 @@
 ---
 title: "When your Ruby system install breaks after a Homebrew upgrade"
-image: ruby-sass.jpg
+image: ./ruby-sass.jpg
 description: Recently I upgraded to Mojave on my Macbook Pro (late 2015). Unbeknownst to me until today, my Ruby system install broke in the process.
 date: '2019-01-18'
 tags: ["homebrew", "ruby", "mojave"]
@@ -40,7 +40,7 @@ At first I got a ***strange stderr*** in **Terminal** when I tried to run `sass 
 Traceback (most recent call last): 2: from /usr/local/bin/sass:22:in <main>' 1: from /usr/local/Cellar/ruby/2.6.0/lib/ruby/2.6.0/rubygems.rb:302:inactivate_bin_path' /usr/local/Cellar/ruby/2.6.0/lib/ruby/2.6.0/rubygems.rb:283:in `find_spec_for_exe': can't find gem sass (>= 0.a) with executable sass (Gem::GemNotFoundException)
 ```
 
-Thinking at first that I ***should install*** version `2.6.0` with `rbenv` and use it instead, I tried installing `2.6.0` and setting it as the system default. After that, I ran `sass --watch` and the `resulting output` to **Terminal** was that `sass commands were only available with version 2.7.0-dev`. I ***switched back*** to `2.7.0-dev` as my default system version and ran `sass --watch` again. This time I was successful. I don't know how I got to the point of success, but I did. I think this was related to the path issue I mentioned earlier. Later I found another [StackOverflow thread](https://stackoverflow.com/questions/45261658/why-cant-i-install-sass-on-mac-os-sierra) regarding the topic that might help those that have encountered **Ruby** issues with their Mac for the first time that might be of help. It relates to **High Sierra**, but should also apply to **Mojave**.
+Thinking at first that I ***should install*** version `2.6.0` with `rbenv` and use it instead, I tried installing `2.6.0` and setting it as the system default. After that, I ran `sass --watch` and the `resulting output` to **Terminal** was that **sass commands** were only available with `version 2.7.0-dev`. I ***switched back*** to `2.7.0-dev` as my default system version and ran `sass --watch` again. This time I was successful. I don't know how I got to the point of success, but I did. I think this was related to the path issue I mentioned earlier. Later I found another [StackOverflow thread](https://stackoverflow.com/questions/45261658/why-cant-i-install-sass-on-mac-os-sierra) regarding the topic that might help those that have encountered **Ruby** issues with their Mac for the first time that might be of help. It relates to **High Sierra**, but should also apply to **Mojave**.
 
 As mentioned in my article entitled [How to save terminal output to a file for future reference](), I ***closed out of*** the **Terminal instance** containing the **stderr(s)** ***related to*** **Ruby/Sass** before I could copy and paste them to a file for future reference. There I do discuss how to create commands or scripts to automate the process. This fuzziness will never happen again thanks to **Command Line** ***commands*** and **Unix scripting**!
 

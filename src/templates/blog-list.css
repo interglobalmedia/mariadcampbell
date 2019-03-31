@@ -1,7 +1,3 @@
-.site-layout {
-    margin-top: 2rem;
-}
-
 .post-list {
     position: relative;
     border: 1px solid gainsboro;
@@ -10,7 +6,7 @@
     margin: 1rem 0.25rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: flex-start;
     color: rgba(0, 0, 0, 0.8);
 }
 
