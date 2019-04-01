@@ -14,12 +14,17 @@ const TagsDiv = styled.div`
   justify-content: flex-start;
 `
 
+const TagsTitleP = styled.p`
+  color: rgba(0, 0, 0, 1);
+  font-size: 1.3rem;
+`
+
 function TagsPage(props) {
   const data = props.data.allMarkdownRemark.group
   return (
     <Layout>
       <TagsDiv>
-        <p className="tags-title"><FontAwesomeIcon icon={faHashtag} style={{ width: '36px', height: '36px' }} /></p>
+        <TagsTitleP><FontAwesomeIcon icon={faHashtag} style={{ width: '36px', height: '36px' }} /></TagsTitleP>
         {
           data.map(tag => (
             <Link to={`/tags/${tag.fieldValue}`} style={{
