@@ -8,14 +8,20 @@ const TagsDiv = styled.div`
     flex-direction: column;
 `
 
+const TagsH1 = styled.h1`
+    display: flex';
+    justifyContent: flex-start';
+    margin: 3rem auto 0; 
+    paddingLeft: 1.5rem'; 
+    letterSpacing: 0.07em;
+`
+
 function Tags(props) {
     const posts = props.data.allMarkdownRemark.edges
     const { tag } = props.pageContext
     return (
         <Layout>
-            <h1 style={{
-                display: 'flex', justifyContent: 'flex-start', margin: '3rem auto 0', paddingLeft: '1.5rem', letterSpacing: '0.07em'
-            }}>{`posts in: ${tag}`}</h1>
+            <TagsH1>{`posts in: ${tag}`}</TagsH1>
             <TagsDiv>
                 {
                     posts.map(({ node }, i) =>
