@@ -9,11 +9,11 @@ const TagsDiv = styled.div`
 `
 
 const TagsH1 = styled.h1`
-    display: flex';
-    justifyContent: flex-start';
+    display: flex;
+    justify-content: flex-start;
     margin: 3rem auto 0; 
-    paddingLeft: 1.5rem'; 
-    letterSpacing: 0.07em;
+    padding-left: 1.5rem; 
+    letter-spacing: 0.07em;
 `
 
 function Tags(props) {
