@@ -62,7 +62,6 @@ const PrevNextUl = styled.ul`
     align-items: center;
     padding-left: 1rem;
     width: 100%;
-    max-width: 960px;
     margin: 1.5rem auto;
 `
 
@@ -94,7 +93,7 @@ function BlogPage(props) {
                     {!isFirst && (
                         <Link to={prevPage} rel="prev" style={{
                             color: prevPage ? '#cb4b16' : 'rgba(0,0,0,0.8)',
-                            marginLeft: '-1rem', boxShadow: 'none', letterSpacing: '0.07em'
+                            /* marginLeft: '-1rem',*/ boxShadow: 'none', letterSpacing: '0.07em'
                         }}>
                             ← Previous
             </Link>
@@ -121,7 +120,7 @@ function BlogPage(props) {
                     {!isLast && (
                         <Link to={nextPage} rel="next" style={{
                             color: nextPage ? '#cb4b16' : 'rgba(0,0,0,0.8)',
-                            marginRight: '0.25rem',
+                            // marginRight: '0.25rem',
                             boxShadow: 'none', letterSpacing: '0.07em'
 
                         }}>
