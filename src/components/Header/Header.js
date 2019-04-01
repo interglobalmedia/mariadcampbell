@@ -5,7 +5,6 @@ import React from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHashtag, faInfo, faHome, faBlog } from '@fortawesome/free-solid-svg-icons'
 import styled from '@emotion/styled'
-import '../Header/Header.css'
 import './SideBar.css'
 
 const HeaderStyle = styled.header`
