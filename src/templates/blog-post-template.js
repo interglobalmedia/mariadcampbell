@@ -34,6 +34,10 @@ const PostTitle = styled.h1`
   letter-spacing: 0.07em;
 `
 
+const TaggedInSpan = styled.span`
+  letter-spacing: 0.07em;
+`
+
 function BlogPost(props) {
   const url = props.data.site.siteMetadata.siteUrl
   const thumbnail = props.data.markdownRemark.frontmatter.image && props.data.markdownRemark.frontmatter.image.childImageSharp.resize.src
@@ -56,9 +60,9 @@ function BlogPost(props) {
         <PostTitle>{title}</PostTitle>
         <div dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }} />
         <div className="tags-list">
-          <span style={{ letterSpacing: '0.07em' }}>Tagged in: </span>
+          <TaggedInSpan>Tagged in: </TaggedInSpan>
           {tags.map((tag, i) => (
-            <a href={`/tags/${tag}`} key={i} style={{ marginLeft: '10px', boxShadow: 'none', color: '#cb4b16', letterSpacing: '0.07em', }}><FontAwesomeIcon icon={faTag} style={{ color: '#268bd2' }} /> {tag} </a>
+            <a href={`/tags/${tag}`} key={i} style={{ boxShadow: 'none', color: '#cb4b16', letterSpacing: '0.07em', }}><FontAwesomeIcon icon={faTag} style={{ color: '#268bd2' }} /> {tag} </a>
           ))}
         </div>
         <div className="social-list">

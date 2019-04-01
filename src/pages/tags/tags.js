@@ -4,7 +4,6 @@ import Layout from '../../components/Layout/Layout'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHashtag, faTag } from '@fortawesome/free-solid-svg-icons'
 import styled from '@emotion/styled'
-import './tags.css'
 
 const TagsDiv = styled.div`
   width: 90%;
