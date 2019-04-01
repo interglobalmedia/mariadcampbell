@@ -59,7 +59,7 @@ function BlogPost(props) {
       <PostContent>
         <PostTitle>{title}</PostTitle>
         <div dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }} />
-        <div className="tags-list">
+        <div className="post-tags">
           <TaggedInSpan>Tagged in: </TaggedInSpan>
           {tags.map((tag, i) => (
             <a href={`/tags/${tag}`} key={i} style={{ boxShadow: 'none', color: '#cb4b16', letterSpacing: '0.07em', }}><FontAwesomeIcon icon={faTag} style={{ color: '#268bd2' }} /> {tag} </a>
