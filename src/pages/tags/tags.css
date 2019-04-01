@@ -1,7 +1,8 @@
-.tags-title {
+/* .tags-title {
     color: rgba(0, 0, 0, 1);
     font-size: 1.3rem;
-}
+    margin: 2rem auto 0;
+} */
 
 .tags {
     display: flex;
@@ -13,8 +14,9 @@
     list-style: none;
     background: #fdf6e3;
     color: #657b83;
-    width: 100%;
+    width: 90%;
     padding: 1rem;
     text-decoration: none;
     font-size: 1.1rem;
+    margin: 2rem auto 0;
 }

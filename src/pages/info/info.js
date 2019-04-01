@@ -14,23 +14,53 @@ const InfoLayout = styled.div`
 
 const InfoFollow = styled.li`
   box-shadow: none;
-  border-bottom: 1px solid rgba(0,0,0,0.8);
   margin-right: 40px;
-  &:hover {
-    border-bottom: none;
-  }
+  list-style-type: none;
 `
 
 const InfoFollowFirst = styled.li`
   box-shadow: none;
-  border-bottom: 1px solid rgba(0,0,0,0.8);
   margin-right: 40px;
   margin-left: 20px;
-  &:hover {
-    border-bottom: none;
-  }
+  list-style-type: none;
 `
 
+const InfoTextUl = styled.ul`
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 90%;
+  max-width: 960px;
+  margin: auto;
+`
+
+const ImageLi = styled.li`
+  width: 100%;
+  max-width: 100px;
+  list-style-type: none;
+`
+
+const TextLi = styled.li`
+  width: 100%;
+  max-width: 600px;
+  margin-left: ${rhythm(1 / 1)};
+  list-style-type: none;
+  letter-spacing: 0.07em;
+  line-height: 1.7;
+`
+
+const SocialMediaUl = styled.ul`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+`
+
+const SocialStrong = styled.strong`
+  color: #268bd2;
+`
 
 export const InfoPage = ({ author }) => {
   const twitter = `https://twitter.com/letsbsocial1`
@@ -39,37 +69,35 @@ export const InfoPage = ({ author }) => {
   return (
     <Layout>
       <InfoLayout>
-        <ul className="info-text" style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', listStyleType: 'none', width: '90%', maxWidth: '960px', margin: 'auto' }}>
-          <li style={{ width: '100%', maxWidth: '100px' }}>
+        <InfoTextUl>
+          <ImageLi>
             <img src={profileSmall} style={{ width: '100px', height: '100px', marginRight: rhythm(1 / 1) }} alt={author} />
-          </li>
-          <li style={{ width: '100%', maxWidth: '600px', marginLeft: rhythm(1 / 1) }}>
+          </ImageLi>
+          <TextLi>
             I design, develop, and teach experiences that make people's lives simpler.
 
-            When I’ m not coding, I love to go to the countryside to recharge, watch Film Noir and mystery movies, listen to music, ponder over surrealist art, and create exotic cuisine.
-
-                  Be sure to follow me on <strong>Twitter</strong>, <strong>Github</strong>, or <strong>Linkedin</strong>!
-                </li>
-        </ul>
-        <ul className="social-media" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', listStyleType: 'none', marginTop: '2.5rem', marginBottom: '2.5rem' }}>
+            When I’ m not coding, I love to go to the countryside to recharge, watch Film Noir and mystery movies, listen to music, ponder over surrealist art, and create exotic cuisine. Be sure to follow me on <SocialStrong>Twitter</SocialStrong>, <SocialStrong>Github</SocialStrong>, or <SocialStrong>Linkedin</SocialStrong>!
+          </TextLi>
+        </InfoTextUl>
+        <SocialMediaUl>
           <InfoFollowFirst>
             <a href={twitter} target="blank" style={{
-              color: 'rgba(0,0,0,0.9)', boxShadow: 'none'
+              color: '#cb4b16', boxShadow: 'none', border: '1px solid rgba(0,0,0,0.8)', borderRadius: '50%', paddingTop: '17px', paddingBottom: '8px', paddingLeft: '8px', paddingRight: '8px', background: 'rgba(29,202,255, 1)'
             }}>
               <FontAwesomeIcon icon={faTwitter} size='2x' style={{ borderRadius: '50%', width: '30px', height: '30px' }} />
             </a>
           </InfoFollowFirst>
           <InfoFollow>
-            <a href={github} target="blank" style={{ color: 'rgba(0,0,0,0.9)', boxShadow: 'none' }}>
+            <a href={github} target="blank" style={{ color: '#cb4b16', boxShadow: 'none', border: '1px solid rgba(0,0,0,0.8)', borderRadius: '50%', paddingTop: '17px', paddingBottom: '8px', paddingLeft: '8px', paddingRight: '8px', background: 'rgba(29,202,255, 1)' }}>
               <FontAwesomeIcon icon={faGithubAlt} size='2x' style={{ width: '30px', height: '30px' }} />
             </a>
           </InfoFollow>
           <InfoFollow>
-            <a href={linkedin} target="blank" style={{ color: 'rgba(0,0,0,0.9)', boxShadow: 'none' }}>
+            <a href={linkedin} target="blank" style={{ color: '#cb4b16', boxShadow: 'none', border: '1px solid rgba(0,0,0,0.8)', borderRadius: '50%', paddingTop: '17px', paddingBottom: '8px', paddingLeft: '8px', paddingRight: '8px', background: 'rgba(29,202,255, 1)' }}>
               <FontAwesomeIcon icon={faLinkedinIn} size='2x' style={{ borderRadius: '50%', width: '30px', height: '30px' }} />
             </a>
           </InfoFollow>
-        </ul>
+        </SocialMediaUl>
       </InfoLayout>
     </Layout >
   )

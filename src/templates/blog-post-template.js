@@ -1,16 +1,22 @@
 import React from 'react'
-import Layout from '../components/Layout/Layout'
-import Img from 'gatsby-image'
-import Metatags from '../components/Metatags/Metatags'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTag } from '@fortawesome/free-solid-svg-icons'
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
+import styled from '@emotion/styled'
+import Layout from '../components/Layout/Layout'
+import Metatags from '../components/Metatags/Metatags'
+
 import PrevNext from '../components/PrevNext/PrevNext'
 import Share from '../components/Share/Share'
 import Bio from '../components/Bio/Bio'
 import '../components/Layout/Layout.css'
-import styled from '@emotion/styled'
+
+import '../pages/post.css'
 
 const ImageDiv = styled.div`
   width: 100%;
+  margin-top: 2rem;
   @media(max-width: 599px) {
     display: none;
   }
@@ -19,13 +25,13 @@ const ImageDiv = styled.div`
 const PostContent = styled.div`
   width: 90%;
   max-width: 960px;
-  margin: 0 auto;
+  margin: 3rem auto;
 `
 
 const PostTitle = styled.h1`
   text-align: center;
-  margin-top: 2rem;
   margin-bottom: 2rem;
+  letter-spacing: 0.07em;
 `
 
 function BlogPost(props) {
@@ -50,16 +56,16 @@ function BlogPost(props) {
         <PostTitle>{title}</PostTitle>
         <div dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }} />
         <div className="tags-list">
-          <span>Tagged in: </span>
+          <span style={{ letterSpacing: '0.07em' }}>Tagged in: </span>
           {tags.map((tag, i) => (
-            <a href={`/tags/${tag}`} key={i} style={{ marginLeft: "10px" }}>{tag}</a>
+            <a href={`/tags/${tag}`} key={i} style={{ marginLeft: '10px', boxShadow: 'none', color: '#cb4b16', letterSpacing: '0.07em', }}><FontAwesomeIcon icon={faTag} style={{ color: '#268bd2' }} /> {tag} </a>
           ))}
         </div>
         <div className="social-list">
           <Share title={title} url={url} pathname={props.location.pathname} />
         </div>
         <Bio />
-        <div className="prev-next-div">
+        <div className="prev-next-div" style={{ letterSpacing: '0.07em' }}>
           <PrevNext prev={prev && prev.node} next={next && next.node} />
         </div>
       </PostContent>

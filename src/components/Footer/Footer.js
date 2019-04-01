@@ -5,6 +5,9 @@ import styled from "@emotion/styled"
 const FooterStyle = styled.footer`
     text-align: center;
     padding-bottom: 0.5rem;
+    letter-spacing: 0.07em;
+    width: 90%;
+    margin: 0 auto;
 `
 
 const Footer = () => {
@@ -15,7 +18,7 @@ const Footer = () => {
                 Built with
                 {` `}
                 <a href="https://www.gatsbyjs.org">Gatsby</a>{` `}
-                © {new Date().getFullYear()} Maria D.Campbell
+                © {new Date().getFullYear()} Maria D. Campbell
             </FooterStyle>
         </>
     )

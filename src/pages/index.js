@@ -29,6 +29,7 @@ const BackgroundImage = styled.img`
 const FooterStyle = styled.footer`
     text-align: center;
     padding-bottom: 0.5rem;
+    letter-spacing: 0.07em;
     @media (max-width: 374px) {
         position: fixed;
         left: 1rem;
@@ -52,7 +53,7 @@ const IndexPage = ({ siteTitle }) => {
                 <FooterStyle>
                     Built with
                 {` `}
-                    <a href="https://www.gatsbyjs.org">Gatsby</a>{` `}
+                    <a href="https://www.gatsbyjs.org" style={{ letterSpacing: '0.07em' }}>Gatsby</a>{` `}
                     © {new Date().getFullYear()} Maria D. Campbell
                 </FooterStyle>
             </div>

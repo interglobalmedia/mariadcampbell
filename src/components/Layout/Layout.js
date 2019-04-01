@@ -15,6 +15,7 @@ import styled from '@emotion/styled'
 
 const LayoutContainer = styled.div`
 width: 100%;
+background: rgba(255,198,0,1);
 `
 
 const Layout = ({ children }) => (

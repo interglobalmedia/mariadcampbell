@@ -4,23 +4,32 @@ import PropTypes from "prop-types"
 import React from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHashtag, faInfo, faHome, faBlog } from '@fortawesome/free-solid-svg-icons'
+import styled from '@emotion/styled'
 import '../Header/Header.css'
-import '../Layout/Layout.css'
 import './SideBar.css'
+
+const HeaderDiv = styled.div`
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: center;
+`
+
+const HeaderTitle = styled.div`
+margin-top: 1.25rem; 
+color: rgba(0,0,0,0.9); 
+font-size: 130%;
+  :hover {
+    color: #cb4b16;
+}
+`
 
 const Header = ({ siteTitle }) => (
   <header style={{ display: 'flex', width: '90%' }}>
 
     <div className='side-navigation'>
-      <div className="header"
-        style={{
-          boxShadow: 'none',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'space-between',
-          justifyContent: 'center',
-        }}
-      >
+      <HeaderDiv>
         <Menu>
           <p style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', outline: 'none' }}>
             <Link className='menu-item'
@@ -68,14 +77,15 @@ const Header = ({ siteTitle }) => (
                 padding: `1.0875rem`,
                 boxShadow: 'none'
               }}
+              activeStyle={{ color: '#cb4b16' }}
             >
               <FontAwesomeIcon icon={faHashtag} style={{ color: '#fdf6e3' }} />
             </Link>
           </p>
         </Menu>
-      </div>
+      </HeaderDiv>
     </div>
-    <h1 className="header-title" style={{ marginTop: '1.5rem', color: 'rgba(0,0,0,0.9)' }}>
+    <HeaderTitle>
       <Link className='menu-item'
         to="/"
         style={{
@@ -84,11 +94,12 @@ const Header = ({ siteTitle }) => (
           padding: `1.0875rem`,
           marginLeft: '0.5rem',
           boxShadow: 'none',
-          letterSpacing: '0.07em'
-        }}>
+          letterSpacing: '0.07em',
+          color: 'rgba(0, 0, 0, 0.8)'
+        }} activeStyle={{ color: '#cb4b16' }}>
         {siteTitle}
       </Link>
-    </h1>
+    </HeaderTitle>
   </header>
 
 )
