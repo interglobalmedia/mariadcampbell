@@ -38,10 +38,6 @@ const TaggedInSpan = styled.span`
   letter-spacing: 0.07em;
 `
 
-const PrevNextDiv = styled.div`
-  // letter-spacing: 0.07em;
-`
-
 function BlogPost(props) {
   const url = props.data.site.siteMetadata.siteUrl
   const thumbnail = props.data.markdownRemark.frontmatter.image && props.data.markdownRemark.frontmatter.image.childImageSharp.resize.src
