@@ -3,12 +3,27 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout/Layout'
 import styled from '@emotion/styled'
-// import './blog-list.css'
 
 const PostDiv = styled.div`
     width: 90%;
     maxWidth: 960px;
     margin: 3rem auto;
+`
+
+const PostListDiv = styled.div`
+    position: relative;
+    border: 1px solid gainsboro;
+    padding: 1rem 1rem 0.25rem;
+    box-shadow: 0 -1px 4px #ede7e7;
+    margin: 1rem 0.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: rgba(0, 0, 0, 0.8);
+    letter-spacing: 0.07em;
+    &:hover {
+        background-color: whitesmoke;
+    }
 `
 
 const PostListTitle = styled.h1`
@@ -63,18 +78,7 @@ function BlogPage(props) {
             <PostDiv>
                 {postList.edges.map(({ node }, i) => (
                     <Link to={node.fields.slug} className="link" key={i} style={{ boxShadow: 'none' }}>
-                        <div className="post-list" style={{
-                            position: 'relative',
-                            border: '1px solid gainsboro',
-                            padding: '1rem 1rem 0.25rem',
-                            boxShadow: '0 -1px 4px #ede7e7',
-                            margin: '1rem 0.25rem',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'flex-start',
-                            color: 'rgba(0, 0, 0, 0.8)',
-                            letterSpacing: '0.07em'
-                        }}>
+                        <PostListDiv>
                             <PostListDate>on {node.frontmatter.date}</PostListDate>
                             <PostListTitle>{node.frontmatter.title}</PostListTitle>
                             <p>{node.excerpt}</p>
@@ -83,7 +87,7 @@ function BlogPage(props) {
                                     by {node.frontmatter.author}
                                 </PostListAuthorLi>
                             </PostListAuthorUl>
-                        </div>
+                        </PostListDiv>
                     </Link>
                 ))}
                 <PrevNextUl>

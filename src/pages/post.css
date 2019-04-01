@@ -29,7 +29,3 @@ a {
 main h2 {
     letter-spacing: 0.07em;
 }
-
-.post-list:hover {
-    background-color: whitesmoke;
-}
