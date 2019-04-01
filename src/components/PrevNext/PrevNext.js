@@ -7,11 +7,12 @@ const PrevNextUl = styled.ul`
     justify-content: space-between;
     align-items: center;
     margin-left: 0.5rem;
-    margin-top: -1rem;;
+    margin-top: -1rem;
 `
 
 const PrevNextLi = styled.li`
     list-style-type: none;
+    letter-spacing: 0.07em;
 `
 
 const PrevNext = (props) => {

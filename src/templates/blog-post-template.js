@@ -38,6 +38,10 @@ const TaggedInSpan = styled.span`
   letter-spacing: 0.07em;
 `
 
+const PrevNextDiv = styled.div`
+  // letter-spacing: 0.07em;
+`
+
 function BlogPost(props) {
   const url = props.data.site.siteMetadata.siteUrl
   const thumbnail = props.data.markdownRemark.frontmatter.image && props.data.markdownRemark.frontmatter.image.childImageSharp.resize.src
@@ -69,7 +73,7 @@ function BlogPost(props) {
           <Share title={title} url={url} pathname={props.location.pathname} />
         </div>
         <Bio />
-        <div className="prev-next-div" style={{ letterSpacing: '0.07em' }}>
+        <div className="prev-next-div">
           <PrevNext prev={prev && prev.node} next={next && next.node} />
         </div>
       </PostContent>
