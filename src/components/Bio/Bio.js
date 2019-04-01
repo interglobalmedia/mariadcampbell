@@ -1,7 +1,14 @@
 import React from 'react'
 import { StaticQuery, graphql } from "gatsby"
+import styled from '@emotion/styled'
 import { rhythm } from '../../utils/typography'
 import profileSmall from '../../img/profileSmall.png'
+
+const BioContainerWrapperDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: ${rhythm(2.5)};
+`
 
 function Bio() {
   return (
@@ -10,13 +17,7 @@ function Bio() {
       render={data => {
         const { author, social } = data.site.siteMetadata
         return (
-          <div
-            style={{
-              display: `flex`,
-              flexDirection: 'column',
-              marginBottom: rhythm(2.5),
-            }}
-          >
+          <BioContainerWrapperDiv>
             <div className="bio-container" style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', borderTop: '1px solid rgba(0,0,0,0.8)', borderBottom: '1px solid rgba(0,0,0,0.8)', paddingTop: '1.5rem', paddingRight: '0.25rem', background: 'rgba(147,173,92,0.4)' }}>
               <img
                 src={profileSmall}
@@ -36,7 +37,7 @@ function Bio() {
               <div>
               </div>
             </div>
-          </div>
+          </BioContainerWrapperDiv>
         )
       }}
     />
