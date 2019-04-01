@@ -65,7 +65,7 @@ function BlogPost(props) {
             <a href={`/tags/${tag}`} key={i} style={{ boxShadow: 'none', color: '#cb4b16', letterSpacing: '0.07em', }}><FontAwesomeIcon icon={faTag} style={{ color: '#268bd2' }} /> {tag} </a>
           ))}
         </div>
-        <div className="social-list">
+        <div className="post-social-share">
           <Share title={title} url={url} pathname={props.location.pathname} />
         </div>
         <Bio />
