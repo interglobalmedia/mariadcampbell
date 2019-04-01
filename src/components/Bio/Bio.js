@@ -3,11 +3,23 @@ import { StaticQuery, graphql } from "gatsby"
 import styled from '@emotion/styled'
 import { rhythm } from '../../utils/typography'
 import profileSmall from '../../img/profileSmall.png'
+import { SocialStrong } from '../../pages/info/info'
 
 const BioContainerWrapperDiv = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: ${rhythm(2.5)};
+`
+
+const BioContainerDiv = styled.div`
+  display: flex; 
+  align-items: flex-start; 
+  justify-content: center;
+  border-top: 1px solid rgba(0,0,0,0.8); 
+  border-bottom: 1px solid rgba(0,0,0,0.8); 
+  padding-top: 1.5rem; 
+  padding-right: 0.25rem;
+  background: rgba(147,173,92,0.4);
 `
 
 function Bio() {
@@ -18,7 +30,7 @@ function Bio() {
         const { author, social } = data.site.siteMetadata
         return (
           <BioContainerWrapperDiv>
-            <div className="bio-container" style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', borderTop: '1px solid rgba(0,0,0,0.8)', borderBottom: '1px solid rgba(0,0,0,0.8)', paddingTop: '1.5rem', paddingRight: '0.25rem', background: 'rgba(147,173,92,0.4)' }}>
+            <BioContainerDiv>
               <img
                 src={profileSmall}
                 alt={author}
@@ -32,11 +44,9 @@ function Bio() {
                 }}
               />
               <p>
-                Written by <strong>{author}</strong> who lives and works in New York City building useful things. Be sure to follow me on <a href={`https://twitter.com/${social.twitter}`} style={{ color: '#cb4b16', boxShadow: 'none' }}>Twitter</a>, <a href={`https://github.com/${social.github}`} style={{ color: '#cb4b16', boxShadow: 'none' }}>Github</a> or <a href={`https://www.linkedin.com/in/${social.linkedin}`} style={{ color: '#cb4b16', boxShadow: 'none' }}>Linkedin</a>!
+                Written by <SocialStrong>{author}</SocialStrong> who lives and works in New York City building useful things. Be sure to follow me on <a href={`https://twitter.com/${social.twitter}`} style={{ color: '#cb4b16', boxShadow: 'none' }}>Twitter</a>, <a href={`https://github.com/${social.github}`} style={{ color: '#cb4b16', boxShadow: 'none' }}>Github</a> or <a href={`https://www.linkedin.com/in/${social.linkedin}`} style={{ color: '#cb4b16', boxShadow: 'none' }}>Linkedin</a>!
               </p>
-              <div>
-              </div>
-            </div>
+            </BioContainerDiv>
           </BioContainerWrapperDiv>
         )
       }}
