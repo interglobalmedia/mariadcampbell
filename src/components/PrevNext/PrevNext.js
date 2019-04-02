@@ -13,16 +13,20 @@ const PrevNextUl = styled.ul`
 const PrevNextLi = styled.li`
     list-style-type: none;
     letter-spacing: 0.07em;
+    & a {
+        color: #cb4b16; 
+        boxShadow: none;
+    }
 `
 
 const PrevNext = (props) => {
     const { prev, next } = props
     return (
         <PrevNextUl>
-            {prev && <PrevNextLi><a href={prev.fields.slug} style={{ color: '#cb4b16', boxShadow: 'none' }}>
+            {prev && <PrevNextLi><a href={prev.fields.slug}>
                 ← Previous {' '}<br />
             </a></PrevNextLi>}
-            {next && <PrevNextLi><a href={next.fields.slug} style={{ color: '#cb4b16', boxShadow: 'none' }}>
+            {next && <PrevNextLi><a href={next.fields.slug}>
                 Next → {' '}<br />
             </a></PrevNextLi>}
         </PrevNextUl>
