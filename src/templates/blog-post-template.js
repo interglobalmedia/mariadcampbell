@@ -1,5 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from 'gatsby'
 import { faTag } from '@fortawesome/free-solid-svg-icons'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
@@ -62,7 +63,7 @@ function BlogPost(props) {
         <div className="post-tags">
           <TaggedInSpan>Tagged in: </TaggedInSpan>
           {tags.map((tag, i) => (
-            <a href={`/tags/${tag}`} key={i} style={{ boxShadow: 'none', color: '#cb4b16', letterSpacing: '0.07em', }}><FontAwesomeIcon icon={faTag} style={{ color: '#268bd2' }} /> {tag} </a>
+            <Link to={`/tags/${tag}`} key={i} style={{ boxShadow: 'none', color: '#cb4b16', letterSpacing: '0.07em', }}><FontAwesomeIcon icon={faTag} style={{ color: '#268bd2' }} /> {tag} </Link>
           ))}
         </div>
         <div className="post-social-share">
