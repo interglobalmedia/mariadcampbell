@@ -19,7 +19,7 @@ const TagsDiv = styled.div`
     width: 100%; 
     padding: 1rem; 
     tex-decoration: none; 
-    font-size: 1.1rem;
+    font-size: 1.1rem; 
     letter-spacing: 0.07em;
   }
 `
