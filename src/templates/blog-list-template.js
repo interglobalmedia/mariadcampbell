@@ -8,6 +8,9 @@ const PostDiv = styled.div`
     width: 90%;
     maxWidth: 960px;
     margin: 3rem auto;
+    & a {
+        box-shadow: none;
+    }
 `
 
 const PostListDiv = styled.div`
@@ -76,7 +79,7 @@ function BlogPage(props) {
         <Layout>
             <PostDiv>
                 {postList.edges.map(({ node }, i) => (
-                    <Link to={node.fields.slug} className="link" key={i} style={{ boxShadow: 'none' }}>
+                    <Link to={node.fields.slug} key={i}>
                         <PostListDiv>
                             <PostListDate>on {node.frontmatter.date}</PostListDate>
                             <PostListTitle>{node.frontmatter.title}</PostListTitle>
