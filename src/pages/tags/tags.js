@@ -11,6 +11,17 @@ const TagsDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  & a {
+    margin-bottom: 2rem;
+    list-style-type: none; 
+    background: #fdf6e3; 
+    color: #cb4b16; 
+    width: 100%; 
+    padding: 1rem; 
+    tex-decoration: none; 
+    font-size: 1.1rem;
+    letter-spacing: 0.07em;
+  }
 `
 
 const TagsTitleP = styled.p`
@@ -26,10 +37,7 @@ function TagsPage(props) {
         <TagsTitleP><FontAwesomeIcon icon={faHashtag} style={{ width: '36px', height: '36px' }} /></TagsTitleP>
         {
           data.map(tag => (
-            <Link to={`/tags/${tag.fieldValue}`} style={{
-              marginBottom: '2rem',
-              listStyleType: 'none', background: '#fdf6e3', color: '#cb4b16', width: '100%', padding: '1rem', textDecoration: 'none', fontSize: '1.1rem', letterSpacing: '0.07em'
-            }}>
+            <Link to={`/tags/${tag.fieldValue}`}>
               <FontAwesomeIcon icon={faTag} style={{ color: '#268bd2' }} /> {tag.fieldValue} {`(${tag.totalCount})`}
             </Link>
           ))
