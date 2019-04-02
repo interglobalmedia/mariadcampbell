@@ -1,15 +1,40 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout/Layout'
-import '../pages/post.css'
+import styled from '@emotion/styled'
+
+const TagsH1 = styled.h1`
+    display: flex;
+    justify-content: flex-start;
+    margin: 3rem auto 0; 
+    padding-left: 1.5rem; 
+    letter-spacing: 0.07em;
+`
+
+const TagsDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    & a {
+        margin-bottom: 2rem; 
+        list-style-type: none; 
+        background: #fdf6e3; 
+        color: #cb4b16; 
+        width: 90%; 
+        padding: 1rem; 
+        text-decoration: none; 
+        font-size: 1.1rem; 
+        margin: 2rem auto 0; 
+        letter-spacing: 0.07em;
+    }
+`
 
 function Tags(props) {
     const posts = props.data.allMarkdownRemark.edges
     const { tag } = props.pageContext
     return (
         <Layout>
-            <h1>{`posts in ${tag}`}</h1>
-            <div className="tags">
+            <TagsH1>{`posts in: ${tag}`}</TagsH1>
+            <TagsDiv>
                 {
                     posts.map(({ node }, i) =>
                         <Link to={node.fields.slug}>
@@ -17,7 +42,7 @@ function Tags(props) {
                         </Link>
                     )
                 }
-            </div>
+            </TagsDiv>
         </Layout>
     )
 }

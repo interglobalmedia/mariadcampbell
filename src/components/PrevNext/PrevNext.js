@@ -1,18 +1,38 @@
 import React from 'react'
-import './PrevNext.css'
+import styled from '@emotion/styled'
+
+const PrevNextUl = styled.ul`
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 0.5rem;
+    margin-top: -1rem;
+`
+
+const PrevNextLi = styled.li`
+    list-style-type: none;
+    letter-spacing: 0.07em;
+    & a {
+        color: #cb4b16; 
+        box-shadow: none;
+        & :hover {
+            text-decoration: underline;
+        }
+    }
+`
 
 const PrevNext = (props) => {
     const { prev, next } = props
     return (
-        <ul className="prev-next">
-            {prev && <li className="prev"><a href={prev.fields.slug} >
+        <PrevNextUl>
+            {prev && <PrevNextLi><a href={prev.fields.slug}>
                 ← Previous {' '}<br />
-            </a></li>}
-            {next && <li className="next"><a href={next.fields.slug}>
+            </a></PrevNextLi>}
+            {next && <PrevNextLi><a href={next.fields.slug}>
                 Next → {' '}<br />
-
-            </a></li >}
-        </ul>
+            </a></PrevNextLi>}
+        </PrevNextUl>
     )
 }
 

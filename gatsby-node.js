@@ -37,7 +37,7 @@ exports.createPages = ({ actions, graphql }) => {
         console.log(result.errors)
         return reject(result.errors)
       }
-      const blogPostTemplate = path.resolve('./src/templates/blog-post.js');
+      const blogPostTemplate = path.resolve('./src/templates/blog-post-template.js');
       const blogListTemplate = path.resolve('./src/templates/blog-list-template.js');
       const tagsTemplate = path.resolve('./src/templates/tag-template.js')
       // Create blog-list pages

@@ -4,93 +4,98 @@ import PropTypes from "prop-types"
 import React from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHashtag, faInfo, faHome, faBlog } from '@fortawesome/free-solid-svg-icons'
-import './Header.css'
-import '../Layout/Layout.css'
-import "./SideBar.css"
+import styled from '@emotion/styled'
+import './SideBar.css'
+
+const HeaderStyle = styled.header`
+  width: 90%;
+`
+
+const HeaderDiv = styled.div`
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: center;
+`
+
+const HeaderTitle = styled.h1`
+  margin-top: 1.25rem; 
+  color: rgba(0,0,0,0.9); 
+  font-size: 130%;
+  & a {
+    color: rgba(0,0,0,0.9);
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-left: 0.5rem;
+    letter-spacing: 0.07em;
+    padding: 1.0875rem;
+    box-shadow: none;
+      & :hover {
+      text-decoration: underline;
+      color: #cb4b16;
+    }
+  }
+`
+const HeaderSideMenuP = styled.p`
+  outline: none;
+  & a {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    color: #fdf6e3;
+    font-size: 1.5rem;
+    padding: 1.0875rem;
+    box-shadow: none;
+  }
+  & a:hover {
+      color: rgba(29,202,255, 1);
+    }
+`
 
 const Header = ({ siteTitle }) => (
-  <header style={{ display: 'block' }}>
+  <HeaderStyle>
 
     <div className='side-navigation'>
-      <div className="header"
-        style={{
-          boxShadow: 'none',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'space-between',
-          justifyContent: 'center',
-        }}
-      >
+      <HeaderDiv>
         <Menu>
-          <p style={{ display: 'flex', flexDirection: 'column', outline: 'none' }}>
-            <Link className='menu-item'
+          <HeaderSideMenuP>
+            <Link
               to="/"
-              style={{
-                fontSize: '1.3rem',
-                fontWeight: '100',
-                color: `rgba(0,0,0,0.8)`,
-                padding: `1.0875rem`,
-                boxShadow: 'none'
-              }}
+              activeStyle={{ color: '#cb4b16' }}
             >
-              <FontAwesomeIcon icon={faHome} style={{ color: '#fdf6e3' }} />
+              <FontAwesomeIcon icon={faHome} />
             </Link>
             <Link
               to="/blog/"
-              style={{
-                fontSize: '1.3rem',
-                fontWeight: '100',
-                color: `rgba(0,0,0,0.8)`,
-                padding: `1.0875rem`,
-                boxShadow: 'none'
-              }}
+              activeStyle={{ color: '#cb4b16' }}
             >
-              <FontAwesomeIcon icon={faBlog} style={{ color: '#fdf6e3' }} />
+              <FontAwesomeIcon icon={faBlog} />
             </Link>
             <Link
               to="/info/info"
-              style={{
-                fontSize: '1.3rem',
-                fontWeight: '100',
-                color: `rgba(0,0,0,0.8)`,
-                padding: `1.0875rem`,
-                boxShadow: 'none'
-              }}
+              activeStyle={{ color: '#cb4b16' }}
             >
-              <FontAwesomeIcon icon={faInfo} style={{ color: '#fdf6e3' }} />
+              <FontAwesomeIcon icon={faInfo} />
             </Link>
             <Link
               to="/tags/tags"
-              style={{
-                fontSize: '1.3rem',
-                fontWeight: 'normal',
-                color: `rgba(0,0,0,0.8)`,
-                padding: `1.0875rem`,
-                boxShadow: 'none'
-              }}
+              activeStyle={{ color: '#cb4b16' }}
             >
-              <FontAwesomeIcon icon={faHashtag} style={{ color: '#fdf6e3' }} />
+              <FontAwesomeIcon icon={faHashtag} />
             </Link>
-          </p>
+          </HeaderSideMenuP>
         </Menu>
-      </div>
+      </HeaderDiv>
     </div>
-    <h1 className="header-title" style={{ marginTop: '1.3rem' }}>
+    <HeaderTitle>
       <Link className='menu-item'
         to="/"
-        style={{
-          fontSize: '1.3rem',
-          fontWeight: '400',
-          color: 'rgba(0,0,0,0.9)',
-          padding: `1.0875rem`,
-          marginLeft: '0.5rem',
-          boxShadow: 'none',
-          letterSpacing: '0.07em'
-        }}>
+        activeStyle={{ color: '#cb4b16' }}>
         {siteTitle}
       </Link>
-    </h1>
-  </header>
+    </HeaderTitle>
+  </HeaderStyle>
 
 )
 
