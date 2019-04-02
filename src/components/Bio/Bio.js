@@ -20,6 +20,10 @@ const BioContainerDiv = styled.div`
   padding-top: 1.5rem; 
   padding-right: 0.25rem;
   background: rgba(147,173,92,0.4);
+  & a {
+    color: #cb4b16; 
+    box-shadow: none;
+  }
 `
 
 function Bio() {
@@ -44,7 +48,7 @@ function Bio() {
                 }}
               />
               <p>
-                Written by <SocialStrong>{author}</SocialStrong> who lives and works in New York City building useful things. Be sure to follow me on <a href={`https://twitter.com/${social.twitter}`} style={{ color: '#cb4b16', boxShadow: 'none' }}>Twitter</a>, <a href={`https://github.com/${social.github}`} style={{ color: '#cb4b16', boxShadow: 'none' }}>Github</a> or <a href={`https://www.linkedin.com/in/${social.linkedin}`} style={{ color: '#cb4b16', boxShadow: 'none' }}>Linkedin</a>!
+                Written by <SocialStrong>{author}</SocialStrong> who lives and works in New York City building useful things. Be sure to follow me on <a href={`https://twitter.com/${social.twitter}`} >Twitter</a>, <a href={`https://github.com/${social.github}`} >Github</a> or <a href={`https://www.linkedin.com/in/${social.linkedin}`}>Linkedin</a>!
               </p>
             </BioContainerDiv>
           </BioContainerWrapperDiv>
