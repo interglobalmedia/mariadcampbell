@@ -43,7 +43,6 @@ const PostTagsDiv = styled.div`
   box-shadow: none; 
   color: #cb4b16;
   letter-spacing: 0.07em;
-}
 `
 
 function BlogPost(props) {
