@@ -12,19 +12,6 @@ const InfoLayout = styled.div`
   margin: 3rem auto 0;
 `
 
-const InfoFollow = styled.li`
-  box-shadow: none;
-  margin-right: 40px;
-  list-style-type: none;
-`
-
-const InfoFollowFirst = styled.li`
-  box-shadow: none;
-  margin-right: 40px;
-  margin-left: 20px;
-  list-style-type: none;
-`
-
 const InfoTextUl = styled.ul`
   display: flex;
   justify-content: center;
@@ -32,21 +19,21 @@ const InfoTextUl = styled.ul`
   width: 90%;
   max-width: 960px;
   margin: auto;
+  & li {
+    list-style-type: none;
+    letter-spacing: 0.07em;
+    line-height: 1.7;
+    width: 100%;
+  }
 `
 
 const ImageLi = styled.li`
-  width: 100%;
   max-width: 100px;
-  list-style-type: none;
 `
 
 const TextLi = styled.li`
-  width: 100%;
   max-width: 600px;
   margin-left: ${rhythm(1 / 1)};
-  list-style-type: none;
-  letter-spacing: 0.07em;
-  line-height: 1.7;
 `
 
 const SocialMediaUl = styled.ul`
@@ -56,6 +43,25 @@ const SocialMediaUl = styled.ul`
   list-style-type: none;
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
+  & li {
+    box-shadow: none;
+    margin-right: 40px;
+    list-style-type: none;
+    &:first-child {
+      margin-left: 20px;
+    }
+    & a {
+      color: #cb4b16;
+      box-shadow: none; 
+      border: 1px solid rgba(0,0,0,0.8); 
+      border-radius: 50%;
+      padding-top: 17px; 
+      padding-bottom: 8px; 
+      padding-left: 8px; 
+      padding-right: 8px; 
+      background: rgba(29,202,255, 1);
+    }
+  }
 `
 
 export const SocialStrong = styled.strong`
@@ -80,23 +86,21 @@ export const InfoPage = ({ author }) => {
           </TextLi>
         </InfoTextUl>
         <SocialMediaUl>
-          <InfoFollowFirst>
-            <a href={twitter} target="blank" style={{
-              color: '#cb4b16', boxShadow: 'none', border: '1px solid rgba(0,0,0,0.8)', borderRadius: '50%', paddingTop: '17px', paddingBottom: '8px', paddingLeft: '8px', paddingRight: '8px', background: 'rgba(29,202,255, 1)'
-            }}>
+          <li>
+            <a href={twitter} target="blank">
               <FontAwesomeIcon icon={faTwitter} size='2x' style={{ borderRadius: '50%', width: '30px', height: '30px' }} />
             </a>
-          </InfoFollowFirst>
-          <InfoFollow>
-            <a href={github} target="blank" style={{ color: '#cb4b16', boxShadow: 'none', border: '1px solid rgba(0,0,0,0.8)', borderRadius: '50%', paddingTop: '17px', paddingBottom: '8px', paddingLeft: '8px', paddingRight: '8px', background: 'rgba(29,202,255, 1)' }}>
+          </li>
+          <li>
+            <a href={github} target="blank">
               <FontAwesomeIcon icon={faGithubAlt} size='2x' style={{ width: '30px', height: '30px' }} />
             </a>
-          </InfoFollow>
-          <InfoFollow>
-            <a href={linkedin} target="blank" style={{ color: '#cb4b16', boxShadow: 'none', border: '1px solid rgba(0,0,0,0.8)', borderRadius: '50%', paddingTop: '17px', paddingBottom: '8px', paddingLeft: '8px', paddingRight: '8px', background: 'rgba(29,202,255, 1)' }}>
+          </li>
+          <li>
+            <a href={linkedin} target="blank">
               <FontAwesomeIcon icon={faLinkedinIn} size='2x' style={{ borderRadius: '50%', width: '30px', height: '30px' }} />
             </a>
-          </InfoFollow>
+          </li>
         </SocialMediaUl>
       </InfoLayout>
     </Layout >
