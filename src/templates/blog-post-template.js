@@ -13,8 +13,6 @@ import Share from '../components/Share/Share'
 import Bio from '../components/Bio/Bio'
 import '../components/Layout/Layout.css'
 
-import '../pages/post.css'
-
 const ImageDiv = styled.div`
   width: 100%;
   margin-top: 1.0rem;
@@ -34,6 +32,24 @@ const PostTitle = styled.h1`
   margin-bottom: 2rem;
   letter-spacing: 0.07em;
 `
+const DangerousDiv = styled.div`
+& p {
+  letter-spacing: 0.07em;
+  line-height: 1.7;
+}
+& li {
+  margin-left: -0.5rem;
+  list-style-type: circle;
+}
+  & a {
+    color: #cb4b16;
+    box-shadow: none;
+    letter-spacing: 0.07em;
+    & :hover {
+      text-decoration: underline;
+    }
+  }
+`
 
 const TaggedInSpan = styled.span`
   letter-spacing: 0.07em;
@@ -43,6 +59,9 @@ const PostTagsDiv = styled.div`
   box-shadow: none; 
   color: #cb4b16;
   letter-spacing: 0.07em;
+  & :hover {
+    text-decoration: underline;
+  }
 `
 
 function BlogPost(props) {
@@ -65,7 +84,7 @@ function BlogPost(props) {
       </ImageDiv>
       <PostContent>
         <PostTitle>{title}</PostTitle>
-        <div dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }} />
+        <DangerousDiv dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}></DangerousDiv>
         <PostTagsDiv>
           <TaggedInSpan>Tagged in: </TaggedInSpan>
           {tags.map((tag, i) => (

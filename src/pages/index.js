@@ -40,6 +40,8 @@ const FooterStyle = styled.footer`
     }
     & a {
         letter-spacing: 0.07em;
+        color: #cb4b16;
+        box-shadow: none;
         & :hover {
             text-decoration: underline;
         }

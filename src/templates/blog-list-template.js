@@ -35,6 +35,9 @@ const PostListTitle = styled.h1`
     margin-top: 0.25rem;
     line-height: 1.3;
     color: #cb4b16;
+    & :hover {
+        text-decoration: underline;
+    }
 `
 
 const PostListDate = styled.div`
@@ -66,6 +69,9 @@ const PrevNextUl = styled.ul`
     padding-left: 1rem;
     width: 100%;
     margin: 1.5rem auto;
+    & a:hover {
+        text-decoration: underline;
+    }
 `
 
 function BlogPage(props) {
@@ -96,17 +102,17 @@ function BlogPage(props) {
                     {!isFirst && (
                         <Link to={prevPage} rel="prev" style={{
                             color: prevPage ? '#cb4b16' : 'rgba(0,0,0,0.8)',
-                            /* marginLeft: '-1rem',*/ boxShadow: 'none', letterSpacing: '0.07em'
+                            boxShadow: 'none', letterSpacing: '0.07em', marginLeft: '-1rem'
                         }}>
                             ← Previous
-            </Link>
+                        </Link>
                     )}
                     {Array.from({ length: numPages }, (_, i) => (
                         <li
                             key={`pagination-number${i + 1}`}
                             style={{
                                 margin: 0,
-                                marginLeft: '-1rem', listStyleType: 'none'
+                                listStyleType: 'none', marginLeft: '-1rem'
                             }}
                         >
                             <Link
@@ -123,12 +129,11 @@ function BlogPage(props) {
                     {!isLast && (
                         <Link to={nextPage} rel="next" style={{
                             color: nextPage ? '#cb4b16' : 'rgba(0,0,0,0.8)',
-                            // marginRight: '0.25rem',
                             boxShadow: 'none', letterSpacing: '0.07em'
 
                         }}>
                             Next →
-            </Link>
+                        </Link>
                     )}
                 </PrevNextUl>
             </PostDiv>

@@ -47,8 +47,8 @@ const SocialMediaUl = styled.ul`
     box-shadow: none;
     margin-right: 40px;
     list-style-type: none;
-    &:first-child {
-      margin-left: 20px;
+    &:first-of-type {
+      margin-left: 1.25rem;
     }
     & a {
       color: #cb4b16;

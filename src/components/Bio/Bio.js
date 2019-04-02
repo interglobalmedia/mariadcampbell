@@ -23,6 +23,9 @@ const BioContainerDiv = styled.div`
   & a {
     color: #cb4b16; 
     box-shadow: none;
+    & :hover {
+      text-decoration: underline;
+    }
   }
 `
 

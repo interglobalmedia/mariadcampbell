@@ -15,7 +15,10 @@ const PrevNextLi = styled.li`
     letter-spacing: 0.07em;
     & a {
         color: #cb4b16; 
-        boxShadow: none;
+        box-shadow: none;
+        & :hover {
+            text-decoration: underline;
+        }
     }
 `
 

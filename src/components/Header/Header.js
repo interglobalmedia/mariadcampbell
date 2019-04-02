@@ -30,7 +30,8 @@ const HeaderTitle = styled.h1`
     margin-left: 0.5rem;
     letter-spacing: 0.07em;
     padding: 1.0875rem;
-      :hover {
+    box-shadow: none;
+      & :hover {
       text-decoration: underline;
       color: #cb4b16;
     }
@@ -45,7 +46,7 @@ const HeaderSideMenuP = styled.p`
     color: #fdf6e3;
     font-size: 1.5rem;
     padding: 1.0875rem;
-    // box-shadow: none;
+    box-shadow: none;
   }
   & a:hover {
       color: rgba(29,202,255, 1);

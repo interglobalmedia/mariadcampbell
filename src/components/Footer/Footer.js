@@ -8,6 +8,13 @@ const FooterStyle = styled.footer`
     letter-spacing: 0.07em;
     width: 90%;
     margin: 0 auto;
+    & a {
+        color: #cb4b16;
+        box-shadow: none;
+        & :hover {
+            text-decoration: underline;
+        }
+    }
 `
 
 const Footer = () => {
