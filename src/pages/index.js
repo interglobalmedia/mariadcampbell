@@ -38,6 +38,12 @@ const FooterStyle = styled.footer`
         height: 30px;
         width: 90%;
     }
+    & a {
+        letter-spacing: 0.07em;
+        & :hover {
+            text-decoration: underline;
+        }
+    }
 `
 
 const IndexPage = ({ siteTitle }) => {
@@ -53,7 +59,7 @@ const IndexPage = ({ siteTitle }) => {
                 <FooterStyle>
                     Built with
                 {` `}
-                    <a href="https://www.gatsbyjs.org" style={{ letterSpacing: '0.07em' }}>Gatsby</a>{` `}
+                    <a href="https://www.gatsbyjs.org">Gatsby</a>{` `}
                     © {new Date().getFullYear()} Maria D. Campbell
                 </FooterStyle>
             </div>
