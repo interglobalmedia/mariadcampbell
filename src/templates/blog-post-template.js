@@ -17,7 +17,7 @@ import '../pages/post.css'
 
 const ImageDiv = styled.div`
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 1.0rem;
   @media(max-width: 599px) {
     display: none;
   }
@@ -26,7 +26,7 @@ const ImageDiv = styled.div`
 const PostContent = styled.div`
   width: 90%;
   max-width: 960px;
-  margin: 3rem auto;
+  margin: 2rem auto;
 `
 
 const PostTitle = styled.h1`
@@ -37,6 +37,13 @@ const PostTitle = styled.h1`
 
 const TaggedInSpan = styled.span`
   letter-spacing: 0.07em;
+`
+const PostTagsDiv = styled.div`
+  & a {
+  box-shadow: none; 
+  color: #cb4b16;
+  letter-spacing: 0.07em;
+}
 `
 
 function BlogPost(props) {
@@ -60,12 +67,12 @@ function BlogPost(props) {
       <PostContent>
         <PostTitle>{title}</PostTitle>
         <div dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }} />
-        <div className="post-tags">
+        <PostTagsDiv>
           <TaggedInSpan>Tagged in: </TaggedInSpan>
           {tags.map((tag, i) => (
-            <Link to={`/tags/${tag}`} key={i} style={{ boxShadow: 'none', color: '#cb4b16', letterSpacing: '0.07em', }}><FontAwesomeIcon icon={faTag} style={{ color: '#268bd2' }} /> {tag} </Link>
+            <Link to={`/tags/${tag}`} key={i}><FontAwesomeIcon icon={faTag} style={{ color: '#268bd2' }} /> {tag} </Link>
           ))}
-        </div>
+        </PostTagsDiv>
         <div className="post-social-share">
           <Share title={title} url={url} pathname={props.location.pathname} />
         </div>
