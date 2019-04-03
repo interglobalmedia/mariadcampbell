@@ -78,7 +78,6 @@ function BlogPost(props) {
         url={url}
         pathname={props.location.pathname}
       />
-
       <ImageDiv>
         {image && <Img fluid={image.childImageSharp.fluid} />}
       </ImageDiv>
