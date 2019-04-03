@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-
+import { rhythm } from '../utils/typography'
 import Layout from '../components/Layout/Layout'
 import styled from '@emotion/styled'
+import Img from 'gatsby-image'
 
 const PostDiv = styled.div`
     width: 90%;
-    maxWidth: 960px;
+    max-width: 960px;
     margin: 3rem auto;
     & a {
         box-shadow: none;
@@ -15,8 +16,10 @@ const PostDiv = styled.div`
 
 const PostListDiv = styled.div`
     position: relative;
+    max-width: 960px;
+    margin: 0 auto;
     border: 1px solid gainsboro;
-    padding: 1rem 1rem 0.25rem;
+    padding: 1rem 1rem 0;
     box-shadow: 0 -1px 4px #ede7e7;
     margin: 1rem 0.25rem;
     display: flex;
@@ -32,7 +35,7 @@ const PostListDiv = styled.div`
 const PostListTitle = styled.h1`
     font-size: 1.3rem;
     font-weight: normal;
-    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
     line-height: 1.3;
     color: #cb4b16;
     & :hover {
@@ -40,24 +43,30 @@ const PostListTitle = styled.h1`
     }
 `
 
-const PostListDate = styled.div`
+const ExcerptWrapUl = styled.ul`
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    list-style-type: none;
+    margin-left: 0;
+    & li {
+        list-style-type: none;
+    }
+    & img {
+        padding-right: ${rhythm(1 / 2)};
+        padding-top: ${rhythm(1 / 2)};
+    }
+    @media (min-width: 600px) {
+        flex-direction: row;
+        align-items: flex-start;
+        & li:nth-of-type(2) {
+            padding-top: ${rhythm(1 / 2)};
+        }
+    }
 `
 
-const PostListAuthorUl = styled.ul`
+const PostListMetaDiv = styled.div`
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    list-style-type: none;
-`
-
-const PostListAuthorLi = styled.li`
-    margin: 0 0 -0.5rem -1.3rem;
+    justify-content: space-between;
+    align-items: center;
     list-style-type: none;
 `
 
@@ -68,6 +77,7 @@ const PrevNextUl = styled.ul`
     align-items: center;
     padding-left: 1rem;
     width: 100%;
+    max-width: 960px;
     margin: 1.5rem auto;
     & a:hover {
         text-decoration: underline;
@@ -87,14 +97,14 @@ function BlogPage(props) {
                 {postList.edges.map(({ node }, i) => (
                     <Link to={node.fields.slug} key={i}>
                         <PostListDiv>
-                            <PostListDate>on {node.frontmatter.date}</PostListDate>
                             <PostListTitle>{node.frontmatter.title}</PostListTitle>
-                            <p>{node.excerpt}</p>
-                            <PostListAuthorUl>
-                                <PostListAuthorLi>
-                                    by {node.frontmatter.author}
-                                </PostListAuthorLi>
-                            </PostListAuthorUl>
+                            <PostListMetaDiv>
+                                by {node.frontmatter.author} on {node.frontmatter.date}
+                            </PostListMetaDiv>
+                            <ExcerptWrapUl>
+                                <li><Img fixed={node.frontmatter.image.childImageSharp.fixed} /></li>
+                                <li>{node.excerpt}</li>
+                            </ExcerptWrapUl>
                         </PostListDiv>
                     </Link>
                 ))}
@@ -146,20 +156,27 @@ export default BlogPage
 export const blogListQuery = graphql`
   query blogListQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: $limit
-      skip: $skip
+      sort: {fields: [frontmatter___date], order: DESC }
+        limit: $limit
+          skip: $skip
     ) {
       edges {
         node {
           fields {
             slug
           }
-          excerpt(pruneLength:250)
+          excerpt(pruneLength:150)
           frontmatter {
             date(formatString: "DD MMMM, YYYY")
             title
             author
+            image {
+              childImageSharp {
+                fixed(width: 200) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
         }
       }
