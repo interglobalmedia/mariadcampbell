@@ -13,6 +13,12 @@ import Share from '../components/Share/Share'
 import Bio from '../components/Bio/Bio'
 import '../components/Layout/Layout.css'
 
+const PostWrapperDiv = styled.div`
+  width: 90%; 
+  max-width: 960px; 
+  margin: 0 auto;
+`
+
 const ImageDiv = styled.div`
   width: 100%;
   margin-top: 1.0rem;
@@ -22,8 +28,8 @@ const ImageDiv = styled.div`
 `
 
 const PostContent = styled.div`
-  width: 90%;
-  max-width: 960px;
+  width: 100%;
+  // max-width: 960px;
   margin: 2rem auto;
 `
 
@@ -78,26 +84,28 @@ function BlogPost(props) {
         url={url}
         pathname={props.location.pathname}
       />
-      <ImageDiv>
-        {image && <Img fluid={image.childImageSharp.fluid} />}
-      </ImageDiv>
-      <PostContent>
-        <PostTitle>{title}</PostTitle>
-        <DangerousDiv dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}></DangerousDiv>
-        <PostTagsDiv>
-          <TaggedInSpan>Tagged in: </TaggedInSpan>
-          {tags.map((tag, i) => (
-            <Link to={`/tags/${tag}`} key={i}><FontAwesomeIcon icon={faTag} style={{ color: '#268bd2' }} /> {tag} </Link>
-          ))}
-        </PostTagsDiv>
-        <div className="post-social-share">
-          <Share title={title} url={url} pathname={props.location.pathname} />
-        </div>
-        <Bio />
-        <div className="prev-next-div">
-          <PrevNext prev={prev && prev.node} next={next && next.node} />
-        </div>
-      </PostContent>
+      <PostWrapperDiv>
+        <ImageDiv>
+          {image && <Img fluid={image.childImageSharp.fluid} />}
+        </ImageDiv>
+        <PostContent>
+          <PostTitle>{title}</PostTitle>
+          <DangerousDiv dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}></DangerousDiv>
+          <PostTagsDiv>
+            <TaggedInSpan>Tagged in: </TaggedInSpan>
+            {tags.map((tag, i) => (
+              <Link to={`/tags/${tag}`} key={i}><FontAwesomeIcon icon={faTag} style={{ color: '#268bd2' }} /> {tag} </Link>
+            ))}
+          </PostTagsDiv>
+          <div className="post-social-share">
+            <Share title={title} url={url} pathname={props.location.pathname} />
+          </div>
+          <Bio />
+          <div className="prev-next-div">
+            <PrevNext prev={prev && prev.node} next={next && next.node} />
+          </div>
+        </PostContent>
+      </PostWrapperDiv>
     </Layout >
   )
 }
