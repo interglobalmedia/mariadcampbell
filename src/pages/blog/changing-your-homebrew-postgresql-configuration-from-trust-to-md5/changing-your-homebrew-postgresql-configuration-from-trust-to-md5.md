@@ -1,9 +1,9 @@
 ---
 title: "Changing your (Homebrew) PostgreSQL configuration from trust to md5"
 image: md5.png
-description: Bringing more tech awareness and efficiency to small business.
+description: I had one last step I had to take to ensure that my PostgreSQL upgrade configuration mirrored that of the previous version.
 date: '2019-01-11'
-tags: ["postgresql 11", "user authentication", "postgresql configuration", "trust", md5, root user", "postgres user", "homebrew", "terminal", "command line", "osx", "backend development"]
+tags: ["user-authentication", "database-configuration", "trust", "md5", "root-user", "homebrew", "terminal", "command-line", "osx", "back-end-development"]
 author: "Maria D. Campbell"
 ---
 
@@ -83,4 +83,4 @@ This taught me that maybe it would be good to have a `backup superuser` for case
 
 ## Related Links:
 
-[Upgrading PostgreSQL from version 10.4 to 11.1 via Homebrew (OSX)](https://www.mariadcampbell.com/upgrading-postgresql-via-homebrew/)
++ [Upgrading PostgreSQL from version 10.4 to 11.1 via Homebrew (OSX)](https://www.mariadcampbell.com/upgrading-postgresql-via-homebrew/)

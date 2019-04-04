@@ -3,7 +3,7 @@ title: "How to save terminal output to a file for future reference"
 image: terminal.png
 description: what I did when my Ruby system install broke.
 date: '2019-01-08'
-tags: ["command line", "osx", "terminal", "history", "output to file", "session log", "stdin", "stdout", "unix script command"]
+tags: ["command-line", "osx", "terminal", "history", "output-to-file", "session-log", "stdin", "stdout", "unix-script-command"]
 author: "Maria D. Campbell"
 ---
 
@@ -91,15 +91,15 @@ There is so much more on this topic. I highly encourage everyone to delve deeper
 
 ## Related Resources:
 
-[In the shell, what does “2>&1” mean?](https://stackoverflow.com/questions/818255/in-the-shell-what-does-21-mean)
++ [In the shell, what does “2>&1” mean?](https://stackoverflow.com/questions/818255/in-the-shell-what-does-21-mean)
 
-[script (Unix)](https://en.wikipedia.org/wiki/Script_(Unix))
++ [script (Unix)](https://en.wikipedia.org/wiki/Script_(Unix))
 
-[The Unix “SCRIPT” command : a command recorder](https://www.ibm.com/developerworks/community/blogs/nix/entry/the_unix_script_command_a_command_recorder2?lang=en)
++ [The Unix “SCRIPT” command : a command recorder](https://www.ibm.com/developerworks/community/blogs/nix/entry/the_unix_script_command_a_command_recorder2?lang=en)
 
-[script: Save Your Session Log](https://www.unixtutorial.org/script-save-your-session-log)
++ [script: Save Your Session Log](https://www.unixtutorial.org/script-save-your-session-log)
 
-[How do I save Terminal output to a file?](https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file)
++ [How do I save Terminal output to a file?](https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file)
 
 
 

@@ -3,7 +3,7 @@ title: "When your Ruby system install breaks after a Homebrew upgrade"
 image: ./ruby-sass.jpg
 description: Recently I upgraded to Mojave on my Macbook Pro (late 2015). Unbeknownst to me until today, my Ruby system install broke in the process.
 date: '2019-01-18'
-tags: ["homebrew", "ruby", "mojave"]
+tags: ["ruby", "homebrew", mojave", "gem-install-sass", "brew-upgrade", "rbenv", system-version", "command-line", "commands", "unix-scripting", "osx"]
 author: "Maria D. Campbell"
 ---
 
