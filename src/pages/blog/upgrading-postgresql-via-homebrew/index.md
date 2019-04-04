@@ -319,6 +319,6 @@ This means that ***any*** `postgres` **user**, root or otherwise, can login to *
 
 + [Migrating Homebrew Postgres to a New Version](https://olivierlacan.com/posts/migrating-homebrew-postgres-to-a-new-version/)
 
-+ [Changing your (Homebrew) PostgreSQL configuration from trust to md5](http://www.mariadcampbell.com/2019/01/11/changing-your-homebrew-postgresql-configuration-from-trust-to-md5/)
++ [Changing your (Homebrew) PostgreSQL configuration from trust to md5](https://www.mariadcampbell.com/2019/01/11/changing-your-homebrew-postgresql-configuration-from-trust-to-md5/)
 
 
