@@ -55,5 +55,8 @@ One more very important thing that relates to syntax error(s) related to the pro
 "parser": "babel-eslint",
 ```
 
-When I introduced image imports to my project causing my Jest tests to fail, it also affected the proposed static class properties I was using in one of my components. Nothing seemed to make it go away until I added this line to my .eslintrc.json. I found this fix in the ESLint docs and subsequently in the Babel-Eslint Github repository.
+When I introduced image imports to my project causing my **Jest** ***tests*** to fail, it also ***affected*** the ***proposed*** **static class properties** I was using in one of my components. Nothing seemed to make it go away until I added this line to my `.eslintrc.json`. I found this ***fix*** in the [ESLint](https://eslint.org/docs/user-guide/configuring) ***docs*** and subsequently in the [Babel-Eslint](https://github.com/babel/babel-eslint) **Github repository**.
 
+### Related Resources:
+
++ [Babel7 Jest unexpected token export](https://stackoverflow.com/questions/52387820/babel7-jest-unexpected-token-export)
