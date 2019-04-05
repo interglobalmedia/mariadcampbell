@@ -3,7 +3,7 @@ title: "When and why it is important to refactor code"
 image: the_cat_whisperer_1024_488.jpg
 description: Why I refactored the code for my app called The Cat Whisperer, and what I learned from the experience regarding future developments for the application.
 date: '2019-01-09'
-tags: ["web-development", "front-end", "javascript", "node-package-manager", "nodejs", "node-security", "react", "web-development-workflows", "code-refactoring", "webpack", "babel"]
+tags: ["web-development", "front-end", "javascript", "node-package-manager", "nodejs", "node-security", "react", "web-development-workflows", "code-refactoring", "webpack-4", "babel-7"]
 author: "Maria D. Campbell"
 ---
 
