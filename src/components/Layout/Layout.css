@@ -732,7 +732,8 @@ pre>code {
 }
 
 /* Custom inline code styling which is always language-text */
-p code.language-text {
+p code.language-text,
+ul li code.language-text {
   color: rgba(132, 0, 88, 1);
   background: rgba(235, 233, 90, 0);
   border-radius: 0;
