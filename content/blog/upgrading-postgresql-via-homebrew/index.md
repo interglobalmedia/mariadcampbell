@@ -3,7 +3,7 @@ title: "Upgrading PostgreSQL from version 10.4 to 11.1 via Homebrew (OSX)"
 image: postgresql.jpg
 description: Upgrading to the latest version of PostgreSQL via Homebrew.
 date: '2019-01-11'
-tags: ["postgresql", "homebrew"]
+tags: ["upgrading-postgresql", "homebrew-postgres-install", "homebrew-postgres-upgrade", "osx", "mojave", "command-line", "terminal","postgresql-version-10", "postgresql-version-11"]
 author: "Maria D. Campbell"
 ---
 
@@ -319,6 +319,6 @@ This means that ***any*** `postgres` **user**, root or otherwise, can login to *
 
 + [Migrating Homebrew Postgres to a New Version](https://olivierlacan.com/posts/migrating-homebrew-postgres-to-a-new-version/)
 
-+ [Changing your (Homebrew) PostgreSQL configuration from trust to md5](http://www.mariadcampbell.com/2019/01/11/changing-your-homebrew-postgresql-configuration-from-trust-to-md5/)
++ [Changing your (Homebrew) PostgreSQL configuration from trust to md5](https://www.mariadcampbell.com/2019/01/11/changing-your-homebrew-postgresql-configuration-from-trust-to-md5/)
 
 

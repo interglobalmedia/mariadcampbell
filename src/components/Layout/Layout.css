@@ -496,11 +496,13 @@ fieldset {
 
 blockquote {
   margin-left: 1.45rem;
+  border-left: 0.4rem solid rgba(132, 0, 88, 1);
+  color: rgba(44, 60, 160, 1);
   margin-right: 1.45rem;
   margin-top: 0;
   padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
   padding-top: 0;
   margin-bottom: 1.45rem;
 }
@@ -690,7 +692,7 @@ code {
 }
 
 pre code {
-  background: none;
+  background: transparent;
   line-height: 1.42;
   overflow-x: auto;
 }
@@ -718,6 +720,66 @@ pre>code {
   -webkit-overflow-x-scrolling: auto !important;
   overflow-y: hidden;
   overflow-x: auto !important;
+}
+
+/* For line highlights similar to PrismJS's */
+.gatsby-highlight-code-line {
+  background-color: transparent;
+  display: block;
+  margin-right: -1em;
+  margin-left: -1em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 0.25em solid #f99;
+}
+
+/* Custom inline code styling which is always language-text */
+p code.language-text,
+ul li code.language-text {
+  color: rgba(132, 0, 88, 1);
+  background: rgba(235, 233, 90, 0);
+  border-radius: 0;
+  padding-top: 3px;
+  white-space: pre-wrap;
+  /* css-3 */
+  white-space: -moz-pre-wrap;
+  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;
+  /* Opera 4-6 */
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+  word-wrap: break-word;
+  /* Internet Explorer 5.5+ */
+}
+
+/* To remove default prismjs styling */
+.gatsby-highlight {
+  background: rgba(235, 233, 90, 1);
+  border-radius: 0;
+  margin: 0 0 0.5em;
+  padding: 0.5em 1em;
+  overflow: auto;
+}
+
+/* This also helps prevent overflow of pre language-text */
+
+.gatsby-highlight pre[class*="language-"] {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  overflow: initial;
+  float: left;
+  /* 1 */
+  min-width: 100%;
+  /* 2 */
+}
+
+/* End */
+
+/* Custom color for code snippets */
+
+pre[class*="language-"] code[class*="language-"] {
+  color: rgba(132, 0, 88, 1);
 }
 
 @media only screen and (max-width: 480px) {

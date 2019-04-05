@@ -3,7 +3,7 @@ title: "When your Ruby system install breaks after a Homebrew upgrade"
 image: ./ruby-sass.jpg
 description: Recently I upgraded to Mojave on my Macbook Pro (late 2015). Unbeknownst to me until today, my Ruby system install broke in the process.
 date: '2019-01-18'
-tags: ["homebrew", "ruby", "mojave"]
+tags: ["ruby", "homebrew", "mojave", "gem-install-sass", "brew-upgrade", "rbenv", system-version", "command-line", "commands", "unix-scripting", "osx"]
 author: "Maria D. Campbell"
 ---
 
@@ -11,13 +11,13 @@ Recently I upgraded to **Mojave** on my **Macbook Pro** (late 2015). I then deci
 
 Unbeknownst to me until today, my **Ruby** system install broke in the process. I hadn’t done anything related to **Ruby** installations in a couple of years, and had to refresh my memory on it. Had I installed with **RVM**? I checked to see if I had it installed on my computer. No. What else could I have used to ***manage*** my **Ruby** installs? I googled for information regarding the error I got when trying to watch a file on a Node project I am working on in which I decided to **switch** ***from*** **CSS** to **SCSS** (today). I just find it to be a much more efficient and powerful way to work with global styles. When I tried to run `sass --watch public/styles/styles.scss`, I got the following error in my **Terminal** console:
 
-```markdown
+```shell
 can't find gem sass (>= 0.a) with executable sass (Gem::GemNotFoundException)
 ```
 
 So then I decided to `re-install` **Sass**. I ran
 
-```markdown
+```shell
 gem install sass
 ```
 That did not work either. It installed **Sass** alright, but I had updated **Ruby** with **Homebrew**, so installing the gem that way did not reach the **Homebrew** ***Cellar***. Then I remembered that since **El Capitan**, **OSX** is a ***rootless*** system, and **Apple** prevents user applications (or users) to modify `/usr/bin` for security reasons. A [StackOverflow thread](https://stackoverflow.com/questions/40957368/gem-install-sass-error) I came across mentioned `rbenv.` Like `rvm`, `rbenv` is a ***Ruby*** **installer** and **version manager** which one can install via **Homebrew**. And that is what I had done ages ago. I checked to see if it was installed on my machine, and indeed it was! Then I googled to see how I could fix my issue with `rbenv`. I came across a very helpful post that helped me resolve my **Ruby** problem.
@@ -36,7 +36,7 @@ Then I had to set a ***new*** **global default version** with `2.7.0-dev` using 
 
 At first I got a ***strange stderr*** in **Terminal** when I tried to run `sass --watch` ***after*** **installing** `ruby -v 2.7.0-dev` with `rbenv` and setting the ***new*** **system version** `2.7.0-dev` with `rbenv global`. It was the following:
 
-```markdown
+```shell
 Traceback (most recent call last): 2: from /usr/local/bin/sass:22:in <main>' 1: from /usr/local/Cellar/ruby/2.6.0/lib/ruby/2.6.0/rubygems.rb:302:inactivate_bin_path' /usr/local/Cellar/ruby/2.6.0/lib/ruby/2.6.0/rubygems.rb:283:in `find_spec_for_exe': can't find gem sass (>= 0.a) with executable sass (Gem::GemNotFoundException)
 ```
 

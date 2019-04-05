@@ -18,7 +18,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/src/pages/blog`,
+        path: `${__dirname}/content`,
         name: 'blog',
       },
     },
@@ -68,6 +68,10 @@ module.exports = {
           },
           {
             resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              noInlineHighlight: false,
+            },
           },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
