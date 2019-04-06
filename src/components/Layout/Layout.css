@@ -818,3 +818,10 @@ pre[class*="language-"] code[class*="language-"] {
   height: 0;
   visibility: hidden;
 }
+
+/* Twitter embed styling */
+#twitter-widget-0 {
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 1rem;
+}
