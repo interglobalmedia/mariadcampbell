@@ -39,5 +39,5 @@ The game also works well on ***IE Edge***. Check it out there if you have access
 
 + [Simplifying Firefox Release Channels and Improving Developer Edition’s Stability (Firefox Quantum Developer Edition)](https://hacks.mozilla.org/2017/04/simplifying-firefox-release-channels/)
 
-+ [Quantum Beta vs Developer Edition (thread)]()
++ [Quantum Beta vs Developer Edition (thread)](https://hacks.mozilla.org/2017/04/simplifying-firefox-release-channels/)
 
