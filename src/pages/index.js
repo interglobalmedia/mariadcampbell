@@ -1,5 +1,5 @@
 import React from 'react'
-import travel from '../img/chris-lawton-346402-unsplash.jpg'
+import travel from '../images/chris-lawton-346402-unsplash.jpg'
 import styled from '@emotion/styled'
 import Header from '../components/Header/Header'
 
