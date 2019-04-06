@@ -5,7 +5,7 @@ import Layout from '../../components/Layout/Layout'
 import { rhythm } from '../../utils/typography'
 import '../../components/Layout/Layout.css'
 import styled from '@emotion/styled'
-import profileSmall from '../../img/profileSmall.png'
+import profileSmall from '../../images/profileSmall.png'
 
 const InfoLayout = styled.div`
   width: 90%;
