@@ -2,7 +2,7 @@ import React from 'react'
 import { StaticQuery, graphql } from "gatsby"
 import styled from '@emotion/styled'
 import { rhythm } from '../../utils/typography'
-import profileSmall from '../../img/profileSmall.png'
+import profileSmall from '../../images/profileSmall.png'
 import { SocialStrong } from '../../pages/info/info'
 
 const BioContainerWrapperDiv = styled.div`
