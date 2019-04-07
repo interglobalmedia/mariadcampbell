@@ -3,7 +3,7 @@ title: "When a Bare Bones Automated JS Workflow Makes Sense"
 image: build_npm.jpg
 description: Sometimes there are JavaScript projects which  don't need workflow tools such as Gulp, Grunt, Browserify, Webpack, etc.
 date: '2018-11-20'
-tags: ["npm"," local-scripts", "javascript-automated-workflows", "rimraf",  "gh-pages", "revealjs", "prebuild", "build", "postbuild"]
+tags: ["npm", "local-scripts", "javascript-automated-workflows", "rimraf",  "gh-pages", "revealjs", "prebuild", "build", "postbuild"]
 author: "Maria D. Campbell"
 ---
 

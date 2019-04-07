@@ -3,7 +3,7 @@ title: "Installing pgAdmin Only after installing PostgreSQL with Homebrew Part 2
 image: postgresql.jpg
 description: Getting to know your developer tools is just as important as learning to program, which takes me back to my battle with PostgreSQL on my machine.
 date: '2018-06-17'
-tags: ["homebew", "postgreesql", "pgadmin", "postgres-user", "postgres-password", "creating-postgres-user", "osx", "command-line", "terminal"]
+tags: ["homebrew", "postgresql", "pgadmin", "postgres-user", "postgres-password", "creating-postgres-user", "osx", "command-line", "terminal"]
 author: "Maria D. Campbell"
 ---
 

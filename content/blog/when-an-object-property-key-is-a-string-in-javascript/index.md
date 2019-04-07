@@ -3,7 +3,7 @@ title: "When an object property key is a string in JavaScript"
 image: davide-ragusa-225093-unsplash.jpg
 description: Notice the last property key in the cat object? It consists of two separate words and is encapsulated in quotes.
 date: '2018-01-24'
-tags: ["javascript objects", "bracket-notation"]
+tags: ["javascript-objects", "bracket-notation"]
 author: "Maria D. Campbell"
 ---
 
