@@ -3,7 +3,7 @@ title: "Class Conflicts"
 image: richard-lee-788052-unsplash.jpg
 description: Today I learned about how one can scope the css files of React components to the styling of only the components themselves using css modules.
 date: '2017-11-09'
-tags: ["react", "css modules", "scope"]
+tags: ["react", "css-modules", "scope"]
 author: "Maria D. Campbell"
 ---
 

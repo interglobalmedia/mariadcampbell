@@ -3,7 +3,7 @@ title: "e.keyCode || e.which?"
 image: guess_the_keys.jpg
 description: My final code includes a minor tweak I had to make in order for the colored box (read Guess the keys for more details)to render to the page in Firefox.
 date: '2018-02-05'
-tags: ["keyboard events", "e.keyCode", "e.which", "cross-browser-compatibility", "javascript"]
+tags: ["keyboard-events", "e-keyCode", "e-which", "cross-browser-compatibility", "javascript"]
 author: "Maria D. Campbell"
 ---
 

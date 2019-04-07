@@ -3,7 +3,7 @@ title: "Cleaning the house of code"
 image: cleaning_the_house_of_code.jpg
 description: I am cleaning up my Github profile, but I'm also cleaning up my house of code (in general).
 date: '2018-01-22'
-tags: ["code-cleanup", "decluttering-github", "dry-code", "presentation", "professionalism"]
+tags: ["code-cleanup", "de-cluttering-github", "dry-code", "presentation", "professionalism"]
 author: "Maria D. Campbell"
 ---
 
