@@ -3,7 +3,7 @@ title: "How to uninstall VS Code Seamlessly on your Mac"
 image: clean_my_mac.png
 description: When I upgraded to Mojave, my VS Code installation disappeared.
 date: '2019-01-05'
-tags: ["clean-my-mac", "visual-studio-code", "osx", "application-uninstalls"]
+tags: ["clean-my-mac", "vs-code", "osx", "application-uninstalls"]
 author: "Maria D. Campbell"
 ---
 
