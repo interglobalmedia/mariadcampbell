@@ -114,35 +114,16 @@ function BlogPage(props) {
                             color: prevPage ? '#cb4b16' : 'rgba(0,0,0,0.8)',
                             boxShadow: 'none', letterSpacing: '0.07em', marginLeft: '-1rem'
                         }}>
-                            ← Previous
+                            ← Newer
                         </Link>
                     )}
-                    {Array.from({ length: numPages }, (_, i) => (
-                        <li
-                            key={`pagination-number${i + 1}`}
-                            style={{
-                                margin: 0,
-                                listStyleType: 'none', marginLeft: '-1rem'
-                            }}
-                        >
-                            <Link
-                                to={`/blog/${i === 0 ? '' : i + 1}`}
-                                style={{
-                                    color: i + 1 === currentPage ? '#cb4b16' : 'rgba(0,0,0,0.8)',
-                                    paddingLeft: '5px', paddingRight: '5px', boxShadow: 'none', paddingBottom: '3px', letterSpacing: '0.07em'
-                                }}
-                            >
-                                {i + 1}
-                            </Link>
-                        </li>
-                    ))}
                     {!isLast && (
                         <Link to={nextPage} rel="next" style={{
                             color: nextPage ? '#cb4b16' : 'rgba(0,0,0,0.8)',
                             boxShadow: 'none', letterSpacing: '0.07em'
 
                         }}>
-                            Next →
+                            Older →
                         </Link>
                     )}
                 </PrevNextUl>
