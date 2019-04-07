@@ -3,7 +3,7 @@ title: "ES2018 language features available in v8js v6.4 and Chrome 64"
 image: es2018_language_features.jpg
 description: Adoption of the latest version of JavaScript takes place very quickly these days, which goes to show how important a language JavaScript has become!
 date: '2018-01-26'
-tags: ["es2018", "chrome-64", "v8-js", "javascript", "browser-compatibility"]
+tags: ["es-2018", "chrome-64", "v-8-engine", "javascript", "browser-compatibility"]
 author: "Maria D. Campbell"
 ---
 
