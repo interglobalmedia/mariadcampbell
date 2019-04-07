@@ -3,7 +3,7 @@ title: "My updated custom React workflow (2nd edition) is here"
 image: react_workflow_second_edition.jpg
 description: But THEN, when I came back to update some React apps and other JS related things, I saw that much had changed.
 date: '2018-11-29'
-tags: ["react", "webpack-4", "babel-7", "eslint-5-9", "custom-workflows", "jest", "documentation", "presentation", "npm"]
+tags: ["react", "webpack-4", "babel-7", "eslint-5-9", "custom-workflows", "jest", "documentation", "presentations", "npm"]
 author: "Maria D. Campbell"
 ---
 

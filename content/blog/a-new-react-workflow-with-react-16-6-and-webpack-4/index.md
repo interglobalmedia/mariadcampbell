@@ -3,7 +3,7 @@ title: "A New React Workflow With React 16.6 and Webpack 4+"
 image: react_workflows.jpg
 description: I just finished updating the first iteration of my React workflow to reflect changes in React 16.6 and Webpack 4.3.0.
 date: '2018-11-07'
-tags: ["web-development-workflows", "react-workflows", "css-modules", "front-end-development", "react-16-6", "webpack-4-3-0"]
+tags: ["web-development-workflows", "react-workflows", "css-modules", "front-end-development", "react-16-6", "webpack-4"]
 author: "Maria D. Campbell"
 ---
 

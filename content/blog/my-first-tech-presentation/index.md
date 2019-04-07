@@ -3,7 +3,7 @@ title: "My first tech presentation"
 image: reveal-presentation.jpg
 description: I'm giving my first technical presentation @ReactNYC this Thursday, September 28, 2017.
 date: '2017-09-25'
-tags: ["presentations", "technology", "react", "workflows", "webpack", "postcss", "modularization"]
+tags: ["presentations", "technology", "react", "workflows", "webpack", "postcss"]
 author: "Maria D. Campbell"
 ---
 

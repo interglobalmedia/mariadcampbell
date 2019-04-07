@@ -3,7 +3,7 @@ title: "Implementing ES6 Modules Without Webpack or Babel"
 image: browserify.png
 description: ES6 modules have been supported in Chrome since version 65, So why do we get errors if we try and use the import export keywords to import or export modules?
 date: '2018-07-11'
-tags: ["javascript", "es6-module-browser-support", "modular-web-development", "web-development-workflows", "webpack", "babel", "browserify"]
+tags: ["javascript", "es-6-module-browser-support", "modular-web-development", "web-development-workflows", "webpack", "babel", "browserify"]
 author: "Maria D. Campbell"
 ---
 
