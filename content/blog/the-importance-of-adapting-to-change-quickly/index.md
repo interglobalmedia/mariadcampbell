@@ -3,7 +3,7 @@ title: "The Importance Of Adapting To Change Quickly"
 image: node_npm.jpg
 description: Recently, I started revisiting some of the front end projects I had created some time ago.
 date: '2018-10-28'
-tags: ["web-development", "full-stack-javascript", "node-js", "web-development-workflows"]
+tags: ["web-development", "full-stack-javascript", "nodejs", "web-development-workflows"]
 author: "Maria D. Campbell"
 ---
 
