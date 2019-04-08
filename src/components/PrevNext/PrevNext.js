@@ -27,7 +27,7 @@ const PrevNext = (props) => {
     return (
         <PrevNextUl>
             {prev && <PrevNextLi><a href={prev.fields.slug}>
-                ← Previous {' '}<br />
+                ← Prev {' '}<br />
             </a></PrevNextLi>}
             {next && <PrevNextLi><a href={next.fields.slug}>
                 Next → {' '}<br />
