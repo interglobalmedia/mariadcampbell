@@ -1,0 +1,20 @@
+---
+title: "Troubleshooting MAMP Pro"
+image: mamp-pro-2015-06-23-10.28.10-1024x640.png
+description: If localhost is highlighted in red, it means that MAMP Pro is not recognizing your localhost install, and will therefore NOT work properly.
+date: '2015-06-23'
+tags: ["mysql", "php", "drupal", "joomla", "wordpress-local-development","mamp-pro","troubleshooting", "apache-server", "cms"]
+author: "Maria D. Campbell"
+---
+
+The above image represents how your **MAMP Pro** installation should look like in order to perform properly. The [Apache Server](http://httpd.apache.org/) checkbox should be green. The [MySQL](https://www.mysql.com/) checkbox should be green. [localhost](https://en.wikipedia.org/wiki/Localhost) should not be highlighted in red but should be in black text as here. Any other installation should be in black text as well, the **WordPress Extras** icon should appear in the **Extras** column for each installation as well. This indicates that **MAMP Pro** recognizes the **WordPress** local installation and **MySQL** database of your local **WordPress** installation. You are ready for local **WordPress development**!
+
+However, if `localhost` is highlighted in red, it means that **MAMP Pro** is ***not*** **recognizing** your `localhost` install, and will therefore NOT work properly. The **Apache Server** will not start, and you won’t have access to any of your local **WordPress** installations. No **WordPress development** for you!
+
+Let’s take this a step further so that you fully understand what ***improper*** installation or why `localhost` installation is ***unrecognizable*** to **MAMP Pro**. Click on your `localhost` installation. You do that by choosing the `Hosts` tab on the left-hand side of your **MAMP Pro** window, and then choose `localhost`. Then, on the ***right-hand side*** of the **MAMP Pro** window, there is another set of tabs. Select the `General` tab. You will know that your `localhost` installation is **incomplete** if your **document root** is **incomplete**. For instance, in my case, I noticed that my **WordPress** ***folder*** was **white**, indicating that there was **no such folder** there! Of course I had been making so many changes to that folder when I started using **MAMP Pro**, and even ignorantly disregarding the changes, that **MAMP Pro** ***finally*** **ceased working**, and the **Apache Server** ***wouldn’t start***. How did I **fix** this? I ***re-installed*** **WordPress** in my `localhost` and set up a ***new*** **WordPress development environment** so that I could ***access*** my **MAMP Pro** installations ***again***. In order to ***install*** **WordPress** ***locally*** with **MAMP Pro**, you **select** the **server**, in this case `localhost`, where you want to install **WordPress**, and then you select the `Extras` tab ***located*** on the **right side** of the **MAMP Pro** ***window***. There are a number of extras to choose from, i.e., [Drupal](https://www.drupal.org/) or **Joomla**, as well as **WordPress**. Click on the `+` tab at the bottom of the right side of the **MAMP Pro** ***window*** to add the [CMS](https://en.wikipedia.org/wiki/Content_management_system) you want to use. In my case, I chose **WordPress 4.0**. That is the most recent available version at this time with **MAMP Pro** ***Extras***. If you have already selected your document root for this installation, then there is nothing more to do. Make sure to ***restart*** **MAMP Pro** so that the changes that have been made will be updated and the **Apache Server** should start.
+
+FYI, I have **MAMP Pro 3.3** installed on my computer.
+
+### Related Resources:
+
++ [The Famous 5 Minute Local WordPress Install for Mac That Wasn’t](https://www.mariadcampbell.com/blog/the-famous-5-minute-local-wordpress-install-for-mac-that-wasnt/)
