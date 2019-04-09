@@ -10,7 +10,6 @@ import Metatags from '../components/Metatags/Metatags'
 
 import PrevNext from '../components/PrevNext/PrevNext'
 import Share from '../components/Share/Share'
-import Bio from '../components/Bio/Bio'
 import '../components/Layout/Layout.css'
 
 const PostWrapperDiv = styled.div`
