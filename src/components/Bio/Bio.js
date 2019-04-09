@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from "gatsby"
 import styled from '@emotion/styled'
 import { rhythm } from '../../utils/typography'
 import profileSmall from '../../images/profileSmall.png'
-import { SocialStrong } from '../../pages/info/info'
+import { SocialStrong } from '../Info/Info'
 
 const BioContainerWrapperDiv = styled.div`
   display: flex;
