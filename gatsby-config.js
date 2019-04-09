@@ -25,9 +25,6 @@ module.exports = {
     },
     {
       resolve: "gatsby-plugin-categories",
-      options: {
-        path: `${__dirname}/src/templates/category-template.js`,
-      }
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
