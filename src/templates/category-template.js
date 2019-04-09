@@ -1,17 +1,20 @@
 import React, { Component } from 'react'
-import Helmt from 'r4eact-helmet'
+import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import BlogPage from './blog-list-template'
+import Layout from '../components/Layout/Layout'
 
 class CategoryTemplate extends Component {
     render() {
         const { pageContext, data } = this.props;
         const { category } = pageContext;
         return (
-            <div className="category-container">
-                <Helmet title={`Posts in category "${category}"`} />
-                <BlogPage postEdges={data.allMarkdownRemark.edges} />
-            </div>
+            <Layout>
+                <div className="category-container">
+                    <Helmet title={`Posts in category "${category}"`} />
+                    <BlogPage postEdges={data.allMarkdownRemark.edges} />
+                </div>
+            </Layout>
         )
     }
 }
