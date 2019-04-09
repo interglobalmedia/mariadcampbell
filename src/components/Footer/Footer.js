@@ -26,6 +26,11 @@ const FooterStyle = styled.footer`
     }
 `
 
+const CreditWrapperDiv = styled.div`
+    margin-top: 2.25rem; 
+    color: whitesmoke;
+`
+
 const Footer = () => {
     return (
         <>
@@ -37,7 +42,7 @@ const Footer = () => {
                     outline: 'none',
                     background: 'transparent'
                 }} />
-                <div style={{ marginTop: '2.25rem', color: 'whitesmoke' }}>© {new Date().getFullYear()} Maria D. Campbell</div>
+                <CreditWrapperDiv>© {new Date().getFullYear()} Maria D. Campbell</CreditWrapperDiv>
             </FooterStyle>
         </>
     )
