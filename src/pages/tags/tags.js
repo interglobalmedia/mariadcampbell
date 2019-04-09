@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../../components/Layout/Layout'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHashtag, faTag } from '@fortawesome/free-solid-svg-icons'
+import { faTag } from '@fortawesome/free-solid-svg-icons'
 import styled from '@emotion/styled'
 
 const TagsDiv = styled.div`
@@ -22,11 +22,6 @@ const TagsDiv = styled.div`
     font-size: 1.1rem; 
     letter-spacing: 0.07em;
   }
-`
-
-const TagsTitleP = styled.p`
-  color: rgba(0, 0, 0, 1);
-  font-size: 1.3rem;
 `
 
 function TagsPage(props) {
