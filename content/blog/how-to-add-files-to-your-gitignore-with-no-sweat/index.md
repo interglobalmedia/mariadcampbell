@@ -4,6 +4,7 @@ image: hans-reniers-743407-unsplash.jpg
 description: I have only started to add .gitignore files to my projects on a more regular basis in the last few months.
 date: '2016-07-15'
 tags: ["gitignore", "git", "cli", "terminal"]
+categories: ["command-line"]
 author: "Maria D. Campbell"
 ---
 

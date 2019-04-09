@@ -4,6 +4,7 @@ image: patreon.jpg
 description:  I have taken my first steps in achieving my company's goals of bringing more tech awareness and efficiency to small business.
 date: '2019-03-08'
 tags: ["patreon", "git", "gh-pages", "version-control", "web-development", "static-websites", "teaching-tech", "benefits", "patronage"]
+categories: ["patreon", "distributed-version-control", "git"]
 author: "Maria D. Campbell"
 ---
 

@@ -4,6 +4,7 @@ image: guess_the_keys.jpg
 description: Last week I created a little game with vanilla Javascript revolving around the keypress event that might end up being reused one day in a bigger project.
 date: '2018-02-05'
 tags: ["keypress-event", "javascript", "event-listeners", "disabled-property"]
+categories: ["javascript"]
 author: "Maria D. Campbell"
 ---
 

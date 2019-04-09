@@ -4,6 +4,7 @@ image: favicons.png
 description: The other night was a real doozy, because I decided to add favicons to all my gh-pages hosted projects on Github.  
 date: '2017-02-25'
 tags: ["favicons", "chrome", "google-chrome-favicon-bug"]
+categories: ["front-end-development", "web-development"]
 author: "Maria D. Campbell"
 ---
 

@@ -4,6 +4,7 @@ image: cleaning_the_house_of_code.jpg
 description: I am cleaning up my Github profile, but I'm also cleaning up my house of code (in general).
 date: '2018-01-22'
 tags: ["code-cleanup", "github"]
+categories: ["computer-programming", "full-stack-javascript", "web-development"]
 author: "Maria D. Campbell"
 ---
 

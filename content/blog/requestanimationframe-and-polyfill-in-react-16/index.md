@@ -4,6 +4,7 @@ image: raf.png
 description: React depends on requestAnimationFrame, so make sure that you load a polyfill in older browsers. 
 date: '2017-09-27'
 tags: ["react", "react-16", "dependencies", "new-features", "workflows"]
+categories: ["front-end-development", "react", "web-development"]
 author: "Maria D. Campbell"
 ---
 

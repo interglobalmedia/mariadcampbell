@@ -4,6 +4,7 @@ image: postgresql.jpg
 description: My teacher said that if I was working on shared code with others using postgreSQL databases, that I should create another account because of security reasons.
 date: '2018-05-02'
 tags: ["web-development", "full-stack-javascript", "postgresql", "command-line", "terminal", "homebrew"]
+categories: ["command-line", "full-stack-javascript", "homebrew", "postgresql", "terminal", "web-development"]
 author: "Maria D. Campbell"
 ---
 

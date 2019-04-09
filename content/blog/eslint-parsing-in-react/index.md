@@ -4,6 +4,7 @@ image: formatter_logos.png
 description: I just completed creating a new custom workflow for React which included support for CSS Modules, SCSS, and image imports.
 date: '2018-12-04'
 tags: ["eslint", "react", "airbnb-style-guide", "prettier-code-formatter", "osx", "command-line", "terminal", "vs-code", "front-end-development", "web-development-workflows"]
+categories: ["front-end-development", "react", "code-editors", "vs-code", "web-development-workflows", "osx", "command-line", "terminal"]
 author: "Maria D. Campbell"
 ---
 

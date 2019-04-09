@@ -4,6 +4,7 @@ image: Custom-HTML5-Video-Player.jpg
 description: Last week I decided to dive into a new project of my own creation, and the project entailed re-using code I had already created, so I was very excited about it. 
 date: '2017-03-12'
 tags: ["code-typo", "html5", "css3", "javascript", "favicon-ico", "favicon-link"]
+categories: ["web-development"]
 author: "Maria D. Campbell"
 ---
 

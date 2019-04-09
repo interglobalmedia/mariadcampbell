@@ -4,6 +4,7 @@ image: postgresql.jpg
 description: Upgrading to the latest version of PostgreSQL via Homebrew.
 date: '2019-01-11'
 tags: ["upgrading-postgresql", "homebrew-postgres-install", "homebrew-postgres-upgrade", "osx", "mojave", "command-line", "terminal","postgresql-version-10", "postgresql-version-11"]
+categories: ["full-stack-javascript", "postgresql", "homebrew", "osx", "command-line"]
 author: "Maria D. Campbell"
 ---
 

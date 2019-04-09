@@ -1,9 +1,10 @@
 ---
-title: "Refactoring your JS workflow when your images are in your CSS only"
+title: "Removing caps from css headers"
 image: jeremy-bishop-50060-unsplash.jpg
-description: I have been doing quite a bit of enhancing and refactoring of apps I have built lately.
+description: I had never thought about changing the styling of css headers before.
 date: '2019-01-08'
-tags: ["distributed-version-control", "git", "web-development", "front-end-development", "javascript-automated-workflows", "webpack", "npm", "refactoring-code"]
+tags: ["css", "headers", "styles", "nocaps"]
+categories: ["web-design"]
 author: "Maria D. Campbell"
 ---
 

@@ -4,6 +4,7 @@ image: eslint_react.png
 description: Eslint (or some other code formatter) is very important in (code) development.
 date: '2018-11-19'
 tags: ["eslint", "eslint-configuration", "linters", "react", "babel-7", "webpack-4", "react-16-6-3", "react-custom-workflows", "javascript", npm, "command-line", "terminal-program", "osx"]
+categories: ["web-development", "front-end-development", "react", "web-development-workflows", "osx", "command-line", "terminal"]
 author: "Maria D. Campbell"
 ---
 

@@ -4,6 +4,7 @@ image: babel_jsx.png
 description: For the last day or so, I have been working on making Jest play nice with the new Babel 7.
 date: '2018-12-03'
 tags: ["jest", "babel-7", "web-development-workflows", "react", "webpack", "test-driven-development"]
+categories: ["web-development", "front-end-development", "react", "tdd", "web-development-workflows"]
 author: "Maria D. Campbell"
 ---
 

@@ -4,6 +4,7 @@ image: iorni-com-321845-unsplash.jpg
 description: When I got home, I researched how to completely uninstall postgres on my administrator account, install it via Homebrew, and get subsequently get it running.
 date: '2018-04-30'
 tags: ["migration-assistant", "homebrew", "osx", "command-line", "terminal-program", "full-stack-javascript", "postgresql", "web-development"]
+categories: ["web-development", "command-line", "full-stack_javascript", "osx", "postgresql", "terminal"]
 author: "Maria D. Campbell"
 ---
 

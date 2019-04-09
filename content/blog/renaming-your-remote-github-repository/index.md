@@ -4,6 +4,7 @@ image: remote_repo.png
 description: Today I came across a repository which I wanted to rename, because it did not mirror the name in the JavaScript30 repository on Github!
 date: '2017-01-16'
 tags: ["command-line-interface", "unix", "osx", "oh-my-zsh", "z-shell", "mv-command", "case-sensitivity", "uppercase", "lowercase", "git", "github", "local-repository", "remote-repository", "renaming-git-repositories"]
+categories: ["github", "git", "distributed-version-control"]
 author: "Maria D. Campbell"
 ---
 

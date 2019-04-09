@@ -4,6 +4,7 @@ image: robby.jpg
 description: I have been using the Z Shell, specifically Oh My Zsh, for almost two years now.
 date: '2017-01-13'
 tags: ["z-shell", "oh-my-zsh", "robby-russell", "path-configuration","upgrading-oh-my-zsh", "git-init", "git-fetch", "git-reset", "rvm", "ruby-gems", "goal-setting"]
+categories: ["web-development"]
 author: "Maria D. Campbell"
 ---
 

@@ -4,6 +4,7 @@ image: es2018_language_features.jpg
 description: Adoption of the latest version of JavaScript takes place very quickly these days, which goes to show how important a language JavaScript has become!
 date: '2018-01-26'
 tags: ["es-2018", "chrome-64", "v-8-engine", "javascript", "browser-compatibility"]
+categories: ["javascript"]
 author: "Maria D. Campbell"
 ---
 

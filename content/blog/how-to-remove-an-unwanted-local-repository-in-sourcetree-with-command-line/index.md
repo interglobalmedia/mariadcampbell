@@ -4,6 +4,7 @@ image: kazuend-30877-unsplash.jpg
 description: Last week, I forgot to drag the folder I wanted to track into the Sourcetree bookmarks window and created a new repository directly in the bookmarks window.
 date: '2015-07-08'
 tags: ["distributed-version-control", "git", "sourcetree", "git-gui"]
+categories: ["command-line", "git", "sourcetree"]
 author: "Maria D. Campbell"
 ---
 

@@ -4,6 +4,7 @@ image: nvm.jpg
 description: The other day I wrote a post about Oh my zsh in which I mentioned that my next post would be about fixing my nvm install, so this morning I did just that.
 date: '2017-01-15'
 tags: ["nvm", "nodejs", "fixing-nvm-install", "command-line", "z-shell", "oh-my-zsh", "osx"]
+categories: ["z-shell", "zsh"]
 author: "Maria D. Campbell"
 ---
 

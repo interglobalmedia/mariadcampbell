@@ -4,6 +4,7 @@ image: terminal.png
 description: what I did when my Ruby system install broke.
 date: '2019-01-08'
 tags: ["command-line", "osx", "terminal", "history", "output-to-file", "session-log", "stdin", "stdout", "unix-script-command"]
+categories: ["osx", "command-line", "terminal"]
 author: "Maria D. Campbell"
 ---
 

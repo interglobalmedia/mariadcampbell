@@ -4,6 +4,7 @@ image: randy-laybourne-712849-unsplash.jpg
 description: I just finished watching Wes Bos' Command Line For Power Users series, and it was great.
 date: '2017-01-16'
 tags: ["command-line-interface", "osx", "el-capitan", "npm", "trash-npm-package", "local-installs", "global-installs", "atom-text-editor","rm-command", "zsh", "z-shell", "unix"]
+categories: ["command-line", "node-package-manager", "z-shell", "zsh"]
 author: "Maria D. Campbell"
 ---
 

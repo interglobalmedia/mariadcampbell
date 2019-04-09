@@ -4,6 +4,7 @@ image: alejandro-alvarez-150154-unsplash.jpg
 description: Yesterday React 16.0 was released, and guess what happened to my project.
 date: '2017-09-27'
 tags: ["react", "react-16"]
+categories: ["front-end-development", "react", "web-development"]
 author: "Maria D. Campbell"
 ---
 

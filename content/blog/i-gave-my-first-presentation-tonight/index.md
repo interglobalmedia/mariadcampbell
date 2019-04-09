@@ -4,6 +4,7 @@ image: react-workflows.jpg
 description: Tonight I gave my first tech presentation (ever), and it was about creating your own React workflow without using create-react-app.
 date: '2017-09-28'
 tags: ["react-workflows", "react", "webpack", "jest", "postcss", "modularization", "developer-workflows"]
+categories: ["front-end-development", "react", "web-development", "web-development-workflows"]
 author: "Maria D. Campbell"
 ---
 
