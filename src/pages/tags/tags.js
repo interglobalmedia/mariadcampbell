@@ -24,11 +24,6 @@ const TagsDiv = styled.div`
   }
 `
 
-const TagsTitleP = styled.p`
-  color: rgba(0, 0, 0, 1);
-  font-size: 1.3rem;
-`
-
 function TagsPage(props) {
   const data = props.data.allMarkdownRemark.group
   return (
