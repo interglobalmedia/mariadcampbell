@@ -1,48 +1,51 @@
-import React, { Component } from 'react'
-import Helmet from 'react-helmet'
-import { graphql } from 'gatsby'
-import BlogPage from './blog-list-template'
+import React from 'react'
+import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout/Layout'
 
-class CategoryTemplate extends Component {
-    render() {
-        const { pageContext, data } = this.props;
-        const { category } = pageContext;
-        return (
-            <Layout>
-                <div className="category-container">
-                    <Helmet title={`Posts in category "${category}"`} />
-                    <BlogPage postEdges={data.allMarkdownRemark.edges} />
+function CategoryTemplate(props) {
+    const posts = props.data.allMarkdownRemark.edges
+    const { category } = props.pageContext
+    return (
+        <Layout>
+            <div className="category-container">
+                <span>{`Posts in category ${category}`}</span>
+                <div>
+                    {
+                        posts.map(({ node }, i) =>
+                            <Link to={node.fields.slug}>
+                                {node.frontmatter.title}
+                            </Link>
+                        )
+                    }
                 </div>
-            </Layout>
-        )
-    }
+            </div>
+        </Layout>
+    )
+
 }
 
 export default CategoryTemplate
 
 export const pageQuery = graphql`
-    query CategoryPage($category: String) {
-        allMarkdownRemark(
-            limit: 1000
-            filter: {fields: {category: {$eq: $category}}}
-        ) {
-            totalCount
-            edges {
-                node {
-                    fields {
-                        slug
-                        category
-                    }
-                    excerpt
-                    timeToRead
-                    frontmatter {
-                        title
-                        tags
-                        date
-                    }
+    query CatsQuery($category: String!) {
+    allMarkdownRemark(
+        limit: 2000
+        sort: { fields: [frontmatter___date], order: DESC }
+        filter: { frontmatter: { categories: { eq: $category } }}
+    ) {
+        edges {
+            node {
+                frontmatter {
+                    title
+                }
+                fields {
+                    slug
+                }
+                frontmatter {
+                    categories
                 }
             }
         }
     }
+}
 `
