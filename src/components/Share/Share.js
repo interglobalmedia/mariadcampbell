@@ -10,19 +10,15 @@ const SocialUl = styled.ul`
     justify-content: center;
     margin-top: 2rem;
     margin-bottom: 3rem;
-    margin-left: 0;
     margin-left: auto;
     margin-right: auto;
     padding-top: 1rem;
     width: 100%;
     & li {
-        // margin-right: 1.5rem;
         list-style-type: none;
         & a {
             color: rgba(132,0,88, 1);
-            // background: whitesmoke;
             box-shadow: none; 
-            // border-radius: 50%; 
             padding-top: 17px; 
             padding-bottom: 8px;
             padding-left: 8px; 
