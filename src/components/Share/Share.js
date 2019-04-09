@@ -8,27 +8,30 @@ const SocialUl = styled.ul`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 3rem;
-    margin-bottom: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1rem;
+    width: 100%;
     & li {
-        margin-right: 1.5rem;
         list-style-type: none;
         & a {
-            color: #cb4b16; 
+            color: rgba(132,0,88, 1);
             box-shadow: none; 
-            border: 1px solid rgba(0,0,0,0.8); 
-            border-radius: 50%; 
             padding-top: 17px; 
             padding-bottom: 8px;
             padding-left: 8px; 
             padding-right: 8px; 
-            background: rgba(29,202,255, 1);
             & :nth-of-type(2) {
                 padding-top: 20px; 
                 padding-bottom: 5px;
 
             }
         }
+    }
+    @media (max-width: 374px) {
+        margin-left: 1rem;
     }
 `
 
@@ -42,17 +45,17 @@ const Share = props => {
         <SocialUl>
             <li>
                 <a href={fb} target="blank">
-                    <FontAwesomeIcon icon={faFacebookF} size='2x' style={{ width: '30px', height: '30px' }} />
+                    <FontAwesomeIcon icon={faFacebookF} size='2x' style={{ width: '24px', height: '24px', marginLeft: '-0.5rem' }} />Facebook
                 </a>
             </li>
             <li>
                 <a href={twitter} target="blank">
-                    <FontAwesomeIcon icon={faTwitter} size='2x' style={{ width: '30px', height: '30px' }} />
+                    <FontAwesomeIcon icon={faTwitter} size='2x' style={{ width: '24px', height: '24px', marginRight: '0.25rem' }} />Twitter
                 </a>
             </li>
             <li>
                 <a href={linkedin} target="blank">
-                    <FontAwesomeIcon icon={faLinkedinIn} size='2x' style={{ width: '30px', height: '30px' }} />
+                    <FontAwesomeIcon icon={faLinkedinIn} size='2x' style={{ width: '24px', height: '24px', marginRight: '0.25rem' }} />Linkedin
                 </a>
             </li>
         </SocialUl>

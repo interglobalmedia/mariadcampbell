@@ -100,7 +100,6 @@ function BlogPost(props) {
           <div className="post-social-share">
             <Share title={title} url={url} pathname={props.location.pathname} />
           </div>
-          <Bio />
           <div className="prev-next-div">
             <PrevNext prev={prev && prev.node} next={next && next.node} />
           </div>
