@@ -7,7 +7,7 @@ import styled from '@emotion/styled'
 import profileSmall from '../../images/profileSmall.png'
 
 const InfoLayout = styled.ul`
-  margin: 3rem auto 0;
+  margin: 3rem auto 0.5rem;
   width: 100vw;
   margin-left: 50%;
   transform: translateX(-50%);
