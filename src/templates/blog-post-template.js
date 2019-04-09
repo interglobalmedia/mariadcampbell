@@ -37,6 +37,12 @@ const PostTitle = styled.h1`
   margin-bottom: 2rem;
   letter-spacing: 0.07em;
 `
+
+const PostDateP = styled.p`
+  text-align: center;
+  color: rgba(132,0,88, 1);
+`
+
 const DangerousDiv = styled.div`
 & p {
   letter-spacing: 0.07em;
@@ -72,7 +78,7 @@ const PostTagsDiv = styled.div`
 function BlogPost(props) {
   const url = props.data.site.siteMetadata.siteUrl
   const thumbnail = props.data.markdownRemark.frontmatter.image && props.data.markdownRemark.frontmatter.image.childImageSharp.resize.src
-  const { title, image, tags } = props.data.markdownRemark.frontmatter
+  const { title, date, image, tags } = props.data.markdownRemark.frontmatter
   const { prev, next } = props.pageContext
   return (
     <Layout>
@@ -89,6 +95,7 @@ function BlogPost(props) {
         </ImageDiv>
         <PostContent>
           <PostTitle>{title}</PostTitle>
+          <PostDateP>{date}</PostDateP>
           <DangerousDiv dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}></DangerousDiv>
           <PostTagsDiv>
             <TaggedInSpan>Tagged in: </TaggedInSpan>
@@ -117,6 +124,7 @@ export const query = graphql`
        excerpt
        frontmatter {
         title
+        date(formatString: "MMMM Do, YYYY")
         tags
         image {
           childImageSharp {
