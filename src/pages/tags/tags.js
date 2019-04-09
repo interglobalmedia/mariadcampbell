@@ -34,7 +34,6 @@ function TagsPage(props) {
   return (
     <Layout>
       <TagsDiv>
-        <TagsTitleP><FontAwesomeIcon icon={faHashtag} style={{ width: '36px', height: '36px' }} /></TagsTitleP>
         {
           data.map(tag => (
             <Link to={`/tags/${tag.fieldValue}`}>
