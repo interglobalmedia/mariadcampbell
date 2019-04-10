@@ -14,6 +14,7 @@ const TagsH1 = styled.h1`
 const TagsDiv = styled.div`
     display: flex;
     flex-direction: column;
+    margin: 0.75rem auto 4rem;
     & a {
         margin-bottom: 2rem; 
         list-style-type: none; 
