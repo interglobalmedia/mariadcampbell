@@ -4,7 +4,7 @@ image: postgresql.jpg
 description: I hadn't installed pgAdmin with Homebrew previously because it is severely outdated, but decided I should give it a try on the pgAdmin website.
 date: '2018-06-15'
 tags: ["web-development", "full-stack-javascript", "postgresql", "command-line", "homebrew"]
-categories: ["web-development"]
+categories: ["web-development", "full-stack-javascript", "postresql", "command-line", "homebrew"]
 author: "Maria D. Campbell"
 ---
 
