@@ -4,6 +4,7 @@ import Layout from '../../components/Layout/Layout'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTag } from '@fortawesome/free-solid-svg-icons'
 import styled from '@emotion/styled'
+import { Helmet } from 'react-helmet'
 
 const TagsDiv = styled.div`
   width: 90%;
@@ -14,7 +15,7 @@ const TagsDiv = styled.div`
   & a {
     margin-bottom: 2rem;
     list-style-type: none; 
-    background: #fdf6e3; 
+    background: #fdf6e3;
     color: #cb4b16; 
     width: 100%; 
     padding: 1rem; 
@@ -28,6 +29,13 @@ function TagsPage(props) {
   const data = props.data.allMarkdownRemark.group
   return (
     <Layout>
+      <div className="application">
+        <Helmet>
+          <meta charset="utf-8" />
+          <title>Tags Page</title>
+          <Link rel="canonical" href="https://www.mariadcampbell.com/tags/tags" />
+        </Helmet>
+      </div>
       <TagsDiv>
         {
           data.map((tag, i) => (
