@@ -2,6 +2,7 @@ import React from 'react'
 import travel from '../images/chris-lawton-346402-unsplash.jpg'
 import styled from '@emotion/styled'
 import Header from '../components/Header/Header'
+import { Helmet } from 'react-helmet'
 
 const Container = styled.div`
     background: rgba(255,255,255,0.4);
@@ -51,6 +52,11 @@ const FooterStyle = styled.footer`
 const IndexPage = ({ siteTitle }) => {
     return (
         <Container>
+            <Helmet>
+                <meta charset="utf-8" />
+                <title>Maria D. Campbell</title>
+                <Link rel="canonical" href="https://www.mariadcampbell.com/" />
+            </Helmet>
             <div className="Site">
                 <Header />
                 <div className='Site-content'>
