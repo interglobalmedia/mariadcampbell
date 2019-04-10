@@ -23,9 +23,6 @@ module.exports = {
         name: 'blog',
       },
     },
-    {
-      resolve: "gatsby-plugin-categories",
-    },
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     {
