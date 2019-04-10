@@ -64,8 +64,24 @@ const DangerousDiv = styled.div`
 
 const TaggedInSpan = styled.span`
   letter-spacing: 0.07em;
+  color: rgba(132,0,88,1);
 `
 const PostTagsDiv = styled.div`
+  & a {
+  box-shadow: none; 
+  color: #cb4b16;
+  letter-spacing: 0.07em;
+  & :hover {
+    text-decoration: underline;
+  }
+`
+const CategorizedInSpan = styled.span`
+  letter-spacing: 0.07em;
+  color: rgba(132,0,88,1);
+`
+
+const PostCategoriesDiv = styled.div`
+margin-top: 1.5rem;
   & a {
   box-shadow: none; 
   color: #cb4b16;
@@ -102,13 +118,15 @@ function BlogPost(props) {
             {tags.map((tag, i) => (
               <Link to={`/tags/${tag}`} key={i}><FontAwesomeIcon icon={faTag} style={{ color: '#268bd2' }} /> {tag} </Link>
             ))}
-            <span>Categorized under: </span>
+          </PostTagsDiv>
+          <PostCategoriesDiv>
+            <CategorizedInSpan>Categorized under: </CategorizedInSpan>
             {categories.map((category, i) => (
-              <Link to={`/categories/${category}`} key={i}><FontAwesomeIcon icon={faFolder} style={{ color: '#268bd2' }} />
+              <Link to={`/categories/${category}`} key={i}><FontAwesomeIcon icon={faFolder} style={{ color: '#268bd2', marginRight: '0.25rem', marginLeft: '0.5rem' }} />
                 {category}
               </Link>
             ))}
-          </PostTagsDiv>
+          </PostCategoriesDiv>
           <div className="post-social-share">
             <Share title={title} url={url} pathname={props.location.pathname} />
           </div>
