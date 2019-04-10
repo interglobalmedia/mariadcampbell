@@ -6,9 +6,9 @@ import styled from '@emotion/styled'
 const CategoriesH1 = styled.h1`
     display: flex;
     justify-content: flex-start;
-    margin: 3rem auto 0; 
-    padding-left: 1.5rem; 
+    margin: 0 auto; 
     letter-spacing: 0.07em;
+    width: 100%;
 `
 
 const CategoriesDiv = styled.div`
@@ -17,16 +17,17 @@ const CategoriesDiv = styled.div`
     justify-content: space-around;
     align-items: center;
     margin: 0.75rem auto 4rem;
+    width: 100%;
     & a {
         margin-bottom: 2rem; 
         list-style-type: none; 
         background: #fdf6e3; 
         color: #cb4b16; 
-        width: 90%; 
+        width: 100%; 
         padding: 1rem; 
         text-decoration: none; 
         font-size: 1.1rem; 
-        margin: 2rem auto 0; 
+        margin: 1.5rem auto 0; 
         letter-spacing: 0.07em;
     }
 `
@@ -36,16 +37,19 @@ function CategoryTemplate(props) {
     const { category } = props.pageContext
     return (
         <Layout>
-            <CategoriesH1>{`posts in category: ${category}`}</CategoriesH1>
-            <CategoriesDiv>
-                {
-                    posts.map(({ node }, i) =>
-                        <Link to={node.fields.slug} key={i}>
-                            {node.frontmatter.title}
-                        </Link>
-                    )
-                }
-            </CategoriesDiv>
+            <div style={{ width: '90%', maxWidth: '960px', margin: '0 auto' }}>
+                <CategoriesH1>{`posts in category: ${category}`}</CategoriesH1>
+                <CategoriesDiv>
+                    {
+                        posts.map(({ node }, i) =>
+                            <Link to={node.fields.slug} key={i}>
+                                {node.frontmatter.title}
+                            </Link>
+                        )
+                    }
+                </CategoriesDiv>
+            </div>
+
         </Layout>
     )
 

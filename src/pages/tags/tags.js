@@ -8,12 +8,13 @@ import { Helmet } from 'react-helmet'
 
 const TagsDiv = styled.div`
   width: 90%;
+  max-width: 960px;
   margin: 3rem auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   & a {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     list-style-type: none; 
     background: #fdf6e3;
     color: #cb4b16; 
@@ -29,13 +30,11 @@ function TagsPage(props) {
   const data = props.data.allMarkdownRemark.group
   return (
     <Layout>
-      <div className="application">
-        <Helmet>
-          <meta charset="utf-8" />
-          <title>Tags Page</title>
-          <Link rel="canonical" href="https://www.mariadcampbell.com/tags/tags" />
-        </Helmet>
-      </div>
+      <Helmet>
+        <meta charset="utf-8" />
+        <title>Tags Page</title>
+        <Link rel="canonical" href="https://www.mariadcampbell.com/tags/tags" />
+      </Helmet>
       <TagsDiv>
         {
           data.map((tag, i) => (

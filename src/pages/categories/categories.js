@@ -7,7 +7,8 @@ import styled from '@emotion/styled'
 import { Helmet } from 'react-helmet'
 
 const CategoriesDiv = styled.div`
-    width: 90%;
+  width: 90%;
+  max-width: 960px;
   margin: 3rem auto;
   display: flex;
   flex-direction: column;
