@@ -41,6 +41,7 @@ const PostTitle = styled.h1`
 const PostDateP = styled.p`
   text-align: center;
   color: rgba(132,0,88, 1);
+  letter-spacing: 0.07em;
 `
 
 const DangerousDiv = styled.div`
