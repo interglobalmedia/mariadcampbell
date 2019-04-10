@@ -4,7 +4,7 @@ image: terminal.png
 description: Since I started my Evening JS Intensive boot camp, I have found the need to compress assignment directories for upload to Canvas.
 date: '2018-01-24'
 tags: ["compressing-directories", "command-line", "osx", "unix"]
-categories: ["command-line", "osx""]
+categories: ["command-line", "osx"]
 author: "Maria D. Campbell"
 ---
 
