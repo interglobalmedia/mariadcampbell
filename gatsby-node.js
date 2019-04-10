@@ -24,9 +24,10 @@ exports.createPages = ({ actions, graphql }) => {
                   slug
               }
             frontmatter {
-              title,
+              title
               author
               tags
+              categories
             }
           }
         }
@@ -40,6 +41,7 @@ exports.createPages = ({ actions, graphql }) => {
       const blogPostTemplate = path.resolve('./src/templates/blog-post-template.js');
       const blogListTemplate = path.resolve('./src/templates/blog-list-template.js');
       const tagsTemplate = path.resolve('./src/templates/tag-template.js')
+      const catsTemplate = path.resolve('./src/templates/category-template.js')
       // Create blog-list pages
       const posts = result.data.allMarkdownRemark.edges
       // All tags
@@ -61,18 +63,38 @@ exports.createPages = ({ actions, graphql }) => {
             tag,
           }
         })
-      }),
-        posts.forEach(({ node }, index) => {
-          createPage({
-            path: node.fields.slug,
-            component: blogPostTemplate,
-            context: {
-              slug: node.fields.slug,
-              prev: index === 0 ? null : posts[index - 1],
-              next: index === result.length - 1 ? null : posts[index + 1],
-            }, // additional data can be passed via context
-          })
-        }))
+      }))
+      // All Categories
+      let allCats = []
+      // Iterate through each post pulling all found categories into allCats array
+      _.each(posts, edge => {
+        if (_.get(edge, "node.frontmatter.categories")) {
+          allCats = allCats.concat(edge.node.frontmatter.categories)
+        }
+      })
+      // Eliminate duplicate categories
+      allCats = _.uniq(allCats)
+
+      allCats.forEach((category => {
+        createPage({
+          path: `/categories/${_.kebabCase(category)}/`,
+          component: catsTemplate,
+          context: {
+            category,
+          }
+        })
+      }))
+      posts.forEach(({ node }, index) => {
+        createPage({
+          path: node.fields.slug,
+          component: blogPostTemplate,
+          context: {
+            slug: node.fields.slug,
+            prev: index === 0 ? null : posts[index - 1],
+            next: index === result.length - 1 ? null : posts[index + 1],
+          }, // additional data can be passed via context
+        })
+      })
       // Create blog post list pages
       const postsPerPage = 6;
       const numPages = Math.ceil(posts.length / postsPerPage);

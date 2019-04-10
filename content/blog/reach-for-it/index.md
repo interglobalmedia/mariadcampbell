@@ -4,6 +4,7 @@ image: reach_for_it.jpg
 description: I was working on a little project for my Evening JS Intensive class, & I found an inspirational and wonderful photo on Unsplash (above) taken by Bryan Minear.
 date: '2018-02-06'
 tags: ["inspirational-images", "javascript", "arrays", "strings", "index-randomization", "responsive design"]
+categories: ["javascript"]
 author: "Maria D. Campbell"
 ---
 

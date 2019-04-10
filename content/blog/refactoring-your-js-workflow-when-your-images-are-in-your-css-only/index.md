@@ -4,6 +4,7 @@ image: big_code_refactoring_with_agility.jpg
 description: I have been doing quite a bit of enhancing and refactoring of apps I have built lately.
 date: '2019-01-08'
 tags: ["distributed-version-control", "git", "web-development", "front-end-development", "javascript-automated-workflows", "webpack", "npm", "refactoring-code"]
+categories: ["front-end-development", "javascript", "node-package-manager", "web-development-workflows", "distributed-version-control", "git"]
 author: "Maria D. Campbell"
 ---
 

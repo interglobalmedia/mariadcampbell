@@ -4,6 +4,7 @@ image: iTerm2.jpg
 description: For the longest time I couldn't get an instance of my iTerm2 Terminal window to open via the Spotlight search bar on my Mac.
 date: '2018-01-26'
 tags: ["spotlight", "search", "iterm-2", "osx", "command-line"]
+categories: ["command-line", "osx", "spotlight-search"]
 author: "Maria D. Campbell"
 ---
 

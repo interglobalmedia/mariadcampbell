@@ -7,7 +7,7 @@ import styled from '@emotion/styled'
 
 const TagsDiv = styled.div`
   width: 90%;
-  margin: 3rem auto 0;
+  margin: 3rem auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -30,8 +30,8 @@ function TagsPage(props) {
     <Layout>
       <TagsDiv>
         {
-          data.map(tag => (
-            <Link to={`/tags/${tag.fieldValue}`}>
+          data.map((tag, index) => (
+            <Link to={`/tags/${tag.fieldValue}`} key={index}>
               <FontAwesomeIcon icon={faTag} style={{ color: '#268bd2' }} /> {tag.fieldValue} {`(${tag.totalCount})`}
             </Link>
           ))

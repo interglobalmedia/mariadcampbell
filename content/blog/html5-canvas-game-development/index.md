@@ -4,6 +4,7 @@ image: breakout-game-mdn.jpg
 description: I just finished developing a 2D Breakout Game using HTML5 Canvas.
 date: '2016-11-09'
 tags: ["javascript", "html", "css", "github", "apis", "uis", "web-performance-optimization", "html5-canvas", "js-game-development", "mobile-development"]
+categories: ["front-end-development"]
 author: "Maria D. Campbell"
 ---
 

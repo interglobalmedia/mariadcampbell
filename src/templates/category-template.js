@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout/Layout'
 import styled from '@emotion/styled'
 
-const TagsH1 = styled.h1`
+const CategoriesH1 = styled.h1`
     display: flex;
     justify-content: flex-start;
     margin: 3rem auto 0; 
@@ -11,9 +11,11 @@ const TagsH1 = styled.h1`
     letter-spacing: 0.07em;
 `
 
-const TagsDiv = styled.div`
+const CategoriesDiv = styled.div`
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     margin: 0.75rem auto 4rem;
     & a {
         margin-bottom: 2rem; 
@@ -29,33 +31,34 @@ const TagsDiv = styled.div`
     }
 `
 
-function Tags(props) {
+function CategoryTemplate(props) {
     const posts = props.data.allMarkdownRemark.edges
-    const { tag } = props.pageContext
+    const { category } = props.pageContext
     return (
         <Layout>
-            <TagsH1>{`posts in: ${tag}`}</TagsH1>
-            <TagsDiv>
+            <CategoriesH1>{`posts in category: ${category}`}</CategoriesH1>
+            <CategoriesDiv>
                 {
                     posts.map(({ node }, i) =>
-                        <Link to={node.fields.slug}>
+                        <Link to={node.fields.slug} key={i}>
                             {node.frontmatter.title}
                         </Link>
                     )
                 }
-            </TagsDiv>
+            </CategoriesDiv>
         </Layout>
     )
+
 }
 
-export default Tags
+export default CategoryTemplate
 
-export const query = graphql`
-query TagsQuery($tag: String!) {
+export const pageQuery = graphql`
+    query CatsQuery($category: String!) {
     allMarkdownRemark(
         limit: 2000
         sort: { fields: [frontmatter___date], order: DESC }
-        filter: { frontmatter: { tags: { eq: $tag } }}
+        filter: { frontmatter: { categories: { eq: $category } }}
     ) {
         edges {
             node {
@@ -66,7 +69,7 @@ query TagsQuery($tag: String!) {
                     slug
                 }
                 frontmatter {
-                    tags
+                    categories
                 }
             }
         }

@@ -4,6 +4,7 @@ image: vscode.png
 description: In desperation, I decided to check out Microsoft's Visual Studio Code, and to my amazement, I found that the editor itself is 100% FREE!
 date: '2018-01-08'
 tags: ["code-editors", "javascript", "vs-code", "ides"]
+categories: ["code-editors", "ides", "javascript", "vs-code"]
 author: "Maria D. Campbell"
 ---
 

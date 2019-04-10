@@ -4,6 +4,7 @@ image: md5.png
 description: I had one last step I had to take to ensure that my PostgreSQL upgrade configuration mirrored that of the previous version.
 date: '2019-01-11'
 tags: ["user-authentication", "database-configuration", "trust", "md5", "root-user", "homebrew", "terminal", "command-line", "osx", "back-end-development"]
+categories: ["full-stack-javascript", "postgresql", "osx", "command-line", "terminal", "homebrew"]
 author: "Maria D. Campbell"
 ---
 

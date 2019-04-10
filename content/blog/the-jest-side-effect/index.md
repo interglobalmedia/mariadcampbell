@@ -4,6 +4,7 @@ image: meds_side_effect_ocduk.jpg
 description: There was a side effect to my modification.
 date: '2018-12-03'
 tags: ["jest", "babel-7", "react", "webpack", "custom-react-workflows", "test-driven-development"]
+categories: ["web-development", "front-end-development", "react", "tdd"]
 author: "Maria D. Campbell"
 ---
 

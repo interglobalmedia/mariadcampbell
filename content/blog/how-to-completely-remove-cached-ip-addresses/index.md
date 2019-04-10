@@ -4,6 +4,7 @@ image: how-to-hide-your-ip-address.jpg
 description: Recently I migrated interglobalmedianetwork.com from WordPress to Hugo and hosting it on Github gh-pages, but I had quite a time with getting the site to display on my computer!
 date: '2017-06-02'
 tags: ["dns", "dns-propagation", "computer-caches", "hosts-file", "mac-osx","mac-os-sierra", "local-cache-removal", "cached-ip-addresses"]
+categories: ["web-development"]
 author: "Maria D. Campbell"
 ---
 

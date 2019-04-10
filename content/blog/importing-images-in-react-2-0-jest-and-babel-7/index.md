@@ -4,6 +4,7 @@ image: react_jest.png
 description: Yesterday I added an image to a new project, and I tried to implement it using the workflow I had set up in my previous custom React Workflow, and it DID NOT WORK!
 date: '2018-12-02'
 tags: ["jest", "webpack-4", "babel-7", "react", "workflows", "front-end-development",  "modern-javascript"]
+categories: ["web-development", "front-end-development", "react", "web-development-workflows"]
 author: "Maria D. Campbell"
 ---
 

@@ -4,6 +4,7 @@ image: how-big-is-my-browser.jpg
 description: Today I was adding a new project image to my front end developer portfolio, and I had the damnedest time trying to match its size to all the others.
 date: '2017-02-02'
 tags: ["browser-window-size", "image-size-matching", "front-end-development","tools", "time-savers", "workflows", "chrome-extensions"]
+categories: ["front-end-development"]
 author: "Maria D. Campbell"
 ---
 

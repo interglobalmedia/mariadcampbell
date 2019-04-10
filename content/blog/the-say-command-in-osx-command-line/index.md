@@ -4,6 +4,7 @@ image: andy-tootell-59614-unsplash.jpg
 description: Happy chatting up with your computer!
 date: '2018-01-24'
 tags: ["say-command", "unix", "command-line"]
+categories: ["command-line", "osx"]
 author: "Maria D. Campbell"
 ---
 

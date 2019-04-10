@@ -4,6 +4,7 @@ image: importing_images_react.jpg
 description: Here I just want to talk about what I had to do to make images I used work properly in my React app both locally AND remotely.
 date: '2017-10-07'
 tags: ["importing-images", "react", "webpack", "react-workflows"]
+categories: ["front-end-development", "react", "web-development", "web-development-workflows"]
 author: "Maria D. Campbell"
 ---
 

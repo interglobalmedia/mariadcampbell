@@ -1,7 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'gatsby'
-import { faTag } from '@fortawesome/free-solid-svg-icons'
+import { faTag, faFolder } from '@fortawesome/free-solid-svg-icons'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from '@emotion/styled'
@@ -78,7 +78,7 @@ const PostTagsDiv = styled.div`
 function BlogPost(props) {
   const url = props.data.site.siteMetadata.siteUrl
   const thumbnail = props.data.markdownRemark.frontmatter.image && props.data.markdownRemark.frontmatter.image.childImageSharp.resize.src
-  const { title, date, image, tags } = props.data.markdownRemark.frontmatter
+  const { title, date, image, tags, categories } = props.data.markdownRemark.frontmatter
   const { prev, next } = props.pageContext
   return (
     <Layout>
@@ -101,6 +101,12 @@ function BlogPost(props) {
             <TaggedInSpan>Tagged in: </TaggedInSpan>
             {tags.map((tag, i) => (
               <Link to={`/tags/${tag}`} key={i}><FontAwesomeIcon icon={faTag} style={{ color: '#268bd2' }} /> {tag} </Link>
+            ))}
+            <span>Categorized under: </span>
+            {categories.map((category, i) => (
+              <Link to={`/categories/${category}`} key={i}><FontAwesomeIcon icon={faFolder} style={{ color: '#268bd2' }} />
+                {category}
+              </Link>
             ))}
           </PostTagsDiv>
           <div className="post-social-share">
@@ -126,6 +132,7 @@ export const query = graphql`
         title
         date(formatString: "MMMM Do, YYYY")
         tags
+        categories
         image {
           childImageSharp {
             resize(width: 1500, height: 1500) {

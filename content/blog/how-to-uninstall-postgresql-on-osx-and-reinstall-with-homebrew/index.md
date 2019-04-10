@@ -4,6 +4,7 @@ image: postgresql.jpg
 description: In this post, I list the steps I took to uninstall postgreSQL installed from the postgreSQL website and reinstall it using Homebrew.
 date: '2018-05-01'
 tags: ["osx", "command-line", "terminal", "homebrew", "full-stack-javascript", "postgresql", "web-development"]
+categories: ["web-development", "command-line", "full-stack-javascript", "homebrew", "osx", "postgresql", "terminal"]
 author: "Maria D. Campbell"
 ---
 

@@ -4,6 +4,7 @@ image: iTerm2.jpg
 description: Today I'm talking about how to download a pdf file from the internet using the Command Line on your Mac.
 date: '2018-01-30'
 tags: ["command-line", "terminal", "osx", "unix", "file-downloading", "internet"]
+categories: ["command-line", "osx", "terminal"]
 author: "Maria D. Campbell"
 ---
 

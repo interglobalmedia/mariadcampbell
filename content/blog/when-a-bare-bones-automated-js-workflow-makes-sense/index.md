@@ -4,6 +4,7 @@ image: build_npm.jpg
 description: Sometimes there are JavaScript projects which  don't need workflow tools such as Gulp, Grunt, Browserify, Webpack, etc.
 date: '2018-11-20'
 tags: ["npm", "local-scripts", "javascript-automated-workflows", "rimraf",  "gh-pages", "revealjs", "prebuild", "build", "postbuild"]
+categories: ["front-end-development", "node-package-manager", "web-development-workflows", "osx", "command-line"]
 author: "Maria D. Campbell"
 ---
 

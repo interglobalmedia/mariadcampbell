@@ -4,6 +4,7 @@ image: react-jest.png
 description: Yesterday, I ran a test to make sure that the changes I made to my Work component passed in my Portfolio React app, but it did not!
 date: '2017-10-12'
 tags: ["react", "jest", "mocks", "testing"]
+categories: ["front-end-development", "react", "web-development", "web-development-workflows"]
 author: "Maria D. Campbell"
 ---
 

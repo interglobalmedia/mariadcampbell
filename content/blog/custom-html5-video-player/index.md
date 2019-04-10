@@ -4,6 +4,7 @@ image: shadow_dom.jpg
 description: Today I completed a Custom HTML5 Video Player, including making the video go full-screen.
 date: '2017-01-04'
 tags: ["fullscreen-api", "html5-video", "cross-browser-issues", "cascading-stylesheets", "shadow-dom", "user-agent-stylesheets", "pseudo-elements", "html5", "javascript"]
+categories: ["front-end-development"]
 author: "Maria D. Campbell"
 ---
 

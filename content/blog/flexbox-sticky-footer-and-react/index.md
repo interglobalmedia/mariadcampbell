@@ -4,6 +4,7 @@ image: sticky-footer.jpg
 description: I came across a design challenge in which pages which had little or no content meant a footer which failed to stay grounded to the bottom of the page.
 date: '2017-10-04'
 tags: ["flexbox", "sticky-footer", "react", "design"]
+categories: ["front-end-development", "react", "web-design", "web-development"]
 author: "Maria D. Campbell"
 ---
 

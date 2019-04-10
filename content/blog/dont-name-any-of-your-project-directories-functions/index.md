@@ -4,6 +4,7 @@ image: terminal.png
 description: Yet another reason to get to know Command Line intimately!
 date: '2018-01-24'
 tags: ["command-line", "functions", "terminal", "unix"]
+categories: ["command-line"]
 author: "Maria D. Campbell"
 ---
 

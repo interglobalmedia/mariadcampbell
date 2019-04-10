@@ -4,6 +4,7 @@ image: postgresql.jpg
 description: Getting to know your developer tools is just as important as learning to program, which takes me back to my battle with PostgreSQL on my machine.
 date: '2018-06-17'
 tags: ["homebrew", "postgresql", "pgadmin", "postgres-user", "postgres-password", "creating-postgres-user", "osx", "command-line", "terminal"]
+categories: ["postgresql", "full-stack-javascript", "osx", "command-line", "terminal", "homebrew"]
 author: "Maria D. Campbell"
 ---
 

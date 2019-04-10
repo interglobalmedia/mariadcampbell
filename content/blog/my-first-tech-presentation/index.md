@@ -4,6 +4,7 @@ image: reveal-presentation.jpg
 description: I'm giving my first technical presentation @ReactNYC this Thursday, September 28, 2017.
 date: '2017-09-25'
 tags: ["presentations", "technology", "react", "workflows", "webpack", "postcss"]
+categories: ["web-development", "web-development-workflows"]
 author: "Maria D. Campbell"
 ---
 

@@ -4,6 +4,7 @@ image: terminal.png
 description: Sometimes you just might want to copy a directory that is in one location to another location, for whatever reason.
 date: '2018-04-19'
 tags: ["osx", "command-line", "copy-directories"]
+categories: ["command-line", "osx", "terminal"]
 author: "Maria D. Campbell"
 ---
 

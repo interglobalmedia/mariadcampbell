@@ -4,6 +4,7 @@ image: microsoft_word_apple_pages.jpg
 description: What took me hours to produce via Microsoft Word took me minutes with Pages.
 date: '2018-05-08'
 tags: ["react", "webpack", "file-loader", "links", "microsoft-word", "apple-pages", "osx", "resume-design", "resume-layout", "web-development-workflows"]
+categories: ["web-development", "front-end-development", "react", "web-development-workflows"]
 author: "Maria D. Campbell"
 ---
 

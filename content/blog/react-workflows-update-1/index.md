@@ -4,6 +4,7 @@ image: react-workflows.jpg
 description: I am refactoring my portfolio site using React, & while working on it, I checked another app I have on gh-pages, & noticed that it did not have production code.
 date: '2017-10-04'
 tags: ["react", "react-workflows", "webpack"]
+categories: ["front-end-development", "react", "web-development", "web-development-workflows"]
 author: "Maria D. Campbell"
 ---
 
