@@ -30,8 +30,8 @@ function CategoriesPage(props) {
         <Layout>
             <CategoriesDiv>
                 {
-                    data.map((category, index) => (
-                        <Link to={`/categories/${category.fieldValue}`} key={index}>
+                    data.map((category, i) => (
+                        <Link to={`/categories/${category.fieldValue}`} key={i}>
                             <FontAwesomeIcon icon={faFolder} style={{ color: '#268bd2', marginRight: '0.5rem' }} />
                             {category.fieldValue} {`(${category.totalCount})`}
                         </Link>
