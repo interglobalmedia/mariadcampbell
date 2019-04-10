@@ -1,24 +1,51 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout/Layout'
+import styled from '@emotion/styled'
+
+const CategoriesH1 = styled.h1`
+    display: flex;
+    justify-content: flex-start;
+    margin: 3rem auto 0; 
+    padding-left: 1.5rem; 
+    letter-spacing: 0.07em;
+`
+
+const CategoriesDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0.75rem auto 4rem;
+    & a {
+        margin-bottom: 2rem; 
+        list-style-type: none; 
+        background: #fdf6e3; 
+        color: #cb4b16; 
+        width: 90%; 
+        padding: 1rem; 
+        text-decoration: none; 
+        font-size: 1.1rem; 
+        margin: 2rem auto 0; 
+        letter-spacing: 0.07em;
+    }
+`
 
 function CategoryTemplate(props) {
     const posts = props.data.allMarkdownRemark.edges
     const { category } = props.pageContext
     return (
         <Layout>
-            <div className="category-container">
-                <span>{`Posts in category ${category}`}</span>
-                <div>
-                    {
-                        posts.map(({ node }, i) =>
-                            <Link to={node.fields.slug} key={i}>
-                                {node.frontmatter.title}
-                            </Link>
-                        )
-                    }
-                </div>
-            </div>
+            <CategoriesH1>{`posts in category: ${category}`}</CategoriesH1>
+            <CategoriesDiv>
+                {
+                    posts.map(({ node }, i) =>
+                        <Link to={node.fields.slug} key={i}>
+                            {node.frontmatter.title}
+                        </Link>
+                    )
+                }
+            </CategoriesDiv>
         </Layout>
     )
 
