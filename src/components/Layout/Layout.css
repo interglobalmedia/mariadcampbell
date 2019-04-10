@@ -755,7 +755,7 @@ ul li code.language-text {
 
 /* To remove default prismjs styling */
 .gatsby-highlight {
-  background: rgba(235, 233, 90, 1);
+  background: rgba(250, 238, 184, 1);
   border-radius: 0;
   margin: 0 0 0.5em;
   padding: 0.5em 1em;
