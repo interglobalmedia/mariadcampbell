@@ -18,7 +18,6 @@ const PostDiv = styled.div`
 const PostListDiv = styled.div`
     position: relative;
     max-width: 960px;
-    margin: 0 auto;
     border: 1px solid gainsboro;
     padding: 1rem 1rem 0;
     box-shadow: 0 -1px 4px #ede7e7;
