@@ -38,7 +38,7 @@ function Tags(props) {
             <TagsDiv>
                 {
                     posts.map(({ node }, i) =>
-                        <Link to={node.fields.slug}>
+                        <Link to={node.fields.slug} key={i}>
                             {node.frontmatter.title}
                         </Link>
                     )
