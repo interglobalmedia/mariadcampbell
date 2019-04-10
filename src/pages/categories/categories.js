@@ -10,8 +10,8 @@ function CategoriesPage(props) {
         <Layout>
             <div>
                 {
-                    data.map(category => (
-                        <Link to={`/categories/${category.fieldValue}`}>
+                    data.map((category, index) => (
+                        <Link to={`/categories/${category.fieldValue}`} key={index}>
                             <FontAwesomeIcon icon={faFolder} style={{ color: '#268bd2' }} />
                             {category.fieldValue} {`(${category.totalCount})`}
                         </Link>
