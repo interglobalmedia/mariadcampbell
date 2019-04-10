@@ -30,8 +30,8 @@ function TagsPage(props) {
     <Layout>
       <TagsDiv>
         {
-          data.map(tag => (
-            <Link to={`/tags/${tag.fieldValue}`} key={tag.id}>
+          data.map((tag, i) => (
+            <Link to={`/tags/${tag.fieldValue}`} key={i}>
               <FontAwesomeIcon icon={faTag} style={{ color: '#268bd2' }} /> {tag.fieldValue} {`(${tag.totalCount})`}
             </Link>
           ))
