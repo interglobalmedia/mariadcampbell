@@ -7,7 +7,7 @@ import styled from '@emotion/styled'
 
 const TagsDiv = styled.div`
   width: 90%;
-  margin: 3rem auto 0;
+  margin: 3rem auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
