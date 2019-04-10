@@ -3,6 +3,7 @@ import travel from '../images/chris-lawton-346402-unsplash.jpg'
 import styled from '@emotion/styled'
 import Header from '../components/Header/Header'
 import { Helmet } from 'react-helmet'
+import { Link } from 'gatsby'
 
 const Container = styled.div`
     background: rgba(255,255,255,0.4);
