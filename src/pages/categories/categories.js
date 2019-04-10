@@ -4,6 +4,7 @@ import Layout from '../../components/Layout/Layout'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFolder } from '@fortawesome/free-solid-svg-icons'
 import styled from '@emotion/styled'
+import { Helmet } from 'react-helmet'
 
 const CategoriesDiv = styled.div`
     width: 90%;
@@ -25,21 +26,26 @@ const CategoriesDiv = styled.div`
 `
 
 function CategoriesPage(props) {
-    const data = props.data.allMarkdownRemark.group
-    return (
-        <Layout>
-            <CategoriesDiv>
-                {
-                    data.map((category, i) => (
-                        <Link to={`/categories/${category.fieldValue}`} key={i}>
-                            <FontAwesomeIcon icon={faFolder} style={{ color: '#268bd2', marginRight: '0.5rem' }} />
-                            {category.fieldValue} {`(${category.totalCount})`}
-                        </Link>
-                    ))
-                }
-            </CategoriesDiv>
-        </Layout>
-    )
+  const data = props.data.allMarkdownRemark.group
+  return (
+    <Layout>
+      <Helmet>
+        <meta charset="utf-8" />
+        <title>Categories Page</title>
+        <Link rel="canonical" href="https://www.mariadcampbell.com/categories/categories" />
+      </Helmet>
+      <CategoriesDiv>
+        {
+          data.map((category, i) => (
+            <Link to={`/categories/${category.fieldValue}`} key={i}>
+              <FontAwesomeIcon icon={faFolder} style={{ color: '#268bd2', marginRight: '0.5rem' }} />
+              {category.fieldValue} {`(${category.totalCount})`}
+            </Link>
+          ))
+        }
+      </CategoriesDiv>
+    </Layout>
+  )
 }
 
 export default CategoriesPage

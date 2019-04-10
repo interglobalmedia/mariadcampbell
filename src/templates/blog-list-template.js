@@ -4,6 +4,7 @@ import { rhythm } from '../utils/typography'
 import Layout from '../components/Layout/Layout'
 import styled from '@emotion/styled'
 import Img from 'gatsby-image'
+import { Helmet } from 'react-helmet'
 
 const PostDiv = styled.div`
     width: 90%;
@@ -93,6 +94,11 @@ function BlogPage(props) {
     const nextPage = `/blog/${(currentPage + 1).toString()}`
     return (
         <Layout>
+            <Helmet>
+                <meta charset="utf-8" />
+                <title>Blog Page</title>
+                <Link rel="canonical" href="https://www.mariadcampbell.com/blog" />
+            </Helmet>
             <PostDiv>
                 {postList.edges.map(({ node }, i) => (
                     <Link to={node.fields.slug} key={i}>
