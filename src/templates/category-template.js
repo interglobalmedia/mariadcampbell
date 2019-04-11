@@ -19,12 +19,11 @@ const CategoriesDiv = styled.div`
     margin: 0.75rem auto 4rem;
     width: 100%;
     & a {
-        margin-bottom: 2rem; 
         list-style-type: none; 
         background: #fdf6e3; 
         color: #cb4b16; 
         width: 100%; 
-        padding: 1rem; 
+        padding: 1rem;
         text-decoration: none; 
         font-size: 1.1rem; 
         margin: 1.5rem auto 0; 
@@ -37,7 +36,7 @@ function CategoryTemplate(props) {
     const { category } = props.pageContext
     return (
         <Layout>
-            <div style={{ width: '90%', maxWidth: '960px', margin: '0 auto' }}>
+            <div style={{ width: '90%', maxWidth: '960px', margin: '3rem auto' }}>
                 <CategoriesH1>{`posts in category: ${category}`}</CategoriesH1>
                 <CategoriesDiv>
                     {
