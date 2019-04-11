@@ -13,31 +13,7 @@ module.exports = {
   },
   pathPrefix: '/',
   plugins: [
-    `gatsby-plugin-advanced-sitemap`,
-    {
-      mapping: {
-        // Each data type can be mapped to a predefined sitemap
-        // Routes can be grouped in one of: posts, tags, authors, pages
-        allRemarkMarkdownPost: {
-          sitemap: `posts`,
-        },
-        allRemarkMarkdownTag: {
-          sitemap: `tags`,
-        },
-        allRemarkMarkdownAuthor: {
-          sitemap: `author`,
-        },
-        allRemarkMarkdownPage: {
-          sitemap: `pages`,
-        },
-      },
-      exclude: [
-        `/dev-404-page`,
-        `/404`,
-        `/404.html`,
-      ],
-      createLinkInHead: true,
-    },
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-twitter`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-emotion`,
