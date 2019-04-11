@@ -13,6 +13,7 @@ module.exports = {
   },
   pathPrefix: '/',
   plugins: [
+    `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-twitter`,
     `gatsby-plugin-react-helmet`,
