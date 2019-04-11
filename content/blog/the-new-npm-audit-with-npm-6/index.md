@@ -4,7 +4,7 @@ image: npm_audit.jpg
 description: First Github started letting us know about npm package vulnerabilities in our Github repos, and now Nodejs does the same in our local repos via command line.
 date: '2018-06-05'
 tags: ["code-security", "nodejs-security", "npm", "github", "software-development", "full-stack-javascript", "front-end-development", "web-development"]
-categories: ["web-development", "front-end-development", "full-stack-javascript", "node-package_manager"]
+categories: ["web-development", "front-end-development", "full-stack-javascript", "node-package-manager"]
 author: "Maria D. Campbell"
 ---
 
