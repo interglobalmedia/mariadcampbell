@@ -86,8 +86,8 @@ mariacam=#
 
 ### Releated Resources:
 
-+ [postgreSQL and the OSX Migration Assistant](https://www.mariadcampbell.com/blog/postgresql-and-the-osx-migration-assistant)
++ [postgreSQL and the OSX Migration Assistant](/blog/postgresql-and-the-osx-migration-assistant)
 
-+ [Installing pgAdmin Only after installing PostgreSQL with Homebrew](https://www.mariadcampbell.com/blog/installing-pgadmin-only-after-installing-postgresql-with-homebrew/)
++ [Installing pgAdmin Only after installing PostgreSQL with Homebrew](/blog/installing-pgadmin-only-after-installing-postgresql-with-homebrew/)
 
 

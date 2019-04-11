@@ -139,7 +139,7 @@ Now everything worked. You see why things could get pretty confusing! So be sure
 
 ### Related Resources:
 
-+ [I gave my first presentation tonight (on React workflows)](https://www.mariadcampbell.com/blog/i-gave-my-first-presentation-tonight)
++ [I gave my first presentation tonight (on React workflows)](/blog/i-gave-my-first-presentation-tonight)
 
 + [How to Use CSS Modules with Create React App](https://medium.com/nulogy/how-to-use-css-modules-with-create-react-app-9e44bec2b5c2)
 

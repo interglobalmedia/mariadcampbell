@@ -32,4 +32,4 @@ Hope this helps, and **happy** ***pgAdmining***!
 
 ### Related Resources:
 
-+ [How to uninstall postgreSQL on OSX and reinstall with Homebrew](https://www.mariadcampbell.com/blog/how-to-uninstall-postgresql-on-osx-and-reinstall-with-homebrew)
++ [How to uninstall postgreSQL on OSX and reinstall with Homebrew](/blog/how-to-uninstall-postgresql-on-osx-and-reinstall-with-homebrew)

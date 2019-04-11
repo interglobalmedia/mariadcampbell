@@ -8,7 +8,7 @@ categories: ["osx", "command-line", "terminal"]
 author: "Maria D. Campbell"
 ---
 
-Recently I upgraded to **Mojave** on my **Macbook Pro** (late 2015). I then decided it was also time to upgrade **Homebrew**. I needed to update `postgres`, so thought I would update everything else. `postgres` was a success. Read more in my posts entitled [Upgrading PostgreSQL from version 10.4 to 11.1 via Homebrew (OSX)](https://www.mariadcampbell.com/upgrading-postgresql-via-homebrew/) and [Changing your (Homebrew) PostgreSQL configuration from trust to md5]().
+Recently I upgraded to **Mojave** on my **Macbook Pro** (late 2015). I then decided it was also time to upgrade **Homebrew**. I needed to update `postgres`, so thought I would update everything else. `postgres` was a success. Read more in my posts entitled [Upgrading PostgreSQL from version 10.4 to 11.1 via Homebrew (OSX)](/blog/upgrading-postgresql-via-homebrew/) and [Changing your (Homebrew) PostgreSQL configuration from trust to md5](/blog/changing-your-homebrew-postgresql-configuration-from-trust-to-md5/).
  
 Unbeknownst to me until today, my **Ruby** system install broke in the process. I hadn’t done anything related to **Ruby** installations in a couple of years, and had to refresh my memory on it. Had I installed with **RVM**? I checked to see if I had it installed on my computer. **No**. What else could I have used to ***manage*** my **Ruby** installs? I googled for information regarding the error I got when trying to watch a file on a Node project I am working on in which I decided to **switch** ***from*** **CSS** to **SCSS** (today). I just find it to be a much more efficient and powerful way to work with global styles.
 

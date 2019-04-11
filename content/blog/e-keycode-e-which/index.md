@@ -8,7 +8,7 @@ categories: ["javascript"]
 author: "Maria D. Campbell"
 ---
 
-I just wrote a post here entitled [Guess the keys](https://www.mariadcampbell.com/blog/guess-the-keys/) in which I articulate the code (without giving away the answer!) and describe how the game works. My final code includes a minor tweak I had to make in order for the colored box (read [Guess the keys](https://www.mariadcampbell.com/blog/guess-the-keys/) for more details) to render to the page in **Firefox**. I went through hell to actually get the game to render properly across browsers. ***Specifically*** **Safari**, **Chrome beta 64**, and **Firefox Quantum**. However, I did not have the chance to check it on **IE Edge**. Today I did.
+I just wrote a post here entitled [Guess the keys](/blog/guess-the-keys/) in which I articulate the code (without giving away the answer!) and describe how the game works. My final code includes a minor tweak I had to make in order for the colored box (read [Guess the keys](/blog/guess-the-keys/) for more details) to render to the page in **Firefox**. I went through hell to actually get the game to render properly across browsers. ***Specifically*** **Safari**, **Chrome beta 64**, and **Firefox Quantum**. However, I did not have the chance to check it on **IE Edge**. Today I did.
 
 But first to get back to the fix I had to implement in order for the colored box to render to the page. It had to do with the `keyCode` **property**. `keyCode` does not necessarily work properly in all browsers. In my case, it worked in **Chrome** and **Safari**, no problem.  That’s usually where I test my projects first. But then I forgot to go into ***Firefox*** and check there. It’s important to check your projects in **Firefox**, because it tends to be the ***most*** **strict** and ***least*** **forgiving**. Being a smart ass, I proudly shared my project on my `Evening Fullstack JS Intensive` **Slack Channel** and on ***Twitter***. I even presented it in class! But then I went home and ***realized*** that I **hadn’t checked** for ***browser compatibility*** on **Firefox**, so I did. Rendering of the colored box depends on the `keypress event`, so it simply did not appear. I wracked my brain about it. I changed my conditions over and over, and then suddenly I remembered having come across a ***thread*** on **CSS Tricks** about `e.keyCode vs.e.which`! There were no examples there, simply talk about it. After a bit of finagling with my code, I came across this incredibly simple solution. That’s always the way it works, right? it is the following:
 
@@ -34,7 +34,7 @@ The game also works well on ***IE Edge***. Check it out there if you have access
 
 + [keycode.info](http://keycode.info/)
 
-+ [Guess the keys (the post)](https://www.mariadcampbell.com/blog/guess-the-keys/)
++ [Guess the keys (the post)](/blog/guess-the-keys/)
 
 + [Guess The Keys on Github gh-pages](https://interglobalmedia.github.io/guess-the-keys/)
 

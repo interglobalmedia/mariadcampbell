@@ -8,7 +8,7 @@ categories: ["web-development", "front-end-development", "react", "web-developme
 author: "Maria D. Campbell"
 ---
 
-Please also visit my post ***entitled*** [ESLint parsing (in React)](https://http://www.mariadcampbell.com/eslint-parsing-in-react/eslint-parsing-in-react/).
+Please also visit my post ***entitled*** [ESLint parsing (in React)](/blog/eslint-parsing-in-react/).
 
 **ESlint** (or some other code formatter) is very important in (code) development. I have been using it for **JavaScript** development for a very long time. When using **Create React App**, I depended on its code formatting suggestions, and took built in code formatting for granted. Then I kind of slipped lately because I use my own ***custom*** **React** workflow. I was ***using ESlint***, but noticed recently that there was something ***wrong*** with my configuration for **React**.
 

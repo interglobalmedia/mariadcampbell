@@ -8,7 +8,7 @@ categories: ["full-stack-javascript", "postgresql", "osx", "command-line", "term
 author: "Maria D. Campbell"
 ---
 
-As I had mentioned in my previous post [Upgrading PostgreSQL from version 10.4 to 11.1 via Homebrew (OSX)](https://www.mariadcampbell.com/upgrading-postgresql-via-homebrew/), I had one last step I had to take to ensure that my **PostgreSQL** upgrade ***configuration*** **mirrored** that of the ***previous version***. I had to ***change*** the following **configuration** that was implemented on version upgrade:
+As I had mentioned in my previous post [Upgrading PostgreSQL from version 10.4 to 11.1 via Homebrew (OSX)](/blog/upgrading-postgresql-via-homebrew/), I had one last step I had to take to ensure that my **PostgreSQL** upgrade ***configuration*** **mirrored** that of the ***previous version***. I had to ***change*** the following **configuration** that was implemented on version upgrade:
 
 ```shell
 WARNING: enabling "trust" authentication for local connections
@@ -84,4 +84,4 @@ This taught me that maybe it would be good to have a `backup superuser` for case
 
 ## Related Links:
 
-+ [Upgrading PostgreSQL from version 10.4 to 11.1 via Homebrew (OSX)](https://www.mariadcampbell.com/upgrading-postgresql-via-homebrew/)
++ [Upgrading PostgreSQL from version 10.4 to 11.1 via Homebrew (OSX)](/blog/upgrading-postgresql-via-homebrew/)

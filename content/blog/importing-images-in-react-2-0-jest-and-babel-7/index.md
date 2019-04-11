@@ -8,7 +8,7 @@ categories: ["web-development", "front-end-development", "react", "web-developme
 author: "Maria D. Campbell"
 ---
 
-**Note December 3, 2018:** There were some changes I had to make after adding support for image imports into React because it caused “side effects”. Please visit my article entitled [The Jest Side Effect](https://www.mariadcampbell.com/blog/the-jest-side-effect/) and [The New Babel Config](https://www.mariadcampbell.com/blog/the-new-babel-7-config/) to get the whole picture. There were some ***issues*** **along the way** ***due to*** **breaking changes** in **Babel 7** which ***affected*** **Jest**, **React**, and **ESLint**. ***Unless*** you are **using** ***create-react-app***, your **workflow** might have to be ***adjusted*** depending on what **support** you want to ***provide*** in any given **application**. I have brought ***all resources*** **together** in the ***repository*** for the **second edition** of my **custom React Workflow** on **Github**. Please visit [issues](https://github.com/interglobalmedia/react-workflow-updated-2018/issues/1) to learn more.
+**Note December 3, 2018:** There were some changes I had to make after adding support for image imports into React because it caused “side effects”. Please visit my article entitled [The Jest Side Effect](/blog/the-jest-side-effect/) and [The New Babel Config](/blog/the-new-babel-7-config/) to get the whole picture. There were some ***issues*** **along the way** ***due to*** **breaking changes** in **Babel 7** which ***affected*** **Jest**, **React**, and **ESLint**. ***Unless*** you are **using** ***create-react-app***, your **workflow** might have to be ***adjusted*** depending on what **support** you want to ***provide*** in any given **application**. I have brought ***all resources*** **together** in the ***repository*** for the **second edition** of my **custom React Workflow** on **Github**. Please visit [issues](https://github.com/interglobalmedia/react-workflow-updated-2018/issues/1) to learn more.
 
 Yesterday I ***added an image*** to a **new project**. I tried to implement it using the **“image” workflow** I had set up ***based on*** the **first edition** of my **custom React Workflow** (without create-react-app), and it DID NOT WORK!
 
@@ -22,7 +22,7 @@ Now that there is ***Babel 7*** and the **Babel configuration** has drastically 
 
 I ***just completed*** the **second edition** of my **custom React Workflow** the other day. It works well for what it offers out of the box. However, just as with the first edition, I only included a favicon and no images. I ended up ***taking images into consideration*** for the **workflow** ***later***.
 
-I would like to discuss the changes in the custom workflow (providing support for images) that have taken place since I wrote the article [Importing images in React](https://www.mariadcampbell.com/blog/importing-images-in-react/) on ***October 7, 2017***. A few things (like the folder structure) may be the same, but I can **no longer** ***export*** my **images** from an `index.js` file in the **images folder**. I think it might have something to do with ***what*** my **Babel 7 configuration** is ***no longer providing*** **me**, but I have to investigate further to find out the answers.
+I would like to discuss the changes in the custom workflow (providing support for images) that have taken place since I wrote the article [Importing images in React](/blog/importing-images-in-react/) on ***October 7, 2017***. A few things (like the folder structure) may be the same, but I can **no longer** ***export*** my **images** from an `index.js` file in the **images folder**. I think it might have something to do with ***what*** my **Babel 7 configuration** is ***no longer providing*** **me**, but I have to investigate further to find out the answers.
 
 ***If*** **you are going to** or **already started** to use **React 16.6+**(***I*** currently ***use*** **React 16.6.3** in my ***workflow***), **Webpack 4+** (**I use 4.3.0**), **Babel 7**, **Jest** (***I use*** **23.6.0**), and **ESLint** (***I use*** **5.9.0**), and want to ADD IMAGES to your ***projects***, ***please follow the steps I discuss here*** **for starters**, and ***ignore*** the **Jest configuration** in both the ***first*** and ***second edition*** of my **custom workflow**. If you ***only*** are **adding a favicon** or ***no image at all***, then ***keep*** the **configuration** ***provided*** in the **second edition**.
 
@@ -210,7 +210,7 @@ To view the project structure and files associated with the project I am current
 
 ### Related Resources:
 
-+ [Importing images in React (October 7, 2017)](https://www.mariadcampbell.com/blog/importing-images-in-react/)
++ [Importing images in React (October 7, 2017)](/blog/importing-images-in-react/)
 
 + [React workflows Without Create-React-App First Edition (2017)](https://github.com/interglobalmedia/react-workflow-presentation)
 

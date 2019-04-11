@@ -977,4 +977,4 @@ So I immediately went into my `Visual Studio Code` **editor** and changed the di
 
 Yet another reason to get to know `Command Line` ***intimately***!
 
-Yet another reason to get to know Command Line intimately!
+Yet another reason to get to know `Command Line` intimately!

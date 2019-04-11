@@ -30,7 +30,7 @@ To check whether you have read access to files within a directory or to the dire
 ls -l
 ```
 
-To learn how to compress and uncompress directories from the Command Line, please visit my article entitled [Compressing and uncompressing directories from the Command Line](https://www.mariadcampbell.com/blog/how-to-copy-a-directory-from-command-line).
+To learn how to compress and uncompress directories from the Command Line, please visit my article entitled [Compressing and uncompressing directories from the Command Line](/blog/how-to-copy-a-directory-from-command-line).
 
 **Happy** ***commanding***!
 

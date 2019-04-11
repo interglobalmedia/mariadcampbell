@@ -8,7 +8,7 @@ categories: ["web-development", "front-end-development", "react", "tdd"]
 author: "Maria D. Campbell"
 ---
 
-**Update December 3, 2018:** I found the solution to this issue and wrote an article about it last night which I published this morning entitled [The New Babel Config](https://www.mariadcampbell.com/blog/the-new-babel-7-config/). I have brought all resources together in the repository for the second edition of my **custom React Workflow** on **Github**. Please visit [issues](https://github.com/interglobalmedia/react-workflow-updated-2018/issues/1) to learn more.
+**Update December 3, 2018:** I found the solution to this issue and wrote an article about it last night which I published this morning entitled [The New Babel Config](/blog/the-new-babel-7-config/). I have brought all resources together in the repository for the second edition of my **custom React Workflow** on **Github**. Please visit [issues](https://github.com/interglobalmedia/react-workflow-updated-2018/issues/1) to learn more.
 
 In my last post, I discussed the changes I had to make in my Jest configuration so that Jest could mock out image imports in my React components. Then my Jest tests would pass. I made the necessary adjustments following the suggestions made in the Jest documentation (several approaches were provided), and my tests did pass.
 
@@ -42,4 +42,4 @@ It just would be nice to get back what I had before just because!
 
 ### Related Resources:
 
-+ [Importing Images in React 2.0: Jest (and Babel 7)](https://www.mariadcampbell.com/blog/importing-images-in-react-2-0-jest-and-babel-7)
++ [Importing Images in React 2.0: Jest (and Babel 7)](/blog/importing-images-in-react-2-0-jest-and-babel-7)

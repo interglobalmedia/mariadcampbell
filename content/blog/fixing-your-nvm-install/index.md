@@ -8,7 +8,7 @@ categories: ["z-shell", "zsh"]
 author: "Maria D. Campbell"
 ---
 
-The other day I wrote a post [What To Do When You Can’t Upgrade Oh my zsh](https://www.mariadcampbell.com/blog/what-to-do-when-you-cant-upgrade-oh-my-zsh/) in which I mentioned that my next post would be about fixing my nvm install. So this morning I did just that. I fixed my nvm install, and now it works. It only took a couple of minutes out of my morning, and now there is one less headache on my machine!
+The other day I wrote a post [What To Do When You Can’t Upgrade Oh my zsh](/blog/what-to-do-when-you-cant-upgrade-oh-my-zsh/) in which I mentioned that my next post would be about fixing my nvm install. So this morning I did just that. I fixed my nvm install, and now it works. It only took a couple of minutes out of my morning, and now there is one less headache on my machine!
 
 I had tried to install NVM (Node Version Manager) a while back, and it never took. Who knows exactly why, but it never did. And I never took the time to sit down and figure out. But back then, Command Line was not so much a part of my workflow either. Then when it did become a large part of it, I didn’t bother to fix it. However, as I also mentioned in previous posts, one of my New Year’s resolutions for 2017 is to become very well acquainted with Command Line and my machine! And all this took now was 2 minutes or < of my time!
 
@@ -80,7 +80,7 @@ nvm --version
 
 Just be aware that there are ***some*** differences between between bash commands and Z shell (Oh my zsh) commands. They even have written books on it. ***From Bash to Z Shell: Conquering the Command Line*** is one. Don’t know if it’s any good and it is somewhat dated, but serves as an example.
 
-Next I went into my `~/` (home) directory in `iTerm2` to make sure that I did indeed have an `~/.nvm` folder, and I did. Then, after a bit of research and falling back on what I had learned when [fixing](https://www.mariadcampbell.com/blog/what-to-do-when-you-cant-upgrade-oh-my-zsh/) my `Z Shell` (`Oh my zsh`) install, I typed
+Next I went into my `~/` (home) directory in `iTerm2` to make sure that I did indeed have an `~/.nvm` folder, and I did. Then, after a bit of research and falling back on what I had learned when [fixing](/blog/what-to-do-when-you-cant-upgrade-oh-my-zsh/) my `Z Shell` (`Oh my zsh`) install, I typed
 
 ```shell
 source ~/.nvm/nvm.sh
