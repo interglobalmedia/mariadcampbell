@@ -35,17 +35,6 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
-    {
-      resolve: `gatsby-plugin-gtag`,
-      options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
-        trackingId: 'UA-32260397-2',
-        // Puts tracking script in the body instead of the head
-        head: false,
-        // enable ip anonymization
-        anonymize: true,
-      },
-    },
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
