@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFolder } from '@fortawesome/free-solid-svg-icons'
 import styled from '@emotion/styled'
 import { Helmet } from 'react-helmet'
+import { OutboundLink } from 'gatsby-plugin-gtag'
 
 const CategoriesDiv = styled.div`
   width: 90%;
@@ -34,6 +35,7 @@ function CategoriesPage(props) {
         <meta charset="utf-8" />
         <title>Categories Page</title>
         <Link rel="canonical" href="https://www.mariadcampbell.com/categories/categories" />
+        <OutboundLink href="https://www.mariadcampbell.com/categories/categories/">Check out Maria D. Campbell's developer notebook categories page!</OutboundLink>
       </Helmet>
       <CategoriesDiv>
         {
