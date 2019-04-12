@@ -2,7 +2,7 @@ import React from 'react'
 import { CircleArrow as ScrollUpButton } from 'react-scroll-up-button'
 import styled from "@emotion/styled"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDirections, faRss } from '@fortawesome/free-solid-svg-icons'
+import { faDirections, faRss, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'gatsby'
 import InfoPage from '../Info/Info'
 
@@ -39,8 +39,11 @@ const Footer = () => {
         <>
             <FooterStyle>
                 <div style={{ display: 'flex', fontSize: '1.2rem', letterSpacing: '0.07em' }}>
-
-                    <Link style={{ marginRight: '1.5rem', color: 'whitesmoke' }} to='/sitemap/sitemap'>
+                    <Link style={{ marginRight: '1.2rem', color: 'whitesmoke' }} to='/contact/contact'>
+                        <FontAwesomeIcon icon={faEnvelope} style={{ color: 'whitesmoke' }} />
+                        Contact
+                    </Link>
+                    <Link style={{ marginRight: '1.2rem', color: 'whitesmoke' }} to='/sitemap/sitemap'>
                         <FontAwesomeIcon icon={faDirections} style={{ color: 'whitesmoke' }} />
                         Sitemap
                     </Link>
