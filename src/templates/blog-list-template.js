@@ -5,6 +5,7 @@ import Layout from '../components/Layout/Layout'
 import styled from '@emotion/styled'
 import Img from 'gatsby-image'
 import { Helmet } from 'react-helmet'
+import { OutboundLink } from 'gatsby-plugin-gtag'
 
 const PostDiv = styled.div`
     width: 90%;
@@ -97,6 +98,7 @@ function BlogPage(props) {
                 <meta charset="utf-8" />
                 <title>Blog Page</title>
                 <Link rel="canonical" href="https://www.mariadcampbell.com/blog" />
+                <OutboundLink href="https://www.mariadcampbell.com/blog/">Check out Maria D. Campbell's developer notebook blog list page!</OutboundLink>
             </Helmet>
             <PostDiv>
                 {postList.edges.map(({ node }, i) => (
