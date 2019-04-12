@@ -23,6 +23,7 @@ const SiteMapPage = (props) => {
           <li><Link to="/blog">Blog</Link></li>
           <li><Link to="/categories/categories">Categories</Link></li>
           <li><Link to="/tags/tags">Tags</Link></li>
+          <li><Link to="/contact/contact">Contact</Link></li>
           <li><Link to="/rss.xml">RSS</Link></li>
         </ul>
         <h2>Posts</h2>
