@@ -4,12 +4,12 @@ module.exports = {
     siteUrl: `https://www.mariadcampbell.com`,
     description: `Where I muse about and share my developer experiences.`,
     author: `Maria D. Campbell`,
-    social: {
-      twitter: `letsbsocial1`,
-      github: `interglobalmedia`,
-      facebook: `mariador62`,
-      linkedin: `mariacampbell`
-    },
+  },
+  social: {
+    twitter: `letsbsocial1`,
+    github: `interglobalmedia`,
+    facebook: `mariador62`,
+    linkedin: `mariacampbell`
   },
   pathPrefix: '/',
   plugins: [
