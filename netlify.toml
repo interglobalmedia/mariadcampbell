@@ -1,5 +1,0 @@
-# Specific branch context: all deploys from this specific branch will inherit
-# these settings.
-[context.staging] # 'staging' is a branch name
-  command = "echo 'staging'"
-  base = "staging"
