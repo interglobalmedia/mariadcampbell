@@ -4,6 +4,9 @@ import styled from '@emotion/styled'
 import Header from '../components/Header/Header'
 import { Helmet } from 'react-helmet'
 import { Link } from 'gatsby'
+import { OutboundLink } from 'gatsby-plugin-gtag'
+import PropTypes from 'prop-types'
+
 
 const Container = styled.div`
     background: rgba(255,255,255,0.4);
@@ -57,6 +60,7 @@ const IndexPage = ({ siteTitle }) => {
                 <meta charset="utf-8" />
                 <title>{siteTitle}</title>
                 <Link rel="canonical" href="https://www.mariadcampbell.com/" />
+                <OutboundLink href="https://www.mariadcampbell.com" >Home Page for Maria D. Campbell's developer notebook'</OutboundLink>
             </Helmet>
             <div className="Site">
                 <Header />
@@ -66,11 +70,21 @@ const IndexPage = ({ siteTitle }) => {
                     </ImageWrapper>
                 </div>
                 <FooterStyle>
-                    © {new Date().getFullYear()} Maria D. Campbell
+                    © {new Date().getFullYear()} {siteTitle}
                 </FooterStyle>
             </div>
         </Container>
     )
 }
 
+IndexPage.propTypes = {
+    siteTitle: PropTypes.string.isRequired,
+}
+
+IndexPage.defaultProps = {
+    siteTitle: `Maria D. Campbell`
+}
+
 export default IndexPage
+
+
