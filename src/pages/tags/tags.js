@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTag } from '@fortawesome/free-solid-svg-icons'
 import styled from '@emotion/styled'
 import { Helmet } from 'react-helmet'
+import { OutboundLink } from 'gatsby-plugin-gtag'
 
 const TagsDiv = styled.div`
   width: 90%;
@@ -34,6 +35,7 @@ function TagsPage(props) {
         <meta charset="utf-8" />
         <title>Tags Page</title>
         <Link rel="canonical" href="https://www.mariadcampbell.com/tags/tags" />
+        <OutboundLink href="https://www.mariadcampbell.com/tags/tags/">Check out Maria D. Campbell's developer notebook tags page!</OutboundLink>
       </Helmet>
       <TagsDiv>
         {
@@ -44,7 +46,7 @@ function TagsPage(props) {
           ))
         }
       </TagsDiv>
-    </Layout>
+    </Layout >
   )
 }
 
