@@ -55,7 +55,7 @@ const IndexPage = ({ siteTitle }) => {
         <Container>
             <Helmet>
                 <meta charset="utf-8" />
-                <title>Maria D. Campbell</title>
+                <title>{siteTitle}</title>
                 <Link rel="canonical" href="https://www.mariadcampbell.com/" />
             </Helmet>
             <div className="Site">
@@ -66,9 +66,6 @@ const IndexPage = ({ siteTitle }) => {
                     </ImageWrapper>
                 </div>
                 <FooterStyle>
-                    Built with
-                {` `}
-                    <a href="https://www.gatsbyjs.org">Gatsby</a>{` `}
                     © {new Date().getFullYear()} Maria D. Campbell
                 </FooterStyle>
             </div>

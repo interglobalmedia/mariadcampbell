@@ -3,7 +3,7 @@ import { elastic as Menu } from 'react-burger-menu'
 import PropTypes from "prop-types"
 import React from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHashtag, faHome, faFolder, faBlog } from '@fortawesome/free-solid-svg-icons'
+import { faHashtag, faHome, faFolder, faBlog, faSitemap } from '@fortawesome/free-solid-svg-icons'
 import styled from '@emotion/styled'
 import './SideBar.css'
 
@@ -83,6 +83,12 @@ const Header = ({ siteTitle }) => (
               activeStyle={{ color: '#cb4b16' }}
             >
               <FontAwesomeIcon icon={faHashtag} />
+            </Link>
+            <Link
+              to="/sitemap/sitemap"
+              activeStyle={{ color: '#cb4b16' }}
+            >
+              <FontAwesomeIcon icon={faSitemap} />
             </Link>
           </HeaderSideMenuP>
         </Menu>
