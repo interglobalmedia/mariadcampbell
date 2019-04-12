@@ -60,7 +60,7 @@ const IndexPage = ({ siteTitle }) => {
                 <meta charset="utf-8" />
                 <title>{siteTitle}</title>
                 <Link rel="canonical" href="https://www.mariadcampbell.com/" />
-                <OutboundLink a href="https://www.mariadcampbell.com">Check out Maria D. Campbell's developer notebook!</OutboundLink>
+                <OutboundLink href="https://www.mariadcampbell.com">Check out Maria D. Campbell's developer notebook!</OutboundLink>
             </Helmet>
             <div className="Site">
                 <Header />
