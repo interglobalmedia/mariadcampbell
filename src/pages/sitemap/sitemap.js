@@ -2,7 +2,6 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import Layout from '../../components/Layout/Layout'
-import styled from '@emotion/styled'
 
 
 const SiteMapPage = (props) => {
@@ -18,10 +17,11 @@ const SiteMapPage = (props) => {
                 <h1>Site Map</h1>
                 <h2>Pages</h2>
                 <ul style={{ listStyleType: 'square' }}>
-                    <li><Link to="/categories/categories">Home</Link></li>
+                    <li><Link to="/">Home</Link></li>
                     <li><Link to="/blog">Blog</Link></li>
                     <li><Link to="/categories/categories">Categories</Link></li>
                     <li><Link to="/tags/tags">Tags</Link></li>
+                    <li><Link to="/rss.xml">RSS</Link></li>
                 </ul>
                 <h2>Posts</h2>
                 <div>
