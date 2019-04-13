@@ -1,4 +1,4 @@
-# MariaD.Campbell.com
+# mariadcampbell.com
 
 ## Built with Gatsbyjs Default Starter Blog
 
