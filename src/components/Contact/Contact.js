@@ -4,9 +4,9 @@ import styled from '@emotion/styled'
 const Contact = () => {
     const ContactWrapperStyle = styled.div`
     width: 90%;
-    max-width: 600px;
+    max-width: 1024px;
     display: flex;
-    // flex-direction: column;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 3rem auto;
@@ -60,27 +60,31 @@ const Contact = () => {
     }
     `
     return (
-        <ContactWrapperStyle>
-            <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
-                <input type="hidden" name="bot-field" />
-                <div className="field half first">
-                    <label htmlFor="name">Name</label>
-                    <input type="text" name="name" id="name" placeholder="Name" />
-                </div>
-                <div className="field half">
-                    <label htmlFor="email">Email</label>
-                    <input type="text" name="email" id="email" placeholder="Email" />
-                </div>
-                <div className="field">
-                    <label htmlFor="message">Message</label>
-                    <textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
-                </div>
-                <ul className="actions">
-                    <li><input style={{ borderRadius: '2px', cursor: 'pointer', background: 'white' }} type="submit" value="Send Message" /></li>
-                    <li><input style={{ borderRadius: '2px', cursor: 'pointer', background: 'white' }} type="reset" value="Clear" /></li>
-                </ul>
-            </form>
-        </ContactWrapperStyle>
+        <div style={{ width: '90%', maxWidth: '1024px', margin: '3rem auto' }}>
+
+            <ContactWrapperStyle>
+                <h1>Contact</h1>
+                <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+                    <input type="hidden" name="bot-field" />
+                    <div className="field half first">
+                        <label htmlFor="name">Name</label>
+                        <input type="text" name="name" id="name" placeholder="Name" />
+                    </div>
+                    <div className="field half">
+                        <label htmlFor="email">Email</label>
+                        <input type="text" name="email" id="email" placeholder="Email" />
+                    </div>
+                    <div className="field">
+                        <label htmlFor="message">Message</label>
+                        <textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
+                    </div>
+                    <ul className="actions">
+                        <li><input style={{ borderRadius: '2px', cursor: 'pointer', background: 'white' }} type="submit" value="Send Message" /></li>
+                        <li><input style={{ borderRadius: '2px', cursor: 'pointer', background: 'white' }} type="reset" value="Clear" /></li>
+                    </ul>
+                </form>
+            </ContactWrapperStyle>
+        </div>
     )
 }
 export default Contact

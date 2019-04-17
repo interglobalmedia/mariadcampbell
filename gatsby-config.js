@@ -1,8 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: `Maria D. Campbell`,
+    titleTemplate: 'The Investigative Developer',
+    description: `Where I muse about and share my developer experiences and code.`,
     siteUrl: `https://www.mariadcampbell.com`,
-    description: `Where I muse about and share my developer experiences.`,
+    image: '/images/profileSmall.png',
     author: `Maria D. Campbell`,
     social: {
       twitter: `letsbsocial1`,
@@ -10,6 +12,8 @@ module.exports = {
       facebook: `mariador62`,
       linkedin: `mariacampbell`
     },
+    twitterUsername: '@letsbsocial1',
+    keywords: ['web-development', 'react', 'mongodb', 'postgresql', 'gatsbyjs', 'nodejs', 'npm', 'jsx', 'css-in-js', 'styled-components', 'jira', 'atlassian', 'git', 'distributed-version-control', 'github', 'development', 'production', 'continuous-deployment', 'git-integration', 'css3', 'html5', 'audio', 'video', 'full-stack-development', 'front-end-development', 'back-end-development', 'automated-workflows', 'aws', 'netlify', 'gh-pages', 'heroku', 'command-line', 'osx', 'serverless-stack', 'cross-browser-compatibility', 'shadow-dom', 'testing', 'jest-testing', 'html5-canvas', 'webgl', 'linting', 'eslint', 'prettier', 'babel', 'webpack', 'css-modules', 'sass', 'homebrew', 'responsive-design', 'es-6', 'modern-javascript', 'node-security', 'npm-audit-fix'],
   },
   pathPrefix: '/',
   plugins: [
