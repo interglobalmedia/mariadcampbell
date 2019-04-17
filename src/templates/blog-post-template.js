@@ -6,7 +6,7 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from '@emotion/styled'
 import Layout from '../components/Layout/Layout'
-import Metatags from '../components/Metatags/Metatags'
+import SEO from '../components/Seo/Seo'
 
 import PrevNext from '../components/PrevNext/PrevNext'
 import Share from '../components/Share/Share'
@@ -95,16 +95,16 @@ margin-top: 1.5rem;
 function BlogPost(props) {
   const url = props.data.site.siteMetadata.siteUrl
   const thumbnail = props.data.markdownRemark.frontmatter.image && props.data.markdownRemark.frontmatter.image.childImageSharp.resize.src
-  const { title, date, image, tags, categories } = props.data.markdownRemark.frontmatter
+  const { title, date, image, tags, categories, description, author } = props.data.markdownRemark.frontmatter
   const { prev, next } = props.pageContext
   return (
     <Layout>
-      <Metatags
+      <SEO
         title={title}
-        description={props.data.markdownRemark.excerpt}
-        thumbnail={thumbnail && url + thumbnail}
-        url={url}
-        pathname={props.location.pathname}
+        description={description}
+        image={thumbnail}
+        post
+        author={author}
       />
       <PostWrapperDiv>
         <ImageDiv>
@@ -152,6 +152,7 @@ export const query = graphql`
         date(formatString: "MMMM Do, YYYY")
         tags
         categories
+        description
         image {
           childImageSharp {
             resize(width: 1500, height: 1500) {
