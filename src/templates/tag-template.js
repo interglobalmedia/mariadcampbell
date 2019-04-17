@@ -36,7 +36,7 @@ function Tags(props) {
     const { tag } = props.pageContext
     return (
         <Layout>
-            <div style={{ width: '90%', maxWidth: '960px', margin: '3rem auto' }}>
+            <div style={{ width: '90%', maxWidth: '1026px', margin: '3rem auto' }}>
                 <TagsH1 >{`posts in: ${tag}`}</TagsH1>
                 <TagsDiv>
                     {
