@@ -18,7 +18,7 @@ const InfoTextUl = styled.ul`
   align-items: center;
   padding: 1rem 0.5rem 0;
   width: 90%;
-  max-width: 45em; 
+  max-width: 57em; 
   margin-left: auto; 
   margin-right: auto; 
   background: whitesmoke;

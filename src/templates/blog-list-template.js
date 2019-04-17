@@ -9,7 +9,7 @@ import { OutboundLink } from 'gatsby-plugin-gtag'
 
 const PostDiv = styled.div`
     width: 90%;
-    max-width: 960px;
+    max-width: 1024px;
     margin: 3rem auto;
     & a {
         box-shadow: none;
@@ -18,7 +18,6 @@ const PostDiv = styled.div`
 
 const PostListDiv = styled.div`
     position: relative;
-    max-width: 960px;
     border: 1px solid gainsboro;
     padding: 1rem 1rem 0;
     box-shadow: 0 -1px 4px #ede7e7;

@@ -15,7 +15,7 @@ const SiteMapPage = (props) => {
         <Link rel="canonical" href="https://www.mariadcampbell.com/sitemap/sitemap" />
         <OutboundLink href="https://www.mariadcampbell.com/sitemap/sitemap">Check out Maria D. Campbell's developer notebook sitemap page!</OutboundLink>
       </Helmet>
-      <div style={{ margin: '3rem auto', width: '90%', maxWidth: '960px', background: 'rgba(250, 238, 184, 1)', padding: '1.5rem', letterSpacing: '0.07em' }}>
+      <div style={{ margin: '3rem auto', width: '90%', maxWidth: '1026px', background: 'rgba(250, 238, 184, 1)', padding: '1.5rem', letterSpacing: '0.07em' }}>
         <h1>Site Map</h1>
         <h2>Pages</h2>
         <ul style={{ listStyleType: 'square' }}>
