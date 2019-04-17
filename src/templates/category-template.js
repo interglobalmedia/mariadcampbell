@@ -36,7 +36,7 @@ function CategoryTemplate(props) {
     const { category } = props.pageContext
     return (
         <Layout>
-            <div style={{ width: '90%', maxWidth: '960px', margin: '3rem auto' }}>
+            <div style={{ width: '90%', maxWidth: '1026px', margin: '3rem auto' }}>
                 <CategoriesH1>{`posts in category: ${category}`}</CategoriesH1>
                 <CategoriesDiv>
                     {

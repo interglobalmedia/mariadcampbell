@@ -9,7 +9,7 @@ import { OutboundLink } from 'gatsby-plugin-gtag'
 
 const CategoriesDiv = styled.div`
   width: 90%;
-  max-width: 960px;
+  max-width: 1026px;
   margin: 3rem auto;
   display: flex;
   flex-direction: column;

@@ -14,7 +14,7 @@ import '../components/Layout/Layout.css'
 
 const PostWrapperDiv = styled.div`
   width: 90%; 
-  max-width: 960px; 
+  max-width: 1026px; 
   margin: 0 auto;
 `
 
