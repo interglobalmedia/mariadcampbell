@@ -30,9 +30,6 @@ const SocialUl = styled.ul`
             }
         }
     }
-    @media (max-width: 374px) {
-        margin-left: 1rem;
-    }
 `
 
 const Share = props => {
