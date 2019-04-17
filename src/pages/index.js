@@ -58,6 +58,7 @@ const IndexPage = ({ siteTitle }) => {
         <Container>
             <Helmet>
                 <meta charset="utf-8" />
+                <meta name="keywords" content="web development, react, mongodb, postgresql, gatsbyjs, nodejs, npm, jsx, css in js, styled components, jira, atlassian, git, distributed version control, github, development, production, continuous deployment, git integration, css3, html5, audio, video' full stack development, front end development, back end development, automated workflows, 'aws, netlify, gh-pages, heroku, command line, osx, serverless stack, cross browser compatibility, shadow dom, testing, jest testing, html5 canvas, webgl, linting, eslint, prettier, babel, webpack, css modules, sass, homebrew, responsive design, es6, modern javascript, node security, npm audit fix" />
                 <title>{siteTitle}</title>
                 <Link rel="canonical" href="https://www.mariadcampbell.com/" />
                 <OutboundLink href="https://www.mariadcampbell.com">Check out Maria D. Campbell's developer notebook!</OutboundLink>
