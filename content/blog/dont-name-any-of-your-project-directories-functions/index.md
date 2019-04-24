@@ -1,14 +1,18 @@
 ---
-title: "Don’t name any of your project directories functions"
+title: 'Don’t name any of your project directories functions'
 image: terminal.png
 description: Yet another reason to get to know Command Line intimately!
 date: '2018-01-24'
-tags: ["command-line", "functions", "terminal", "unix"]
-categories: ["command-line"]
-author: "Maria D. Campbell"
+tags: ['command-line', 'functions', 'terminal', 'unix']
+categories: ['command-line']
+author: 'Maria D. Campbell'
 ---
 
-Today, during my `Evening JS Intensive` boot camp class, I created a directory called `functions`, in which I wanted to store an `index.html` and `functions.js` file in which I would write some functions we were creating in class. Then  I went into `iTerm2` so I could `cd` into that directory. Guess what? This is what I got back:
+Today, during my `Evening JS Intensive` boot camp class, I created a directory
+called `functions`, in which I wanted to store an `index.html` and
+`functions.js` file in which I would write some functions we were creating in
+class. Then I went into `iTerm2` so I could `cd` into that directory. Guess
+what? This is what I got back:
 
 ```shell
 ARCH3" ]
@@ -973,8 +977,14 @@ zsh_stats () {
 }
 ```
 
-So I immediately went into my `Visual Studio Code` **editor** and changed the directory I named `functions` to `functionsDir`. So if you are ***using*** `zshell` and therefore ***don’t need to use*** `cd` to **change into** ***directories***, ***don’t name*** any **directories** `functions`. ***Apparently***, I **pulled up** the ***functions manual*** for my `iTerm2`. I ***checked this out*** by **typing** `man functions` in `iTerm2` and came up with the above. I’m sure the concept is the **same** with `bash`.
+So I immediately went into my `Visual Studio Code` **editor** and changed the
+directory I named `functions` to `functionsDir`. So if you are **_using_**
+`zshell` and therefore **_don’t need to use_** `cd` to **change into**
+**_directories_**, **_don’t name_** any **directories** `functions`.
+**_Apparently_**, I **pulled up** the **_functions manual_** for my `iTerm2`. I
+**_checked this out_** by **typing** `man functions` in `iTerm2` and came up
+with the above. I’m sure the concept is the **same** with `bash`.
 
-Yet another reason to get to know `Command Line` ***intimately***!
+Yet another reason to get to know `Command Line` **_intimately_**!
 
 Yet another reason to get to know `Command Line` intimately!

@@ -1,11 +1,20 @@
 ---
-title: "ES2018 language features available in v8js v6.4 and Chrome 64"
+title: 'ES2018 language features available in v8js v6.4 and Chrome 64'
 image: es2018_language_features.jpg
-description: Adoption of the latest version of JavaScript takes place very quickly these days, which goes to show how important a language JavaScript has become!
+description:
+    Adoption of the latest version of JavaScript takes place very quickly these
+    days, which goes to show how important a language JavaScript has become!
 date: '2018-01-26'
-tags: ["es-2018", "chrome-64", "v-8-engine", "javascript", "browser-compatibility"]
-categories: ["javascript"]
-author: "Maria D. Campbell"
+tags:
+    [
+        'es-2018',
+        'chrome-64',
+        'v-8-engine',
+        'javascript',
+        'browser-compatibility',
+    ]
+categories: ['javascript']
+author: 'Maria D. Campbell'
 ---
 
 I just found out minutes ago on **Twitter** that
@@ -15,12 +24,13 @@ I just found out minutes ago on **Twitter** that
 — V8 (@v8js) <a href="https://twitter.com/v8js/status/956976954074267648?ref_src=twsrc%5Etfw">January 26, 2018</a></blockquote>
 <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-I ***just finished*** **downloading** `Google Chrome Version 64.0.3282.119 (Official Build) beta (64-bit)` and am typing this post using it. Can’t wait to test out `ES2018` features with it! And yes, it is **available** ***both for*** **Windows** AND **OSX**.
+I **_just finished_** **downloading**
+`Google Chrome Version 64.0.3282.119 (Official Build) beta (64-bit)` and am
+typing this post using it. Can’t wait to test out `ES2018` features with it! And
+yes, it is **available** **_both for_** **Windows** AND **OSX**.
 
-Happy ***ES2018***, ***v8js***, and ***Chrome 64ing***!
+Happy **_ES2018_**, **_v8js_**, and **_Chrome 64ing_**!
 
 ### Related Resources:
 
-+ [Google: Chrome 64 is out now, giving you tougher pop-up blocker, Spectre fixes](https://www.zdnet.com/article/google-chrome-64-is-out-now-giving-you-tougher-pop-up-blocker-spectre-fixes/)
-
-
+-   [Google: Chrome 64 is out now, giving you tougher pop-up blocker, Spectre fixes](https://www.zdnet.com/article/google-chrome-64-is-out-now-giving-you-tougher-pop-up-blocker-spectre-fixes/)

@@ -1,18 +1,52 @@
 ---
-title: "Fixing Your NVM Install"
+title: 'Fixing Your NVM Install'
 image: nvm.jpg
-description: The other day I wrote a post about Oh my zsh in which I mentioned that my next post would be about fixing my nvm install, so this morning I did just that.
+description:
+    The other day I wrote a post about Oh my zsh in which I mentioned that my
+    next post would be about fixing my nvm install, so this morning I did just
+    that.
 date: '2017-01-15'
-tags: ["nvm", "nodejs", "fixing-nvm-install", "command-line", "z-shell", "oh-my-zsh", "osx"]
-categories: ["z-shell", "zsh"]
-author: "Maria D. Campbell"
+tags:
+    [
+        'nvm',
+        'nodejs',
+        'fixing-nvm-install',
+        'command-line',
+        'z-shell',
+        'oh-my-zsh',
+        'osx',
+    ]
+categories: ['z-shell', 'zsh']
+author: 'Maria D. Campbell'
 ---
 
-The other day I wrote a post [What To Do When You Can’t Upgrade Oh my zsh](/blog/what-to-do-when-you-cant-upgrade-oh-my-zsh/) in which I mentioned that my next post would be about fixing my nvm install. So this morning I did just that. I fixed my nvm install, and now it works. It only took a couple of minutes out of my morning, and now there is one less headache on my machine!
+The other day I wrote a
+post [What To Do When You Can’t Upgrade Oh my zsh](/blog/what-to-do-when-you-cant-upgrade-oh-my-zsh/) in
+which I mentioned that my next post would be about fixing my nvm install. So
+this morning I did just that. I fixed my nvm install, and now it works. It only
+took a couple of minutes out of my morning, and now there is one less headache
+on my machine!
 
-I had tried to install NVM (Node Version Manager) a while back, and it never took. Who knows exactly why, but it never did. And I never took the time to sit down and figure out. But back then, Command Line was not so much a part of my workflow either. Then when it did become a large part of it, I didn’t bother to fix it. However, as I also mentioned in previous posts, one of my New Year’s resolutions for 2017 is to become very well acquainted with Command Line and my machine! And all this took now was 2 minutes or < of my time!
+I had tried to install NVM (Node Version Manager) a while back, and it never
+took. Who knows exactly why, but it never did. And I never took the time to sit
+down and figure out. But back then, Command Line was not so much a part of my
+workflow either. Then when it did become a large part of it, I didn’t bother to
+fix it. However, as I also mentioned in previous posts, one of my New Year’s
+resolutions for 2017 is to become very well acquainted with Command Line and my
+machine! And all this took now was 2 minutes or < of my time!
 
-First I did a bit of research on the topic, and came up with the ***thread*** [Node Version Manager install – nvm command not found](https://stackoverflow.com/questions/16904658/node-version-manager-install-nvm-command-not-found), because that is what I would come up with when trying to find out what version of nvm I had installed on my computer. `Z shell` had ***not been recognizing*** **anything** `nvm`. Then I ***followed*** the **link** in the ***thread*** to [NVM on Github](https://github.com/creationix/nvm) and read more on installing nvm. The thread on StackOverflow was a bit more pertinent to my situation, so I stuck with the explanation there. One thing I should note that might confuse you if you decide to go the NVM on Github route, is to ignore the suggestion to type the `nvm -v` **command** to check and see what ***version*** of `nvm` you have on your computer if you use `Z shell`. That command will not be recognized by it. When I typed `nvm -v` in `CL`, then I received
+First I did a bit of research on the topic, and came up with the **_thread_**
+[Node Version Manager install – nvm command not found](https://stackoverflow.com/questions/16904658/node-version-manager-install-nvm-command-not-found),
+because that is what I would come up with when trying to find out what version
+of nvm I had installed on my computer. `Z shell` had **_not been recognizing_**
+**anything** `nvm`. Then I **_followed_** the **link** in the **_thread_** to
+[NVM on Github](https://github.com/creationix/nvm) and read more on installing
+nvm. The thread on StackOverflow was a bit more pertinent to my situation, so I
+stuck with the explanation there. One thing I should note that might confuse you
+if you decide to go the NVM on Github route, is to ignore the suggestion to type
+the `nvm -v` **command** to check and see what **_version_** of `nvm` you have
+on your computer if you use `Z shell`. That command will not be recognized by
+it. When I typed `nvm -v` in `CL`, then I received
 
 ```shell
 Node Version Manager
@@ -78,15 +112,23 @@ So, as stated above, type
 nvm --version
 ```
 
-Just be aware that there are ***some*** differences between between bash commands and Z shell (Oh my zsh) commands. They even have written books on it. ***From Bash to Z Shell: Conquering the Command Line*** is one. Don’t know if it’s any good and it is somewhat dated, but serves as an example.
+Just be aware that there are **_some_** differences between between bash
+commands and Z shell (Oh my zsh) commands. They even have written books on it.
+**_From Bash to Z Shell: Conquering the Command Line_** is one. Don’t know if
+it’s any good and it is somewhat dated, but serves as an example.
 
-Next I went into my `~/` (home) directory in `iTerm2` to make sure that I did indeed have an `~/.nvm` folder, and I did. Then, after a bit of research and falling back on what I had learned when [fixing](/blog/what-to-do-when-you-cant-upgrade-oh-my-zsh/) my `Z Shell` (`Oh my zsh`) install, I typed
+Next I went into my `~/` (home) directory in `iTerm2` to make sure that I did
+indeed have an `~/.nvm` folder, and I did. Then, after a bit of research and
+falling back on what I had learned when
+[fixing](/blog/what-to-do-when-you-cant-upgrade-oh-my-zsh/) my `Z Shell`
+(`Oh my zsh`) install, I typed
 
 ```shell
 source ~/.nvm/nvm.sh
 ```
 
-in the ***current*** `iTerm2` **instance**. This is the message I received when I hit return:
+in the **_current_** `iTerm2` **instance**. This is the message I received when
+I hit return:
 
 ```shell
 nvm is not compatible with the npm config "prefix" option: currently set to "/Users/mariacam/.npm-global"
@@ -111,17 +153,24 @@ in `CL` and received the following when I hit return
 0.31.4
 ```
 
-I guess I should be updating my NVM install! Perhaps we’ll cover that in my next post.
+I guess I should be updating my NVM install! Perhaps we’ll cover that in my next
+post.
 
 ```shell
 OSX operating system: El Capitan 10.11.6
 ```
 
-**Note:** When I checked to see what **version** of `Node` I had installed on my computer, I was surprised to see that I had ***version*** `4.4.7` installed. I had been downloading latest versions via `Command Line` for a while ***thinking*** that I was being **automatically updated** as in the past. However, I had installed `NVM` since then, and it takes care of managing which versions you want to use. So simply downloading Node expecting a miracle to happen won’t work. You have to do the following:
+**Note:** When I checked to see what **version** of `Node` I had installed on my
+computer, I was surprised to see that I had **_version_** `4.4.7` installed. I
+had been downloading latest versions via `Command Line` for a while
+**_thinking_** that I was being **automatically updated** as in the past.
+However, I had installed `NVM` since then, and it takes care of managing which
+versions you want to use. So simply downloading Node expecting a miracle to
+happen won’t work. You have to do the following:
 
 ```shell
 nvm install 7.4.0
 ```
 
-for example, or whichever other version you want to use. It’s that simple! Happy ***noding***!
-
+for example, or whichever other version you want to use. It’s that simple! Happy
+**_noding_**!

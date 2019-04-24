@@ -1,24 +1,52 @@
 ---
-title: "The new npm audit with npm > 6"
+title: 'The new npm audit with npm > 6'
 image: npm_audit.jpg
-description: First Github started letting us know about npm package vulnerabilities in our Github repos, and now Nodejs does the same in our local repos via command line.
+description:
+    First Github started letting us know about npm package vulnerabilities in
+    our Github repos, and now Nodejs does the same in our local repos via
+    command line.
 date: '2018-06-05'
-tags: ["code-security", "nodejs-security", "npm", "github", "software-development", "full-stack-javascript", "front-end-development", "web-development"]
-categories: ["web-development", "front-end-development", "full-stack-javascript", "node-package-manager"]
-author: "Maria D. Campbell"
+tags:
+    [
+        'code-security',
+        'nodejs-security',
+        'npm',
+        'github',
+        'software-development',
+        'full-stack-javascript',
+        'front-end-development',
+        'web-development',
+    ]
+categories:
+    [
+        'web-development',
+        'front-end-development',
+        'full-stack-javascript',
+        'node-package-manager',
+    ]
+author: 'Maria D. Campbell'
 ---
 
-First **Github** started letting us know about `npm package vulnerabilities` in our **Github** ***repos***. Now **Nodejs** has followed suit and does the same in our **local repos** via `command line`.
+First **Github** started letting us know about `npm package vulnerabilities` in
+our **Github** **_repos_**. Now **Nodejs** has followed suit and does the same
+in our **local repos** via `command line`.
 
-It took me a little while to figure out how to fix these vulnerabilities. It was a matter of ***not so hot*** `npm documentation`. It seems that it has since improved! **Node Security** is ***very new***, after all! **Links** to ***better documentation*** is now included in our **vulnerability warnings** in **Terminal** (`Mac OSX`).
+It took me a little while to figure out how to fix these vulnerabilities. It was
+a matter of **_not so hot_** `npm documentation`. It seems that it has since
+improved! **Node Security** is **_very new_**, after all! **Links** to **_better
+documentation_** is now included in our **vulnerability warnings** in
+**Terminal** (`Mac OSX`).
 
-Currently I am ***working on*** an **app** using `express`, `nodejs`, `sequelize`, `express-session`, `bcrypt`, ***among others***. I wanted to include the `sequelize-cli`, and did so with the command
+Currently I am **_working on_** an **app** using `express`, `nodejs`,
+`sequelize`, `express-session`, `bcrypt`, **_among others_**. I wanted to
+include the `sequelize-cli`, and did so with the command
 
 ```shell
 npm i sequelize-cli --save
 ```
 
-***However***, **once installed**, I got the following ***warning*** in **Terminal**:
+**_However_**, **once installed**, I got the following **_warning_** in
+**Terminal**:
 
 ```shell
 sequelize-cli@4.0.0
@@ -27,7 +55,7 @@ found 1 low severity vulnerability
 run `npm audit fix` to fix them, or `npm audit` for details
 ```
 
-First I followed the instructions to ***fix*** the **vulnerability** with
+First I followed the instructions to **_fix_** the **vulnerability** with
 
 ```shell
 npm audit fix
@@ -47,7 +75,8 @@ Then I ran
 npm audit
 ```
 
-to get ***more information*** **about** the **vulnerability(s)**. The information included a link to **Node Security** with next steps to take:
+to get **_more information_** **about** the **vulnerability(s)**. The
+information included a link to **Node Security** with next steps to take:
 
 ```shell
 === npm audit security report ===
@@ -73,7 +102,10 @@ to get ***more information*** **about** the **vulnerability(s)**. The informatio
 └───────────────┴──────────────────────────────────────────────────────────────┘
 ```
 
-It involved the **package** `deep-extend`, which is a **dependency** of `sequelize-cli` and `bcrypt`, both which I have **included** in my ***root dependencies***. I got the following information on deep-extend in the **Node Security** ***link***:
+It involved the **package** `deep-extend`, which is a **dependency** of
+`sequelize-cli` and `bcrypt`, both which I have **included** in my **_root
+dependencies_**. I got the following information on deep-extend in the **Node
+Security** **_link_**:
 
 ```shell
 Overview
@@ -85,7 +117,9 @@ Remediation
 Update to version 0.5.1 or later.
 ```
 
-When I ran `npm audit` in **Terminal**, it told me to go into the `package` located in `node_modules` and check that a `package-lock.json` actually existed. If not, I should create one:
+When I ran `npm audit` in **Terminal**, it told me to go into the `package`
+located in `node_modules` and check that a `package-lock.json` actually existed.
+If not, I should create one:
 
 ```shell
 npm audit                                                                                      ✖ ✹ ✭
@@ -97,15 +131,22 @@ npm ERR! A complete log of this run can be found in:
 npm ERR! /Users/mariacam/.npm/_logs/2018-06-05T10_22_24_882Z-debug.log
 ```
 
-But first I ***got rid of*** my **top level** `package-lock.json` so that I could ***actually*** **upgrade** `deep-extend`. If I had kept it, `deep-extend` would just be ***re-installed*** with the **same version**. To learn more, please visit [package-lock.json](https://docs.npmjs.com/files/package-lock.json) on [npmjs.com](https://docs.npmjs.com/).
+But first I **_got rid of_** my **top level** `package-lock.json` so that I
+could **_actually_** **upgrade** `deep-extend`. If I had kept it, `deep-extend`
+would just be **_re-installed_** with the **same version**. To learn more,
+please visit [package-lock.json](https://docs.npmjs.com/files/package-lock.json)
+on [npmjs.com](https://docs.npmjs.com/).
 
-After I ***deleted*** the **top-level** `package-lock.json`, I went into `sequelize-cli` in `node_modules`, which ***contained*** the `deep-extend` **dependency**, and saw that there was ***no*** `package-lock.json`. I ran the following `command` to ***create one*** for `sequelize-cli`:
+After I **_deleted_** the **top-level** `package-lock.json`, I went into
+`sequelize-cli` in `node_modules`, which **_contained_** the `deep-extend`
+**dependency**, and saw that there was **_no_** `package-lock.json`. I ran the
+following `command` to **_create one_** for `sequelize-cli`:
 
 ```shell
 npm i --package-lock-only
 ```
 
-After running it, I ***got back*** the following **warning** in **Terminal**:
+After running it, I **_got back_** the following **warning** in **Terminal**:
 
 ```shell
 created a lockfile as package-lock.json. You should commit this file.
@@ -120,7 +161,7 @@ I went back up to the `root directory` and **ran** the following `command`:
 npm i deep-extend@0.5.1
 ```
 
-Again, I ***got*** the following **warning** in **Terminal**:
+Again, I **_got_** the following **warning** in **Terminal**:
 
 ```shell
 deep-extend@0.5.1
@@ -129,7 +170,8 @@ found 1 low severity vulnerability
 run `npm audit fix` to fix them, or `npm audit` for details
 ```
 
-This ***installed*** the **version needed** to get ***rid of*** the **vulnerability**, as mentioned earlier.
+This **_installed_** the **version needed** to get **_rid of_** the
+**vulnerability**, as mentioned earlier.
 
 Now I was ready to run the command
 
@@ -144,17 +186,22 @@ removed 2 packages and updated 2 packages in 3.131s
 fixed 1 of 1 vulnerability in 2070 scanned packages
 ```
 
-Then I had to ***re-install*** **all** my **npm packages**, because I had gotten rid of the `package-lock.json` in **root**. Then I received
+Then I had to **_re-install_** **all** my **npm packages**, because I had gotten
+rid of the `package-lock.json` in **root**. Then I received
 
 ```shell
 audited 2070 packages in 3.049s
 found 0 vulnerabilities
 ```
 
-I had also received a warning for the **npm package** `sharp`, and had uninstalled it, Now, if I really wanted to, I could ***re-install*** and ***fix*** the **vulnerability**. This also goes for **any vulnerabilities** you may have to ***fix*** on your **remote repos** on **Github**! I know I have a few to address!
+I had also received a warning for the **npm package** `sharp`, and had
+uninstalled it, Now, if I really wanted to, I could **_re-install_** and
+**_fix_** the **vulnerability**. This also goes for **any vulnerabilities** you
+may have to **_fix_** on your **remote repos** on **Github**! I know I have a
+few to address!
 
-Happy ***npm security***!
+Happy **_npm security_**!
 
 ### Related Resources:
 
-+ [About security audits](https://docs.npmjs.com/auditing-package-dependencies-for-security-vulnerabilities)
+-   [About security audits](https://docs.npmjs.com/auditing-package-dependencies-for-security-vulnerabilities)

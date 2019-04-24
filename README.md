@@ -4,46 +4,49 @@
 
 ### Features
 
-+ Sitemap (gatsby-plugin-sitemap and a visual one of my own creation)
+-   Sitemap (gatsby-plugin-sitemap and a visual one of my own creation)
 
-+ RSS Feed (gatsby-plugin-feed)
+-   RSS Feed (gatsby-plugin-feed)
 
-+ BlogList thumbnails (gatsby-image. gatsby-remark-images, & gatsby-plugin sharp)
+-   BlogList thumbnails (gatsby-image. gatsby-remark-images, & gatsby-plugin
+    sharp)
 
-+ Post Featured Image (gatsby-image, gatsby-remark-images, & gatsby-plugin sharp)
+-   Post Featured Image (gatsby-image, gatsby-remark-images, & gatsby-plugin
+    sharp)
 
-+ Google Analytics Gtag (gatsby-plugin-gtag)
+-   Google Analytics Gtag (gatsby-plugin-gtag)
 
-+ CSS in JS Styling (@emotion/styled & gatsby-plugin-emotion)
+-   CSS in JS Styling (@emotion/styled & gatsby-plugin-emotion)
 
-+ Embedded Tweets (gatsby-plugin-twitter)
+-   Embedded Tweets (gatsby-plugin-twitter)
 
-+ Custom Prismjs Highlighting (prismjs & gatsby-remark-prismjs) 
+-   Custom Prismjs Highlighting (prismjs & gatsby-remark-prismjs)
 
-+ Navigation Side Menu (react-burger-menu)
+-   Navigation Side Menu (react-burger-menu)
 
-+ FontAwesome Icons (for React)
+-   FontAwesome Icons (for React)
 
-+ Typography (react-typography, typeface-merriweather, typeface-montserrat, typography-theme-wordpress-2016)
+-   Typography (react-typography, typeface-merriweather, typeface-montserrat,
+    typography-theme-wordpress-2016)
 
-+ JAMStack (static) hosting on Netlify
+-   JAMStack (static) hosting on Netlify
 
-+ Netlify-Cli 
+-   Netlify-Cli
 
-+ Github/Netflify Integration
+-   Github/Netflify Integration
 
-+ Deployment to Netflify from Github via master (production) branch
+-   Deployment to Netflify from Github via master (production) branch
 
-+ Netlify Branch Deployment (staging)
+-   Netlify Branch Deployment (staging)
 
-+ Netlify Contact Forms
+-   Netlify Contact Forms
 
-+ Free HTTPS (thanks to Netlify)
+-   Free HTTPS (thanks to Netlify)
 
-+ Continuous Deployment (thanks to Netlify)
+-   Continuous Deployment (thanks to Netlify)
 
-+ Jira Project Management
+-   Jira Project Management
 
-+ Github-Jira Integration
+-   Github-Jira Integration
 
 Over time, there will be more!
