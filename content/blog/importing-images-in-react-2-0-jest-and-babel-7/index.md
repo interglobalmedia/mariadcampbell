@@ -1,32 +1,100 @@
 ---
-title: "Importing Images in React 2.0: Jest (and Babel 7)"
+title: 'Importing Images in React 2.0: Jest (and Babel 7)'
 image: react_jest.png
-description: Yesterday I added an image to a new project, and I tried to implement it using the workflow I had set up in my previous custom React Workflow, and it DID NOT WORK!
+description:
+    Yesterday I added an image to a new project, and I tried to implement it
+    using the workflow I had set up in my previous custom React Workflow, and it
+    DID NOT WORK!
 date: '2018-12-02'
-tags: ["jest", "webpack-4", "babel-7", "react", "workflows", "front-end-development",  "modern-javascript"]
-categories: ["web-development", "front-end-development", "react", "web-development-workflows"]
-author: "Maria D. Campbell"
+tags:
+    [
+        'jest',
+        'webpack-4',
+        'babel-7',
+        'react',
+        'workflows',
+        'front-end-development',
+        'modern-javascript',
+    ]
+categories:
+    [
+        'web-development',
+        'front-end-development',
+        'react',
+        'web-development-workflows',
+    ]
+author: 'Maria D. Campbell'
 ---
 
-**Note December 3, 2018:** There were some changes I had to make after adding support for image imports into React because it caused “side effects”. Please visit my article entitled [The Jest Side Effect](/blog/the-jest-side-effect/) and [The New Babel Config](/blog/the-new-babel-7-config/) to get the whole picture. There were some ***issues*** **along the way** ***due to*** **breaking changes** in **Babel 7** which ***affected*** **Jest**, **React**, and **ESLint**. ***Unless*** you are **using** ***create-react-app***, your **workflow** might have to be ***adjusted*** depending on what **support** you want to ***provide*** in any given **application**. I have brought ***all resources*** **together** in the ***repository*** for the **second edition** of my **custom React Workflow** on **Github**. Please visit [issues](https://github.com/interglobalmedia/react-workflow-updated-2018/issues/1) to learn more.
+**Note December 3, 2018:** There were some changes I had to make after adding
+support for image imports into React because it caused “side effects”. Please
+visit my article entitled [The Jest Side Effect](/blog/the-jest-side-effect/)
+and [The New Babel Config](/blog/the-new-babel-7-config/) to get the whole
+picture. There were some **_issues_** **along the way** **_due to_** **breaking
+changes** in **Babel 7** which **_affected_** **Jest**, **React**, and
+**ESLint**. **_Unless_** you are **using** **_create-react-app_**, your
+**workflow** might have to be **_adjusted_** depending on what **support** you
+want to **_provide_** in any given **application**. I have brought **_all
+resources_** **together** in the **_repository_** for the **second edition** of
+my **custom React Workflow** on **Github**. Please visit
+[issues](https://github.com/interglobalmedia/react-workflow-updated-2018/issues/1)
+to learn more.
 
-Yesterday I ***added an image*** to a **new project**. I tried to implement it using the **“image” workflow** I had set up ***based on*** the **first edition** of my **custom React Workflow** (without create-react-app), and it DID NOT WORK!
+Yesterday I **_added an image_** to a **new project**. I tried to implement it
+using the **“image” workflow** I had set up **_based on_** the **first edition**
+of my **custom React Workflow** (without create-react-app), and it DID NOT WORK!
 
-***Of course not***. I am not using the same dependency versions I did more than a year ago. Things always change, but now they are changing more quickly than ever! Not only are they changing, but it seems that whatever is released needs to be tweaked as well.
+**_Of course not_**. I am not using the same dependency versions I did more than
+a year ago. Things always change, but now they are changing more quickly than
+ever! Not only are they changing, but it seems that whatever is released needs
+to be tweaked as well.
 
-It’s ***not necessarily*** that something **isn’t good** when it is released, but it ***still*** has to be able to **play well** with its ***“playmates”***. That doesn’t always end up being the case. ***Old playmates*** **disappear**, and ***new ones*** **come in** to ***replace them***.
+It’s **_not necessarily_** that something **isn’t good** when it is released,
+but it **_still_** has to be able to **play well** with its **_“playmates”_**.
+That doesn’t always end up being the case. **_Old playmates_** **disappear**,
+and **_new ones_** **come in** to **_replace them_**.
 
-For instance, I used to be able to **create** an ***images folder*** in the ***root*** of **my projects** and an `index.js` file in the ***root*** of the **images folder**, then ***export*** the **images** from `index.js` so that I could use them anywhere in my project. That’s because way back when, images had to be in the same folder as all other files needed for production. That (usually) was a **folder** ***called*** `src`. But because I used a lot of images, and liked to have an ***organized folder structure*** in my **dist** (build) folder, I created my own image workflow to make that happen.
+For instance, I used to be able to **create** an **_images folder_** in the
+**_root_** of **my projects** and an `index.js` file in the **_root_** of the
+**images folder**, then **_export_** the **images** from `index.js` so that I
+could use them anywhere in my project. That’s because way back when, images had
+to be in the same folder as all other files needed for production. That
+(usually) was a **folder** **_called_** `src`. But because I used a lot of
+images, and liked to have an **_organized folder structure_** in my **dist**
+(build) folder, I created my own image workflow to make that happen.
 
-Now that there is ***Babel 7*** and the **Babel configuration** has drastically changed, certain **modern JavaScript syntax** in our code is no longer recognized when we are developing inside our **text editors** or **IDE**s. This means that **TDD software** ***such as*** **Jest** is affected as well.
+Now that there is **_Babel 7_** and the **Babel configuration** has drastically
+changed, certain **modern JavaScript syntax** in our code is no longer
+recognized when we are developing inside our **text editors** or **IDE**s. This
+means that **TDD software** **_such as_** **Jest** is affected as well.
 
-I ***just completed*** the **second edition** of my **custom React Workflow** the other day. It works well for what it offers out of the box. However, just as with the first edition, I only included a favicon and no images. I ended up ***taking images into consideration*** for the **workflow** ***later***.
+I **_just completed_** the **second edition** of my **custom React Workflow**
+the other day. It works well for what it offers out of the box. However, just as
+with the first edition, I only included a favicon and no images. I ended up
+**_taking images into consideration_** for the **workflow** **_later_**.
 
-I would like to discuss the changes in the custom workflow (providing support for images) that have taken place since I wrote the article [Importing images in React](/blog/importing-images-in-react/) on ***October 7, 2017***. A few things (like the folder structure) may be the same, but I can **no longer** ***export*** my **images** from an `index.js` file in the **images folder**. I think it might have something to do with ***what*** my **Babel 7 configuration** is ***no longer providing*** **me**, but I have to investigate further to find out the answers.
+I would like to discuss the changes in the custom workflow (providing support
+for images) that have taken place since I wrote the article
+[Importing images in React](/blog/importing-images-in-react/) on **_October 7,
+2017_**. A few things (like the folder structure) may be the same, but I can
+**no longer** **_export_** my **images** from an `index.js` file in the **images
+folder**. I think it might have something to do with **_what_** my **Babel 7
+configuration** is **_no longer providing_** **me**, but I have to investigate
+further to find out the answers.
 
-***If*** **you are going to** or **already started** to use **React 16.6+**(***I*** currently ***use*** **React 16.6.3** in my ***workflow***), **Webpack 4+** (**I use 4.3.0**), **Babel 7**, **Jest** (***I use*** **23.6.0**), and **ESLint** (***I use*** **5.9.0**), and want to ADD IMAGES to your ***projects***, ***please follow the steps I discuss here*** **for starters**, and ***ignore*** the **Jest configuration** in both the ***first*** and ***second edition*** of my **custom workflow**. If you ***only*** are **adding a favicon** or ***no image at all***, then ***keep*** the **configuration** ***provided*** in the **second edition**.
+**_If_** **you are going to** or **already started** to use **React
+16.6+**(**_I_** currently **_use_** **React 16.6.3** in my **_workflow_**),
+**Webpack 4+** (**I use 4.3.0**), **Babel 7**, **Jest** (**_I use_**
+**23.6.0**), and **ESLint** (**_I use_** **5.9.0**), and want to ADD IMAGES to
+your **_projects_**, **_please follow the steps I discuss here_** **for
+starters**, and **_ignore_** the **Jest configuration** in both the **_first_**
+and **_second edition_** of my **custom workflow**. If you **_only_** are
+**adding a favicon** or **_no image at all_**, then **_keep_** the
+**configuration** **_provided_** in the **second edition**.
 
-In the **presentation/documentation** for the ***second edition*** of my **custom workflow** ***for React***, I have the ***following*** **dependencies** and **devDependencies** in my `package.json`:
+In the **presentation/documentation** for the **_second edition_** of my
+**custom workflow** **_for React_**, I have the **_following_** **dependencies**
+and **devDependencies** in my `package.json`:
 
 ```js
 {
@@ -122,9 +190,14 @@ In the **presentation/documentation** for the ***second edition*** of my **custo
 }
 ```
 
-My ***workflow*** **provides** ***support*** ***for*** **SCSS**, **CSS Modules**, and ***files*** such as `favicon.ico`. I can only ***attest to*** the ***support for favicons***, as that is all that I added to the project I used as an example in my workflow presentation/documentation.
+My **_workflow_** **provides** **_support_** **_for_** **SCSS**, **CSS
+Modules**, and **_files_** such as `favicon.ico`. I can only **_attest to_** the
+**_support for favicons_**, as that is all that I added to the project I used as
+an example in my workflow presentation/documentation.
 
-That being said, **my Jest** ***configuration didn’t*** **successfully mock out** ***image import*** in **components** ***in testing***. ***Result***? My ***test*** for `App.js`, where an image was imported, failed. When I ran
+That being said, **my Jest** **_configuration didn’t_** **successfully mock
+out** **_image import_** in **components** **_in testing_**. **_Result_**? My
+**_test_** for `App.js`, where an image was imported, failed. When I ran
 
 ```shell
 npm run test
@@ -149,26 +222,46 @@ npm test                                                              ⏎ ✹ �
 npm ERR! Test failed.  See above for more details.
 ```
 
-A ***year ago***, I had **no need for** a ***custom transformer*** or a ***transform option*** in my `package.json`. The `"setupFiles"` and `"moduleNameMapper"` **option configurations** shown here was ***all I needed*** **as far as** ***Jest*** **was concerned**. ***Now***, **however**, it was ***looking for*** a **custom transformer** and a **transform** ***option***. Why?
+A **_year ago_**, I had **no need for** a **_custom transformer_** or a
+**_transform option_** in my `package.json`. The `"setupFiles"` and
+`"moduleNameMapper"` **option configurations** shown here was **_all I needed_**
+**as far as** **_Jest_** **was concerned**. **_Now_**, **however**, it was
+**_looking for_** a **custom transformer** and a **transform** **_option_**.
+Why?
 
-Because the **moduleNameMapper** ***configuration*** I previously used ***did not fulfill*** **my** (current) **requirements**. In that case, the ***following is suggested*** in the **Jest documentation** for ***version 23.6*** entitled [Using Jest With Webpack](https://jestjs.io/docs/en/webpack):
+Because the **moduleNameMapper** **_configuration_** I previously used **_did
+not fulfill_** **my** (current) **requirements**. In that case, the **_following
+is suggested_** in the **Jest documentation** for **_version 23.6_** entitled
+[Using Jest With Webpack](https://jestjs.io/docs/en/webpack):
 
-> If `moduleNameMapper` cannot fulfill your requirements, you can use Jest’s [`transform`](https://jestjs.io/docs/en/configuration#transform-object-string-string) config option to specify how assets are transformed. For example, a transformer that returns the basename of a file (such that `require('logo.jpg');` returns `'logo'`) can be written as:
+> If `moduleNameMapper` cannot fulfill your requirements, you can use Jest’s
+> [`transform`](https://jestjs.io/docs/en/configuration#transform-object-string-string)
+> config option to specify how assets are transformed. For example, a
+> transformer that returns the basename of a file (such that
+> `require('logo.jpg');` returns `'logo'`) can be written as:
 
 ```js
 // fileTransformer.js
-const path = require('path');
+const path = require('path')
 
 module.exports = {
-  process(src, filename, config, options) {
-      return 'module.exports = ' + JSON.stringify(path.basename(filename)) + ';';
-  },
-};
+    process(src, filename, config, options) {
+        return (
+            'module.exports = ' + JSON.stringify(path.basename(filename)) + ';'
+        )
+    },
+}
 ```
 
-I created a `fileTransformer.js` file in the root of my project folder where my `package.json` resides, and added the above code to it.
+I created a `fileTransformer.js` file in the root of my project folder where my
+`package.json` resides, and added the above code to it.
 
-Next, according to the suggestions the same **Jest** documentation,  [Using Jest With Webpack](https://jestjs.io/docs/en/webpack) (Jest 23.6 docs), provided, I ***replaced*** the **moduleNameMapper** ***option configuration*** I was **using** with the **abridged version** ***suggested***, and ***added*** a **transform option** which basically ***picked up the rest*** of what ***previously resided*** in **moduleNameMapper**:
+Next, according to the suggestions the same **Jest** documentation,
+[Using Jest With Webpack](https://jestjs.io/docs/en/webpack) (Jest 23.6 docs),
+provided, I **_replaced_** the **moduleNameMapper** **_option configuration_** I
+was **using** with the **abridged version** **_suggested_**, and **_added_** a
+**transform option** which basically **_picked up the rest_** of what
+**_previously resided_** in **moduleNameMapper**:
 
 ```js
 // package.json (for custom transformers and CSS Modules)
@@ -184,7 +277,7 @@ Next, according to the suggestions the same **Jest** documentation,  [Using Jest
 }
 ```
 
-Then **I ran my tests** ***again***, and **this time** they ***all passed***:
+Then **I ran my tests** **_again_**, and **this time** they **_all passed_**:
 
 ```shell
 npm test                                                              ⏎ ✹ ✭
@@ -202,18 +295,33 @@ Time:        2.265s
 Ran all test suites.
 ```
 
-***Advice*** for **dealing** with **rapidly changing technology**? ***Start from*** your **point(s)** of **knowledge**. With ***each error you encounter***, **deal with it** ***one at a time***. When I started developing projects with **React 16.6.+**, **Webpack 4**, and **Babel 7**, I ***first*** **set up** my **project** ***with my old workflow***, ***expecting*** things to **break**, but ***knowing*** that **starting from** *SOMEWHERE* I was ***familiar with*** was going to be ***better than*** trying to **start** ALL **over** ***from scratch***. This way, I got to a point of success much more quickly, and I learned much more. I compared the differences along the way and gained a much better understanding of how things worked both previously and now. Keeping historical records of things and building a knowledge base from them is very important.
+**_Advice_** for **dealing** with **rapidly changing technology**? **_Start
+from_** your **point(s)** of **knowledge**. With **_each error you encounter_**,
+**deal with it** **_one at a time_**. When I started developing projects with
+**React 16.6.+**, **Webpack 4**, and **Babel 7**, I **_first_** **set up** my
+**project** **_with my old workflow_**, **_expecting_** things to **break**, but
+**_knowing_** that **starting from** _SOMEWHERE_ I was **_familiar with_** was
+going to be **_better than_** trying to **start** ALL **over** **_from
+scratch_**. This way, I got to a point of success much more quickly, and I
+learned much more. I compared the differences along the way and gained a much
+better understanding of how things worked both previously and now. Keeping
+historical records of things and building a knowledge base from them is very
+important.
 
-> That’s why seasoned developers who “have seen it all from the beginning” are so integral to any developer community or team! – me
+> That’s why seasoned developers who “have seen it all from the beginning” are
+> so integral to any developer community or team! – me
 
-To view the project structure and files associated with the project I am currently working on, and which is using the changes to the Jest configuration discussed here, please visit my [Text To Speech repository](https://github.com/interglobalmedia/text-to-speech-app).
+To view the project structure and files associated with the project I am
+currently working on, and which is using the changes to the Jest configuration
+discussed here, please visit my
+[Text To Speech repository](https://github.com/interglobalmedia/text-to-speech-app).
 
 ### Related Resources:
 
-+ [Importing images in React (October 7, 2017)](/blog/importing-images-in-react/)
+-   [Importing images in React (October 7, 2017)](/blog/importing-images-in-react/)
 
-+ [React workflows Without Create-React-App First Edition (2017)](https://github.com/interglobalmedia/react-workflow-presentation)
+-   [React workflows Without Create-React-App First Edition (2017)](https://github.com/interglobalmedia/react-workflow-presentation)
 
-+ [React workflows Without Create-React-App Second Edition (updated 2018)](https://github.com/interglobalmedia/react-workflow-updated-2018)
+-   [React workflows Without Create-React-App Second Edition (updated 2018)](https://github.com/interglobalmedia/react-workflow-updated-2018)
 
-+ [Using Jest With Webpack (Jest 23.6 docs)](https://jestjs.io/docs/en/webpack)
+-   [Using Jest With Webpack (Jest 23.6 docs)](https://jestjs.io/docs/en/webpack)

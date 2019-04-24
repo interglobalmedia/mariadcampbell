@@ -2,18 +2,17 @@ import React from 'react'
 import travel from '../images/chris-lawton-346402-unsplash.jpg'
 import styled from '@emotion/styled'
 import Header from '../components/Header/Header'
-import { Helmet } from 'react-helmet'
-import { Link } from 'gatsby'
-import { OutboundLink } from 'gatsby-plugin-gtag'
+import {Helmet} from 'react-helmet'
+import {Link} from 'gatsby'
+import {OutboundLink} from 'gatsby-plugin-gtag'
 import PropTypes from 'prop-types'
 
-
-const Container = styled.div`
-    background: rgba(255,255,255,0.4);
+export const Container = styled.div`
+    background: rgba(255, 255, 255, 0.4);
     overflow-y: hidden;
 `
 
-const ImageWrapper = styled.div`
+export const ImageWrapper = styled.div`
     display: flex;
     align-items: center;
     margin-top: 0;
@@ -22,16 +21,16 @@ const ImageWrapper = styled.div`
     margin-left: auto;
 `
 
-const BackgroundImage = styled.img`
-    position: fixed; 
-    top: 0; 
-    left: 0; 
+export const BackgroundImage = styled.img`
+    position: fixed;
+    top: 0;
+    left: 0;
     min-width: 100%;
     min-height: 100%;
     z-index: -1;
 `
 
-const FooterStyle = styled.footer`
+export const FooterStyle = styled.footer`
     text-align: center;
     padding-bottom: 0.5rem;
     letter-spacing: 0.07em;
@@ -53,28 +52,35 @@ const FooterStyle = styled.footer`
     }
 `
 
-const IndexPage = ({ siteTitle }) => {
+const IndexPage = ({siteTitle}) => {
     return (
-        <Container>
+        <>
             <Helmet>
                 <meta charset="utf-8" />
-                <meta name="keywords" content="web development, react, mongodb, postgresql, gatsbyjs, nodejs, npm, jsx, css in js, styled components, jira, atlassian, git, distributed version control, github, development, production, continuous deployment, git integration, css3, html5, audio, video' full stack development, front end development, back end development, automated workflows, 'aws, netlify, gh-pages, heroku, command line, osx, serverless stack, cross browser compatibility, shadow dom, testing, jest testing, html5 canvas, webgl, linting, eslint, prettier, babel, webpack, css modules, sass, homebrew, responsive design, es6, modern javascript, node security, npm audit fix" />
+                <meta
+                    name="keywords"
+                    content="web development, react, mongodb, postgresql, gatsbyjs, nodejs, npm, jsx, css in js, styled components, jira, atlassian, git, distributed version control, github, development, production, continuous deployment, git integration, css3, html5, audio, video, full stack development, front end development, back end development, automated workflows, aws, netlify, gh-pages, heroku, command line, osx, serverless stack, cross browser compatibility, shadow dom, testing, jest testing, html5 canvas, webgl, linting, eslint, prettier, babel, webpack, css modules, sass, homebrew, responsive design, es6, modern javascript, node security, npm audit fix"
+                />
                 <title>{siteTitle}</title>
                 <Link rel="canonical" href="https://www.mariadcampbell.com/" />
-                <OutboundLink href="https://www.mariadcampbell.com">Check out Maria D. Campbell's developer notebook!</OutboundLink>
+                <OutboundLink href="https://www.mariadcampbell.com">
+                    Check out the Maria D. Campbell developer notebook!
+                </OutboundLink>
             </Helmet>
-            <div className="Site">
-                <Header />
-                <div className='Site-content'>
-                    <ImageWrapper>
-                        <BackgroundImage src={travel} alt={siteTitle} />
-                    </ImageWrapper>
+            <Container>
+                <div className="Site">
+                    <Header />
+                    <div className="Site-content">
+                        <ImageWrapper>
+                            <BackgroundImage src={travel} alt={siteTitle} />
+                        </ImageWrapper>
+                    </div>
+                    <FooterStyle>
+                        © {new Date().getFullYear()} {siteTitle}
+                    </FooterStyle>
                 </div>
-                <FooterStyle>
-                    © {new Date().getFullYear()} {siteTitle}
-                </FooterStyle>
-            </div>
-        </Container>
+            </Container>
+        </>
     )
 }
 
@@ -83,9 +89,7 @@ IndexPage.propTypes = {
 }
 
 IndexPage.defaultProps = {
-    siteTitle: `Maria D. Campbell`
+    siteTitle: `Maria D. Campbell`,
 }
 
 export default IndexPage
-
-

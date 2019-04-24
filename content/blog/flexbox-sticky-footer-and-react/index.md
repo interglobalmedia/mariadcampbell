@@ -1,42 +1,63 @@
 ---
-title: "Flexbox sticky footer and React"
+title: 'Flexbox sticky footer and React'
 image: sticky-footer.jpg
-description: I came across a design challenge in which pages which had little or no content meant a footer which failed to stay grounded to the bottom of the page.
+description:
+    I came across a design challenge in which pages which had little or no
+    content meant a footer which failed to stay grounded to the bottom of the
+    page.
 date: '2017-10-04'
-tags: ["flexbox", "sticky-footer", "react", "design"]
-categories: ["front-end-development", "react", "web-design", "web-development"]
-author: "Maria D. Campbell"
+tags: ['flexbox', 'sticky-footer', 'react', 'design']
+categories: ['front-end-development', 'react', 'web-design', 'web-development']
+author: 'Maria D. Campbell'
 ---
 
-Currently I am working on a **React** ***version*** of my **portfolio site**. I like my **Jekyll** ***version***, but wanted to **compare** `UX` ***between*** **React** and **Jekyll**. I also wanted to ***add animation*** and ***interactivity*** which were not present in my **Jekyll site**.
+Currently I am working on a **React** **_version_** of my **portfolio site**. I
+like my **Jekyll** **_version_**, but wanted to **compare** `UX` **_between_**
+**React** and **Jekyll**. I also wanted to **_add animation_** and
+**_interactivity_** which were not present in my **Jekyll site**.
 
-I came across a design challenge pretty quickly into the project. The `“raised footer”` **issue**. Pages which had little or no content meant a footer which failed to stay grounded to the bottom of the page. It was time to add the `Flexbox “sticky footer” solution` ***developed by*** **Philip Walton**. Suggestions on **Github** that
+I came across a design challenge pretty quickly into the project. The
+`“raised footer”` **issue**. Pages which had little or no content meant a footer
+which failed to stay grounded to the bottom of the page. It was time to add the
+`Flexbox “sticky footer” solution` **_developed by_** **Philip Walton**.
+Suggestions on **Github** that
 
 ```css
-html, body {
+html,
+body {
     height: 100%;
 }
 ```
 
-would be enough is simply not true. Just check out devices with irregularly great heights like Kindle Fire HD or not so irregular devices like Nexus 10 and see what happens with your footer! better yet, check out your own empty or nearly empty pages!
+would be enough is simply not true. Just check out devices with irregularly
+great heights like Kindle Fire HD or not so irregular devices like Nexus 10 and
+see what happens with your footer! better yet, check out your own empty or
+nearly empty pages!
 
-I also found that **React developers** seem to have a hard time translating ***traditional implementations*** of **Flexbox** to **React DOM** ***configurations***. I had that problem at first as well. But then I started examining the ***structure*** of my **React application** from the ***React*** **point of view**, and things became clear pretty quickly.
+I also found that **React developers** seem to have a hard time translating
+**_traditional implementations_** of **Flexbox** to **React DOM**
+**_configurations_**. I had that problem at first as well. But then I started
+examining the **_structure_** of my **React application** from the **_React_**
+**point of view**, and things became clear pretty quickly.
 
-With a ***regular*** `HTML5`, `CSS3`, and `JavaScript` **application**, I would add the `Site` **class** to the `<body></body>` **tag**:
+With a **_regular_** `HTML5`, `CSS3`, and `JavaScript` **application**, I would
+add the `Site` **class** to the `<body></body>` **tag**:
 
 ```jsx
-<body class="Site"></body>
+<body class="Site" />
 ```
 
-Then I would add the `Site-content` **class** to a `<div></div>` I would create purely for the sake of the **Flexbox** `sticky footer`:
+Then I would add the `Site-content` **class** to a `<div></div>` I would create
+purely for the sake of the **Flexbox** `sticky footer`:
 
 ```jsx
 <body class="Site">
-    <div class="Site-content"></div>
+    <div class="Site-content" />
 </body>
 ```
 
-The structure of a **React** application, however, can confuse matters a bit at first. This is how my **React Portfolio**‘s `index.html` looks like right now:
+The structure of a **React** application, however, can confuse matters a bit at
+first. This is how my **React Portfolio**‘s `index.html` looks like right now:
 
 ```jsx
 <!DOCTYPE html>
@@ -61,10 +82,10 @@ The structure of a **React** application, however, can confuse matters a bit at 
 And this is what my `App.js` looks like:
 
 ```jsx
-import React, { Component } from 'react';
-import {Header} from './components/Header';
-import {Main} from './components/Main';
-import {Footer} from './components/Footer';
+import React, {Component} from 'react'
+import {Header} from './components/Header'
+import {Main} from './components/Main'
+import {Footer} from './components/Footer'
 
 class App extends Component {
     render() {
@@ -80,20 +101,28 @@ class App extends Component {
                 </div>
                 <Footer />
             </div>
-        );
+        )
     }
 }
 
-export default App;
+export default App
 ```
 
-If I were to add the `Site` **class** to the `<body></body>` in `index.html` and then created a new `div` below it for the `Site-content` **class**, it would not work. Why? because it would mean that the `<footer></footer>` **component** would end up being included, and that doesn’t do.
+If I were to add the `Site` **class** to the `<body></body>` in `index.html` and
+then created a new `div` below it for the `Site-content` **class**, it would not
+work. Why? because it would mean that the `<footer></footer>` **component**
+would end up being included, and that doesn’t do.
 
-So I had to determine what in React would act as the equivalent of the `<body></body>` **tag** and the proceeding `<div></div>` tag.
+So I had to determine what in React would act as the equivalent of the
+`<body></body>` **tag** and the proceeding `<div></div>` tag.
 
-Forget about the `<body></body>` tag! It’s the `<div className="App"></div>` which is **React**’s `<body></body>` tag. ***Then***, I added a new `<div className="Site-content"></div>` below that. Notice how the `<Footer />` **component** has been ***isolated*** from the rest of the `App`’s structure?
+Forget about the `<body></body>` tag! It’s the `<div className="App"></div>`
+which is **React**’s `<body></body>` tag. **_Then_**, I added a new
+`<div className="Site-content"></div>` below that. Notice how the `<Footer />`
+**component** has been **_isolated_** from the rest of the `App`’s structure?
 
-Lastly, I added the necessary `CSS` in my `_sticky-footer.css` `POSTCSS` **module**:
+Lastly, I added the necessary `CSS` in my `_sticky-footer.css` `POSTCSS`
+**module**:
 
 ```css
 :root {
@@ -122,10 +151,11 @@ Lastly, I added the necessary `CSS` in my `_sticky-footer.css` `POSTCSS` **modul
 }
 ```
 
-This is based on **Philip Walton**’s `Solved By Flexbox/Sticky Footer`. Try it out for yourself and let me know what you think.
+This is based on **Philip Walton**’s `Solved By Flexbox/Sticky Footer`. Try it
+out for yourself and let me know what you think.
 
 Happy coding!
 
 ### Related Resources:
 
-+ [Solved By FlexBox Sticky Footer](https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/)
+-   [Solved By FlexBox Sticky Footer](https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/)

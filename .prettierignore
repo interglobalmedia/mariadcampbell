@@ -1,0 +1,9 @@
+node_modules/
+coverage
+public
+.cache
+build
+.build
+__mocks__
+
+# etc...

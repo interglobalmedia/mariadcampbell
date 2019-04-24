@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-const PrevNextUl = styled.ul`
+export const PrevNextUl = styled.ul`
     list-style-type: none;
     display: flex;
     justify-content: space-between;
@@ -10,11 +10,11 @@ const PrevNextUl = styled.ul`
     margin-top: -1rem;
 `
 
-const PrevNextLi = styled.li`
+export const PrevNextLi = styled.li`
     list-style-type: none;
     letter-spacing: 0.07em;
     & a {
-        color: #cb4b16; 
+        color: #cb4b16;
         box-shadow: none;
         & :hover {
             text-decoration: underline;
@@ -22,16 +22,24 @@ const PrevNextLi = styled.li`
     }
 `
 
-const PrevNext = (props) => {
-    const { prev, next } = props
+const PrevNext = props => {
+    const {prev, next} = props
     return (
         <PrevNextUl>
-            {prev && <PrevNextLi><a href={prev.fields.slug}>
-                ← Prev {' '}<br />
-            </a></PrevNextLi>}
-            {next && <PrevNextLi><a href={next.fields.slug}>
-                Next → {' '}<br />
-            </a></PrevNextLi>}
+            {prev && (
+                <PrevNextLi>
+                    <a href={prev.fields.slug}>
+                        ← Prev <br />
+                    </a>
+                </PrevNextLi>
+            )}
+            {next && (
+                <PrevNextLi>
+                    <a href={next.fields.slug}>
+                        Next → <br />
+                    </a>
+                </PrevNextLi>
+            )}
         </PrevNextUl>
     )
 }
