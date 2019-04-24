@@ -6,15 +6,17 @@ function Metatags(props) {
         <Helmet
             title={props.title}
             meta={[
-                { name: 'title', content: props.title },
-                { name: 'description', content: props.description },
+                {name: 'title', content: props.title},
+                {name: 'description', content: props.description},
                 {
                     property: 'og:title',
                     content: props.title,
                 },
                 {
                     property: 'og:url',
-                    content: props.pathname ? props.url + props.pathname : props.url,
+                    content: props.pathname
+                        ? props.url + props.pathname
+                        : props.url,
                 },
                 {
                     property: 'og:image',
@@ -34,14 +36,14 @@ function Metatags(props) {
                 },
                 {
                     property: 'og:image:height',
-                    content: '630'
+                    content: '630',
                 },
                 {
                     property: 'og:locale',
                     content: 'en',
                 },
-                { name: 'twitter:card', content: 'summary_large_image' },
-                { name: 'twitter:title', content: props.title },
+                {name: 'twitter:card', content: 'summary_large_image'},
+                {name: 'twitter:title', content: props.title},
                 {
                     name: 'twitter:description',
                     content: props.description,
@@ -52,20 +54,20 @@ function Metatags(props) {
                 },
                 {
                     property: 'og:type',
-                    content: 'website'
+                    content: 'website',
                 },
                 {
                     name: 'robots',
-                    content: 'index, follow'
+                    content: 'index, follow',
                 },
                 {
                     name: 'twitter:creator',
-                    content: '@letsbsocial1'
+                    content: '@letsbsocial1',
                 },
                 {
                     property: 'og:site_name',
-                    content: 'yoursitename'
-                }
+                    content: 'yoursitename',
+                },
             ]}
         >
             <html lang="en" />

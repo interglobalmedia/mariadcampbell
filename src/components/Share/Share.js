@@ -1,9 +1,13 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter, faFacebookF, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {
+    faTwitter,
+    faFacebookF,
+    faLinkedinIn,
+} from '@fortawesome/free-brands-svg-icons'
 import styled from '@emotion/styled'
 
-const SocialUl = styled.ul`
+export const SocialUl = styled.ul`
     box-shadow: none;
     display: flex;
     align-items: center;
@@ -17,16 +21,15 @@ const SocialUl = styled.ul`
     & li {
         list-style-type: none;
         & a {
-            color: rgba(132,0,88, 1);
-            box-shadow: none; 
-            padding-top: 17px; 
+            color: rgba(132, 0, 88, 1);
+            box-shadow: none;
+            padding-top: 17px;
             padding-bottom: 8px;
-            padding-left: 8px; 
-            padding-right: 8px; 
+            padding-left: 8px;
+            padding-right: 8px;
             & :nth-of-type(2) {
-                padding-top: 20px; 
+                padding-top: 20px;
                 padding-bottom: 5px;
-
             }
         }
     }
@@ -37,22 +40,50 @@ const Share = props => {
         props.pathname}&text=${props.title} by @letsbsocial1`
     const fb = `https://www.facebook.com/sharer/sharer.php?u=${props.url +
         props.pathname}&text=${props.title}`
-    const linkedin = `https://www.linkedin.com/shareArticle?mini=true&url=${props.url + props.pathname}&text=${props.title}`
+    const linkedin = `https://www.linkedin.com/shareArticle?mini=true&url=${props.url +
+        props.pathname}&text=${props.title}`
     return (
         <SocialUl>
             <li>
                 <a href={fb} target="blank">
-                    <FontAwesomeIcon icon={faFacebookF} size='2x' style={{ width: '24px', height: '24px', marginLeft: '-0.5rem' }} />Facebook
+                    <FontAwesomeIcon
+                        icon={faFacebookF}
+                        size="2x"
+                        style={{
+                            width: '24px',
+                            height: '24px',
+                            marginLeft: '-0.5rem',
+                        }}
+                    />
+                    Facebook
                 </a>
             </li>
             <li>
                 <a href={twitter} target="blank">
-                    <FontAwesomeIcon icon={faTwitter} size='2x' style={{ width: '24px', height: '24px', marginRight: '0.25rem' }} />Twitter
+                    <FontAwesomeIcon
+                        icon={faTwitter}
+                        size="2x"
+                        style={{
+                            width: '24px',
+                            height: '24px',
+                            marginRight: '0.25rem',
+                        }}
+                    />
+                    Twitter
                 </a>
             </li>
             <li>
                 <a href={linkedin} target="blank">
-                    <FontAwesomeIcon icon={faLinkedinIn} size='2x' style={{ width: '24px', height: '24px', marginRight: '0.25rem' }} />Linkedin
+                    <FontAwesomeIcon
+                        icon={faLinkedinIn}
+                        size="2x"
+                        style={{
+                            width: '24px',
+                            height: '24px',
+                            marginRight: '0.25rem',
+                        }}
+                    />
+                    Linkedin
                 </a>
             </li>
         </SocialUl>

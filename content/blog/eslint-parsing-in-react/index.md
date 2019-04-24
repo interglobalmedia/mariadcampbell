@@ -1,18 +1,49 @@
 ---
-title: "ESLint parsing (in React)"
+title: 'ESLint parsing (in React)'
 image: formatter_logos.png
-description: I just completed creating a new custom workflow for React which included support for CSS Modules, SCSS, and image imports.
+description:
+    I just completed creating a new custom workflow for React which included
+    support for CSS Modules, SCSS, and image imports.
 date: '2018-12-04'
-tags: ["eslint", "react", "airbnb-style-guide", "prettier-code-formatter", "osx", "command-line", "terminal", "vs-code", "front-end-development", "web-development-workflows"]
-categories: ["front-end-development", "react", "code-editors", "vs-code", "web-development-workflows", "osx", "command-line", "terminal"]
-author: "Maria D. Campbell"
+tags:
+    [
+        'eslint',
+        'react',
+        'airbnb-style-guide',
+        'prettier-code-formatter',
+        'osx',
+        'command-line',
+        'terminal',
+        'vs-code',
+        'front-end-development',
+        'web-development-workflows',
+    ]
+categories:
+    [
+        'front-end-development',
+        'react',
+        'code-editors',
+        'vs-code',
+        'web-development-workflows',
+        'osx',
+        'command-line',
+        'terminal',
+    ]
+author: 'Maria D. Campbell'
 ---
 
 **Note:** I use **VS Code**.
 
-I just completed creating a ***new*** **custom workflow** for ***React*** which included **support** ***for*** **CSS Modules**, **SCSS**, and **image imports**. I use **ESLint** as my ***linter***, went full throttle with an ***extended configuration*** as well as ***adding*** a `babel-eslint` **loader** in my `webpack.base.config.js`. I added a custom `lint: eslint .` ***script*** in my `package.json`.
+I just completed creating a **_new_** **custom workflow** for **_React_** which
+included **support** **_for_** **CSS Modules**, **SCSS**, and **image imports**.
+I use **ESLint** as my **_linter_**, went full throttle with an **_extended
+configuration_** as well as **_adding_** a `babel-eslint` **loader** in my
+`webpack.base.config.js`. I added a custom `lint: eslint .` **_script_** in my
+`package.json`.
 
-I found, however, when I ran the `npm run lint` **script** ***after*** a **production build**, the script crashed, and some strange errors showed up in the **Terminal** window:
+I found, however, when I ran the `npm run lint` **script** **_after_** a
+**production build**, the script crashed, and some strange errors showed up in
+the **Terminal** window:
 
 ```shell
 npm run lint                                                           ✹ ✭
@@ -92,25 +123,34 @@ npm ERR! Failed at the text-to-speech-app@0.0.1 lint script.
 npm ERR! This is probably not a problem with npm. There is likely additional logging
 ```
 
-At first I thought there might be something wrong with my code even though the src code passed with flying colors.
+At first I thought there might be something wrong with my code even though the
+src code passed with flying colors.
 
-After a lot of research, I added an `.eslintignore` file so that I could keep my lint script to `"script": eslint ."` and not see all those incomprehensible errors occurring in `dist`:
+After a lot of research, I added an `.eslintignore` file so that I could keep my
+lint script to `"script": eslint ."` and not see all those incomprehensible
+errors occurring in `dist`:
 
 ```js
 dist/
 ```
 
-All those errors went away, and my code passed with flying colors. But I still wanted to know ***why*** they had **appeared** in the ***first place***, and how I could ***fix*** them.
+All those errors went away, and my code passed with flying colors. But I still
+wanted to know **_why_** they had **appeared** in the **_first place_**, and how
+I could **_fix_** them.
 
-I decided to ***extend*** **ESLint** with the **Airbnb style guide**. I wanted to ***improve upon*** my ***code even more***, and if possibly some of the errors I was seeing ***extended only with***
+I decided to **_extend_** **ESLint** with the **Airbnb style guide**. I wanted
+to **_improve upon_** my **_code even more_**, and if possibly some of the
+errors I was seeing **_extended only with_**
 
 ```js
 "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:import/recommended"],
 ```
 
-might (eventually) go away. I had to remove `dist/` from `.eslintignore` in order for the errors to appear in **Terminal** again.
+might (eventually) go away. I had to remove `dist/` from `.eslintignore` in
+order for the errors to appear in **Terminal** again.
 
-At first, that was NOT the case. **This time** the ***number of errors*** was **almost** ***double***. I got the following in **Terminal**:
+At first, that was NOT the case. **This time** the **_number of errors_** was
+**almost** **_double_**. I got the following in **Terminal**:
 
 ```shell
 npm run lint                                                           ✹ ✭
@@ -257,15 +297,17 @@ npm ERR! A complete log of this run can be found in:
 npm ERR!     /Users/mariacam/.npm/_logs/2018-12-04T15_27_23_030Z-debug.log
 ```
 
-I did further investigation into the ins and outs of `ESLint`, and the `eslint-cli`.
+I did further investigation into the ins and outs of `ESLint`, and the
+`eslint-cli`.
 
-I installed the `eslint-cli` as a `devDependency`. According to the `ESLint` ***docs***, I could use the following command
+I installed the `eslint-cli` as a `devDependency`. According to the `ESLint`
+**_docs_**, I could use the following command
 
 ```shell
 npx eslint . --fix
 ```
 
-to ***fix*** **linting errors**. However, the `ESLint` docs ***warn***
+to **_fix_** **linting errors**. However, the `ESLint` docs **_warn_**
 
 ```shell
 Specifying Parser
@@ -277,29 +319,41 @@ It must produce Esprima-compatible AST and token objects.
 Note that even with these compatibilities, there are no guarantees that an external parser will work correctly with ESLint and ESLint will not fix bugs related to incompatibilities with other parsers.
 ```
 
-I decided that there must be a **way** to ***integrate*** the `Airbnb style guide` into ***ESLint recommendations***, so I did another **Google Search**. I came up with the ***following thread*** on **StackOverflow**:
+I decided that there must be a **way** to **_integrate_** the
+`Airbnb style guide` into **_ESLint recommendations_**, so I did another
+**Google Search**. I came up with the **_following thread_** on
+**StackOverflow**:
 
 [JSX not allowed in files with extension ‘ .js’ with eslint-config-airbnb](https://stackoverflow.com/questions/43031126/jsx-not-allowed-in-files-with-extension-js-with-eslint-config-airbnb)
 
-If you look carefully, you will notice that ***I was*** **getting** such ***an error*** when I ran my `lint` ***script***. At the ***top*** of the `StackOverflow thread`, I saw the following:
+If you look carefully, you will notice that **_I was_** **getting** such **_an
+error_** when I ran my `lint` **_script_**. At the **_top_** of the
+`StackOverflow thread`, I saw the following:
 
 ```js
 "extends": "eslint-config-airbnb",
 ```
 
-It was located at the ***top*** of the person’s (the one asking for help) `.eslintrc` ***file***. I decided to ***look into*** what `eslint-config-airbnb` was. I looked for it on [npmjs.com](https://www.npmjs.com/package/eslint-config-airbnb). The package addresses the following:
+It was located at the **_top_** of the person’s (the one asking for help)
+`.eslintrc` **_file_**. I decided to **_look into_** what `eslint-config-airbnb`
+was. I looked for it on
+[npmjs.com](https://www.npmjs.com/package/eslint-config-airbnb). The package
+addresses the following:
 
 ```markdown
 This package provides Airbnb's .eslintrc as an extensible shared config.
 ```
 
-In other words, once you install ***all*** the **peerdeps** you need for this to work, you can add `"airbnb"` to your `"extends"` options in your `.eslintrc`:
+In other words, once you install **_all_** the **peerdeps** you need for this to
+work, you can add `"airbnb"` to your `"extends"` options in your `.eslintrc`:
 
 ```js
 "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:import/recommended", "airbnb"],
 ```
 
-As per the suggested solution to the `no JSX in .js` rule in the StackOverflow Thread I found, I also ***added*** the **following line** to my `.eslintrc.json` within `"rules"`:
+As per the suggested solution to the `no JSX in .js` rule in the StackOverflow
+Thread I found, I also **_added_** the **following line** to my `.eslintrc.json`
+within `"rules"`:
 
 ```js
 "react/jsx-filename-extension": [1, {
@@ -309,33 +363,51 @@ As per the suggested solution to the `no JSX in .js` rule in the StackOverflow T
 
 Once I added this line, the `no JSX in .js` errors went away.
 
-I had ***another*** **unexpected error** which ***appeared*** when I **ran** the `lint` ***script***. It was ***related to*** my `postcss.config.js` file. I got the following error in **Terminal** output:
+I had **_another_** **unexpected error** which **_appeared_** when I **ran** the
+`lint` **_script_**. It was **_related to_** my `postcss.config.js` file. I got
+the following error in **Terminal** output:
 
 ```shell
 /Users/mariacam/Development/text-to-speech-app/postcss.config.js
   3:9  error  Unexpected require()  global-require
 ```
 
-I couldn’t understand why that would happen. I ***knew*** that I had **configured** my `postcss.config.js` correctly. But then ***integrating*** `ESLint` into my application as I did was new for me. ***Before***, I **added** an `.eslintrc.json` **file** to a project, but I did ***not explicitly*** **add** `extensions options` or `extends options` and a ***whole lot of other changes*** which **did not seem necessary** in the ***first edition*** of my **custom React workflow**. I did another **Google** search, and this is what I came up with in a `postcss-loader` [issue](https://github.com/postcss/postcss-loader/issues/358) in their **Github** [repository](https://github.com/postcss/postcss-loader/):
+I couldn’t understand why that would happen. I **_knew_** that I had
+**configured** my `postcss.config.js` correctly. But then **_integrating_**
+`ESLint` into my application as I did was new for me. **_Before_**, I **added**
+an `.eslintrc.json` **file** to a project, but I did **_not explicitly_**
+**add** `extensions options` or `extends options` and a **_whole lot of other
+changes_** which **did not seem necessary** in the **_first edition_** of my
+**custom React workflow**. I did another **Google** search, and this is what I
+came up with in a `postcss-loader`
+[issue](https://github.com/postcss/postcss-loader/issues/358) in their
+**Github** [repository](https://github.com/postcss/postcss-loader/):
 
 ```markdown
-You are revering to extends within eslintrc configs which isn't currently supported by postcss.config.js directly. A postcss.config.js file is scoped to the project, but you may require() a preset shared through an node module as follows:
+You are revering to extends within eslintrc configs which isn't currently
+supported by postcss.config.js directly. A postcss.config.js file is scoped to
+the project, but you may require() a preset shared through an node module as
+follows:
 
-postcss.config.js
-module.exports = require('my-preset')(options)
+postcss.config.js module.exports = require('my-preset')(options)
 ```
 
-***by*** **michael-ciniawsky**, ***core*** **webpack contributor**.
+**_by_** **michael-ciniawsky**, **_core_** **webpack contributor**.
 
 I made the following changes in `postcss.config.js`:
 
 ```js
-module.exports = require('autoprefixer');
+module.exports = require('autoprefixer')
 ```
 
-And then ran the `lint` ***script*** again. That error went away as well as the ***squiggly red line*** that was in the file ***indicating*** the **parsing error**.
+And then ran the `lint` **_script_** again. That error went away as well as the
+**_squiggly red line_** that was in the file **_indicating_** the **parsing
+error**.
 
-After I made all these changes, I ended up only with ***one error*** when I ran my `start` script. When I ran the `lint` ***script*** the `require()` ***errors*** were **gone**. The ***only ones*** I had **left** were the following:
+After I made all these changes, I ended up only with **_one error_** when I ran
+my `start` script. When I ran the `lint` **_script_** the `require()`
+**_errors_** were **gone**. The **_only ones_** I had **left** were the
+following:
 
 ```shell
 npm run lint                                                           ✹ ✭
@@ -382,35 +454,59 @@ npm ERR! A complete log of this run can be found in:
 npm ERR!     /Users/mariacam/.npm/_logs/2018-12-04T18_50_14_449Z-debug.log
 ```
 
-Most of these errors have to do with the ***opinionated nature*** of **Airbnb** and involve code created by plugins (the `workbox-webpack-plugin` ***specifically***, for example, that I do not want to tamper with!). Not bad considering I started off with 102 errors! As for
+Most of these errors have to do with the **_opinionated nature_** of **Airbnb**
+and involve code created by plugins (the `workbox-webpack-plugin`
+**_specifically_**, for example, that I do not want to tamper with!). Not bad
+considering I started off with 102 errors! As for
 
 ```shell
 Unused state field: 'listening'  react/no-unused-state
 ```
 
-I ***expected*** **this one**. I put this line there to ***make sure*** that `(proposed) static class properties` ***didn’t throw*** a **parsing error** ***after*** I **created** the ***new*** `babel.config.js` and made `babel-eslint` my `eslint parser` in `.eslintrc.json`.
+I **_expected_** **this one**. I put this line there to **_make sure_** that
+`(proposed) static class properties` **_didn’t throw_** a **parsing error**
+**_after_** I **created** the **_new_** `babel.config.js` and made
+`babel-eslint` my `eslint parser` in `.eslintrc.json`.
 
-I never **realized** the ***importance*** of the `Airbnb style guide` in **React** ***applications*** until I started taking a ***deep dive*** into my **custom workflow**. It is important to know exactly what is and should be under the hood in order to improve your ***code***, **development** ***skills***, ***quality***, and ***speed***. If there hadn’t been such ***breaking changes*** in my **workflow** in the ***first place***, I ***might not have made*** a **deeper dive** into my ***workflow*** and ***toolset*** to take my **skills** as a **developer** to the ***next level***.
+I never **realized** the **_importance_** of the `Airbnb style guide` in
+**React** **_applications_** until I started taking a **_deep dive_** into my
+**custom workflow**. It is important to know exactly what is and should be under
+the hood in order to improve your **_code_**, **development** **_skills_**,
+**_quality_**, and **_speed_**. If there hadn’t been such **_breaking changes_**
+in my **workflow** in the **_first place_**, I **_might not have made_** a
+**deeper dive** into my **_workflow_** and **_toolset_** to take my **skills**
+as a **developer** to the **_next level_**.
 
-It is ***totally fine*** to use tools such as `create-react-app` if you ***want*** or ***need to*** **save time**. ***However***, don’t just ***“blindly”*** keep on using them without finding out ***how*** things like that work and ***why*** it is so fantastic (because it is). I’m ***not saying*** you should **replicate** what they have ***created***. Absolutely ***not***. The whole point is to create your OWN ***custom workflow*** ***with tools*** that **fit** the ***requirements*** of the **applications** ***you*** are **creating**.
+It is **_totally fine_** to use tools such as `create-react-app` if you
+**_want_** or **_need to_** **save time**. **_However_**, don’t just
+**_“blindly”_** keep on using them without finding out **_how_** things like
+that work and **_why_** it is so fantastic (because it is). I’m **_not saying_**
+you should **replicate** what they have **_created_**. Absolutely **_not_**. The
+whole point is to create your OWN **_custom workflow_** **_with tools_** that
+**fit** the **_requirements_** of the **applications** **_you_** are
+**creating**.
 
 ### For those of you willing to stick around and take it a step further
 
-I wanted to make my ESLint configuration even more all encompassing. I had heard about Prettier and how great it was. So why not see if I could add it to the current ESLint stack? I did a Google search, and found the answer: YES!
+I wanted to make my ESLint configuration even more all encompassing. I had heard
+about Prettier and how great it was. So why not see if I could add it to the
+current ESLint stack? I did a Google search, and found the answer: YES!
 
-`Prettier` is another ***opinionated*** `code formatter`. ***Adding*** `Prettier` to the `ESLint` stack is ***similar*** to ***adding*** `Airbnb`.
+`Prettier` is another **_opinionated_** `code formatter`. **_Adding_**
+`Prettier` to the `ESLint` stack is **_similar_** to **_adding_** `Airbnb`.
 
-+ **Install Prettier:** `npm i prettier -D`
+-   **Install Prettier:** `npm i prettier -D`
 
-+ **Install eslint-config-prettier:** `npm i eslint-config-prettier -D`
+-   **Install eslint-config-prettier:** `npm i eslint-config-prettier -D`
 
-+ **Install eslint-plugin-pretter:** `npm i eslint-plugin-prettier -D`
+-   **Install eslint-plugin-pretter:** `npm i eslint-plugin-prettier -D`
 
-+ **Create a** `.prettierrc` **file** – I created a `.prettierrc.json` file since I already had an `.eslintrc.json` file
+-   **Create a** `.prettierrc` **file** – I created a `.prettierrc.json` file
+    since I already had an `.eslintrc.json` file
 
-+ **Create your own custom configs there**
+-   **Create your own custom configs there**
 
-+ **Integrate Prettier into your** `.eslintrc.json` **file**
+-   **Integrate Prettier into your** `.eslintrc.json` **file**
 
 I added the following to my `.prettierrc.json` file:
 
@@ -423,7 +519,8 @@ I added the following to my `.prettierrc.json` file:
 }
 ```
 
-I ***integrated*** `Prettier` into `ESLint` in the ***following*** way in my `.eslintrc.json`:
+I **_integrated_** `Prettier` into `ESLint` in the **_following_** way in my
+`.eslintrc.json`:
 
 ```js
 {
@@ -508,42 +605,48 @@ I ***integrated*** `Prettier` into `ESLint` in the ***following*** way in my `.e
 }
 ```
 
-This is my ***latest*** `.eslintrc.json` **configuration** based on the errors I was getting at first when I started working on my Text To Speech App. I made quite a few changes since I ***wrote*** the **article** entitled [The importance of ESLint (And React)](). In ***addition***, I ***integrated*** the `Airbnb Style Guide` and `Prettier`. Except for
+This is my **_latest_** `.eslintrc.json` **configuration** based on the errors I
+was getting at first when I started working on my Text To Speech App. I made
+quite a few changes since I **_wrote_** the **article** entitled
+[The importance of ESLint (And React)](). In **_addition_**, I **_integrated_**
+the `Airbnb Style Guide` and `Prettier`. Except for
 
 ```shell
 error  Unused state field: 'listening'  react/no-unused-state
 ```
 
-which will be rectified when I add more code to Text.js and ultimately complete the application, I was able to get rid of or fix all my linting errors!
+which will be rectified when I add more code to Text.js and ultimately complete
+the application, I was able to get rid of or fix all my linting errors!
 
-There are so many different ways to configure ESLint or linters in general. Again, a drop in the bucket if not the ocean. What may be good for me may not be good for you, but this is a starting point to a better understanding!
+There are so many different ways to configure ESLint or linters in general.
+Again, a drop in the bucket if not the ocean. What may be good for me may not be
+good for you, but this is a starting point to a better understanding!
 
-To view the `src code` for the ***app*** I **used** ***as a reference***, please visit the [Text To Speech repository](https://github.com/interglobalmedia/text-to-speech-app) on **Github**.
+To view the `src code` for the **_app_** I **used** **_as a reference_**, please
+visit the
+[Text To Speech repository](https://github.com/interglobalmedia/text-to-speech-app)
+on **Github**.
 
-***Happy developing!***
+**_Happy developing!_**
 
 ### Related Resources:
 
-+ [ESLint: Getting Started](https://eslint.org/docs/user-guide/getting-started)
+-   [ESLint: Getting Started](https://eslint.org/docs/user-guide/getting-started)
 
-+ [Prettier](https://prettier.io/)
+-   [Prettier](https://prettier.io/)
 
-+ [Integrating Prettier + ESLint + Airbnb Style Guide in VSCode](https://blog.echobind.com/integrating-prettier-eslint-airbnb-style-guide-in-vscode-47f07b5d7d6a)
+-   [Integrating Prettier + ESLint + Airbnb Style Guide in VSCode](https://blog.echobind.com/integrating-prettier-eslint-airbnb-style-guide-in-vscode-47f07b5d7d6a)
 
-+ [How to integrate Eslint & Prettier in React](https://medium.com/quick-code/how-to-integrate-eslint-prettier-in-react-6efbd206d5c4)
+-   [How to integrate Eslint & Prettier in React](https://medium.com/quick-code/how-to-integrate-eslint-prettier-in-react-6efbd206d5c4)
 
-+ [Unexpected use of ‘self’ no-restricted-globals React](https://stackoverflow.com/questions/44292520/unexpected-use-of-self-no-restricted-globals-react)
+-   [Unexpected use of ‘self’ no-restricted-globals React](https://stackoverflow.com/questions/44292520/unexpected-use-of-self-no-restricted-globals-react)
 
-+ [Validate JSX indentation (react/jsx-indent)](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-indent.md)
+-   [Validate JSX indentation (react/jsx-indent)](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-indent.md)
 
-+ [eslint should be listed in the project’s dependencies, not devDependencies](https://stackoverflow.com/questions/44939304/eslint-should-be-listed-in-the-projects-dependencies-not-devdependencies)
+-   [eslint should be listed in the project’s dependencies, not devDependencies](https://stackoverflow.com/questions/44939304/eslint-should-be-listed-in-the-projects-dependencies-not-devdependencies)
 
-+ [Your last ESLint config](https://medium.com/@netczuk/your-last-eslint-config-9e35bace2f99)
+-   [Your last ESLint config](https://medium.com/@netczuk/your-last-eslint-config-9e35bace2f99)
 
-+ [JSX not allowed in files with extension ‘ .js’ with eslint-config-airbnb](https://stackoverflow.com/questions/43031126/jsx-not-allowed-in-files-with-extension-js-with-eslint-config-airbnb)
+-   [JSX not allowed in files with extension ‘ .js’ with eslint-config-airbnb](https://stackoverflow.com/questions/43031126/jsx-not-allowed-in-files-with-extension-js-with-eslint-config-airbnb)
 
-+ [The Importance Of ESlint (And React)](https://http://www.mariadcampbell.com/the-importance-of-eslint-and-react/)
-
-
-
-
+-   [The Importance Of ESlint (And React)](https://http://www.mariadcampbell.com/the-importance-of-eslint-and-react/)
