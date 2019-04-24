@@ -1,14 +1,28 @@
 ---
-title: "Jest, React and mocks"
+title: 'Jest, React and mocks'
 image: react-jest.png
-description: Yesterday, I ran a test to make sure that the changes I made to my Work component passed in my Portfolio React app, but it did not!
+description:
+    Yesterday, I ran a test to make sure that the changes I made to my Work
+    component passed in my Portfolio React app, but it did not!
 date: '2017-10-12'
-tags: ["react", "jest", "mocks", "testing"]
-categories: ["front-end-development", "react", "web-development", "web-development-workflows"]
-author: "Maria D. Campbell"
+tags: ['react', 'jest', 'mocks', 'testing']
+categories:
+    [
+        'front-end-development',
+        'react',
+        'web-development',
+        'web-development-workflows',
+    ]
+author: 'Maria D. Campbell'
 ---
 
-I use **Facebook**’s **Jest** to ***test*** my **React applications**. Yesterday, I ran a test to make sure that the changes I made to my `Work` **component** ***passed*** in my **Portfolio React** ***app***. It did ***not***! But as indicated in the **iTerm2** `console`, it was ***not*** **because of any errors** in the `Work` **component**. It was because I am **using** a `.pdf` file in my `About` **component**, and **Jest** does ***not*** take kindly to it.
+I use **Facebook**’s **Jest** to **_test_** my **React applications**.
+Yesterday, I ran a test to make sure that the changes I made to my `Work`
+**component** **_passed_** in my **Portfolio React** **_app_**. It did
+**_not_**! But as indicated in the **iTerm2** `console`, it was **_not_**
+**because of any errors** in the `Work` **component**. It was because I am
+**using** a `.pdf` file in my `About` **component**, and **Jest** does **_not_**
+take kindly to it.
 
 ```shell
 npm run test
@@ -41,7 +55,8 @@ I include it in my `webpack configs` so that `webpack` knows to load it:
 { test: /\.(jpg|png|gif|svg|pdf|ico)$/, use: [ { loader: 'file-loader', options: { name: '[path][name]-[hash:8].[ext]' }, }, ]},
 ```
 
-Then why was this happening? I mock out files for **Jest** to ***ignore*** in my `package.json`, so I went to see what types of files I had included there:
+Then why was this happening? I mock out files for **Jest** to **_ignore_** in my
+`package.json`, so I went to see what types of files I had included there:
 
 ```js
 "jest": {
@@ -55,7 +70,9 @@ Then why was this happening? I mock out files for **Jest** to ***ignore*** in my
 },
 ```
 
-Apparently I hadn’t included `.pdf`! That was because I had added that asset much later, and didn’t think to add it to my `jest` **configuration** in `package.json`. That resulted in my test failing. I added `pdf` to the mix:
+Apparently I hadn’t included `.pdf`! That was because I had added that asset
+much later, and didn’t think to add it to my `jest` **configuration** in
+`package.json`. That resulted in my test failing. I added `pdf` to the mix:
 
 ```js
 "jest": {
@@ -69,18 +86,22 @@ Apparently I hadn’t included `.pdf`! That was because I had added that asset m
 },
 ```
 
-Then I ran `npm run test` in **iTerm2** again. And guess what? My test ***passed***!
+Then I ran `npm run test` in **iTerm2** again. And guess what? My test
+**_passed_**!
 
-So if you are using **Jest** to ***run tests*** in your **React application**, make sure that you mock out certain types of assets that would otherwise cause your tests to fail! I have included links to resources related to this topic at the end of the article.
+So if you are using **Jest** to **_run tests_** in your **React application**,
+make sure that you mock out certain types of assets that would otherwise cause
+your tests to fail! I have included links to resources related to this topic at
+the end of the article.
 
-Happy ***React testing*** with **Jest**!
+Happy **_React testing_** with **Jest**!
 
 ### Related Resources:
 
-+ [React workflows without Create React App](https://interglobalmedia.github.io/react-workflow-presentation/#/)
+-   [React workflows without Create React App](https://interglobalmedia.github.io/react-workflow-presentation/#/)
 
-+ [Jest and webpack](https://jestjs.io/docs/en/webpack.html)
+-   [Jest and webpack](https://jestjs.io/docs/en/webpack.html)
 
-+ [Handling Static Assets with Jest](https://jestjs.io/docs/en/webpack.html#content)
+-   [Handling Static Assets with Jest](https://jestjs.io/docs/en/webpack.html#content)
 
-+ [Testing React Apps With Jest](https://jestjs.io/docs/en/tutorial-react.html#content)
+-   [Testing React Apps With Jest](https://jestjs.io/docs/en/tutorial-react.html#content)
