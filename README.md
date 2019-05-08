@@ -4,6 +4,16 @@
 
 ### Features
 
+-   Jest Testing (React)
+
+-   Eslint and Prettier Linting
+
+-   Lint-Staged
+
+-   Husky pre-commits/hooks
+
+-   react-testing-library
+
 -   Sitemap (gatsby-plugin-sitemap and a visual one of my own creation)
 
 -   RSS Feed (gatsby-plugin-feed)
