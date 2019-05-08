@@ -6,6 +6,7 @@ import {Helmet} from 'react-helmet'
 import {Link} from 'gatsby'
 import {OutboundLink} from 'gatsby-plugin-gtag'
 import PropTypes from 'prop-types'
+import CookieConsent, {Cookies} from 'react-cookie-consent'
 
 export const Container = styled.div`
     background: rgba(255, 255, 255, 0.4);
@@ -77,6 +78,36 @@ const IndexPage = ({siteTitle}) => {
                     </div>
                     <FooterStyle>
                         © {new Date().getFullYear()} {siteTitle}
+                        <CookieConsent
+                            location="bottom"
+                            buttonText="Accept"
+                            declineButtonText="Decline"
+                            cookieName="MDCDevBlogCookieConsent"
+                            style={{
+                                background: 'rgba(0,0,0,1)',
+                                paddingTop: '5px',
+                            }}
+                            buttonStyle={{color: '#4e503b', fontSize: '1rem'}}
+                            declineButtonStyle={{fontSize: '1rem'}}
+                            expires={150}
+                            onAccept={() => {
+                                alert('Great!')
+                            }}
+                            enableDeclineButton
+                            onDecline={() => {
+                                alert('Sorry to hear that!')
+                            }}
+                        >
+                            This website uses cookies to enhance the user
+                            experience.{' '}
+                            <a
+                                style={{color: '#cb4b16'}}
+                                href="https://cookiesandyou.com/"
+                                target="_new"
+                            >
+                                Learn more
+                            </a>
+                        </CookieConsent>
                     </FooterStyle>
                 </div>
             </Container>
