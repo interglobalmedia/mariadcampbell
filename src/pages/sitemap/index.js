@@ -30,7 +30,7 @@ const SiteMapPage = props => {
         <Layout>
             <SEO
                 location={props.location}
-                title={siteTitle}
+                siteTitle={siteTitle}
                 keywords={keywords}
             />
             <Helmet>
