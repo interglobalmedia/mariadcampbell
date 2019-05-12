@@ -65,12 +65,12 @@ const IndexHeader = () => (
     </HeaderStyle>
 )
 
-// IndexHeader.propTypes = {
-//     siteTitle: PropTypes.string,
-// }
+IndexHeader.propTypes = {
+    siteTitle: PropTypes.string,
+}
 
-// IndexHeader.defaultProps = {
-//     siteTitle: `Maria D. Campbell`,
-// }
+IndexHeader.defaultProps = {
+    siteTitle: `Maria D. Campbell`,
+}
 
 export default IndexHeader
