@@ -1,14 +1,15 @@
 import React from 'react'
 import travel from '../images/chris-lawton-346402-unsplash.jpg'
 import styled from '@emotion/styled'
-import Header from '../components/Header/Header'
-import {graphql} from 'gatsby'
+import IndexHeader from '../components/IndexHeader/IndexHeader'
+import {Link, graphql} from 'gatsby'
 import CookieConsent, {Cookies} from 'react-cookie-consent'
 import {Helmet} from 'react-helmet'
 import SEO from '../components/Seo/Seo'
 
 export const Container = styled.div`
     background: rgba(255, 255, 255, 0.4);
+    position: fixed;
     overflow-y: hidden;
 `
 
@@ -28,24 +29,44 @@ export const BackgroundImage = styled.img`
     min-width: 100%;
     min-height: 100%;
     z-index: -1;
+    overflow-y: hidden;
+`
+
+export const HeaderTitle = styled.h1`
+    margin-top: 1.25rem;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 130%;
+    & a {
+        color: rgba(0, 0, 0, 0.9);
+        font-size: 1.3rem;
+        font-weight: 400;
+        letter-spacing: 0.07em;
+        padding: 1.0875rem;
+        box-shadow: none;
+        & :hover {
+            text-decoration: underline;
+            color: #cb4b16;
+        }
+    }
 `
 
 export const FooterStyle = styled.footer`
     text-align: center;
     padding-bottom: 0.5rem;
     letter-spacing: 0.07em;
-    @media (max-width: 374px) {
-        position: fixed;
-        left: 1rem;
-        right: 1rem;
-        bottom: 1.5rem;
-        height: 30px;
-        width: 90%;
-    }
+    color: ghostwhite;
+    position: fixed;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    height: 30px;
+    width: 90%;
+    background-color: transparent;
     & a {
         letter-spacing: 0.07em;
         color: #cb4b16;
         box-shadow: none;
+        text-align: center;
         & :hover {
             text-decoration: underline;
         }
@@ -67,8 +88,17 @@ const IndexPage = props => {
                 <title>Home Page</title>
             </Helmet>
             <div className="Site">
-                <Header />
+                <IndexHeader />
                 <div className="Site-content">
+                    <HeaderTitle>
+                        <Link
+                            className="menu-item"
+                            to="/"
+                            activeStyle={{color: '#cb4b16'}}
+                        >
+                            {siteTitle}
+                        </Link>
+                    </HeaderTitle>
                     <ImageWrapper>
                         <BackgroundImage src={travel} alt={siteTitle} />
                     </ImageWrapper>
