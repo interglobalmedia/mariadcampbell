@@ -10,7 +10,7 @@ import {
     faEnvelope,
 } from '@fortawesome/free-solid-svg-icons'
 import styled from '@emotion/styled'
-import '../Header/IndexSideBar.css'
+import '../Header/SideBar.css'
 
 export const HeaderStyle = styled.header`
     width: 90%;
