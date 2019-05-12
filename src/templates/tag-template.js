@@ -4,7 +4,6 @@ import {Link, graphql} from 'gatsby'
 import Layout from '../components/Layout/Layout'
 import styled from '@emotion/styled'
 import {Helmet} from 'react-helmet'
-import SEO from '../components/Seo/Seo'
 
 const TagWrapper = styled.div`
     width: 90%;
@@ -43,16 +42,8 @@ export const TagsDiv = styled.div`
 const Tags = props => {
     const posts = props.data.allMarkdownRemark.edges
     const {tag} = props.pageContext
-    const {data} = props
-    const siteTitle = data.site.siteMetadata.siteTitle
-    const keywords = data.site.siteMetadata.keywords
     return (
         <Layout>
-            <SEO
-                location={props.location}
-                title={siteTitle}
-                keywords={keywords}
-            />
             <Helmet>
                 <title>Tags Page</title>
             </Helmet>
@@ -72,8 +63,8 @@ const Tags = props => {
 
 export default Tags
 
-export const query = graphql`
-    query TagsQuery($tag: String!) {
+export const pageQuery = graphql`
+    query tagsQuery($tag: String!) {
         allMarkdownRemark(
             limit: 2000
             sort: {fields: [frontmatter___date], order: DESC}
