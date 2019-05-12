@@ -4,7 +4,6 @@ import styled from '@emotion/styled'
 import IndexHeader from '../components/IndexHeader/IndexHeader'
 import {Link, graphql} from 'gatsby'
 import CookieConsent, {Cookies} from 'react-cookie-consent'
-import {Helmet} from 'react-helmet'
 import SEO from '../components/Seo/Seo'
 
 export const Container = styled.div`
@@ -75,18 +74,11 @@ export const FooterStyle = styled.footer`
 
 const IndexPage = props => {
     const {data} = props
-    const siteTitle = data.site.siteMetadata.siteTitle
+    const title = data.site.siteMetadata.title
     const keywords = data.site.siteMetadata.keywords
     return (
         <Container>
-            <SEO
-                location={props.location}
-                siteTitle={siteTitle}
-                keywords={keywords}
-            />
-            <Helmet>
-                <title>Home Page</title>
-            </Helmet>
+            <SEO location={props.location} title={title} keywords={keywords} />
             <div className="Site">
                 <IndexHeader />
                 <div className="Site-content">
@@ -94,17 +86,17 @@ const IndexPage = props => {
                         <Link
                             className="menu-item"
                             to="/"
-                            activeStyle={{color: '#cb4b16'}}
+                            activeStyle={{color: '#fb2e01'}}
                         >
-                            {siteTitle}
+                            {title}
                         </Link>
                     </HeaderTitle>
                     <ImageWrapper>
-                        <BackgroundImage src={travel} alt={siteTitle} />
+                        <BackgroundImage src={travel} alt={title} />
                     </ImageWrapper>
                 </div>
                 <FooterStyle>
-                    © {new Date().getFullYear()} {siteTitle}
+                    © {new Date().getFullYear()} {title}
                     <CookieConsent
                         location="bottom"
                         buttonText="Accept"
@@ -147,7 +139,7 @@ export const indexQuery = graphql`
     query indexQuery {
         site {
             siteMetadata {
-                siteTitle
+                title
             }
         }
     }

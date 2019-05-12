@@ -4,7 +4,6 @@ import {rhythm} from '../utils/typography'
 import Layout from '../components/Layout/Layout'
 import styled from '@emotion/styled'
 import Img from 'gatsby-image'
-import {Helmet} from 'react-helmet'
 import SEO from '../components/Seo/Seo'
 
 export const PostDiv = styled.div`
@@ -92,18 +91,11 @@ const BlogPage = props => {
             : `/blog/${(currentPage - 1).toString()}`
     const nextPage = `/blog/${(currentPage + 1).toString()}`
     const {data} = props
-    const siteTitle = data.site.siteMetadata.siteTitle
+    const title = data.site.siteMetadata.title
     const keywords = data.site.siteMetadata.keywords
     return (
         <Layout>
-            <SEO
-                location={props.location}
-                siteTitle={siteTitle}
-                keywords={keywords}
-            />
-            <Helmet>
-                <title>Blog Page</title>
-            </Helmet>
+            <SEO location={props.location} title={title} keywords={keywords} />
             <PostDiv>
                 {postList.edges.map(({node}, i) => (
                     <Link to={node.fields.slug} key={i}>
@@ -196,7 +188,7 @@ export const blogListQuery = graphql`
         }
         site {
             siteMetadata {
-                siteTitle
+                title
             }
         }
     }

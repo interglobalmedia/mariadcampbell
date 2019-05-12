@@ -26,14 +26,14 @@ const Layout = ({children}) => (
             query SiteTitleQuery {
                 site {
                     siteMetadata {
-                        siteTitle
+                        title
                     }
                 }
             }
         `}
         render={data => (
             <LayoutContainer>
-                <Header siteTitle={data.site.siteMetadata.siteTitle} />
+                <Header title={data.site.siteMetadata.title} />
                 <div className="Site">
                     <Search />
                     <main className="Site-content">{children}</main>

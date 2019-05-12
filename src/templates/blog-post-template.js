@@ -5,8 +5,8 @@ import {faTag, faFolder} from '@fortawesome/free-solid-svg-icons'
 import {graphql} from 'gatsby'
 import Img from 'gatsby-image'
 import styled from '@emotion/styled'
+import {Helmet} from 'react-helmet'
 import Layout from '../components/Layout/Layout'
-import SEO from '../components/Seo/Seo'
 import PrevNext from '../components/PrevNext/PrevNext'
 import Share from '../components/Share/Share'
 import '../components/Layout/Layout.css'
@@ -108,13 +108,15 @@ const BlogPost = props => {
     const {prev, next} = props.pageContext
     return (
         <Layout>
-            <SEO
-                title={title}
-                description={description}
-                image={thumbnail}
-                post
-                author={author}
-            />
+            <Helmet>
+                <title>{title}</title>
+                <meta name="title" content={title} />
+                <meta name="thumbnail" content={thumbnail} />
+                <meta name="date" content={date} />
+                <meta name="description" content={description} />
+                <meta name="tags" content={tags} />
+                <meta name="categories" content={categories} />
+            </Helmet>
             <PostWrapperDiv>
                 <ImageDiv>
                     {image && <Img fluid={image.childImageSharp.fluid} />}

@@ -11,7 +11,7 @@ import {Helmet} from 'react-helmet'
 import {StaticQuery, graphql} from 'gatsby'
 
 const SEO = ({
-    siteTitle,
+    title,
     description,
     image,
     pathname,
@@ -26,7 +26,7 @@ const SEO = ({
             site: {
                 siteMetadata: {
                     defaultTitle,
-                    siteTitleTemplate,
+                    titleTemplate,
                     defaultDescription,
                     siteUrl,
                     defaultImage,
@@ -37,7 +37,7 @@ const SEO = ({
             },
         }) => {
             const seo = {
-                title: siteTitle || defaultTitle,
+                title: title || defaultTitle,
                 description: description || defaultDescription,
                 image: `${image || defaultImage}`,
                 author: author,
@@ -50,8 +50,8 @@ const SEO = ({
                         htmlAttributes={{
                             lang,
                         }}
-                        title={seo.siteTitle}
-                        titleTemplate={siteTitleTemplate}
+                        title={seo.title}
+                        titleTemplate={titleTemplate}
                     >
                         <meta name="keywords" content={seo.keywords} />
                         <meta name="author" content={seo.author} />
@@ -108,7 +108,7 @@ const SEO = ({
 )
 
 SEO.propTypes = {
-    siteTitle: PropTypes.string.isRequired,
+    title: PropTypes.string,
     description: PropTypes.string,
     image: PropTypes.string,
     pathname: PropTypes.string,
@@ -120,7 +120,7 @@ SEO.propTypes = {
 }
 
 SEO.defaultProps = {
-    siteTitle: null,
+    title: null,
     description: null,
     image: null,
     pathname: null,
@@ -190,8 +190,8 @@ const query = graphql`
     query SEO {
         site {
             siteMetadata {
-                title: siteTitle
-                siteTitleTemplate
+                title: title
+                titleTemplate
                 defaultDescription: description
                 siteUrl: siteUrl
                 defaultImage: image
