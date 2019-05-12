@@ -1,7 +1,16 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import {Link, graphql} from 'gatsby'
 import Layout from '../components/Layout/Layout'
 import styled from '@emotion/styled'
+import {Helmet} from 'react-helmet'
+import SEO from '../components/Seo/Seo'
+
+const TagWrapper = styled.div`
+    width: 90%;
+    max-width: 1026px;
+    margin: 3rem auto;
+`
 
 export const TagsH1 = styled.h1`
     display: flex;
@@ -34,15 +43,20 @@ export const TagsDiv = styled.div`
 const Tags = props => {
     const posts = props.data.allMarkdownRemark.edges
     const {tag} = props.pageContext
+    const {data} = props
+    const siteTitle = data.site.siteMetadata.siteTitle
+    const keywords = data.site.siteMetadata.keywords
     return (
         <Layout>
-            <div
-                style={{
-                    width: '90%',
-                    maxWidth: '1026px',
-                    margin: '3rem auto',
-                }}
-            >
+            <SEO
+                location={props.location}
+                title={siteTitle}
+                keywords={keywords}
+            />
+            <Helmet>
+                <title>Tags Page</title>
+            </Helmet>
+            <TagWrapper>
                 <TagsH1>{`posts in: ${tag}`}</TagsH1>
                 <TagsDiv>
                     {posts.map(({node}, i) => (
@@ -51,7 +65,7 @@ const Tags = props => {
                         </Link>
                     ))}
                 </TagsDiv>
-            </div>
+            </TagWrapper>
         </Layout>
     )
 }
