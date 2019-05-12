@@ -67,7 +67,7 @@ const Header = ({siteTitle}) => (
                         <Link to="/" activeStyle={{color: '#cb4b16'}}>
                             <FontAwesomeIcon icon={faHome} />
                         </Link>
-                        <Link to="/blog" activeStyle={{color: '#cb4b16'}}>
+                        <Link to="/blog/" activeStyle={{color: '#cb4b16'}}>
                             <FontAwesomeIcon icon={faBlog} />
                         </Link>
                         <Link to="/sitemap" activeStyle={{color: '#cb4b16'}}>

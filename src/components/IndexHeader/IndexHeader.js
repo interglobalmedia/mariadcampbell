@@ -40,7 +40,7 @@ export const HeaderSideMenuP = styled.p`
     }
 `
 
-const IndexHeader = ({siteTitle}) => (
+const IndexHeader = () => (
     <HeaderStyle>
         <div className="side-navigation">
             <HeaderDiv>

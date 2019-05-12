@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
-        siteTitle: `Maria D. Campbell`,
-        siteTitleTemplate: 'The Investigative Developer',
+        title: `Maria D. Campbell`,
+        titleTemplate: 'The Investigative Developer',
         description: `Where I muse about and share my developer experiences and code.`,
         siteUrl: `https://www.mariadcampbell.com`,
         image: '/images/profileSmall.png',
@@ -112,7 +112,7 @@ module.exports = {
           {
             site {
               siteMetadata {
-                siteTitle
+                title
                 description
                 siteUrl
                 site_url: siteUrl

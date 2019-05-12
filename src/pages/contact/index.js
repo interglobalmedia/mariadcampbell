@@ -6,15 +6,11 @@ import SEO from '../../components/Seo/Seo'
 
 const ContactPage = props => {
     const {data} = props
-    const siteTitle = data.site.siteMetadata.siteTitle
+    const title = data.site.siteMetadata.title
     const keywords = data.site.siteMetadata.keywords
     return (
         <Layout>
-            <SEO
-                location={props.location}
-                title={siteTitle}
-                keywords={keywords}
-            />
+            <SEO location={props.location} title={title} keywords={keywords} />
             <Contact />
         </Layout>
     )
@@ -26,7 +22,7 @@ export const contactQuery = graphql`
     query contactQuery {
         site {
             siteMetadata {
-                siteTitle
+                title
             }
         }
     }
