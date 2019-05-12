@@ -10,7 +10,7 @@ import {
     faEnvelope,
 } from '@fortawesome/free-solid-svg-icons'
 import styled from '@emotion/styled'
-import '../Header/SideBar.css'
+import '../Header/IndexSideBar.css'
 
 export const HeaderStyle = styled.header`
     width: 90%;
@@ -65,12 +65,12 @@ const IndexHeader = () => (
     </HeaderStyle>
 )
 
-// IndexHeader.propTypes = {
-//     siteTitle: PropTypes.string,
-// }
+IndexHeader.propTypes = {
+    siteTitle: PropTypes.string,
+}
 
-// IndexHeader.defaultProps = {
-//     siteTitle: `Maria D. Campbell`,
-// }
+IndexHeader.defaultProps = {
+    siteTitle: `Maria D. Campbell`,
+}
 
 export default IndexHeader
