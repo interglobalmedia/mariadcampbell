@@ -103,7 +103,7 @@ const InfoPage = ({author}) => (
             query InfoPageQuery {
                 site {
                     siteMetadata {
-                        siteTitle
+                        title
                         author
                         social {
                             twitter
