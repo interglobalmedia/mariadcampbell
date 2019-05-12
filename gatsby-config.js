@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
-        title: `Maria D. Campbell`,
-        titleTemplate: 'The Investigative Developer',
+        siteTitle: `Maria D. Campbell`,
+        siteTitleTemplate: 'The Investigative Developer',
         description: `Where I muse about and share my developer experiences and code.`,
         siteUrl: `https://www.mariadcampbell.com`,
         image: '/images/profileSmall.png',
