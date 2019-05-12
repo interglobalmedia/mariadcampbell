@@ -1,6 +1,5 @@
 import React from 'react'
 import {Link, graphql} from 'gatsby'
-import {Helmet} from 'react-helmet'
 import styled from '@emotion/styled'
 import Layout from '../../components/Layout/Layout'
 import SEO from '../../components/Seo/Seo'
@@ -24,18 +23,11 @@ const PageLinksUl = styled.ul`
 const SiteMapPage = props => {
     const postList = props.data.allMarkdownRemark
     const {data} = props
-    const siteTitle = data.site.siteMetadata.siteTitle
+    const title = data.site.siteMetadata.title
     const keywords = data.site.siteMetadata.keywords
     return (
         <Layout>
-            <SEO
-                location={props.location}
-                siteTitle={siteTitle}
-                keywords={keywords}
-            />
-            <Helmet>
-                <title>Sitemap Page</title>
-            </Helmet>
+            <SEO location={props.location} keywords={keywords} title={title} />
             <SiteMapDiv>
                 <h1>Site Map</h1>
                 <h2>Pages</h2>
@@ -89,7 +81,7 @@ export const sitemapQuery = graphql`
     query sitemapQuery {
         site {
             siteMetadata {
-                siteTitle
+                title
                 keywords
             }
         }
