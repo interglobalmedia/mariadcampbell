@@ -2,6 +2,14 @@ import React from 'react'
 import {Link, graphql} from 'gatsby'
 import Layout from '../components/Layout/Layout'
 import styled from '@emotion/styled'
+import {Helmet} from 'react-helmet'
+import SEO from '../components/Seo/Seo'
+
+const LayoutDiv = styled.div`
+    width: 90%;
+    max-width: 1026px;
+    margin: 3rem auto;
+`
 
 export const CategoriesH1 = styled.h1`
     display: flex;
@@ -34,15 +42,20 @@ export const CategoriesDiv = styled.div`
 const CategoryTemplate = props => {
     const posts = props.data.allMarkdownRemark.edges
     const {category} = props.pageContext
+    const {data} = props
+    const siteTitle = data.site.siteMetadata.siteTitle
+    const keywords = data.site.siteMetadata.keywords
     return (
         <Layout>
-            <div
-                style={{
-                    width: '90%',
-                    maxWidth: '1026px',
-                    margin: '3rem auto',
-                }}
-            >
+            <SEO
+                location={props.location}
+                siteTitle={siteTitle}
+                keywords={keywords}
+            />
+            <Helmet>
+                <title>Categories Page</title>
+            </Helmet>
+            <LayoutDiv>
                 <CategoriesH1>{`posts in category: ${category}`}</CategoriesH1>
                 <CategoriesDiv>
                     {posts.map(({node}, i) => (
@@ -51,7 +64,7 @@ const CategoryTemplate = props => {
                         </Link>
                     ))}
                 </CategoriesDiv>
-            </div>
+            </LayoutDiv>
         </Layout>
     )
 }
