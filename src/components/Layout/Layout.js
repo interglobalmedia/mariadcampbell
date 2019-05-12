@@ -13,6 +13,7 @@ import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import './Layout.css'
 import styled from '@emotion/styled'
+import Search from '../Search/Search'
 
 export const LayoutContainer = styled.div`
     width: 100%;
@@ -34,6 +35,7 @@ const Layout = ({children}) => (
             <LayoutContainer>
                 <Header siteTitle={data.site.siteMetadata.siteTitle} />
                 <div className="Site">
+                    <Search />
                     <main className="Site-content">{children}</main>
                     <Footer />
                 </div>
