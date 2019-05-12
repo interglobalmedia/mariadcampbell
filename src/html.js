@@ -23,6 +23,13 @@ export default function HTML(props) {
                     id="___gatsby"
                     dangerouslySetInnerHTML={{__html: props.body}}
                 />
+                <div
+                    key={`footer`}
+                    id="search"
+                    dangerouslySetInnerHTML={{
+                        __html: props.footer,
+                    }}
+                />
                 {props.postBodyComponents}
             </body>
         </html>
