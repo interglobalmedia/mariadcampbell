@@ -2,11 +2,12 @@ import React from 'react'
 import styled from '@emotion/styled'
 
 export const PrevNextUl = styled.ul`
+    width: 100%;
     list-style-type: none;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-left: 0.5rem;
+    margin-left: 0.25rem;
+    margin-right: 1rem;
     margin-top: -1rem;
 `
 
