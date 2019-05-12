@@ -70,13 +70,16 @@ const Footer = () => {
                     Sitemap
                 </Link>
 
-                <Link style={{color: 'whitesmoke'}} to="/rss.xml">
+                <a
+                    style={{color: 'whitesmoke'}}
+                    href="https://www.mariadcampbell.com/rss.xml"
+                >
                     <FontAwesomeIcon
                         icon={faRss}
                         style={{color: 'whitesmoke'}}
                     />
                     RSS
-                </Link>
+                </a>
             </div>
             <InfoPage />
 
