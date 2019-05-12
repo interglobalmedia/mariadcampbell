@@ -5,7 +5,7 @@ import Layout from '../components/Layout/Layout'
 import styled from '@emotion/styled'
 import Img from 'gatsby-image'
 import {Helmet} from 'react-helmet'
-import {OutboundLink} from 'gatsby-plugin-gtag'
+import SEO from '../components/Seo/Seo'
 
 export const PostDiv = styled.div`
     width: 90%;
@@ -72,12 +72,9 @@ export const PostListMetaDiv = styled.div`
 
 export const PrevNextUl = styled.ul`
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-    padding-left: 1rem;
     width: 100%;
-    max-width: 960px;
+    max-width: 1026px;
     margin: 1.5rem auto;
     & a:hover {
         text-decoration: underline;
@@ -94,19 +91,18 @@ const BlogPage = props => {
             ? '/blog/'
             : `/blog/${(currentPage - 1).toString()}`
     const nextPage = `/blog/${(currentPage + 1).toString()}`
+    const {data} = props
+    const siteTitle = data.site.siteMetadata.siteTitle
+    const keywords = data.site.siteMetadata.keywords
     return (
         <Layout>
+            <SEO
+                location={props.location}
+                siteTitle={siteTitle}
+                keywords={keywords}
+            />
             <Helmet>
-                <meta charset="utf-8" />
                 <title>Blog Page</title>
-                <Link
-                    rel="canonical"
-                    href="https://www.mariadcampbell.com/blog"
-                />
-                <OutboundLink href="https://www.mariadcampbell.com/blog/">
-                    Check out Maria D. Campbell's developer notebook blog list
-                    page!
-                </OutboundLink>
             </Helmet>
             <PostDiv>
                 {postList.edges.map(({node}, i) => (
@@ -142,7 +138,7 @@ const BlogPage = props => {
                                 color: prevPage ? '#cb4b16' : 'rgba(0,0,0,0.8)',
                                 boxShadow: 'none',
                                 letterSpacing: '0.07em',
-                                marginLeft: '-1rem',
+                                marginLeft: '0.25rem',
                             }}
                         >
                             ← Newer
@@ -156,6 +152,7 @@ const BlogPage = props => {
                                 color: nextPage ? '#cb4b16' : 'rgba(0,0,0,0.8)',
                                 boxShadow: 'none',
                                 letterSpacing: '0.07em',
+                                marginLeft: '0.5rem',
                             }}
                         >
                             Older →
@@ -195,6 +192,11 @@ export const blogListQuery = graphql`
                         }
                     }
                 }
+            }
+        }
+        site {
+            siteMetadata {
+                siteTitle
             }
         }
     }

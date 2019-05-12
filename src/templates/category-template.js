@@ -2,6 +2,13 @@ import React from 'react'
 import {Link, graphql} from 'gatsby'
 import Layout from '../components/Layout/Layout'
 import styled from '@emotion/styled'
+import {Helmet} from 'react-helmet'
+
+const LayoutDiv = styled.div`
+    width: 90%;
+    max-width: 1026px;
+    margin: 3rem auto;
+`
 
 export const CategoriesH1 = styled.h1`
     display: flex;
@@ -36,13 +43,10 @@ const CategoryTemplate = props => {
     const {category} = props.pageContext
     return (
         <Layout>
-            <div
-                style={{
-                    width: '90%',
-                    maxWidth: '1026px',
-                    margin: '3rem auto',
-                }}
-            >
+            <Helmet>
+                <title>Categories Page</title>
+            </Helmet>
+            <LayoutDiv>
                 <CategoriesH1>{`posts in category: ${category}`}</CategoriesH1>
                 <CategoriesDiv>
                     {posts.map(({node}, i) => (
@@ -51,7 +55,7 @@ const CategoryTemplate = props => {
                         </Link>
                     ))}
                 </CategoriesDiv>
-            </div>
+            </LayoutDiv>
         </Layout>
     )
 }
@@ -59,7 +63,7 @@ const CategoryTemplate = props => {
 export default CategoryTemplate
 
 export const pageQuery = graphql`
-    query CatsQuery($category: String!) {
+    query catsQuery($category: String!) {
         allMarkdownRemark(
             limit: 2000
             sort: {fields: [frontmatter___date], order: DESC}

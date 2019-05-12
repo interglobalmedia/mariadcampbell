@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import {graphql} from 'gatsby'
 
 export const ContactWrapperStyle = styled.div`
     width: 92.5%;

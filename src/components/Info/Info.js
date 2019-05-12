@@ -103,6 +103,7 @@ const InfoPage = ({author}) => (
             query InfoPageQuery {
                 site {
                     siteMetadata {
+                        siteTitle
                         author
                         social {
                             twitter
@@ -118,7 +119,6 @@ const InfoPage = ({author}) => (
                 <InfoTextUl>
                     <ImageDiv>
                         <ImageImg src={profileSmall} alt={author} />
-
                         <TextLi>
                             <p>
                                 I design, develop, and teach experiences that

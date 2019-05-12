@@ -10,14 +10,23 @@ import PropTypes from 'prop-types'
 import {Helmet} from 'react-helmet'
 import {StaticQuery, graphql} from 'gatsby'
 
-const SEO = ({title, description, image, pathname, post, keywords, author}) => (
+const SEO = ({
+    siteTitle,
+    description,
+    image,
+    pathname,
+    post,
+    keywords,
+    author,
+    lang,
+}) => (
     <StaticQuery
         query={query}
         render={({
             site: {
                 siteMetadata: {
                     defaultTitle,
-                    titleTemplate,
+                    siteTitleTemplate,
                     defaultDescription,
                     siteUrl,
                     defaultImage,
@@ -28,7 +37,7 @@ const SEO = ({title, description, image, pathname, post, keywords, author}) => (
             },
         }) => {
             const seo = {
-                title: title || defaultTitle,
+                title: siteTitle || defaultTitle,
                 description: description || defaultDescription,
                 image: `${image || defaultImage}`,
                 author: author,
@@ -37,7 +46,15 @@ const SEO = ({title, description, image, pathname, post, keywords, author}) => (
             }
             return (
                 <>
-                    <Helmet title={seo.title} titleTemplate={titleTemplate}>
+                    <Helmet
+                        htmlAttributes={{
+                            lang,
+                        }}
+                        title={seo.siteTitle}
+                        titleTemplate={siteTitleTemplate}
+                    >
+                        <meta name="keywords" content={seo.keywords} />
+                        <meta name="author" content={seo.author} />
                         <meta name="description" content={seo.description} />
                         <meta name="image" content={seo.image} />
                         {seo.siteUrl && (
@@ -48,6 +65,9 @@ const SEO = ({title, description, image, pathname, post, keywords, author}) => (
                         )}
                         {seo.title && (
                             <meta property="og:title" content={seo.title} />
+                        )}
+                        {seo.author && (
+                            <meta property="og:author" content={seo.author} />
                         )}
                         {seo.description && (
                             <meta
@@ -88,7 +108,7 @@ const SEO = ({title, description, image, pathname, post, keywords, author}) => (
 )
 
 SEO.propTypes = {
-    title: PropTypes.string.isRequired,
+    siteTitle: PropTypes.string.isRequired,
     description: PropTypes.string,
     image: PropTypes.string,
     pathname: PropTypes.string,
@@ -96,10 +116,11 @@ SEO.propTypes = {
     keywords: PropTypes.array,
     author: PropTypes.string,
     twitterUsername: PropTypes.string,
+    lang: PropTypes.string,
 }
 
 SEO.defaultProps = {
-    title: null,
+    siteTitle: null,
     description: null,
     image: null,
     pathname: null,
@@ -160,6 +181,7 @@ SEO.defaultProps = {
         'npm-audit-fix',
     ],
     author: 'Maria D. Campbell',
+    lang: `en`,
 }
 
 export default SEO
@@ -168,13 +190,14 @@ const query = graphql`
     query SEO {
         site {
             siteMetadata {
-                defaultTitle: title
-                titleTemplate
+                title: siteTitle
+                siteTitleTemplate
                 defaultDescription: description
                 siteUrl: siteUrl
                 defaultImage: image
                 author
                 twitterUsername
+                defaultKeywords: keywords
             }
         }
     }
