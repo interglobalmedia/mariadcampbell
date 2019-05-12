@@ -94,7 +94,7 @@ const IndexPage = props => {
                         <Link
                             className="menu-item"
                             to="/"
-                            activeStyle={{color: '#cb4b16'}}
+                            activeStyle={{color: '#fb2e01'}}
                         >
                             {siteTitle}
                         </Link>
