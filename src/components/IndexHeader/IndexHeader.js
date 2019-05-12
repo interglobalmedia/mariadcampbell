@@ -40,7 +40,7 @@ export const HeaderSideMenuP = styled.p`
     }
 `
 
-const IndexHeader = ({siteTitle}) => (
+const IndexHeader = () => (
     <HeaderStyle>
         <div className="side-navigation">
             <HeaderDiv>
@@ -65,12 +65,12 @@ const IndexHeader = ({siteTitle}) => (
     </HeaderStyle>
 )
 
-IndexHeader.propTypes = {
-    siteTitle: PropTypes.string,
-}
+// IndexHeader.propTypes = {
+//     siteTitle: PropTypes.string,
+// }
 
-IndexHeader.defaultProps = {
-    siteTitle: `Maria D. Campbell`,
-}
+// IndexHeader.defaultProps = {
+//     siteTitle: `Maria D. Campbell`,
+// }
 
 export default IndexHeader
