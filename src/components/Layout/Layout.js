@@ -25,29 +25,19 @@ const Layout = ({children}) => (
             query SiteTitleQuery {
                 site {
                     siteMetadata {
-                        title
+                        siteTitle
                     }
                 }
             }
         `}
         render={data => (
-            <>
-                <Helmet>
-                    <meta
-                        name="keywords"
-                        content="web development, react, mongodb, postgresql, gatsbyjs, nodejs, npm, jsx, css in js, styled components, jira, atlassian, git, distributed version control, github, development, production, continuous deployment, git integration, css3, html5, audio, video full stack development, front end development, back end development, automated workflows, aws, netlify, gh-pages, heroku, command line, osx, serverless stack, cross browser compatibility, shadow dom, testing, jest testing, html5 canvas, webgl, linting, eslint, prettier, babel, webpack, css modules, sass, homebrew, responsive design, es6, modern javascript, node security, npm audit fix"
-                    />
-                </Helmet>
-                <LayoutContainer>
-                    <Header siteTitle={data.site.siteMetadata.title} />
-
-                    <div className="Site">
-                        <main className="Site-content">{children}</main>
-
-                        <Footer />
-                    </div>
-                </LayoutContainer>
-            </>
+            <LayoutContainer>
+                <Header siteTitle={data.site.siteMetadata.siteTitle} />
+                <div className="Site">
+                    <main className="Site-content">{children}</main>
+                    <Footer />
+                </div>
+            </LayoutContainer>
         )}
     />
 )
