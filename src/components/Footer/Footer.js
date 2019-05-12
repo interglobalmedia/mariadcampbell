@@ -51,7 +51,7 @@ const Footer = () => {
             >
                 <Link
                     style={{marginRight: '1.2rem', color: 'whitesmoke'}}
-                    to="/contact/contact"
+                    to="/contact"
                 >
                     <FontAwesomeIcon
                         icon={faEnvelope}
@@ -61,7 +61,7 @@ const Footer = () => {
                 </Link>
                 <Link
                     style={{marginRight: '1.2rem', color: 'whitesmoke'}}
-                    to="/sitemap/sitemap"
+                    to="/sitemap"
                 >
                     <FontAwesomeIcon
                         icon={faDirections}
