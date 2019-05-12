@@ -59,4 +59,16 @@
 
 -   Github-Jira Integration
 
+-   RSS Configuration in gatsby-config.js
+
+-   Customized Home (Index.js) Page
+
+-   react-cookie-consent npm package for GDPR compliance
+
+-   Google Custom Search Functionality
+
+-   SEO component
+
+-   Helmet meta using react-helmet
+
 Over time, there will be more!
