@@ -1,7 +1,15 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import {Link, graphql} from 'gatsby'
 import Layout from '../components/Layout/Layout'
 import styled from '@emotion/styled'
+import {Helmet} from 'react-helmet'
+
+const TagWrapper = styled.div`
+    width: 90%;
+    max-width: 1026px;
+    margin: 3rem auto;
+`
 
 export const TagsH1 = styled.h1`
     display: flex;
@@ -36,13 +44,10 @@ const Tags = props => {
     const {tag} = props.pageContext
     return (
         <Layout>
-            <div
-                style={{
-                    width: '90%',
-                    maxWidth: '1026px',
-                    margin: '3rem auto',
-                }}
-            >
+            <Helmet>
+                <title>Tags Page</title>
+            </Helmet>
+            <TagWrapper>
                 <TagsH1>{`posts in: ${tag}`}</TagsH1>
                 <TagsDiv>
                     {posts.map(({node}, i) => (
@@ -51,15 +56,15 @@ const Tags = props => {
                         </Link>
                     ))}
                 </TagsDiv>
-            </div>
+            </TagWrapper>
         </Layout>
     )
 }
 
 export default Tags
 
-export const query = graphql`
-    query TagsQuery($tag: String!) {
+export const pageQuery = graphql`
+    query tagsQuery($tag: String!) {
         allMarkdownRemark(
             limit: 2000
             sort: {fields: [frontmatter___date], order: DESC}
