@@ -7,7 +7,6 @@ import Img from 'gatsby-image'
 import styled from '@emotion/styled'
 import Layout from '../components/Layout/Layout'
 import SEO from '../components/Seo/Seo'
-
 import PrevNext from '../components/PrevNext/PrevNext'
 import Share from '../components/Share/Share'
 import '../components/Layout/Layout.css'
