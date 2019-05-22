@@ -7,7 +7,7 @@ import CookieConsent, {Cookies} from 'react-cookie-consent'
 import SEO from '../components/Seo/Seo'
 
 export const Container = styled.div`
-    position: fixed;
+    position: relative;
     overflow-y: hidden;
     min-width: 100%;
     min-height: 100%;
@@ -20,6 +20,7 @@ export const BackgroundImage = styled.img`
     min-width: 100%;
     min-height: 100%;
     z-index: -1;
+    opacity: 0.7;
     overflow-y: hidden;
 `
 
@@ -100,6 +101,7 @@ const IndexPage = props => {
                             style={{
                                 background: 'rgba(0,0,0,1)',
                                 paddingTop: '5px',
+                                zIndex: '9999',
                             }}
                             buttonStyle={{color: '#4e503b', fontSize: '1rem'}}
                             declineButtonStyle={{fontSize: '1rem'}}
