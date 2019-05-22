@@ -11,6 +11,12 @@ const SiteMapDiv = styled.div`
     background: rgba(250, 238, 184, 1);
     padding: 1.5rem;
     letter-spacing: 0.07em;
+    & a {
+        box-shadow: none;
+    }
+    & a:hover h3 {
+        text-decoration: underline;
+    }
 `
 
 const PageLinksUl = styled.ul`
@@ -18,6 +24,14 @@ const PageLinksUl = styled.ul`
     & a {
         box-shadow: none;
     }
+    & a:hover {
+        text-decoration: underline;
+    }
+`
+
+const MetaDiv = styled.div`
+    box-shadow: none;
+    color: rgba(153, 170, 181, 1);
 `
 
 const SiteMapPage = props => {
@@ -55,18 +69,16 @@ const SiteMapPage = props => {
                 <div>
                     {postList.edges.map(({node}, i) => (
                         <Link to={node.fields.slug} key={i}>
-                            <div>
-                                <h3>{node.frontmatter.title}</h3>
-                                <div>
-                                    by {node.frontmatter.author} on{' '}
-                                    {node.frontmatter.date}
-                                </div>
-                                <ul>
-                                    <li style={{listStyleType: 'square'}}>
-                                        {node.excerpt}
-                                    </li>
-                                </ul>
-                            </div>
+                            <h3>{node.frontmatter.title}</h3>
+                            <MetaDiv>
+                                by {node.frontmatter.author} on{' '}
+                                {node.frontmatter.date}
+                            </MetaDiv>
+                            <PageLinksUl>
+                                <li style={{listStyleType: 'square'}}>
+                                    {node.excerpt}
+                                </li>
+                            </PageLinksUl>
                         </Link>
                     ))}
                 </div>
