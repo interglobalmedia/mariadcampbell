@@ -62,7 +62,7 @@ const SiteMapPage = props => {
                         <Link to="/contact">Contact</Link>
                     </li>
                     <li>
-                        <Link to="/rss.xml">RSS</Link>
+                        <a href="https://www.mariadcampbell.com/rss.xml">RSS</a>
                     </li>
                 </PageLinksUl>
                 <h2>Posts</h2>
