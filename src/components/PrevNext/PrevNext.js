@@ -15,7 +15,7 @@ export const PrevNextLi = styled.li`
     list-style-type: none;
     letter-spacing: 0.07em;
     & a {
-        color: #cb4b16;
+        color: rgb(226, 39, 74);
         box-shadow: none;
         & :hover {
             text-decoration: underline;
@@ -29,15 +29,23 @@ const PrevNext = props => {
         <PrevNextUl>
             {prev && (
                 <PrevNextLi>
-                    <a href={prev.fields.slug}>
-                        ← Prev <br />
+                    <a
+                        href={prev.fields.slug}
+                        title={`visit link to newer post to read more recent content`}
+                    >
+                        <span>← Newer</span>
                     </a>
+                    <br />
                 </PrevNextLi>
             )}
             {next && (
                 <PrevNextLi>
-                    <a href={next.fields.slug}>
-                        Next → <br />
+                    <a
+                        href={next.fields.slug}
+                        title={`visit link to older post to read older content`}
+                    >
+                        <span>Older →</span>
+                        <br />
                     </a>
                 </PrevNextLi>
             )}
