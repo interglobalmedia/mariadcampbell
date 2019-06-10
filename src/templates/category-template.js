@@ -18,7 +18,7 @@ export const CategoriesH1 = styled.h1`
     width: 100%;
 `
 
-export const CategoriesDiv = styled.div`
+export const TagsCategoriesDiv = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -27,14 +27,18 @@ export const CategoriesDiv = styled.div`
     width: 100%;
     & a {
         list-style-type: none;
-        background: #fdf6e3;
-        color: #cb4b16;
+        background: rgb(207, 203, 177);
+        color: rgb(226, 39, 74);
         width: 100%;
         padding: 1rem;
         text-decoration: none;
         font-size: 1.1rem;
         margin: 1.5rem auto 0;
-        letter-spacing: 0.07em;
+        border-bottom: 1px solid rgb(226, 39, 74);
+        & :hover {
+            border-bottom: 0;
+            text-decoration: underline;
+        }
     }
 `
 
@@ -48,13 +52,13 @@ const CategoryTemplate = props => {
             </Helmet>
             <LayoutDiv>
                 <CategoriesH1>{`posts in category: ${category}`}</CategoriesH1>
-                <CategoriesDiv>
+                <TagsCategoriesDiv>
                     {posts.map(({node}, i) => (
                         <Link to={node.fields.slug} key={i}>
                             {node.frontmatter.title}
                         </Link>
                     ))}
-                </CategoriesDiv>
+                </TagsCategoriesDiv>
             </LayoutDiv>
         </Layout>
     )

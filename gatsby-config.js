@@ -74,6 +74,7 @@ module.exports = {
         `gatsby-plugin-sitemap`,
         `gatsby-plugin-twitter`,
         `gatsby-plugin-react-helmet`,
+        `gatsby-plugin-sass`,
         `gatsby-plugin-emotion`,
         {
             resolve: 'gatsby-source-filesystem',

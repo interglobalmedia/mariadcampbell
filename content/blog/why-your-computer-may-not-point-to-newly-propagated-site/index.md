@@ -15,7 +15,8 @@ author: 'Maria D. Campbell'
 
 **Note:** `DIG`, aka `Domain Information Groper`, which I used to find out the
 **_new_** `IP address` for my newly propagated web site, is built into my Mac.
-According to [ns1.com](https://ns1.com/blog/decoding-dig-output),
+According to
+<a href="https://ns1.com/blog/decoding-dig-output" target="_new" rel="noopener noreferrer" title="visit link to NS1 website dedicated to everything DNS (Domain Name System)">ns1.com</a>,
 
 > (DIG) is the best tool for quickly diagnosing and understanding DNS
 > responses. - Carl Levine, July 13, 2016
@@ -147,6 +148,8 @@ Happy **_site propagation_**!
 
 ## Related Resources:
 
-[How to Edit your hosts File on a Mac](https://www.inmotionhosting.com/support/website/how-to/how-to-edit-your-hosts-file-on-a-mac)
+-   <a href="https://www.inmotionhosting.com/support/website/how-to/how-to-edit-your-hosts-file-on-a-mac" target="_new" rel="noopener noreferrer" title="visit link to post on the inmotion hosting website entitled 'How to Edit your hosts File on a Mac' to learn more about editing your hosts file on a Mac">How
+    to Edit your hosts File on a Mac</a>
 
-[Decoding DIG Output](https://ns1.com/blog/decoding-dig-output)
+-   <a href="https://ns1.com/blog/decoding-dig-output" target="_new" rel="noopener noreferrer" title="visit link to post on the NS1 website entitled 'Decoding DIG Output' to learn more about Domain Information Groper aka DIG">Decoding
+    DIG Output</a>

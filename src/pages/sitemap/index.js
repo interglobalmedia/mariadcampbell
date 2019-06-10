@@ -8,11 +8,21 @@ const SiteMapDiv = styled.div`
     margin: 3rem auto;
     width: 90%;
     max-width: 1026px;
-    background: rgba(250, 238, 184, 1);
+    background: rgb(207, 203, 177);
     padding: 1.5rem;
     letter-spacing: 0.07em;
+    & h1,
+    & h2,
+    & h4 {
+        font-weight: 600;
+    }
+    & h4 {
+        text-transform: capitalize;
+        font-size: 1.2rem;
+    }
     & a {
         box-shadow: none;
+        color: rgb(25, 13, 8);
     }
     & a:hover h3 {
         text-decoration: underline;
@@ -20,18 +30,24 @@ const SiteMapDiv = styled.div`
 `
 
 const PageLinksUl = styled.ul`
-    list-style-type: square;
+    & li {
+        list-style-type: square;
+        color: rgb(47, 0, 0);
+    }
     & a {
         box-shadow: none;
     }
     & a:hover {
         text-decoration: underline;
     }
+    & span {
+        color: #283148;
+    }
 `
 
 const MetaDiv = styled.div`
     box-shadow: none;
-    color: rgba(153, 170, 181, 1);
+    color: #283148;
 `
 
 const SiteMapPage = props => {
@@ -47,36 +63,74 @@ const SiteMapPage = props => {
                 <h2>Pages</h2>
                 <PageLinksUl>
                     <li>
-                        <Link to="/">Home</Link>
+                        <Link
+                            to="/"
+                            title={`visit the link to the Home Page to view what our Landing Page looks like`}
+                        >
+                            Home
+                        </Link>
                     </li>
                     <li>
-                        <Link to="/blog">Blog</Link>
+                        <Link
+                            to="/blog"
+                            title={`visit the link to the Blog Page to read our posts`}
+                        >
+                            Blog
+                        </Link>
                     </li>
                     <li>
-                        <Link to="/categories">Categories</Link>
+                        <Link
+                            to="/categories"
+                            title={`visit the link to our Categories Page to view the various categories our Blog contains`}
+                        >
+                            Categories
+                        </Link>
                     </li>
                     <li>
-                        <Link to="/tags">Tags</Link>
+                        <Link
+                            to="/tags"
+                            title={`visit the link to our Tags Page to view the various tags our Blog contains`}
+                        >
+                            Tags
+                        </Link>
                     </li>
                     <li>
-                        <Link to="/contact">Contact</Link>
+                        <Link
+                            to="/contact"
+                            title={`visit the link to the Contact Page to connect with us`}
+                        >
+                            Contact
+                        </Link>
                     </li>
                     <li>
-                        <a href="https://www.mariadcampbell.com/rss.xml">RSS</a>
+                        <a
+                            href="https://www.mariadcampbell.com/rss.xml"
+                            title={`visit the link to our RSS Feed to view our complete site content`}
+                            target="_new"
+                            rel="noopener noreferrer"
+                        >
+                            RSS
+                        </a>
                     </li>
                 </PageLinksUl>
                 <h2>Posts</h2>
                 <div>
                     {postList.edges.map(({node}, i) => (
-                        <Link to={node.fields.slug} key={i}>
-                            <h3>{node.frontmatter.title}</h3>
+                        <Link
+                            to={node.fields.slug}
+                            key={i}
+                            title={`visit the link to the post entitled "${
+                                node.frontmatter.title
+                            }" to read more`}
+                        >
+                            <h4>{node.frontmatter.title}</h4>
                             <MetaDiv>
                                 by {node.frontmatter.author} on{' '}
                                 {node.frontmatter.date}
                             </MetaDiv>
                             <PageLinksUl>
                                 <li style={{listStyleType: 'square'}}>
-                                    {node.excerpt}
+                                    <span>{node.excerpt}</span>
                                 </li>
                             </PageLinksUl>
                         </Link>
