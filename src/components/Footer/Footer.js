@@ -8,22 +8,21 @@ import {
     faEnvelope,
 } from '@fortawesome/free-solid-svg-icons'
 import {Link} from 'gatsby'
-import InfoPage from '../Info/Info'
-import CookieConsent, {Cookies} from 'react-cookie-consent'
+import Info from '../Info/Info'
+import CookieConsent from 'react-cookie-consent'
 
 export const FooterStyle = styled.footer`
     text-align: center;
     padding-bottom: 0.5rem;
     letter-spacing: 0.07em;
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto -1.5rem;
     padding-top: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-
-    background: rgba(44, 60, 160, 1);
+    background: rgb(25, 13, 8);
     & a {
         color: #cb4b16;
         box-shadow: none;
@@ -52,6 +51,7 @@ const Footer = () => {
                 <Link
                     style={{marginRight: '1.2rem', color: 'whitesmoke'}}
                     to="/contact"
+                    title={`visit link to main Contact page to learn how to connect with us`}
                 >
                     <FontAwesomeIcon
                         icon={faEnvelope}
@@ -62,6 +62,7 @@ const Footer = () => {
                 <Link
                     style={{marginRight: '1.2rem', color: 'whitesmoke'}}
                     to="/sitemap"
+                    title={`visit link to Sitemap page to get an overview of the entire site`}
                 >
                     <FontAwesomeIcon
                         icon={faDirections}
@@ -73,6 +74,7 @@ const Footer = () => {
                 <a
                     style={{color: 'whitesmoke'}}
                     href="https://www.mariadcampbell.com/rss.xml"
+                    title={`visit link to RSS Feed page to view or subscribe to our RSS Feed`}
                 >
                     <FontAwesomeIcon
                         icon={faRss}
@@ -81,12 +83,14 @@ const Footer = () => {
                     RSS
                 </a>
             </div>
-            <InfoPage />
+            <Info />
 
             <ScrollUpButton
+                ContainerClassName="ScrollUpButton__Container"
                 style={{
                     outline: 'none',
-                    background: 'transparent',
+                    background: 'rgb(226,39,74)',
+                    border: ' 5px solid rgb(226,39,74)',
                 }}
             />
             <CreditWrapperDiv>
@@ -110,7 +114,12 @@ const Footer = () => {
                 }}
             >
                 This website uses cookies to enhance the user experience.{' '}
-                <a href="https://cookiesandyou.com/" target="_new">
+                <a
+                    href="https://cookiesandyou.com/"
+                    target="_new"
+                    rel="noopener noreferrer"
+                    title={`visit the cookies and you website to learn more about how cookies work`}
+                >
                     Learn more
                 </a>
             </CookieConsent>

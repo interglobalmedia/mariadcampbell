@@ -21,7 +21,7 @@ export const SocialUl = styled.ul`
     & li {
         list-style-type: none;
         & a {
-            color: rgba(132, 0, 88, 1);
+            color: rgba(25, 13, 8);
             box-shadow: none;
             padding-top: 17px;
             padding-bottom: 8px;
@@ -45,7 +45,12 @@ const Share = props => {
     return (
         <SocialUl>
             <li>
-                <a href={fb} target="blank">
+                <a
+                    href={fb}
+                    target="_new"
+                    rel="noopener noreferrer"
+                    title={`if you like this post share it on Facebook with your friends!`}
+                >
                     <FontAwesomeIcon
                         icon={faFacebookF}
                         size="2x"
@@ -59,7 +64,12 @@ const Share = props => {
                 </a>
             </li>
             <li>
-                <a href={twitter} target="blank">
+                <a
+                    href={twitter}
+                    target="_new"
+                    rel="noopener noreferrer"
+                    title={`if you like this post share it on Twitter with your friends!`}
+                >
                     <FontAwesomeIcon
                         icon={faTwitter}
                         size="2x"
@@ -73,7 +83,12 @@ const Share = props => {
                 </a>
             </li>
             <li>
-                <a href={linkedin} target="blank">
+                <a
+                    href={linkedin}
+                    target="_new"
+                    rel="noopener noreferrer"
+                    title={`if you like this post share it on Linkedin with your connections!`}
+                >
                     <FontAwesomeIcon
                         icon={faLinkedinIn}
                         size="2x"

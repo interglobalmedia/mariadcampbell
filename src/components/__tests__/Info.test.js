@@ -6,7 +6,7 @@ import {
     faLinkedinIn,
     faGithubAlt,
 } from '@fortawesome/free-brands-svg-icons'
-import {ParaStyle, SocialStrong} from '../Info/Info'
+import {SocialStyle, SocialStrong} from '../Info/Info'
 
 describe('InfoPage', () => {
     it(`should render social follow links`, () => {
@@ -22,7 +22,7 @@ describe('InfoPage', () => {
             },
         }
         const {container} = render(
-            <ParaStyle>
+            <SocialStyle>
                 <a
                     href={`https://twitter.com${
                         data.site.siteMetadata.social.twitter
@@ -79,7 +79,7 @@ describe('InfoPage', () => {
                         />
                     </SocialStrong>
                 </a>
-            </ParaStyle>,
+            </SocialStyle>,
         )
         expect(container).toBeInTheDocument()
     })

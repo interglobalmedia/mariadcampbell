@@ -1,6 +1,6 @@
+/* eslint-disable jsx-a11y/tabindex-no-positive */
 import React from 'react'
 import styled from '@emotion/styled'
-import {graphql} from 'gatsby'
 
 export const ContactWrapperStyle = styled.div`
     width: 92.5%;
@@ -10,9 +10,12 @@ export const ContactWrapperStyle = styled.div`
     align-items: center;
     justify-content: center;
     margin: 3rem auto;
-    background: rgba(250, 238, 184, 1);
+    background: rgb(207, 203, 177);
     padding: 1.5rem 0 0;
     letter-spacing: 0.07em;
+    & h1 {
+        font-weight: 600;
+    }
     & form {
         width: 90%;
         margin: 0 auto;
@@ -21,7 +24,7 @@ export const ContactWrapperStyle = styled.div`
             flex-direction: column;
             margin: 1rem auto;
             letter-spacing: 0.1em;
-            color: #007acc;
+            color: rgb(25, 13, 8);
         }
         & ul {
             margin-bottom: 3rem;
@@ -32,27 +35,31 @@ export const ContactWrapperStyle = styled.div`
             -webkit-appearance: none;
             -webkit-rtl-ordering: none;
             outline: none;
-            border: 0;
-            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
             height: 2rem;
             padding: 7px 5px 3px;
+            background: #fdf6e3;
+            border: none;
+            boxshadow: none;
             letter-spacing: 0.1em;
             & ::placeholder {
                 letter-spacing: 0.1em;
-                color: #007acc;
+                color: rgb(25, 13, 8);
             }
         }
         & textarea {
-            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-            padding: 5px;
-            color: #007acc;
-            letter-spacing: 0.1em;
+            box-shadow: none;
+            border: none;
             outline: none;
+            background: #fdf6e3;
+            padding: 5px;
+            color: rgba(25, 13, 8);
+            letter-spacing: 0.1em;
         }
         & ul li input {
-            color: #007acc;
+            color: rgb(25, 13, 8);
             padding-top: 7px;
             display: flex;
+            cursor: pointer;
         }
     }
 `
@@ -74,7 +81,8 @@ const Contact = () => {
                         type="text"
                         name="name"
                         id="name"
-                        placeholder="Name"
+                        placeholder="type name here"
+                        tabIndex="1"
                     />
                 </div>
                 <div className="field half">
@@ -83,7 +91,8 @@ const Contact = () => {
                         type="text"
                         name="email"
                         id="email"
-                        placeholder="Email"
+                        placeholder="type email here"
+                        tabIndex="2"
                     />
                 </div>
                 <div className="field">
@@ -92,30 +101,25 @@ const Contact = () => {
                         name="message"
                         id="message"
                         rows="6"
-                        placeholder="Message"
+                        placeholder="type message here"
+                        tabIndex="3"
                     />
                 </div>
                 <ul className="actions">
                     <li>
                         <input
-                            style={{
-                                borderRadius: '2px',
-                                cursor: 'pointer',
-                                background: 'white',
-                            }}
                             type="submit"
                             value="Send Message"
+                            tabIndex="4"
+                            title={`click to send message when you have completed typing`}
                         />
                     </li>
                     <li>
                         <input
-                            style={{
-                                borderRadius: '2px',
-                                cursor: 'pointer',
-                                background: 'white',
-                            }}
                             type="reset"
                             value="Clear"
+                            tabIndex="5"
+                            title={`click to clear form when you have completed sending your message`}
                         />
                     </li>
                 </ul>
