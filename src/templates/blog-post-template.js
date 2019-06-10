@@ -9,7 +9,6 @@ import {Helmet} from 'react-helmet'
 import Layout from '../components/Layout/Layout'
 import PrevNext from '../components/PrevNext/PrevNext'
 import Share from '../components/Share/Share'
-import '../components/Layout/Layout.css'
 
 export const PostWrapperDiv = styled.div`
     width: 90%;
@@ -19,7 +18,7 @@ export const PostWrapperDiv = styled.div`
 
 export const ImageDiv = styled.div`
     width: 100%;
-    margin-top: 1rem;
+    margin-top: 3rem;
     @media (max-width: 599px) {
         display: none;
     }
@@ -39,7 +38,7 @@ export const PostTitle = styled.h1`
 
 export const PostDateP = styled.p`
     text-align: center;
-    color: rgba(132, 0, 88, 1);
+    color: rgba (25, 13, 8);
     letter-spacing: 0.07em;
 `
 
@@ -53,7 +52,7 @@ export const DangerousDiv = styled.div`
         list-style-type: circle;
     }
     & a {
-        color: #cb4b16;
+        color: rgb(226, 39, 74);
         box-shadow: none;
         letter-spacing: 0.07em;
         & :hover {
@@ -64,31 +63,18 @@ export const DangerousDiv = styled.div`
 
 export const TaggedInSpan = styled.span`
     letter-spacing: 0.07em;
-    color: rgba(132, 0, 88, 1);
+    color: rgb(47, 0, 0);
+    font-weight: bold;
 `
-export const PostTagsDiv = styled.div`
-  & a {
-  box-shadow: none; 
-  color: #cb4b16;
-  letter-spacing: 0.07em;
-  & :hover {
-    text-decoration: underline;
-  }
-`
+
 export const CategorizedInSpan = styled.span`
     letter-spacing: 0.07em;
-    color: rgba(132, 0, 88, 1);
+    color: rgba(92, 44, 29);
+    font-weight: bold;
 `
 
 export const PostCategoriesDiv = styled.div`
-margin-top: 1.5rem;
-  & a {
-  box-shadow: none; 
-  color: #cb4b16;
-  letter-spacing: 0.07em;
-  & :hover {
-    text-decoration: underline;
-  }
+    margin-top: 1.5rem;
 `
 
 export const DiscussTwitter = styled.div`
@@ -96,12 +82,6 @@ export const DiscussTwitter = styled.div`
     align-items: center;
     justify-content: center;
     margin: 3rem auto;
-    & a {
-        box-shadow: none;
-    }
-    & :hover {
-        text-decoration: underline;
-    }
 `
 
 const BlogPost = props => {
@@ -144,29 +124,41 @@ const BlogPost = props => {
                             __html: props.data.markdownRemark.html,
                         }}
                     />
-                    <PostTagsDiv>
-                        <TaggedInSpan>Tagged in: </TaggedInSpan>
+                    <div>
+                        <TaggedInSpan>Tagged in:</TaggedInSpan>
                         {tags.map((tag, i) => (
-                            <Link to={`/tags/${tag}`} key={i}>
+                            <Link
+                                to={`/tags/${tag}`}
+                                key={i}
+                                title={`visit link to "${tag}" tag page listing the posts tagged in "${tag}"`}
+                            >
                                 <FontAwesomeIcon
                                     icon={faTag}
-                                    style={{color: '#268bd2'}}
-                                />{' '}
-                                {tag}{' '}
+                                    style={{
+                                        color: 'rgb(25,13,8)',
+                                        marginRight: '0.5rem',
+                                        marginLeft: '0.5rem',
+                                    }}
+                                />
+                                {tag}
                             </Link>
                         ))}
-                    </PostTagsDiv>
+                    </div>
                     <PostCategoriesDiv>
                         <CategorizedInSpan>
-                            Categorized under:{' '}
+                            Categorized under:
                         </CategorizedInSpan>
                         {categories.map((category, i) => (
-                            <Link to={`/categories/${category}`} key={i}>
+                            <Link
+                                to={`/categories/${category}`}
+                                key={i}
+                                title={`visit link to "${category}" category page listing the posts categorized under "${category}"`}
+                            >
                                 <FontAwesomeIcon
                                     icon={faFolder}
                                     style={{
-                                        color: '#268bd2',
-                                        marginRight: '0.25rem',
+                                        color: 'rgb(25,13,8)',
+                                        marginRight: '0.5rem',
                                         marginLeft: '0.5rem',
                                     }}
                                 />
@@ -182,9 +174,16 @@ const BlogPost = props => {
                             href={`https://mobile.twitter.com/search?q=${encodeURIComponent(
                                 blogPostUrl,
                             )}`}
+                            title={`visit link to this shared post on Twitter to discuss it there`}
                         >
-                            <FontAwesomeIcon icon={faComment} /> Discuss On
-                            Twitter
+                            <FontAwesomeIcon
+                                icon={faComment}
+                                style={{
+                                    color: 'rgb(25,13,8)',
+                                    marginRight: '0.5rem',
+                                }}
+                            />
+                            <span>Discuss On Twitter</span>
                         </a>
                     </DiscussTwitter>
                     <div className="post-social-share">

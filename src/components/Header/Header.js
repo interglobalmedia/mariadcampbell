@@ -10,7 +10,7 @@ import {
     faEnvelope,
 } from '@fortawesome/free-solid-svg-icons'
 import styled from '@emotion/styled'
-import './SideBar.css'
+import './SideBar.scss'
 
 export const HeaderStyle = styled.header`
     width: 90%;
@@ -26,7 +26,7 @@ export const HeaderDiv = styled.div`
 
 export const HeaderTitle = styled.h1`
     margin-top: 1.25rem;
-    color: rgba(0, 0, 0, 0.9);
+    color: rgb(0, 0, 0);
     font-size: 130%;
     & a {
         color: rgba(0, 0, 0, 0.9);
@@ -38,7 +38,7 @@ export const HeaderTitle = styled.h1`
         box-shadow: none;
         & :hover {
             text-decoration: underline;
-            color: #cb4b16;
+            color: rgb(226, 39, 74);
         }
     }
 `
@@ -54,7 +54,7 @@ export const HeaderSideMenuP = styled.p`
         box-shadow: none;
     }
     & a:hover {
-        color: rgba(29, 202, 255, 1);
+        color: rgb(89, 219, 209);
     }
 `
 
@@ -64,16 +64,25 @@ const Header = ({siteTitle}) => (
             <HeaderDiv>
                 <Menu>
                     <HeaderSideMenuP>
-                        <Link to="/" activeStyle={{color: '#cb4b16'}}>
+                        <Link to="/" activeStyle={{color: 'rgb(226,39,74)'}}>
                             <FontAwesomeIcon icon={faHome} />
                         </Link>
-                        <Link to="/blog/" activeStyle={{color: '#cb4b16'}}>
+                        <Link
+                            to="/blog/"
+                            activeStyle={{color: 'rgb(226,39,74)'}}
+                        >
                             <FontAwesomeIcon icon={faBlog} />
                         </Link>
-                        <Link to="/sitemap" activeStyle={{color: '#cb4b16'}}>
+                        <Link
+                            to="/sitemap"
+                            activeStyle={{color: 'rgb(226,39,74)'}}
+                        >
                             <FontAwesomeIcon icon={faDirections} />
                         </Link>
-                        <Link to="/contact" activeStyle={{color: '#cb4b16'}}>
+                        <Link
+                            to="/contact"
+                            activeStyle={{color: 'rgb(226,39,74)'}}
+                        >
                             <FontAwesomeIcon icon={faEnvelope} />
                         </Link>
                     </HeaderSideMenuP>
@@ -81,7 +90,11 @@ const Header = ({siteTitle}) => (
             </HeaderDiv>
         </div>
         <HeaderTitle>
-            <Link className="menu-item" to="/" activeStyle={{color: '#cb4b16'}}>
+            <Link
+                className="menu-item"
+                to="/"
+                activeStyle={{color: 'rgb(226,39,74)'}}
+            >
                 {siteTitle}
             </Link>
         </HeaderTitle>

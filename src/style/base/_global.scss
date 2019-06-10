@@ -1,0 +1,10 @@
+a {
+    box-shadow: none;
+    color: rgb(226, 39, 74);
+    cursor: pointer;
+    letter-spacing: 0.07em;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

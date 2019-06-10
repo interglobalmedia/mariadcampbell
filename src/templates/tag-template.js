@@ -4,6 +4,7 @@ import {Link, graphql} from 'gatsby'
 import Layout from '../components/Layout/Layout'
 import styled from '@emotion/styled'
 import {Helmet} from 'react-helmet'
+import {TagsCategoriesDiv} from './category-template'
 
 const TagWrapper = styled.div`
     width: 90%;
@@ -19,26 +20,6 @@ export const TagsH1 = styled.h1`
     width: 100%;
 `
 
-export const TagsDiv = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0.75rem auto 4rem;
-    width: 100%;
-    & a {
-        list-style-type: none;
-        background: #fdf6e3;
-        color: #cb4b16;
-        width: 100%;
-        padding: 1rem;
-        text-decoration: none;
-        font-size: 1.1rem;
-        margin: 1.5rem auto 0;
-        letter-spacing: 0.07em;
-    }
-`
-
 const Tags = props => {
     const posts = props.data.allMarkdownRemark.edges
     const {tag} = props.pageContext
@@ -49,13 +30,13 @@ const Tags = props => {
             </Helmet>
             <TagWrapper>
                 <TagsH1>{`posts in: ${tag}`}</TagsH1>
-                <TagsDiv>
+                <TagsCategoriesDiv>
                     {posts.map(({node}, i) => (
                         <Link to={node.fields.slug} key={i}>
                             {node.frontmatter.title}
                         </Link>
                     ))}
-                </TagsDiv>
+                </TagsCategoriesDiv>
             </TagWrapper>
         </Layout>
     )

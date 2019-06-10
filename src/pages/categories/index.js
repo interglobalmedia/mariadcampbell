@@ -6,23 +6,27 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faFolder} from '@fortawesome/free-solid-svg-icons'
 import styled from '@emotion/styled'
 
-export const CategoriesDiv = styled.div`
+export const TagsCategoriesDiv = styled.div`
     width: 90%;
-    max-width: 1026px;
-    margin: 3rem auto;
+    max-width: 960px;
+    margin: 3rem auto 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     & a {
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
         list-style-type: none;
-        background: #fdf6e3;
-        color: #cb4b16;
+        background: rgb(207, 203, 177);
+        color: rgb(226, 39, 74);
         width: 100%;
         padding: 1rem;
         tex-decoration: none;
         font-size: 1.1rem;
         letter-spacing: 0.07em;
+        border-bottom: 1px solid rgb(226, 39, 74);
+        & :hover {
+            border-bottom: 0;
+        }
     }
 `
 
@@ -33,20 +37,20 @@ const CategoriesPage = props => {
             <Helmet>
                 <title>Categories Page</title>
             </Helmet>
-            <CategoriesDiv>
+            <TagsCategoriesDiv>
                 {data.map((category, i) => (
                     <Link to={`/categories/${category.fieldValue}`} key={i}>
                         <FontAwesomeIcon
                             icon={faFolder}
                             style={{
-                                color: '#268bd2',
+                                color: 'rgb(25,13,8)',
                                 marginRight: '0.5rem',
                             }}
                         />
                         {category.fieldValue} {`(${category.totalCount})`}
                     </Link>
                 ))}
-            </CategoriesDiv>
+            </TagsCategoriesDiv>
         </Layout>
     )
 }
