@@ -10,7 +10,7 @@ import {
     faEnvelope,
 } from '@fortawesome/free-solid-svg-icons'
 import styled from '@emotion/styled'
-import '../Header/SideBar.css'
+import '../Header/SideBar.scss'
 
 export const HeaderStyle = styled.header`
     width: 90%;
@@ -36,7 +36,7 @@ export const HeaderSideMenuP = styled.p`
         box-shadow: none;
     }
     & a:hover {
-        color: rgba(29, 202, 255, 1);
+        color: rgb(89, 219, 209);
     }
 `
 
@@ -46,16 +46,25 @@ const IndexHeader = () => (
             <HeaderDiv>
                 <Menu>
                     <HeaderSideMenuP>
-                        <Link to="/" activeStyle={{color: '#cb4b16'}}>
+                        <Link to="/" activeStyle={{color: 'rgb(226,39,74)'}}>
                             <FontAwesomeIcon icon={faHome} />
                         </Link>
-                        <Link to="/blog" activeStyle={{color: '#cb4b16'}}>
+                        <Link
+                            to="/blog"
+                            activeStyle={{color: 'rgb(226,39,74)'}}
+                        >
                             <FontAwesomeIcon icon={faBlog} />
                         </Link>
-                        <Link to="/sitemap" activeStyle={{color: '#cb4b16'}}>
+                        <Link
+                            to="/sitemap"
+                            activeStyle={{color: 'rgb(226,39,74)'}}
+                        >
                             <FontAwesomeIcon icon={faDirections} />
                         </Link>
-                        <Link to="/contact" activeStyle={{color: '#cb4b16'}}>
+                        <Link
+                            to="/contact"
+                            activeStyle={{color: 'rgb(226,39,74)'}}
+                        >
                             <FontAwesomeIcon icon={faEnvelope} />
                         </Link>
                     </HeaderSideMenuP>
