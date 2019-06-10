@@ -11,13 +11,13 @@ import {StaticQuery, graphql} from 'gatsby'
 import {Helmet} from 'react-helmet'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
-import './Layout.css'
+import './Layout.scss'
 import styled from '@emotion/styled'
 import Search from '../Search/Search'
 
 export const LayoutContainer = styled.div`
     width: 100%;
-    background: rgba(235, 233, 90, 1);
+    background: #fdf6e3;
 `
 
 const Layout = ({children}) => (
