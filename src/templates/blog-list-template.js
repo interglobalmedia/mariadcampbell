@@ -27,7 +27,7 @@ export const PostListDiv = styled.div`
     color: rgba(0, 0, 0, 0.8);
     letter-spacing: 0.07em;
     &:hover {
-        background-color: whitesmoke;
+        background-color: rgb(207, 203, 177);
     }
 `
 
@@ -36,7 +36,7 @@ export const PostListTitle = styled.h1`
     font-weight: normal;
     margin-bottom: 0.25rem;
     line-height: 1.3;
-    color: #cb4b16;
+    color: rgb(226, 39, 74);
     & :hover {
         text-decoration: underline;
     }
@@ -98,28 +98,33 @@ const BlogPage = props => {
             <SEO location={props.location} title={title} keywords={keywords} />
             <PostDiv>
                 {postList.edges.map(({node}, i) => (
-                    <Link to={node.fields.slug} key={i}>
-                        <PostListDiv>
+                    <PostListDiv key={i}>
+                        <Link
+                            to={node.fields.slug}
+                            title={`visit link to the post entitled "${
+                                node.frontmatter.title
+                            }" to read more`}
+                        >
                             <PostListTitle>
                                 {node.frontmatter.title}
                             </PostListTitle>
-                            <PostListMetaDiv>
-                                by {node.frontmatter.author} on{' '}
-                                {node.frontmatter.date}
-                            </PostListMetaDiv>
-                            <ExcerptWrapUl>
-                                <li>
-                                    <Img
-                                        fixed={
-                                            node.frontmatter.image
-                                                .childImageSharp.fixed
-                                        }
-                                    />
-                                </li>
-                                <li>{node.excerpt}</li>
-                            </ExcerptWrapUl>
-                        </PostListDiv>
-                    </Link>
+                        </Link>
+                        <PostListMetaDiv>
+                            by {node.frontmatter.author} on{' '}
+                            {node.frontmatter.date}
+                        </PostListMetaDiv>
+                        <ExcerptWrapUl>
+                            <li>
+                                <Img
+                                    fixed={
+                                        node.frontmatter.image.childImageSharp
+                                            .fixed
+                                    }
+                                />
+                            </li>
+                            <li>{node.excerpt}</li>
+                        </ExcerptWrapUl>
+                    </PostListDiv>
                 ))}
                 <PrevNextUl>
                     {!isFirst && (
@@ -127,11 +132,14 @@ const BlogPage = props => {
                             to={prevPage}
                             rel="prev"
                             style={{
-                                color: prevPage ? '#cb4b16' : 'rgba(0,0,0,0.8)',
+                                color: prevPage
+                                    ? 'rgb(226,39,74)'
+                                    : 'rgba(0,0,0,0.8)',
                                 boxShadow: 'none',
                                 letterSpacing: '0.07em',
                                 marginLeft: '0.25rem',
                             }}
+                            title={`visit link to newer posts to read more recent content`}
                         >
                             ← Newer
                         </Link>
@@ -141,11 +149,14 @@ const BlogPage = props => {
                             to={nextPage}
                             rel="next"
                             style={{
-                                color: nextPage ? '#cb4b16' : 'rgba(0,0,0,0.8)',
+                                color: nextPage
+                                    ? 'rgb(226,39,74)'
+                                    : 'rgba(0,0,0,0.8)',
                                 boxShadow: 'none',
                                 letterSpacing: '0.07em',
                                 marginLeft: '0.5rem',
                             }}
+                            title={`visit link to older posts to read older content`}
                         >
                             Older →
                         </Link>
