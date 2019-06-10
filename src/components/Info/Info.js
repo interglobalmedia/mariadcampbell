@@ -7,12 +7,11 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import {rhythm} from '../../utils/typography'
 import {StaticQuery, graphql} from 'gatsby'
-import '../../components/Layout/Layout.css'
+import Image from 'gatsby-image'
 import styled from '@emotion/styled'
-import profileSmall from '../../images/profileSmall.png'
 
 export const InfoLayout = styled.ul`
-    margin: 3rem auto 0.5rem;
+    margin: 2rem auto 1.5rem;
     width: 100vw;
     margin-left: 50%;
     transform: translateX(-50%);
@@ -36,24 +35,8 @@ export const InfoTextUl = styled.ul`
 
 export const ImageDiv = styled.div`
     display: block;
-    maxwidth: 150px;
-    maxheight: 150px;
-    margin-top: ${rhythm(1 / 4)};
-    margin-left: ${rhythm(1 / 2)};
-`
-
-const ImageImg = styled.img`
-    max-height: 150px;
-    max-width: 150px;
-    margin-right: ${rhythm(1 / 4)};
     margin-top: ${rhythm(1 / 2)};
-    margin-bottom: ${rhythm(1 / 2)};
-    padding-right: ${rhythm(1 / 4)};
-    max-width: 150px;
-    max-height: 150px;
-    float: left;
-    outside: circle();
-    shape-outside: circle();
+    margin-left: ${rhythm(1 / 2)};
 `
 
 export const TextLi = styled.li`
@@ -64,43 +47,36 @@ export const TextLi = styled.li`
     margin-right: ${rhythm(1 / 8)};
 `
 
-export const ParaStyle = styled.p`
+export const SocialStyle = styled.p`
     display: flex;
     justify-content: center;
     margin-top: 2rem;
-`
-
-export const SocialMediaUl = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style-type: none;
-    margin-top: 2.5rem;
-    & li {
-        box-shadow: none;
-        display: flex;
-        margin-right: 40px;
-        list-style-type: none;
-        padding-bottom: 1rem;
-        &:first-of-type {
-            margin-left: 1.25rem;
-        }
-        & a {
-            color: #268bd2;
-            box-shadow: none;
-            padding: 5px 8px;
-        }
-    }
+    margin-left: 0.75rem;
+    width: 100%;
+    max-width: 1026px;
 `
 
 export const SocialStrong = styled.strong`
-    color: #268bd2;
+    color: rgb(25, 13, 8);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    &:hover {
+        color: rgb(226, 39, 74);
+        transition: 1s ease-out;
+    }
 `
 
-const InfoPage = ({author}) => (
+const Info = ({author}) => (
     <StaticQuery
         query={graphql`
             query InfoPageQuery {
+                avatar: file(relativePath: {eq: "profileSmall.png"}) {
+                    childImageSharp {
+                        fixed(width: 150, height: 150) {
+                            ...GatsbyImageSharpFixed
+                        }
+                    }
+                }
                 site {
                     siteMetadata {
                         title
@@ -118,7 +94,21 @@ const InfoPage = ({author}) => (
             <InfoLayout>
                 <InfoTextUl>
                     <ImageDiv>
-                        <ImageImg src={profileSmall} alt={author} />
+                        <Image
+                            fixed={data.avatar.childImageSharp.fixed}
+                            alt="The author Maria D. Campbell"
+                            style={{
+                                maxHeight: '150px',
+                                maxWidth: '150px',
+                                marginRight: rhythm(1 / 4),
+                                marginTop: rhythm(1 / 2),
+                                marginBottom: rhythm(1 / 2),
+                                paddingRight: rhythm(1 / 4),
+                                float: 'left',
+                                outside: 'circle()',
+                                shapeOutside: 'circle()',
+                            }}
+                        />
                         <TextLi>
                             <p>
                                 I design, develop, and teach experiences that
@@ -128,12 +118,14 @@ const InfoPage = ({author}) => (
                                 listen to music, ponder over surrealist art, and
                                 create exotic cuisine.
                             </p>
-                            <ParaStyle>
+                            <SocialStyle>
                                 <a
                                     href={`https://twitter.com/${
                                         data.site.siteMetadata.social.twitter
                                     }`}
-                                    target="blank"
+                                    target="_new"
+                                    rel="noopener noreferrer"
+                                    title={`visit link to Maria's Twitter profile to follow her on Twitter`}
                                 >
                                     <SocialStrong>
                                         <FontAwesomeIcon
@@ -143,8 +135,6 @@ const InfoPage = ({author}) => (
                                                 borderRadius: '50%',
                                                 width: '30px',
                                                 height: '30px',
-                                                marginRight: '1.5rem',
-                                                marginLeft: '-1.5rem',
                                             }}
                                         />
                                     </SocialStrong>
@@ -153,7 +143,9 @@ const InfoPage = ({author}) => (
                                     href={`https://github.com/${
                                         data.site.siteMetadata.social.github
                                     }`}
-                                    target="blank"
+                                    target="_new"
+                                    rel="noopener noreferrer"
+                                    title={`visit link to Maria's Github profile to follow her on Github`}
                                 >
                                     <SocialStrong>
                                         <FontAwesomeIcon
@@ -162,7 +154,6 @@ const InfoPage = ({author}) => (
                                             style={{
                                                 width: '30px',
                                                 height: '30px',
-                                                marginRight: '1.5rem',
                                             }}
                                         />
                                     </SocialStrong>
@@ -171,7 +162,9 @@ const InfoPage = ({author}) => (
                                     href={`https://www.linkedin.com/in/${
                                         data.site.siteMetadata.social.linkedin
                                     }`}
-                                    target="blank"
+                                    target="_new"
+                                    rel="noopener noreferrer"
+                                    title={`visit link to Maria's Linkedin profile to connect with her on Linkedin`}
                                 >
                                     <SocialStrong>
                                         <FontAwesomeIcon
@@ -185,7 +178,7 @@ const InfoPage = ({author}) => (
                                         />
                                     </SocialStrong>
                                 </a>
-                            </ParaStyle>
+                            </SocialStyle>
                         </TextLi>
                     </ImageDiv>
                 </InfoTextUl>
@@ -194,4 +187,4 @@ const InfoPage = ({author}) => (
     />
 )
 
-export default InfoPage
+export default Info
