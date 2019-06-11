@@ -116,14 +116,15 @@ const SiteMapPage = props => {
                 <h2>Posts</h2>
                 <div>
                     {postList.edges.map(({node}, i) => (
-                        <Link
-                            to={node.fields.slug}
-                            key={i}
-                            title={`visit the link to the post entitled "${
-                                node.frontmatter.title
-                            }" to read more`}
-                        >
-                            <h4>{node.frontmatter.title}</h4>
+                        <div key={i}>
+                            <Link
+                                to={node.fields.slug}
+                                title={`visit the link to the post entitled "${
+                                    node.frontmatter.title
+                                }" to read more`}
+                            >
+                                <h4>{node.frontmatter.title}</h4>
+                            </Link>
                             <MetaDiv>
                                 by {node.frontmatter.author} on{' '}
                                 {node.frontmatter.date}
@@ -133,7 +134,7 @@ const SiteMapPage = props => {
                                     <span>{node.excerpt}</span>
                                 </li>
                             </PageLinksUl>
-                        </Link>
+                        </div>
                     ))}
                 </div>
             </SiteMapDiv>

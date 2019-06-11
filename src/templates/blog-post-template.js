@@ -26,7 +26,6 @@ export const ImageDiv = styled.div`
 
 export const PostContent = styled.div`
     width: 100%;
-    // max-width: 960px;
     margin: 2rem auto;
 `
 
@@ -52,12 +51,7 @@ export const DangerousDiv = styled.div`
         list-style-type: circle;
     }
     & a {
-        color: rgb(226, 39, 74);
-        box-shadow: none;
         letter-spacing: 0.07em;
-        & :hover {
-            text-decoration: underline;
-        }
     }
 `
 

@@ -17,7 +17,6 @@ export const HeaderStyle = styled.header`
 `
 
 export const HeaderDiv = styled.div`
-    box-shadow: none;
     display: flex;
     flex-direction: column;
     align-items: space-between;
@@ -26,10 +25,9 @@ export const HeaderDiv = styled.div`
 
 export const HeaderTitle = styled.h1`
     margin-top: 1.25rem;
-    color: rgb(0, 0, 0);
     font-size: 130%;
     & a {
-        color: rgba(0, 0, 0, 0.9);
+        color: rgb(25, 13, 8);
         font-size: 1.3rem;
         font-weight: 400;
         margin-left: 0.5rem;
