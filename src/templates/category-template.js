@@ -4,13 +4,13 @@ import Layout from '../components/Layout/Layout'
 import styled from '@emotion/styled'
 import {Helmet} from 'react-helmet'
 
-const LayoutDiv = styled.div`
+export const TagCatWrapper = styled.div`
     width: 90%;
     max-width: 1026px;
     margin: 3rem auto;
 `
 
-export const CategoriesH1 = styled.h1`
+export const TagsCategoriesH1 = styled.h1`
     display: flex;
     justify-content: flex-start;
     margin: 0 auto;
@@ -26,18 +26,14 @@ export const TagsCategoriesDiv = styled.div`
     margin: 0.75rem auto 4rem;
     width: 100%;
     & a {
-        list-style-type: none;
         background: rgb(207, 203, 177);
-        color: rgb(226, 39, 74);
         width: 100%;
         padding: 1rem;
-        text-decoration: none;
         font-size: 1.1rem;
         margin: 1.5rem auto 0;
         border-bottom: 1px solid rgb(226, 39, 74);
         & :hover {
             border-bottom: 0;
-            text-decoration: underline;
         }
     }
 `
@@ -50,8 +46,8 @@ const CategoryTemplate = props => {
             <Helmet>
                 <title>Categories Page</title>
             </Helmet>
-            <LayoutDiv>
-                <CategoriesH1>{`posts in category: ${category}`}</CategoriesH1>
+            <TagCatWrapper>
+                <TagsCategoriesH1>{`posts in category: ${category}`}</TagsCategoriesH1>
                 <TagsCategoriesDiv>
                     {posts.map(({node}, i) => (
                         <Link to={node.fields.slug} key={i}>
@@ -59,7 +55,7 @@ const CategoryTemplate = props => {
                         </Link>
                     ))}
                 </TagsCategoriesDiv>
-            </LayoutDiv>
+            </TagCatWrapper>
         </Layout>
     )
 }
