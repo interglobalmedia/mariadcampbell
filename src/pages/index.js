@@ -85,7 +85,11 @@ const IndexPage = props => {
                     <IndexHeader />
                     <div className="Site-content">
                         <HeaderTitle>
-                            <Link className="menu-item" to="/">
+                            <Link
+                                className="menu-item"
+                                to="/"
+                                title={`link to the Home Page containing the name of Maria's developer blog entitled "Maria D. Campbell"`}
+                            >
                                 {title}
                             </Link>
                         </HeaderTitle>
@@ -99,6 +103,7 @@ const IndexPage = props => {
                                         marginRight: '1.2rem',
                                     }}
                                     to="/contact"
+                                    title={`visit link to main Contact page to learn how to connect with us`}
                                 >
                                     <FontAwesomeIcon icon={faEnvelope} />
                                     Contact
@@ -108,12 +113,16 @@ const IndexPage = props => {
                                         marginRight: '1.2rem',
                                     }}
                                     to="/sitemap"
+                                    title={`visit link to Sitemap page to get an overview of the entire site`}
                                 >
                                     <FontAwesomeIcon icon={faDirections} />
                                     Sitemap
                                 </Link>
 
-                                <a href="https://www.mariadcampbell.com/rss.xml">
+                                <a
+                                    href="https://www.mariadcampbell.com/rss.xml"
+                                    title={`visit link to RSS Feed page to view or subscribe to our RSS Feed`}
+                                >
                                     <FontAwesomeIcon icon={faRss} />
                                     RSS
                                 </a>
@@ -147,6 +156,8 @@ const IndexPage = props => {
                                 style={{color: '#cb4b16'}}
                                 href="https://cookiesandyou.com/"
                                 target="_new"
+                                rel="noopener noreferrer"
+                                title={`visit the cookies and you website to learn more about how cookies work`}
                             >
                                 Learn more
                             </a>

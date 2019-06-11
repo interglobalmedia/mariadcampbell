@@ -4,16 +4,16 @@ import Layout from '../../components/Layout/Layout'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faTag} from '@fortawesome/free-solid-svg-icons'
 import styled from '@emotion/styled'
-import {Helmet} from 'react-helmet'
 import {TagsCategoriesDiv} from '../categories'
+import SEO from '../../components/Seo/Seo'
 
 const TagsPage = props => {
     const data = props.data.allMarkdownRemark.group
+    const title = props.data.site.siteMetadata.title
+    const keywords = props.data.site.siteMetadata.keywords
     return (
         <Layout>
-            <Helmet>
-                <title>Tags Page</title>
-            </Helmet>
+            <SEO location={props.location} title={title} keywords={keywords} />
             <TagsCategoriesDiv>
                 {data.map((tag, i) => (
                     <Link to={`/tags/${tag.fieldValue}`} key={i}>
@@ -40,6 +40,12 @@ export const pageQuery = graphql`
             group(field: frontmatter___tags) {
                 fieldValue
                 totalCount
+            }
+        }
+        site {
+            siteMetadata {
+                title
+                keywords
             }
         }
     }
