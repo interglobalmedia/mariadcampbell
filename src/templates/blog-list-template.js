@@ -10,9 +10,6 @@ export const PostDiv = styled.div`
     width: 90%;
     max-width: 1026px;
     margin: 3rem auto;
-    & a {
-        box-shadow: none;
-    }
 `
 
 export const PostListDiv = styled.div`
@@ -24,7 +21,7 @@ export const PostListDiv = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    color: rgba(0, 0, 0, 0.8);
+    color: rgba(25, 13, 8);
     letter-spacing: 0.07em;
     &:hover {
         background-color: rgb(207, 203, 177);
@@ -37,9 +34,6 @@ export const PostListTitle = styled.h1`
     margin-bottom: 0.25rem;
     line-height: 1.3;
     color: rgb(226, 39, 74);
-    & :hover {
-        text-decoration: underline;
-    }
 `
 
 export const ExcerptWrapUl = styled.ul`
@@ -75,9 +69,6 @@ export const PrevNextUl = styled.ul`
     width: 100%;
     max-width: 1026px;
     margin: 1.5rem auto;
-    & a:hover {
-        text-decoration: underline;
-    }
 `
 
 const BlogPage = props => {
