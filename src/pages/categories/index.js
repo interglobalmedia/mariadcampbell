@@ -1,10 +1,10 @@
 import React from 'react'
 import {Link, graphql} from 'gatsby'
-import {Helmet} from 'react-helmet'
 import Layout from '../../components/Layout/Layout'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faFolder} from '@fortawesome/free-solid-svg-icons'
 import styled from '@emotion/styled'
+import SEO from '../../components/Seo/Seo'
 
 export const TagsCategoriesDiv = styled.div`
     width: 90%;
@@ -32,16 +32,11 @@ export const TagsCategoriesDiv = styled.div`
 
 const CategoriesPage = props => {
     const data = props.data.allMarkdownRemark.group
+    const title = props.data.site.siteMetadata.title
+    const keywords = props.data.site.siteMetadata.keywords
     return (
         <Layout>
-            <Helmet>
-                <meta charset="utf-8" />
-                <title>Categories Page</title>
-                <Link
-                    rel="canonical"
-                    href="https://www.mariadcampbell.com/categories"
-                />
-            </Helmet>
+            <SEO location={props.location} title={title} keywords={keywords} />
             <TagsCategoriesDiv>
                 {data.map((category, i) => (
                     <Link to={`/categories/${category.fieldValue}`} key={i}>
@@ -68,6 +63,12 @@ export const pageQuery = graphql`
             group(field: frontmatter___categories) {
                 fieldValue
                 totalCount
+            }
+        }
+        site {
+            siteMetadata {
+                title
+                keywords
             }
         }
     }
