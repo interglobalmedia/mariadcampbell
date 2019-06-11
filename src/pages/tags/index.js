@@ -12,7 +12,12 @@ const TagsPage = props => {
     return (
         <Layout>
             <Helmet>
-                <title>Tags Page</title>
+                <meta charset="utf-8" />
+                <title>Categories Page</title>
+                <Link
+                    rel="canonical"
+                    href="https://www.mariadcampbell.com/tags"
+                />
             </Helmet>
             <TagsCategoriesDiv>
                 {data.map((tag, i) => (
