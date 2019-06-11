@@ -17,7 +17,7 @@ export const HeaderStyle = styled.header`
 `
 
 export const HeaderDiv = styled.div`
-    box-shadow: none;
+    // box-shadow: none;
     display: flex;
     flex-direction: column;
     align-items: space-between;
@@ -33,7 +33,7 @@ export const HeaderSideMenuP = styled.p`
         color: #fdf6e3;
         font-size: 1.5rem;
         padding: 1.0875rem;
-        box-shadow: none;
+        // box-shadow: none;
     }
     & a:hover {
         color: rgb(89, 219, 209);
