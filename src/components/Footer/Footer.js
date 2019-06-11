@@ -24,12 +24,8 @@ export const FooterStyle = styled.footer`
     justify-content: space-around;
     background: rgb(25, 13, 8);
     & a {
-        color: #cb4b16;
-        box-shadow: none;
+        color: whitesmoke;
         margin-bottom: 3rem;
-        & :hover {
-            text-decoration: underline;
-        }
     }
 `
 
@@ -49,37 +45,27 @@ const Footer = () => {
                 }}
             >
                 <Link
-                    style={{marginRight: '1.2rem', color: 'whitesmoke'}}
+                    style={{marginRight: '1.2rem'}}
                     to="/contact"
                     title={`visit link to main Contact page to learn how to connect with us`}
                 >
-                    <FontAwesomeIcon
-                        icon={faEnvelope}
-                        style={{color: 'whitesmoke'}}
-                    />
+                    <FontAwesomeIcon icon={faEnvelope} />
                     Contact
                 </Link>
                 <Link
-                    style={{marginRight: '1.2rem', color: 'whitesmoke'}}
+                    style={{marginRight: '1.2rem'}}
                     to="/sitemap"
                     title={`visit link to Sitemap page to get an overview of the entire site`}
                 >
-                    <FontAwesomeIcon
-                        icon={faDirections}
-                        style={{color: 'whitesmoke'}}
-                    />
+                    <FontAwesomeIcon icon={faDirections} />
                     Sitemap
                 </Link>
 
                 <a
-                    style={{color: 'whitesmoke'}}
                     href="https://www.mariadcampbell.com/rss.xml"
                     title={`visit link to RSS Feed page to view or subscribe to our RSS Feed`}
                 >
-                    <FontAwesomeIcon
-                        icon={faRss}
-                        style={{color: 'whitesmoke'}}
-                    />
+                    <FontAwesomeIcon icon={faRss} />
                     RSS
                 </a>
             </div>
