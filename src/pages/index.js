@@ -9,7 +9,7 @@ import {
     faRss,
     faEnvelope,
 } from '@fortawesome/free-solid-svg-icons'
-import CookieConsent, {Cookies} from 'react-cookie-consent'
+import CookieConsent from 'react-cookie-consent'
 import SEO from '../components/Seo/Seo'
 
 export const Container = styled.div`
@@ -37,10 +37,7 @@ export const HeaderTitle = styled.h1`
     letter-spacing: 0.07em;
     & a {
         padding: 1.0875rem;
-        box-shadow: none;
-        & :hover {
-            text-decoration: underline;
-        }
+        color: whitesmoke;
     }
 `
 
@@ -53,11 +50,7 @@ export const FooterStyle = styled.footer`
     letter-spacing: 0.08em;
     background: none repeat scroll 0 0 transparent;
     & a {
-        box-shadow: none;
         text-align: center;
-        & :hover {
-            text-decoration: underline;
-        }
     }
 `
 const FooterDiv = styled.div`
@@ -68,6 +61,9 @@ const FooterDiv = styled.div`
 const IconsDiv = styled.div`
     font-size: 1rem;
     padding-bottom: 1rem;
+    & a {
+        color: whitesmoke;
+    }
     @media (min-width: 375px) {
         font-size: 1.2rem;
     }
@@ -89,11 +85,7 @@ const IndexPage = props => {
                     <IndexHeader />
                     <div className="Site-content">
                         <HeaderTitle>
-                            <Link
-                                className="menu-item"
-                                to="/"
-                                activeStyle={{color: 'whitesmoke'}}
-                            >
+                            <Link className="menu-item" to="/">
                                 {title}
                             </Link>
                         </HeaderTitle>
@@ -105,38 +97,24 @@ const IndexPage = props => {
                                 <Link
                                     style={{
                                         marginRight: '1.2rem',
-                                        color: 'whitesmoke',
                                     }}
                                     to="/contact"
                                 >
-                                    <FontAwesomeIcon
-                                        icon={faEnvelope}
-                                        style={{color: 'whitesmoke'}}
-                                    />
+                                    <FontAwesomeIcon icon={faEnvelope} />
                                     Contact
                                 </Link>
                                 <Link
                                     style={{
                                         marginRight: '1.2rem',
-                                        color: 'whitesmoke',
                                     }}
                                     to="/sitemap"
                                 >
-                                    <FontAwesomeIcon
-                                        icon={faDirections}
-                                        style={{color: 'whitesmoke'}}
-                                    />
+                                    <FontAwesomeIcon icon={faDirections} />
                                     Sitemap
                                 </Link>
 
-                                <a
-                                    style={{color: 'whitesmoke'}}
-                                    href="https://www.mariadcampbell.com/rss.xml"
-                                >
-                                    <FontAwesomeIcon
-                                        icon={faRss}
-                                        style={{color: 'whitesmoke'}}
-                                    />
+                                <a href="https://www.mariadcampbell.com/rss.xml">
+                                    <FontAwesomeIcon icon={faRss} />
                                     RSS
                                 </a>
                             </IconsDiv>
