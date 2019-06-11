@@ -59,27 +59,40 @@ export const HeaderSideMenuP = styled.p`
 const Header = ({siteTitle}) => (
     <HeaderStyle>
         <div className="side-navigation">
-            <HeaderDiv>
+            <HeaderDiv
+                title={`click hamburger icon to reveal Sidebar Navigation Menu`}
+            >
                 <Menu>
                     <HeaderSideMenuP>
-                        <Link to="/" activeStyle={{color: 'rgb(226,39,74)'}}>
+                        <Link
+                            to="/"
+                            activeStyle={{
+                                color: 'rgb(226,39,74)',
+                            }}
+                            title={`link to the Home Page of Maria D. Campbell's developer blog`}
+                        >
                             <FontAwesomeIcon icon={faHome} />
                         </Link>
                         <Link
                             to="/blog/"
-                            activeStyle={{color: 'rgb(226,39,74)'}}
+                            activeStyle={{
+                                color: 'rgb(226,39,74)',
+                            }}
+                            title={`link to the Blog Page of Maria D. Campbell's Developer Blog`}
                         >
                             <FontAwesomeIcon icon={faBlog} />
                         </Link>
                         <Link
                             to="/sitemap"
                             activeStyle={{color: 'rgb(226,39,74)'}}
+                            title={`visit the Sitemap page to get an overview of the entire site`}
                         >
                             <FontAwesomeIcon icon={faDirections} />
                         </Link>
                         <Link
                             to="/contact"
                             activeStyle={{color: 'rgb(226,39,74)'}}
+                            title={`visit the main Contact page to learn how to connect with us`}
                         >
                             <FontAwesomeIcon icon={faEnvelope} />
                         </Link>
@@ -92,6 +105,7 @@ const Header = ({siteTitle}) => (
                 className="menu-item"
                 to="/"
                 activeStyle={{color: 'rgb(226,39,74)'}}
+                title={`link to the Home Page containing the name of Maria's developer blog entitled "Maria D. Campbell"`}
             >
                 {siteTitle}
             </Link>

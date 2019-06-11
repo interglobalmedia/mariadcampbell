@@ -35,7 +35,12 @@ const CategoriesPage = props => {
     return (
         <Layout>
             <Helmet>
+                <meta charset="utf-8" />
                 <title>Categories Page</title>
+                <Link
+                    rel="canonical"
+                    href="https://www.mariadcampbell.com/categories"
+                />
             </Helmet>
             <TagsCategoriesDiv>
                 {data.map((category, i) => (
