@@ -1,6 +1,6 @@
 import React from 'react'
 import {StaticQuery, graphql} from 'gatsby'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 import {rhythm} from '../../utils/typography'
 import profileSmall from '../../images/profileSmall.png'
 import {SocialStrong} from '../Info/Info'
@@ -49,8 +49,8 @@ function Bio() {
             render={data => {
                 const {author, social} = data.site.siteMetadata
                 return (
-                    <BioContainerWrapperDiv>
-                        <BioContainerDiv>
+                    <BioContainerWrapperDiv as="div">
+                        <BioContainerDiv as="div">
                             <img
                                 src={profileSmall}
                                 alt={author}
@@ -64,7 +64,10 @@ function Bio() {
                                 }}
                             />
                             <p>
-                                Written by <SocialStrong>{author}</SocialStrong>{' '}
+                                Written by{' '}
+                                <SocialStrong as="strong">
+                                    {author}
+                                </SocialStrong>{' '}
                                 who lives and works in New York City building
                                 useful things. Be sure to follow me on{' '}
                                 <a
