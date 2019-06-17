@@ -1,6 +1,6 @@
 import React from 'react'
 import travel from '../images/chris-lawton-346402-unsplash.jpg'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 import IndexHeader from '../components/IndexHeader/IndexHeader'
 import {Link, graphql} from 'gatsby'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'

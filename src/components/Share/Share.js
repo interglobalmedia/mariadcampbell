@@ -5,7 +5,7 @@ import {
     faFacebookF,
     faLinkedinIn,
 } from '@fortawesome/free-brands-svg-icons'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 
 export const SocialUl = styled.ul`
     box-shadow: none;
@@ -43,7 +43,7 @@ const Share = props => {
     const linkedin = `https://www.linkedin.com/shareArticle?mini=true&url=${props.url +
         props.pathname}&text=${props.title}`
     return (
-        <SocialUl>
+        <SocialUl as="ul">
             <li>
                 <a
                     href={fb}

@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/tabindex-no-positive */
 import React from 'react'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 
 export const ContactWrapperStyle = styled.div`
     width: 92.5%;
@@ -66,7 +66,7 @@ export const ContactWrapperStyle = styled.div`
 
 const Contact = () => {
     return (
-        <ContactWrapperStyle>
+        <ContactWrapperStyle as="div">
             <h1>Contact</h1>
             <form
                 name="contact"

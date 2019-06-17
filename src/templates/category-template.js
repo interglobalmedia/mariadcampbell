@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link, graphql} from 'gatsby'
 import Layout from '../components/Layout/Layout'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 import {Helmet} from 'react-helmet'
 
 export const TagCatWrapper = styled.div`

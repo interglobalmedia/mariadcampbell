@@ -9,7 +9,7 @@ import {
     faDirections,
     faEnvelope,
 } from '@fortawesome/free-solid-svg-icons'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 import '../Header/SideBar.scss'
 
 export const HeaderStyle = styled.header`
@@ -41,13 +41,14 @@ export const HeaderSideMenuP = styled.p`
 `
 
 const IndexHeader = () => (
-    <HeaderStyle>
+    <HeaderStyle as="header">
         <div className="side-navigation">
             <HeaderDiv
+                as="div"
                 title={`click hamburger icon to reveal Sidebar Navigation Menu`}
             >
                 <Menu>
-                    <HeaderSideMenuP>
+                    <HeaderSideMenuP as="p">
                         <Link
                             to="/"
                             activeStyle={{color: 'rgb(226,39,74)'}}

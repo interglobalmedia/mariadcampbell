@@ -1,6 +1,6 @@
 import React from 'react'
 import {CircleArrow as ScrollUpButton} from 'react-scroll-up-button'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {
     faDirections,
@@ -36,7 +36,7 @@ export const CreditWrapperDiv = styled.div`
 
 const Footer = () => {
     return (
-        <FooterStyle>
+        <FooterStyle as="footer">
             <div
                 style={{
                     display: 'flex',
@@ -79,7 +79,7 @@ const Footer = () => {
                     border: ' 5px solid rgb(226,39,74)',
                 }}
             />
-            <CreditWrapperDiv>
+            <CreditWrapperDiv as="div">
                 © {new Date().getFullYear()} Maria D. Campbell
             </CreditWrapperDiv>
             <CookieConsent

@@ -75,7 +75,12 @@ module.exports = {
         `gatsby-plugin-twitter`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-sass`,
-        `gatsby-plugin-emotion`,
+        {
+            resolve: `gatsby-plugin-styled-components`,
+            options: {
+                pure: true,
+            },
+        },
         {
             resolve: 'gatsby-source-filesystem',
             options: {
