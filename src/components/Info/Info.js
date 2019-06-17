@@ -8,7 +8,7 @@ import {
 import {rhythm} from '../../utils/typography'
 import {StaticQuery, graphql} from 'gatsby'
 import Image from 'gatsby-image'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 
 export const InfoLayout = styled.ul`
     margin: 2rem auto 1.5rem;
@@ -91,9 +91,9 @@ const Info = ({author}) => (
             }
         `}
         render={data => (
-            <InfoLayout>
-                <InfoTextUl>
-                    <ImageDiv>
+            <InfoLayout as="ul">
+                <InfoTextUl as="ul">
+                    <ImageDiv as="div">
                         <Image
                             fixed={data.avatar.childImageSharp.fixed}
                             alt="The author Maria D. Campbell"
@@ -109,7 +109,7 @@ const Info = ({author}) => (
                                 shapeOutside: 'circle()',
                             }}
                         />
-                        <TextLi>
+                        <TextLi as="li">
                             <p>
                                 I design, develop, and teach experiences that
                                 make people's lives simpler. When I’ m not
@@ -118,7 +118,7 @@ const Info = ({author}) => (
                                 listen to music, ponder over surrealist art, and
                                 create exotic cuisine.
                             </p>
-                            <SocialStyle>
+                            <SocialStyle as="p">
                                 <a
                                     href={`https://twitter.com/${
                                         data.site.siteMetadata.social.twitter
@@ -127,7 +127,7 @@ const Info = ({author}) => (
                                     rel="noopener noreferrer"
                                     title={`visit link to Maria's Twitter profile to follow her on Twitter`}
                                 >
-                                    <SocialStrong>
+                                    <SocialStrong as="strong">
                                         <FontAwesomeIcon
                                             icon={faTwitter}
                                             size="2x"
@@ -147,7 +147,7 @@ const Info = ({author}) => (
                                     rel="noopener noreferrer"
                                     title={`visit link to Maria's Github profile to follow her on Github`}
                                 >
-                                    <SocialStrong>
+                                    <SocialStrong as="strong">
                                         <FontAwesomeIcon
                                             icon={faGithubAlt}
                                             size="2x"
@@ -166,7 +166,7 @@ const Info = ({author}) => (
                                     rel="noopener noreferrer"
                                     title={`visit link to Maria's Linkedin profile to connect with her on Linkedin`}
                                 >
-                                    <SocialStrong>
+                                    <SocialStrong as="strong">
                                         <FontAwesomeIcon
                                             icon={faLinkedinIn}
                                             size="2x"
