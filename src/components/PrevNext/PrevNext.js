@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 
 export const PrevNextUl = styled.ul`
     width: 100%;
@@ -26,9 +26,9 @@ export const PrevNextLi = styled.li`
 const PrevNext = props => {
     const {prev, next} = props
     return (
-        <PrevNextUl>
+        <PrevNextUl as="ul">
             {prev && (
-                <PrevNextLi>
+                <PrevNextLi as="li">
                     <a
                         href={prev.fields.slug}
                         title={`visit link to newer post to read more recent content`}
@@ -39,7 +39,7 @@ const PrevNext = props => {
                 </PrevNextLi>
             )}
             {next && (
-                <PrevNextLi>
+                <PrevNextLi as="li">
                     <a
                         href={next.fields.slug}
                         title={`visit link to older post to read older content`}

@@ -3,7 +3,6 @@ import {Link, graphql} from 'gatsby'
 import Layout from '../../components/Layout/Layout'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faTag} from '@fortawesome/free-solid-svg-icons'
-import styled from '@emotion/styled'
 import {TagsCategoriesDiv} from '../categories'
 import SEO from '../../components/Seo/Seo'
 

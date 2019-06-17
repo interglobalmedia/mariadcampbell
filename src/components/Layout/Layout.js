@@ -12,7 +12,7 @@ import {Helmet} from 'react-helmet'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import './Layout.scss'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 import Search from '../Search/Search'
 
 export const LayoutContainer = styled.div`
@@ -32,7 +32,7 @@ const Layout = ({children}) => (
             }
         `}
         render={data => (
-            <LayoutContainer>
+            <LayoutContainer as="div">
                 <Header title={data.site.siteMetadata.title} />
                 <div className="Site">
                     <Search />
