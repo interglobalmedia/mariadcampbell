@@ -71,13 +71,18 @@
         "lint-staged": "^8.1.5",
         "netlify-cli": "^2.11.7",
         "prettier": "^1.17.0",
-        "react-testing-library": "^6.0.0"
+        "react-testing-library": "^6.0.0",
+        "stylelint": "^10.1.0",
+        "stylelint-config-recommended": "^2.2.0",
+        "stylelint-config-styled-components": "^0.1.1",
+        "stylelint-processor-styled-components": "^1.8.0"
     },
     "keywords": [
         "gatsby"
     ],
     "license": "MIT",
     "scripts": {
+        "lint:css": "stylelint './src/**/*.js'",
         "lint": "eslint src",
         "format": "npm run prettier -- --write",
         "prettier": "prettier \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|graphql|mdx)\"",

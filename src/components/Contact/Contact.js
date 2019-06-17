@@ -32,14 +32,13 @@ export const ContactWrapperStyle = styled.div`
             margin-left: 0;
         }
         & input {
-            -webkit-appearance: none;
             -webkit-rtl-ordering: none;
             outline: none;
             height: 2rem;
             padding: 7px 5px 3px;
             background: #fdf6e3;
             border: none;
-            boxshadow: none;
+            box-shadow: none;
             letter-spacing: 0.1em;
             & ::placeholder {
                 letter-spacing: 0.1em;
